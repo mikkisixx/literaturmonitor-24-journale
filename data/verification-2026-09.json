@@ -1,0 +1,40 @@
+{
+  "month": "2026-09",
+  "checked_at": "2026-10-23",
+  "scope": "Publisher-source review of journals with zero Crossref matches; issue date does not prove first online date",
+  "journals": {
+    "American Journal of Dentistry": {
+      "status": "publisher_issue_found_online_dates_unverified",
+      "evidence": "Publisher archive lists September Special Issue 2026 but has no linked issue/article list in the available archive snapshot.",
+      "source": "https://www.amjdent.com/previousarticles.htm"
+    },
+    "Journal of Adhesive Dentistry": {
+      "status": "not_verified",
+      "evidence": "Publisher confirms journal exists; no complete September first-online article list verified.",
+      "source": "https://www.quintessence-publishing.com/gbr/en/journals/authors-guidelines"
+    },
+    "International Journal of Prosthodontics": {
+      "status": "not_verified",
+      "evidence": "Publisher confirms journal exists; no complete September first-online article list verified.",
+      "source": "https://www.quintessence-publishing.com/gbr/en/journals/authors-guidelines"
+    },
+    "Quintessence International": {
+      "status": "not_verified",
+      "evidence": "Publisher confirms journal exists; no complete September first-online article list verified.",
+      "source": "https://www.quintessence-publishing.com/gbr/en/journals/authors-guidelines"
+    },
+    "Operative Dentistry": {
+      "status": "not_verified",
+      "evidence": "Zero Crossref results are not proof of zero September publications."
+    },
+    "Clinical Oral Investigations": {
+      "status": "not_verified",
+      "evidence": "Zero Crossref results are not proof of zero September publications."
+    },
+    "Journal of Materials Science: Materials in Medicine": {
+      "status": "publisher_dates_available_month_unverified",
+      "evidence": "Springer article pages contain Published and Version of record dates; no exhaustive September article audit completed.",
+      "source": "https://link.springer.com/journal/10856"
+    }
+  }
+}
