@@ -24,7 +24,7 @@ for doi,item in observed.items():
         explicit=bool(online and online.startswith(month))
         basis="crossref_online" if explicit else "crossref_published_unverified"
         record={"doi":doi,"title":item.get("title",""),"journal":item.get("journal",""),
-            "category":item.get("category",""),"online_date":online if explicit else None,
+            "category":item.get("category",""),"authors":item.get("authors",[]),"online_date":online if explicit else None,
             "display_date":online if explicit else (published if published and published.startswith(month) else month+" (Filtertreffer)"),
             "date_basis":basis,"url":"https://doi.org/"+doi}
         months.setdefault(month,[]).append(record)
