@@ -48,6 +48,8 @@ def main():
                         previous=observed.get(doi,{})
                         online=collect.date_field(item,"published-online")
                         published=collect.date_field(item,"published")
+                        previous.setdefault("matched_months",[])
+                        if args.month not in previous["matched_months"]: previous["matched_months"].append(args.month)
                         previous.update({
                             "doi":doi,"title":(item.get("title") or [""])[0],
                             "journal":name,"category":group,
