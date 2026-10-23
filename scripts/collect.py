@@ -16,7 +16,7 @@ JOURNALS = {
 "Zahnmedizin": ["Journal of Dental Research","Dental Materials","Journal of Dentistry","American Journal of Dentistry","Journal of Adhesive Dentistry","Journal of Prosthetic Dentistry","International Journal of Prosthodontics","Quintessence International","Operative Dentistry","Clinical Oral Investigations","European Journal of Oral Sciences","The Journal of Esthetic and Restorative Dentistry","International Endodontic Journal","Journal of Endodontics","Dental Traumatology","International Journal of Paediatric Dentistry","BMC Oral Health"],
 "Biomaterialien": ["Journal of the Mechanical Behavior of Biomedical Materials","Journal of Materials Science: Materials in Medicine","Acta Biomaterialia","Journal of Oral Rehabilitation"],
 "Engineering": ["Journal of the American Ceramic Society","Journal of the European Ceramic Society","Journal of Biomechanics"]}
-ISSN = {"Journal of Adhesive Dentistry":"1461-5185","International Journal of Prosthodontics":"1942-4426","Quintessence International":"0033-6572"}
+ISSN = {"American Journal of Dentistry":"0894-8275","Journal of Adhesive Dentistry":"1461-5185","International Journal of Prosthodontics":"1942-4426","Quintessence International":"0033-6572"}
 ALIASES = {"International Journal of Prosthodontics":"The International Journal of Prosthodontics","The Journal of Esthetic and Restorative Dentistry":"Journal of Esthetic and Restorative Dentistry"}
 AGENT = "Literaturmonitor/0.1 (public research metadata; https://github.com/mikkisixx/literaturmonitor-24-journale)"
 def get(url):
