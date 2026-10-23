@@ -15,8 +15,11 @@ for doi,item in observed.items():
     published=item.get("published_date")
     matched=item.get("matched_months") or []
     eligible=set(m for m in matched if "2026-01"<=m<=current)
+    # An explicit online month takes precedence over a general publication month.
+    if online and len(online)==10:
+        eligible={online[:7]} if "2026-01"<=online[:7]<=current else set()
     if online and "2026-01"<=online[:7]<=current:eligible.add(online[:7])
-    if published and "2026-01"<=published[:7]<=current:eligible.add(published[:7])
+    if not online and published and "2026-01"<=published[:7]<=current:eligible.add(published[:7])
     for month in eligible:
         explicit=bool(online and online.startswith(month))
         basis="crossref_online" if explicit else "crossref_published_unverified"
