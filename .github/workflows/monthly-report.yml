@@ -1,0 +1,51 @@
+name: Monatsrecherche und Bericht
+on:
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Monat (YYYY-MM)'
+        required: true
+        default: '2026-09'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/monthly-report.yml'
+permissions:
+  contents: write
+concurrency:
+  group: literature-data-write
+  cancel-in-progress: false
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Berichtsmonat bestimmen
+        id: period
+        env:
+          INPUT_MONTH: ${{ github.event.inputs.month }}
+        run: |
+          if [ -n "$INPUT_MONTH" ]; then
+            MONTH="$INPUT_MONTH"
+          else
+            MONTH="2026-09"
+          fi
+          echo "month=$MONTH" >> "$GITHUB_OUTPUT"
+      - name: Monat bei Crossref nachrecherchieren
+        run: python scripts/backfill.py --month "${{ steps.period.outputs.month }}"
+      - name: HTML-Daten neu erzeugen
+        run: python scripts/build_months.py
+      - name: Monatsberichte speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/observed.json data/backfill-*.json data/months/
+          if ! git diff --cached --quiet; then
+            git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
+            git pull --rebase
+            git push
+          fi
