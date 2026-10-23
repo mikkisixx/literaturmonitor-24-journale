@@ -12,6 +12,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/monthly-report.yml'
+      - 'scripts/backfill.py'
+      - 'scripts/build_months.py'
 permissions:
   contents: write
 concurrency:
@@ -50,4 +52,11 @@ jobs:
             git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
             git pull --rebase
             git push
+          else
+            echo "Keine geänderten Ergebnisdateien. Prüfe Kandidatenzahlen im Monatsbericht."
           fi
+      - name: Kandidatenbericht prüfen
+        run: |
+          python -c 'import json,os; m=os.environ["REPORT_MONTH"]; r=json.load(open("data/months/"+m+".json")); print("Monat",m,"Online",r["verified_online_count"],"Kandidaten",r["candidate_count"]); assert r["count"]==len(r["articles"])'
+        env:
+          REPORT_MONTH: ${{ steps.period.outputs.month }}
