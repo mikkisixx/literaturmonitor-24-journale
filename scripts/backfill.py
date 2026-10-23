@@ -12,7 +12,7 @@ sys.path.insert(0,str(pathlib.Path(__file__).resolve().parent))
 import collect
 DATA=collect.DATA
 def fetch_pages(issn, start, end, mode):
-    filters=f"from-{mode}-pub-date:{start},until-{mode}-pub-date:{end},type:journal-article"
+    filters=f"from-{mode+'-' if mode else ''}pub-date:{start},until-{mode+'-' if mode else ''}pub-date:{end},type:journal-article"
     cursor="*"
     while True:
         msg=collect.get(collect.url("journals/"+issn+"/works",{
