@@ -15,8 +15,8 @@ def fetch_pages(issn, start, end, mode):
     filters=f"from-{mode+'-' if mode else ''}pub-date:{start},until-{mode+'-' if mode else ''}pub-date:{end},type:journal-article"
     cursor="*"
     while True:
-        msg=collect.get(collect.url("journals/"+issn+"/works",{
-            "filter":filters,"rows":200,"cursor":cursor,
+        msg=collect.get(collect.url("works",{
+            "filter":filters+",issn:"+issn,"rows":200,"cursor":cursor,
             "select":"DOI,title,published-online,published-print,published,created,indexed,container-title,ISSN,URL,author,type"}))
         items=msg.get("items",[])
         yield from items
