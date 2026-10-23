@@ -68,8 +68,8 @@ def main():
         if doi in existing and existing[doi].get("status")=="publisher_date_match":continue
         try:
             url,dates=get_publisher(doi)
-            exact=[(k,v) for k,v in dates if re.match(r"^\\d{4}-\\d{2}-\\d{2}",v) and v[:10]==date]
-            conflicting=[(k,v) for k,v in dates if re.match(r"^\\d{4}-\\d{2}-\\d{2}",v) and v[:10]!=date]
+            exact=[(k,v) for k,v in dates if re.match(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}",v) and v[:10]==date]
+            conflicting=[(k,v) for k,v in dates if re.match(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}",v) and v[:10]!=date]
             # Generic publication dates may represent an issue, not the first online date.
             online=[(k,v) for k,v in exact if k in ("citation_online_date","article:published_time")]
             status="publisher_date_match" if online and not conflicting else "needs_manual_review"
