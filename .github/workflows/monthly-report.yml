@@ -14,6 +14,7 @@ on:
       - '.github/workflows/monthly-report.yml'
       - 'scripts/backfill.py'
       - 'scripts/build_months.py'
+      - 'scripts/verify_publishers.py'
 permissions:
   contents: write
 concurrency:
@@ -43,11 +44,15 @@ jobs:
         run: python scripts/backfill.py --month "${{ steps.period.outputs.month }}"
       - name: HTML-Daten neu erzeugen
         run: python scripts/build_months.py
+      - name: Verlagsdaten artikelweise abgleichen
+        run: python scripts/verify_publishers.py "$REPORT_MONTH"
+        env:
+          REPORT_MONTH: ${{ steps.period.outputs.month }}
       - name: Monatsberichte speichern
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/observed.json data/backfill-*.json data/months/
+          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/
           if ! git diff --cached --quiet; then
             git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
             git pull --rebase
