@@ -1,18 +1,17 @@
 {
   "month": "2026-09",
   "source": "Crossref journal-article queries using publication/online-publication month filters",
-  "checked": 21,
-  "errors": {
-    "American Journal of Dentistry": "HTTP Error 404: Not Found",
-    "Journal of Adhesive Dentistry": "HTTP Error 404: Not Found",
-    "Quintessence International": "HTTP Error 404: Not Found"
-  },
+  "checked": 24,
+  "errors": {},
   "counts": {
     "Journal of Dental Research": 8,
     "Dental Materials": 33,
     "Journal of Dentistry": 44,
+    "American Journal of Dentistry": 0,
+    "Journal of Adhesive Dentistry": 0,
     "Journal of Prosthetic Dentistry": 96,
     "International Journal of Prosthodontics": 0,
+    "Quintessence International": 0,
     "Operative Dentistry": 0,
     "Clinical Oral Investigations": 0,
     "European Journal of Oral Sciences": 16,
