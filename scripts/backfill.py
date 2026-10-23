@@ -53,6 +53,7 @@ def main():
                         previous.update({
                             "doi":doi,"title":(item.get("title") or [""])[0],
                             "journal":name,"category":group,
+                            "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8],
                             "online_date":online,"published_date":published,
                             "print_date":collect.date_field(item,"published-print"),
                             "url":item.get("URL") or "https://doi.org/"+doi,
