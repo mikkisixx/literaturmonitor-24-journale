@@ -2,11 +2,11 @@
   "months": [
     {
       "month": "2026-01",
-      "count": 107
+      "count": 108
     },
     {
       "month": "2026-02",
-      "count": 100
+      "count": 101
     },
     {
       "month": "2026-03",
@@ -18,11 +18,11 @@
     },
     {
       "month": "2026-05",
-      "count": 115
+      "count": 116
     },
     {
       "month": "2026-06",
-      "count": 185
+      "count": 186
     },
     {
       "month": "2026-07",
@@ -38,7 +38,7 @@
     },
     {
       "month": "2026-10",
-      "count": 376
+      "count": 384
     }
   ],
   "warning": "Ungeprüfte Crossref-Kandidaten werden getrennt angezeigt. Der Filtertreffer allein bestätigt kein Online-First-Datum."
