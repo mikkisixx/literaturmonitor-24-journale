@@ -32,18 +32,23 @@ def fetch_title_pages(journal, start, end, mode):
     """
     filters=f"from-{mode+'-' if mode else ''}pub-date:{start},until-{mode+'-' if mode else ''}pub-date:{end},type:journal-article"
     cursor="*"
+    pages=0
+    max_pages=10
     expected={collect.norm(journal),collect.norm(collect.ALIASES.get(journal,journal))}
     while True:
         msg=collect.get(collect.url("works",{
             "filter":filters,"query.container-title":journal,
             "rows":200,"cursor":cursor,
             "select":"DOI,title,published-online,published-print,published,created,indexed,container-title,ISSN,URL,author,type"}))
+        pages+=1
         items=msg.get("items",[])
         for item in items:
             if any(collect.norm(title) in expected for title in item.get("container-title",[])):
                 yield item
         nxt=msg.get("next-cursor")
         if len(items)<200 or not nxt or nxt==cursor:break
+        if pages>=max_pages:
+            raise RuntimeError(f"Crossref title search for {journal} exceeded {max_pages} pages; incomplete results must not be treated as exhaustive")
         cursor=nxt
         time.sleep(.12)
 
