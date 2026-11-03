@@ -11,6 +11,16 @@ def export(month, output):
     report=json.loads((ROOT/"data/months"/(month+".json")).read_text())
     quality=json.loads((ROOT/"data/quality"/(month+".json")).read_text())
     coverage=json.loads((ROOT/"data/coverage"/(month+".json")).read_text())
+    if report.get("count") != len(report.get("articles", [])):
+        raise ValueError("Article count mismatch; refusing reader HTML export")
+    if report.get("verified_online_count", 0) + report.get("candidate_count", 0) != report["count"]:
+        raise ValueError("Article classification totals mismatch; refusing HTML export")
+    if coverage.get("confirmed_missing_publisher_articles") != len(coverage.get("missing_publisher_articles", [])):
+        raise ValueError("Publisher gap evidence inconsistent; refusing HTML export")
+    if coverage.get("journals_expected") != 24 or coverage.get("journals_queried") != 24 or coverage.get("query_errors") != 0:
+        raise ValueError("Incomplete journal queries; refusing HTML export")
+    if quality.get("publication_ready") is not False or quality.get("release_status") != "review_required":
+        raise ValueError("Editorial status inconsistent; refusing HTML export")
     approved=quality.get("publication_ready") is True and quality.get("release_status")=="approved"
     # Never infer approval from successful automation or article counts.
     if approved:
