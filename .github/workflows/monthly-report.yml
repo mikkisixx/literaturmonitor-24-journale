@@ -16,6 +16,7 @@ on:
       - 'scripts/build_months.py'
       - 'scripts/verify_publishers.py'
       - 'scripts/audit_candidates.py'
+      - 'scripts/audit_coverage.py'
 permissions:
   contents: write
 concurrency:
@@ -53,11 +54,15 @@ jobs:
         run: python scripts/audit_candidates.py "$REPORT_MONTH"
         env:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
+      - name: Vollständigkeit der 24 Zeitschriften dokumentieren
+        run: python scripts/audit_coverage.py "$REPORT_MONTH"
+        env:
+          REPORT_MONTH: ${{ steps.period.outputs.month }}
       - name: Monatsberichte speichern
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/quality/
+          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/quality/ data/coverage/
           if ! git diff --cached --quiet; then
             git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
             git pull --rebase
