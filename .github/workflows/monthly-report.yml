@@ -20,6 +20,7 @@ on:
       - 'scripts/validate_report.py'
       - 'scripts/export_report.py'
       - 'scripts/export_html.py'
+      - 'tests/test_backfill.py'
       - 'tests/test_validate_report.py'
       - 'tests/test_export_html.py'
       - 'data/publisher-evidence/**'
