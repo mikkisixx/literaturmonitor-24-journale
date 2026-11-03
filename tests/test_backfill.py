@@ -22,5 +22,22 @@ class JournalIssnTests(unittest.TestCase):
             self.assertEqual(backfill.journal_issns("1234-5678"), ["1234-5678"])
 
 
+    def test_title_fallback_rejects_similarly_named_journals(self):
+        records=[
+            {"DOI":"10.1/exact","container-title":["Clinical Oral Investigations"]},
+            {"DOI":"10.1/wrong","container-title":["Clinical Oral Investigations Reports"]},
+            {"DOI":"10.1/other","container-title":["Unrelated Journal"]},
+        ]
+        with patch.object(backfill.collect,"get",return_value={"items":records}):
+            found=list(backfill.fetch_title_pages("Clinical Oral Investigations","2026-10-01","2026-10-31","online"))
+        self.assertEqual([x["DOI"] for x in found],["10.1/exact"])
+
+    def test_title_fallback_accepts_known_alias(self):
+        with patch.object(backfill.collect,"get",return_value={"items":[
+            {"DOI":"10.1/alias","container-title":["Journal of Esthetic and Restorative Dentistry"]}
+        ]}):
+            found=list(backfill.fetch_title_pages("The Journal of Esthetic and Restorative Dentistry","2026-10-01","2026-10-31","online"))
+        self.assertEqual(len(found),1)
+
 if __name__ == "__main__":
     unittest.main()
