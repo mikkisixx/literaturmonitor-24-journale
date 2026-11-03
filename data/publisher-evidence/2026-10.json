@@ -1,0 +1,38 @@
+{
+  "month": "2026-10",
+  "method": "Direct publisher article pages independently compared against Crossref October register",
+  "coverage_complete": false,
+  "findings": [
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07203-0",
+      "publisher_online_date": "2026-10-17",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07203-0"
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07179-x",
+      "publisher_online_date": "2026-10-15",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07179-x"
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07204-z",
+      "publisher_online_date": "2026-10-09",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07204-z"
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07177-z",
+      "publisher_online_date": "2026-10-03",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07177-z"
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07217-8",
+      "publisher_online_date": "2026-10-13",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07217-8"
+    }
+  ],
+  "note": "These publisher-dated examples disprove a zero-publication interpretation. This is a sample, not an exhaustive publisher enumeration."
+}
