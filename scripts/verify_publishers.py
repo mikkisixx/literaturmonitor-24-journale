@@ -95,28 +95,55 @@ def classify(dates,expected):
     if any(d!=expected for _,_,d in online):return "date_conflict",[],parsed
     return "publisher_date_match",[(k,v) for k,v,d in online],parsed
 
+def pubmed_electronic_dates(article):
+    """Read explicitly electronic publication dates from PubMed XML.
+
+    ArticleDate DateType=Electronic is the publisher-supplied electronic date.
+    PubMedPubDate epublish/aheadofprint is a PubMed history date. These are
+    retained with provenance, never substituted with print/issue dates.
+    """
+    results=[]
+    for e in article.findall("./MedlineCitation/Article/ArticleDate"):
+        if e.attrib.get("DateType","").lower()!="electronic":continue
+        date=pubmed_xml_date(e)
+        if date:results.append({"source":"ArticleDate:Electronic","date":date})
+    for e in article.findall("./PubmedData/History/PubMedPubDate"):
+        status=e.attrib.get("PubStatus","").lower()
+        if status not in ("epublish","aheadofprint"):continue
+        date=pubmed_xml_date(e)
+        if date:results.append({"source":"PubMedPubDate:"+status,"date":date})
+    return results
+
+def pubmed_xml_date(element):
+    year=element.findtext("Year")
+    month=element.findtext("Month")
+    day=element.findtext("Day")
+    if not all((year,month,day)):return None
+    try:
+        if not month.isdigit():
+            month=str(dt.datetime.strptime(month[:3],"%b").month)
+        return dt.date(int(year),int(month),int(day)).isoformat()
+    except (ValueError,TypeError):return None
+
 def pubmed_check(doi,expected):
-    """Independent PubMed E-utilities evidence; no publication date inference."""
-    q=urllib.parse.urlencode({"db":"pubmed","term":doi+"[AID]","retmode":"json","retmax":3})
-    req=urllib.request.Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?"+q,headers={"User-Agent":"Literaturmonitor/1.0 research audit"})
+    """Cross-check the exact DOI with explicitly electronic PubMed dates."""
+    q=urllib.parse.urlencode({"db":"pubmed","term":'"'+doi+'"[AID]',"retmode":"json","retmax":5})
+    headers={"User-Agent":"Literaturmonitor/1.0 (academic publication date audit)"}
+    req=urllib.request.Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?"+q,headers=headers)
     with urllib.request.urlopen(req,timeout=15) as response:
         ids=json.load(response).get("esearchresult",{}).get("idlist",[])
     if not ids:return {"status":"not_indexed"}
-    req=urllib.request.Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?"+urllib.parse.urlencode({"db":"pubmed","id":",".join(ids),"retmode":"xml"}),headers={"User-Agent":"Literaturmonitor/1.0 research audit"})
+    req=urllib.request.Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?"+urllib.parse.urlencode({"db":"pubmed","id":",".join(ids),"retmode":"xml"}),headers=headers)
     with urllib.request.urlopen(req,timeout=18) as response:
         root=ET.fromstring(response.read(1500000))
-    for article in root.findall(".//PubmedArticle"):
-        article_dois=[(e.text or "").lower().strip() for e in article.findall(".//ArticleId") if e.attrib.get("IdType")=="doi"]
+    for article in root.findall("./PubmedArticle"):
+        article_dois=[(e.text or "").lower().strip() for e in article.findall("./PubmedData/ArticleIdList/ArticleId") if e.attrib.get("IdType")=="doi"]
         if doi.lower() not in article_dois:continue
-        dates=[]
-        for e in article.findall(".//PubMedPubDate"):
-            if e.attrib.get("PubStatus","").lower() not in ("epublish","aheadofprint"):continue
-            y=e.findtext("Year");m=e.findtext("Month");d=e.findtext("Day")
-            if y and m and d:
-                try:dates.append(dt.date(int(y),int(m),int(d)).isoformat())
-                except ValueError:pass
-        if not dates:return {"status":"no_electronic_date"}
-        return {"status":"date_match" if all(x==expected for x in dates) else "date_conflict","dates":dates}
+        dates=pubmed_electronic_dates(article)
+        if not dates:return {"status":"no_electronic_date","pmid":article.findtext("./MedlineCitation/PMID")}
+        distinct={x["date"] for x in dates}
+        return {"status":"date_match" if distinct=={expected} else "date_conflict",
+                "dates":dates,"pmid":article.findtext("./MedlineCitation/PMID")}
     return {"status":"doi_not_matched"}
 
 def main():
