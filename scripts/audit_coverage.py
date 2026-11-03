@@ -24,7 +24,15 @@ for group,names in collect.JOURNALS.items():
         entries=observed.get(name,{})
         issue="query_error" if err or count is None else ("zero_hits_requires_independent_check" if count==0 else "source_completeness_unverified")
         rows.append({"journal":name,"group":group,"crossref_query_count":count,"crossref_online":entries.get("crossref_online",0),"other_candidates":entries.get("other_candidates",0),"status":issue,"error":err,"publisher_coverage_verified":False})
-coverage={"month":month,"journals_expected":sum(map(len,collect.JOURNALS.values())),"journals_queried":back.get("checked"),"query_errors":len(back.get("errors",{})),"zero_hit_journals":sum(r["crossref_query_count"]==0 for r in rows),"journals_independently_verified":0,"complete":False,"reason":"No independent publisher-by-publisher exhaustive article enumeration has been performed.","journals":rows}
+evidence_path=data/"publisher-evidence"/(month+".json")
+evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"findings":[]}
+existing_dois={a["doi"].lower() for a in report["articles"]}
+missing=[{**a,"in_monthly_report":a["doi"].lower() in existing_dois} for a in evidence["findings"] if a["doi"].lower() not in existing_dois]
+for row in rows:
+    journal_missing=[a for a in missing if a["journal"]==row["journal"]]
+    row["publisher_examples_missing"]=len(journal_missing)
+    if journal_missing:row["status"]="confirmed_missing_publisher_articles"
+coverage={"month":month,"journals_expected":sum(map(len,collect.JOURNALS.values())),"journals_queried":back.get("checked"),"query_errors":len(back.get("errors",{})),"zero_hit_journals":sum(r["crossref_query_count"]==0 for r in rows),"journals_independently_verified":0,"complete":False,"publisher_examples_checked":len(evidence["findings"]),"confirmed_missing_publisher_articles":len(missing),"missing_publisher_articles":missing,"reason":"No independent publisher-by-publisher exhaustive article enumeration has been performed.","journals":rows}
 out=data/"coverage"/(month+".json");out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+"\n")
 quality["coverage_summary"]={k:v for k,v in coverage.items() if k!="journals"}
