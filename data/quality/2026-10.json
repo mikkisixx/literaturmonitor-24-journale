@@ -8265,6 +8265,45 @@
     "zero_hit_journals": 6,
     "journals_independently_verified": 0,
     "complete": false,
+    "publisher_examples_checked": 5,
+    "confirmed_missing_publisher_articles": 5,
+    "missing_publisher_articles": [
+      {
+        "journal": "Clinical Oral Investigations",
+        "doi": "10.1007/s00784-026-07203-0",
+        "publisher_online_date": "2026-10-17",
+        "source": "https://link.springer.com/article/10.1007/s00784-026-07203-0",
+        "in_monthly_report": false
+      },
+      {
+        "journal": "Clinical Oral Investigations",
+        "doi": "10.1007/s00784-026-07179-x",
+        "publisher_online_date": "2026-10-15",
+        "source": "https://link.springer.com/article/10.1007/s00784-026-07179-x",
+        "in_monthly_report": false
+      },
+      {
+        "journal": "Clinical Oral Investigations",
+        "doi": "10.1007/s00784-026-07204-z",
+        "publisher_online_date": "2026-10-09",
+        "source": "https://link.springer.com/article/10.1007/s00784-026-07204-z",
+        "in_monthly_report": false
+      },
+      {
+        "journal": "Clinical Oral Investigations",
+        "doi": "10.1007/s00784-026-07177-z",
+        "publisher_online_date": "2026-10-03",
+        "source": "https://link.springer.com/article/10.1007/s00784-026-07177-z",
+        "in_monthly_report": false
+      },
+      {
+        "journal": "Clinical Oral Investigations",
+        "doi": "10.1007/s00784-026-07217-8",
+        "publisher_online_date": "2026-10-13",
+        "source": "https://link.springer.com/article/10.1007/s00784-026-07217-8",
+        "in_monthly_report": false
+      }
+    ],
     "reason": "No independent publisher-by-publisher exhaustive article enumeration has been performed."
   }
 }

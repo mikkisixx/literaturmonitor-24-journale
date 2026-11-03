@@ -6,6 +6,45 @@
   "zero_hit_journals": 6,
   "journals_independently_verified": 0,
   "complete": false,
+  "publisher_examples_checked": 5,
+  "confirmed_missing_publisher_articles": 5,
+  "missing_publisher_articles": [
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07203-0",
+      "publisher_online_date": "2026-10-17",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07203-0",
+      "in_monthly_report": false
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07179-x",
+      "publisher_online_date": "2026-10-15",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07179-x",
+      "in_monthly_report": false
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07204-z",
+      "publisher_online_date": "2026-10-09",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07204-z",
+      "in_monthly_report": false
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07177-z",
+      "publisher_online_date": "2026-10-03",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07177-z",
+      "in_monthly_report": false
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "doi": "10.1007/s00784-026-07217-8",
+      "publisher_online_date": "2026-10-13",
+      "source": "https://link.springer.com/article/10.1007/s00784-026-07217-8",
+      "in_monthly_report": false
+    }
+  ],
   "reason": "No independent publisher-by-publisher exhaustive article enumeration has been performed.",
   "journals": [
     {
@@ -16,7 +55,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Dental Materials",
@@ -26,7 +66,8 @@
       "other_candidates": 41,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Dentistry",
@@ -36,7 +77,8 @@
       "other_candidates": 88,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "American Journal of Dentistry",
@@ -46,7 +88,8 @@
       "other_candidates": 0,
       "status": "zero_hits_requires_independent_check",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Adhesive Dentistry",
@@ -56,7 +99,8 @@
       "other_candidates": 0,
       "status": "zero_hits_requires_independent_check",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Prosthetic Dentistry",
@@ -66,7 +110,8 @@
       "other_candidates": 93,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "International Journal of Prosthodontics",
@@ -76,7 +121,8 @@
       "other_candidates": 0,
       "status": "zero_hits_requires_independent_check",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Quintessence International",
@@ -86,7 +132,8 @@
       "other_candidates": 0,
       "status": "zero_hits_requires_independent_check",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Operative Dentistry",
@@ -96,7 +143,8 @@
       "other_candidates": 10,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Clinical Oral Investigations",
@@ -104,9 +152,10 @@
       "crossref_query_count": 0,
       "crossref_online": 0,
       "other_candidates": 0,
-      "status": "zero_hits_requires_independent_check",
+      "status": "confirmed_missing_publisher_articles",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 5
     },
     {
       "journal": "European Journal of Oral Sciences",
@@ -116,7 +165,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "The Journal of Esthetic and Restorative Dentistry",
@@ -126,7 +176,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "International Endodontic Journal",
@@ -136,7 +187,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Endodontics",
@@ -146,7 +198,8 @@
       "other_candidates": 38,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Dental Traumatology",
@@ -156,7 +209,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "International Journal of Paediatric Dentistry",
@@ -166,7 +220,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "BMC Oral Health",
@@ -176,7 +231,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
@@ -186,7 +242,8 @@
       "other_candidates": 40,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Materials Science: Materials in Medicine",
@@ -196,7 +253,8 @@
       "other_candidates": 0,
       "status": "zero_hits_requires_independent_check",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Acta Biomaterialia",
@@ -206,7 +264,8 @@
       "other_candidates": 124,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Oral Rehabilitation",
@@ -216,7 +275,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of the American Ceramic Society",
@@ -226,7 +286,8 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of the European Ceramic Society",
@@ -236,7 +297,8 @@
       "other_candidates": 55,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Biomechanics",
@@ -246,7 +308,8 @@
       "other_candidates": 46,
       "status": "source_completeness_unverified",
       "error": null,
-      "publisher_coverage_verified": false
+      "publisher_coverage_verified": false,
+      "publisher_examples_missing": 0
     }
   ]
 }
