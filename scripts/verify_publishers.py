@@ -125,17 +125,34 @@ def pubmed_xml_date(element):
         return dt.date(int(year),int(month),int(day)).isoformat()
     except (ValueError,TypeError):return None
 
+_last_pubmed_request=0.0
+
+def pubmed_open(url,headers):
+    """Stay below NCBI unauthenticated request limits and retry temporary 429s."""
+    global _last_pubmed_request
+    for attempt in range(4):
+        wait=max(0,0.45-(time.monotonic()-_last_pubmed_request))
+        if wait:time.sleep(wait)
+        _last_pubmed_request=time.monotonic()
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=20) as response:
+                return response.read(1500000)
+        except urllib.error.HTTPError as exc:
+            if exc.code not in (429,500,502,503,504) or attempt==3:raise
+            retry=exc.headers.get("Retry-After","")
+            delay=min(45,max(2,2**(attempt+1)))
+            if retry.isdigit():delay=min(60,max(delay,int(retry)))
+            time.sleep(delay)
+
 def pubmed_check(doi,expected):
     """Cross-check the exact DOI with explicitly electronic PubMed dates."""
     q=urllib.parse.urlencode({"db":"pubmed","term":'"'+doi+'"[AID]',"retmode":"json","retmax":5})
     headers={"User-Agent":"Literaturmonitor/1.0 (academic publication date audit)"}
-    req=urllib.request.Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?"+q,headers=headers)
-    with urllib.request.urlopen(req,timeout=15) as response:
-        ids=json.load(response).get("esearchresult",{}).get("idlist",[])
+    data=pubmed_open("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?"+q,headers)
+    ids=json.loads(data).get("esearchresult",{}).get("idlist",[])
     if not ids:return {"status":"not_indexed"}
-    req=urllib.request.Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?"+urllib.parse.urlencode({"db":"pubmed","id":",".join(ids),"retmode":"xml"}),headers=headers)
-    with urllib.request.urlopen(req,timeout=18) as response:
-        root=ET.fromstring(response.read(1500000))
+    data=pubmed_open("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?"+urllib.parse.urlencode({"db":"pubmed","id":",".join(ids),"retmode":"xml"}),headers)
+    root=ET.fromstring(data)
     for article in root.findall("./PubmedArticle"):
         article_dois=[(e.text or "").lower().strip() for e in article.findall("./PubmedData/ArticleIdList/ArticleId") if e.attrib.get("IdType")=="doi"]
         if doi.lower() not in article_dois:continue
