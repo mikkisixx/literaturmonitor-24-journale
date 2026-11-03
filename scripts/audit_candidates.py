@@ -44,11 +44,44 @@ for i,a in enumerate(candidates,1):
             entry["reason"]="Crossref recheck failed: "+str(exc)[:110]
             if isinstance(exc,urllib.error.HTTPError) and exc.code not in (429,500,502,503,504):break
             if attempt<2:time.sleep(2**attempt)
+    # Europe PMC: match exact DOI; use electronicPublicationDate only.
+    # firstPublicationDate can be inferred from incomplete dates and is not proof of online-first.
+    query=urllib.parse.urlencode({"query":'EXT_ID:"'+doi+'" OR DOI:"'+doi+'"',"format":"json","resultType":"core","pageSize":"5"})
+    epmc_url="https://www.ebi.ac.uk/europepmc/webservices/rest/search?"+query
+    try:
+        req=urllib.request.Request(epmc_url,headers={"User-Agent":"Literaturmonitor/1.0 (research date audit)"})
+        with urllib.request.urlopen(req,timeout=16) as response:
+            hits=json.load(response).get("resultList",{}).get("result",[])
+        exact=[hit for hit in hits if (hit.get("doi") or "").lower()==doi.lower()]
+        if exact:
+            hit=exact[0]
+            entry["europe_pmc"]={"source":hit.get("source"),"id":hit.get("id"),
+                "electronic_publication_date":hit.get("electronicPublicationDate"),
+                "first_publication_date":hit.get("firstPublicationDate")}
+            edate=hit.get("electronicPublicationDate")
+            if edate and len(edate)==10 and edate[4]=="-" and edate[7]=="-":
+                entry["europe_pmc"]["electronic_date_month_match"]=edate[:7]==MONTH
+                if entry["status"]=="needs_manual_review":
+                    entry["status"]="europe_pmc_electronic_month_match" if edate[:7]==MONTH else "europe_pmc_electronic_other_month"
+                    entry["online_date"]=edate
+                    entry["source"]="Europe PMC electronicPublicationDate"
+                    entry["reason"]="Europe PMC electronic publication date; check publisher for original first-online event"
+            elif entry["status"]=="needs_manual_review":
+                entry["reason"]="Europe PMC indexed, but no exact electronic publication date"
+        else:
+            entry["europe_pmc"]={"status":"not_indexed_by_exact_doi"}
+    except (urllib.error.HTTPError,urllib.error.URLError,TimeoutError,ValueError) as exc:
+        entry["europe_pmc"]={"status":"lookup_failed","error":str(exc)[:110]}
     records.append(entry)
     if i%50==0:print("Kandidaten geprüft:",i,"/",len(candidates),flush=True)
-    time.sleep(.12)
+    time.sleep(.18)
 status_counts={}
-for entry in records:status_counts[entry["status"]]=status_counts.get(entry["status"],0)+1
+by_journal={}
+for entry in records:
+    status_counts[entry["status"]]=status_counts.get(entry["status"],0)+1
+    j=by_journal.setdefault(entry["journal"],{"total":0,"statuses":{}})
+    j["total"]+=1
+    j["statuses"][entry["status"]]=j["statuses"].get(entry["status"],0)+1
 verified=sum(v.get("status") in ("publisher_date_match","pubmed_date_match") for v in checks.values())
 unresolved=sum(v.get("status") not in ("publisher_date_match","pubmed_date_match") for v in checks.values())
 quality={"month":MONTH,"publication_ready":False,"release_status":"review_required",
@@ -56,7 +89,7 @@ quality={"month":MONTH,"publication_ready":False,"release_status":"review_requir
          "crossref_online_articles":report["verified_online_count"],
          "independently_corroborrated_online_dates":verified,
          "online_dates_not_corroborrated":unresolved,
-         "candidate_count":len(candidates),"candidate_status_counts":status_counts,
+         "candidate_count":len(candidates),"candidate_status_counts":status_counts,"candidate_journals":by_journal,
          "candidate_reviews":records}
 out.write_text(json.dumps(quality,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print(json.dumps({k:v for k,v in quality.items() if k!="candidate_reviews"},ensure_ascii=False))
