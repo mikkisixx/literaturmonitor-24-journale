@@ -19,6 +19,7 @@ on:
       - 'scripts/audit_coverage.py'
       - 'scripts/validate_report.py'
       - 'scripts/export_report.py'
+      - 'scripts/export_html.py'
       - 'tests/test_validate_report.py'
       - 'data/publisher-evidence/**'
 permissions:
@@ -70,14 +71,14 @@ jobs:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
       - name: Reproduzierbare Validierungs-Regressionstests
         run: python -m unittest discover -s tests -p 'test_validate_report.py' -v
-      - name: Bericht als Markdown und JSON zum Download erstellen
-        run: python scripts/export_report.py "$REPORT_MONTH" --output exports
+      - name: Leserbericht als eigenständige HTML-Datei erstellen
+        run: python scripts/export_html.py "$REPORT_MONTH" --output exports
         env:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
       - name: Berichtspaket als GitHub-Artefakt bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: Literaturbericht-${{ steps.period.outputs.month }}-ENTWURF
+          name: Literaturbericht-${{ steps.period.outputs.month }}-HTML
           path: exports/
           if-no-files-found: error
           retention-days: 90
