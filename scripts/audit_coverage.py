@@ -27,12 +27,32 @@ for group,names in collect.JOURNALS.items():
 evidence_path=data/"publisher-evidence"/(month+".json")
 evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"findings":[]}
 existing_dois={a["doi"].lower() for a in report["articles"]}
-missing=[{**a,"in_monthly_report":a["doi"].lower() in existing_dois} for a in evidence["findings"] if a["doi"].lower() not in existing_dois]
+# Publisher evidence is independent input: validate before counting and deduplicate DOI.
+# Malformed or contradictory records must never inflate corroboration counts.
+evidence_by_doi={}
+for finding in evidence.get("findings",[]):
+    doi=str(finding.get("doi","")).strip().lower()
+    journal=finding.get("journal")
+    date=finding.get("publisher_online_date")
+    source=finding.get("source","")
+    if not doi.startswith("10.") or journal not in {r["journal"] for r in rows}:
+        raise ValueError("Invalid publisher evidence DOI or journal")
+    if not isinstance(date,str) or not date.startswith(month+"-"):
+        raise ValueError("Publisher evidence date does not match audit month")
+    import datetime
+    try: datetime.date.fromisoformat(date)
+    except ValueError as exc: raise ValueError("Invalid publisher evidence date") from exc
+    if not isinstance(source,str) or not source.startswith("https://"):
+        raise ValueError("Publisher evidence requires HTTPS source URL")
+    if doi in evidence_by_doi and evidence_by_doi[doi]!=finding:
+        raise ValueError("Conflicting publisher evidence for DOI "+doi)
+    evidence_by_doi[doi]=finding
+missing=[{**a,"in_monthly_report":False} for doi,a in evidence_by_doi.items() if doi not in existing_dois]
 for row in rows:
     journal_missing=[a for a in missing if a["journal"]==row["journal"]]
     row["publisher_examples_missing"]=len(journal_missing)
     if journal_missing:row["status"]="confirmed_missing_publisher_articles"
-coverage={"month":month,"journals_expected":sum(map(len,collect.JOURNALS.values())),"journals_queried":back.get("checked"),"query_errors":len(back.get("errors",{})),"zero_hit_journals":sum(r["crossref_query_count"]==0 for r in rows),"journals_independently_verified":0,"complete":False,"publisher_examples_checked":len(evidence["findings"]),"confirmed_missing_publisher_articles":len(missing),"missing_publisher_articles":missing,"reason":"No independent publisher-by-publisher exhaustive article enumeration has been performed.","journals":rows}
+coverage={"month":month,"journals_expected":sum(map(len,collect.JOURNALS.values())),"journals_queried":back.get("checked"),"query_errors":len(back.get("errors",{})),"zero_hit_journals":sum(r["crossref_query_count"]==0 for r in rows),"journals_independently_verified":0,"complete":False,"publisher_examples_checked":len(evidence_by_doi),"confirmed_missing_publisher_articles":len(missing),"missing_publisher_articles":missing,"reason":"No independent publisher-by-publisher exhaustive article enumeration has been performed.","journals":rows}
 out=data/"coverage"/(month+".json");out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+"\n")
 quality["coverage_summary"]={k:v for k,v in coverage.items() if k!="journals"}
