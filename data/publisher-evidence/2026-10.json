@@ -32,7 +32,25 @@
       "doi": "10.1007/s00784-026-07217-8",
       "publisher_online_date": "2026-10-13",
       "source": "https://link.springer.com/article/10.1007/s00784-026-07217-8"
+    },
+    {
+      "journal": "Journal of Materials Science: Materials in Medicine",
+      "doi": "10.1007/s10856-026-07117-z",
+      "publisher_online_date": "2026-10-28",
+      "source": "https://link.springer.com/article/10.1007/s10856-026-07117-z"
+    },
+    {
+      "journal": "Journal of Materials Science: Materials in Medicine",
+      "doi": "10.1007/s10856-026-07118-y",
+      "publisher_online_date": "2026-10-31",
+      "source": "https://link.springer.com/article/10.1007/s10856-026-07118-y"
+    },
+    {
+      "journal": "Journal of Materials Science: Materials in Medicine",
+      "doi": "10.1007/s10856-026-07135-x",
+      "publisher_online_date": "2026-10-31",
+      "source": "https://link.springer.com/article/10.1007/s10856-026-07135-x"
     }
   ],
-  "note": "These publisher-dated examples disprove a zero-publication interpretation. This is a sample, not an exhaustive publisher enumeration."
+  "note": "Publisher-dated article-level examples demonstrate that Crossref zero hits are not zero publications. Not exhaustive; issue table-of-contents dates are not assumed to be first-online dates."
 }
