@@ -1258,22 +1258,6 @@
       }
     },
     {
-      "doi": "10.1016/j.actbio.2026.10.012",
-      "journal": "Acta Biomaterialia",
-      "title": "Multiscale Meniscus Mechanics under Unconfined Compression: Composite Fibril-Reinforced Biphasic Modeling across Infinitesimal to Physiological Cumulative Strain Regimes",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
-      "europe_pmc": {
-        "source": "MED",
-        "id": "42854940",
-        "electronic_publication_date": "2026-10-09",
-        "first_publication_date": "2026-10-09",
-        "electronic_date_month_match": true
-      }
-    },
-    {
       "doi": "10.1016/j.actbio.2026.08.032",
       "journal": "Acta Biomaterialia",
       "title": "Multiscale analysis reveals distinct temporal trajectories of morphological reconstruction and mechanical maturation during mouse digit tip regeneration",
@@ -1302,6 +1286,22 @@
         "id": "42906674",
         "electronic_publication_date": "2026-10-21",
         "first_publication_date": "2026-10-21",
+        "electronic_date_month_match": true
+      }
+    },
+    {
+      "doi": "10.1016/j.actbio.2026.10.012",
+      "journal": "Acta Biomaterialia",
+      "title": "Multiscale meniscus mechanics under unconfined compression: Composite fibril-reinforced biphasic modeling across infinitesimal to physiological cumulative strain regimes",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-09",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "europe_pmc": {
+        "source": "MED",
+        "id": "42854940",
+        "electronic_publication_date": "2026-10-09",
+        "first_publication_date": "2026-10-09",
         "electronic_date_month_match": true
       }
     },
