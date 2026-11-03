@@ -21,7 +21,9 @@ def fetch_pages(issn, start, end, mode):
         items=msg.get("items",[])
         yield from items
         nxt=msg.get("next-cursor")
-        if len(items)<200 or not nxt or nxt==cursor:break
+        if len(items)<200:break
+        if not nxt or nxt==cursor:
+            raise RuntimeError(f"Crossref pagination stalled for ISSN {issn}; full page without a new cursor")
         cursor=nxt
         time.sleep(.12)
 def fetch_title_pages(journal, start, end, mode):
@@ -46,7 +48,9 @@ def fetch_title_pages(journal, start, end, mode):
             if any(collect.norm(title) in expected for title in item.get("container-title",[])):
                 yield item
         nxt=msg.get("next-cursor")
-        if len(items)<200 or not nxt or nxt==cursor:break
+        if len(items)<200:break
+        if not nxt or nxt==cursor:
+            raise RuntimeError(f"Crossref title pagination stalled for {journal}; full page without a new cursor")
         if pages>=max_pages:
             raise RuntimeError(f"Crossref title search for {journal} exceeded {max_pages} pages; incomplete results must not be treated as exhaustive")
         cursor=nxt
