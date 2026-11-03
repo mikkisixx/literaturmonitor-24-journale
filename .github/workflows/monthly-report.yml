@@ -17,6 +17,7 @@ on:
       - 'scripts/verify_publishers.py'
       - 'scripts/audit_candidates.py'
       - 'scripts/audit_coverage.py'
+      - 'scripts/validate_report.py'
       - 'data/publisher-evidence/**'
 permissions:
   contents: write
@@ -57,6 +58,10 @@ jobs:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
       - name: Vollständigkeit der 24 Zeitschriften dokumentieren
         run: python scripts/audit_coverage.py "$REPORT_MONTH"
+        env:
+          REPORT_MONTH: ${{ steps.period.outputs.month }}
+      - name: Datenkonsistenz und redaktionelle Sperre prüfen
+        run: python scripts/validate_report.py "$REPORT_MONTH"
         env:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
       - name: Monatsberichte speichern
