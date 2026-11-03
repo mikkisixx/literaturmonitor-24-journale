@@ -39,5 +39,18 @@ class JournalIssnTests(unittest.TestCase):
             found=list(backfill.fetch_title_pages("The Journal of Esthetic and Restorative Dentistry","2026-10-01","2026-10-31","online"))
         self.assertEqual(len(found),1)
 
+    def test_title_fallback_fails_closed_on_unbounded_crossref_results(self):
+        # A broad fuzzy title search can produce an arbitrarily long result set.
+        # Do not silently accept a truncated subset as the journal inventory.
+        records=[{"DOI":f"10.1234/{i}","container-title":["Unrelated Journal"]} for i in range(200)]
+        calls={"count":0}
+        def page(_url):
+            calls["count"]+=1
+            return {"items":records,"next-cursor":f"page-{calls['count']}"}
+        with patch.object(backfill.collect,"get",side_effect=page), patch.object(backfill.time,"sleep"):
+            with self.assertRaisesRegex(RuntimeError,"incomplete results"):
+                list(backfill.fetch_title_pages("Clinical Oral Investigations","2026-10-01","2026-10-31","online"))
+        self.assertEqual(calls["count"],10)
+
 if __name__ == "__main__":
     unittest.main()
