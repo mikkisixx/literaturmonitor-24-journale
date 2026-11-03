@@ -71,8 +71,12 @@ jobs:
         run: python scripts/validate_report.py "$REPORT_MONTH"
         env:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
-      - name: Reproduzierbare Validierungs-Regressionstests
-        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Regressionstest Crossref und Null-Treffer-Suche
+        run: python -m unittest discover -s tests -p 'test_backfill.py' -v
+      - name: Regressionstest wissenschaftliche Datenvalidierung
+        run: python -m unittest discover -s tests -p 'test_validate_report.py' -v
+      - name: Regressionstest HTML und Freigabesperre
+        run: python -m unittest discover -s tests -p 'test_export_html.py' -v
       - name: Leserbericht als eigenständige HTML-Datei erstellen
         run: python scripts/export_html.py "$REPORT_MONTH" --output exports
         env:
