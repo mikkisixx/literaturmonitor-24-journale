@@ -30,6 +30,8 @@ jobs:
     timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
+      - name: Aktuellen Hauptzweig vor der Recherche übernehmen
+        run: git pull --ff-only origin main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -71,8 +73,14 @@ jobs:
           git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/quality/ data/coverage/
           if ! git diff --cached --quiet; then
             git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
-            git pull --rebase
-            git push
+            # Never silently resolve conflicts in scientific evidence or review files.
+            # A concurrent edit must be reviewed rather than overwritten.
+            if ! git pull --rebase origin main; then
+              git rebase --abort || true
+              echo '::error::Paralleländerung während der Recherche: Rebase-Konflikt. Keine Qualitäts- oder Freigabedaten überschrieben. Recherche auf aktuellem main erneut starten.'
+              exit 1
+            fi
+            git push origin HEAD:main
           else
             echo "Keine geänderten Ergebnisdateien. Prüfe Kandidatenzahlen im Monatsbericht."
           fi
