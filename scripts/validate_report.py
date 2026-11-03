@@ -42,6 +42,29 @@ def validate(month, data=DATA):
         assert item["publisher_online_date"].startswith(month+"-"), "Publisher evidence outside report month"
         dt.date.fromisoformat(item["publisher_online_date"])
         assert item["source"].startswith("https://"), "Publisher evidence has no HTTPS source"
+    evidence_path=data/"publisher-evidence"/(month+".json")
+    evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"findings":[]}
+    findings=evidence["findings"]
+    assert evidence.get("month",month)==month, "Publisher evidence month mismatch"
+    evidence_dois=[str(item["doi"]).strip().lower() for item in findings]
+    assert len(evidence_dois)==len(set(evidence_dois)), "Duplicate publisher evidence DOI"
+    expected_missing=[item for item in findings if item["doi"].strip().lower() not in dois]
+    assert coverage["publisher_examples_checked"]==len(findings), "Publisher evidence count mismatch"
+    assert coverage["confirmed_missing_publisher_articles"]==len(expected_missing), "Missing publisher evidence count mismatch"
+    expected_by_doi={item["doi"].strip().lower():item for item in expected_missing}
+    actual_by_doi={item["doi"].strip().lower():item for item in coverage["missing_publisher_articles"]}
+    assert len(actual_by_doi)==len(coverage["missing_publisher_articles"]), "Duplicate missing publisher DOI"
+    assert set(actual_by_doi)==set(expected_by_doi), "Missing publisher evidence DOI set mismatch"
+    for doi,original in expected_by_doi.items():
+        actual=actual_by_doi[doi]
+        for field in ("journal","publisher_online_date","source"):
+            assert actual[field]==original[field], f"Publisher evidence {field} altered for {doi}"
+        assert actual.get("in_monthly_report") is False, "Missing publisher DOI marked present"
+    for row in coverage["journals"]:
+        expected=sum(item["journal"]==row["journal"] for item in expected_missing)
+        assert row["publisher_examples_missing"]==expected, "Per-journal publisher gap count mismatch"
+        assert row["publisher_coverage_verified"] is False, "Exhaustive publisher coverage claimed without audit"
+    assert coverage["journals_independently_verified"]==0, "Unverified journals counted as complete"
     assert quality["publication_ready"] is False, "Unapproved report marked publication-ready"
     assert quality["release_status"]=="review_required", "Unapproved report release status changed"
     assert coverage["complete"] is False, "Completeness incorrectly claimed"
