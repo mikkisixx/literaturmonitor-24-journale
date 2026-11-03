@@ -28,6 +28,22 @@ class ReportValidationTests(unittest.TestCase):
             dest = self.data / relative
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes((ROOT / "data" / relative).read_bytes())
+        # Normalize the fixture while an evidence-triggered monthly rebuild is queued.
+        report = json.loads((self.data / f"months/{MONTH}.json").read_text())
+        evidence = json.loads((self.data / f"publisher-evidence/{MONTH}.json").read_text())
+        coverage_path = self.data / f"coverage/{MONTH}.json"
+        coverage = json.loads(coverage_path.read_text())
+        known = {a["doi"].lower() for a in report["articles"]}
+        missing = [{**a, "in_monthly_report": False} for a in evidence["findings"] if a["doi"].lower() not in known]
+        coverage["publisher_examples_checked"] = len(evidence["findings"])
+        coverage["missing_publisher_articles"] = missing
+        coverage["confirmed_missing_publisher_articles"] = len(missing)
+        for row in coverage["journals"]:
+            n = sum(a["journal"] == row["journal"] for a in missing)
+            row["publisher_examples_missing"] = n
+            if n:
+                row["status"] = "confirmed_missing_publisher_articles"
+        coverage_path.write_text(json.dumps(coverage))
 
     def mutate(self, relative, change):
         path = self.data / relative
