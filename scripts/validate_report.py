@@ -20,6 +20,15 @@ def validate(month, data=DATA):
     assert all(dois) and len(dois)==len(set(dois)), "Missing or duplicate article DOI"
     assert report["count"]==len(articles), "Report count differs from article count"
     assert report["verified_online_count"]+report["candidate_count"]==len(articles), "Online/candidate totals inconsistent"
+    reviews=quality["candidate_reviews"]
+    statuses=quality["candidate_status_counts"]
+    assert quality["candidate_count"]==len(reviews)==report["candidate_count"], "Candidate review count mismatch"
+    assert sum(statuses.values())==len(reviews), "Candidate status totals inconsistent"
+    assert set(statuses)=={r["status"] for r in reviews}, "Candidate status categories inconsistent"
+    assert all(sum(r["status"]==status for r in reviews)==count for status,count in statuses.items()), "Candidate status counts differ from records"
+    assert len({r["doi"].strip().lower() for r in reviews})==len(reviews), "Duplicate candidate reviews"
+    assert quality["crossref_online_articles"]==report["verified_online_count"], "Crossref online count mismatch"
+    assert quality["independently_corroborrated_online_dates"]+quality["online_dates_not_corroborrated"]==quality["crossref_online_articles"], "Online corroboration counts inconsistent"
     assert coverage["month"]==quality["month"]==report["month"]==month, "Month mismatch"
     assert coverage["journals_expected"]==24, "Expected 24 journals"
     assert len(coverage["journals"])==24, "Missing or duplicate journal audit rows"
