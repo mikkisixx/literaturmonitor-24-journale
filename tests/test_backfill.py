@@ -52,5 +52,28 @@ class JournalIssnTests(unittest.TestCase):
                 list(backfill.fetch_title_pages("Clinical Oral Investigations","2026-10-01","2026-10-31","online"))
         self.assertEqual(calls["count"],10)
 
+
+    def test_failed_journal_does_not_commit_partial_discoveries(self):
+        import json
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            data=pathlib.Path(tmp)
+            (data/"observed.json").write_text("{}")
+            def pages(issn, *_):
+                yield {"DOI":"10.1234/partial","title":["Partial"],"container-title":["Journal A"]}
+                raise RuntimeError("page failed")
+            with patch.object(backfill,"DATA",data), \
+                 patch.object(backfill.collect,"JOURNALS",{"group":["Journal A"]}), \
+                 patch.object(backfill.collect,"resolve",return_value="1234-5678"), \
+                 patch.object(backfill,"journal_issns",return_value=["1234-5678"]), \
+                 patch.object(backfill,"fetch_pages",side_effect=pages), \
+                 patch.object(sys,"argv",["backfill.py","--month","2026-10"]):
+                backfill.main()
+            self.assertEqual(json.loads((data/"observed.json").read_text()),{})
+            result=json.loads((data/"backfill-2026-10.json").read_text())
+            self.assertEqual(result["checked"],0)
+            self.assertIn("Journal A",result["errors"])
+
 if __name__ == "__main__":
     unittest.main()
