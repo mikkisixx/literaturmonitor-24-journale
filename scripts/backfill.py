@@ -24,6 +24,14 @@ def fetch_pages(issn, start, end, mode):
         if len(items)<200 or not nxt or nxt==cursor:break
         cursor=nxt
         time.sleep(.12)
+def journal_issns(primary):
+    """Include both print and electronic ISSNs, falling back to the known ISSN."""
+    try:
+        record=collect.get(collect.url("journals/"+primary,{}))
+        return list(dict.fromkeys([primary]+(record.get("ISSN") or [])))
+    except Exception:
+        return [primary]
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--month",required=True,help="YYYY-MM")
@@ -39,27 +47,28 @@ def main():
                 issn=collect.resolve(name)
                 if not issn:raise ValueError("ISSN unbekannt")
                 found=set()
-                for mode in ("online","",):
-                    # Crossref supports from-online-pub-date and from-pub-date.
-                    for item in fetch_pages(issn,start.isoformat(),end.isoformat(),mode):
-                        doi=(item.get("DOI") or "").lower().strip()
-                        if not doi:continue
-                        found.add(doi)
-                        previous=observed.get(doi,{})
-                        online=collect.date_field(item,"published-online")
-                        published=collect.date_field(item,"published")
-                        previous.setdefault("matched_months",[])
-                        if args.month not in previous["matched_months"]: previous["matched_months"].append(args.month)
-                        previous.update({
-                            "doi":doi,"title":(item.get("title") or [""])[0],
-                            "journal":name,"category":group,
-                            "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8],
-                            "online_date":online,"published_date":published,
-                            "print_date":collect.date_field(item,"published-print"),
-                            "url":item.get("URL") or "https://doi.org/"+doi,
-                            "last_seen":dt.date.today().isoformat()})
-                        previous.setdefault("first_seen",dt.date.today().isoformat())
-                        observed[doi]=previous
+                for candidate_issn in journal_issns(issn):
+                    for mode in ("online","",):
+                        # Crossref supports from-online-pub-date and from-pub-date.
+                        for item in fetch_pages(candidate_issn,start.isoformat(),end.isoformat(),mode):
+                            doi=(item.get("DOI") or "").lower().strip()
+                            if not doi:continue
+                            found.add(doi)
+                            previous=observed.get(doi,{})
+                            online=collect.date_field(item,"published-online")
+                            published=collect.date_field(item,"published")
+                            previous.setdefault("matched_months",[])
+                            if args.month not in previous["matched_months"]: previous["matched_months"].append(args.month)
+                            previous.update({
+                                "doi":doi,"title":(item.get("title") or [""])[0],
+                                "journal":name,"category":group,
+                                "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8],
+                                "online_date":online,"published_date":published,
+                                "print_date":collect.date_field(item,"published-print"),
+                                "url":item.get("URL") or "https://doi.org/"+doi,
+                                "last_seen":dt.date.today().isoformat()})
+                            previous.setdefault("first_seen",dt.date.today().isoformat())
+                            observed[doi]=previous
                 counts[name]=len(found)
             except Exception as exc:
                 errors[name]=str(exc)[:200]
