@@ -62,8 +62,28 @@ class ReportValidationTests(unittest.TestCase):
             validate(MONTH, self.data)
 
     def test_changed_publisher_date_is_rejected(self):
+        # The live report may already contain every previously missing DOI.
+        # Add a controlled, absent publisher DOI so this test is independent
+        # of the changing monthly Crossref inventory.
+        fixture = {
+            "journal": "Clinical Oral Investigations",
+            "doi": "10.9999/test-publisher-evidence-missing",
+            "publisher_online_date": "2026-10-12",
+            "source": "https://example.org/test-publisher-evidence",
+        }
         self.mutate(f"publisher-evidence/{MONTH}.json",
-                    lambda obj: obj["findings"][0].update(publisher_online_date="2026-10-29"))
+                    lambda obj: obj["findings"].append(dict(fixture)))
+        def add_missing(obj):
+            obj["publisher_examples_checked"] += 1
+            obj["confirmed_missing_publisher_articles"] += 1
+            obj["missing_publisher_articles"].append({**fixture, "in_monthly_report": False})
+            for row in obj["journals"]:
+                if row["journal"] == fixture["journal"]:
+                    row["publisher_examples_missing"] += 1
+        self.mutate(f"coverage/{MONTH}.json", add_missing)
+        validate(MONTH, self.data)
+        self.mutate(f"publisher-evidence/{MONTH}.json",
+                    lambda obj: obj["findings"][-1].update(publisher_online_date="2026-10-29"))
         with self.assertRaises(AssertionError):
             validate(MONTH, self.data)
 
