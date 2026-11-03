@@ -75,6 +75,7 @@ def main():
                 issn=collect.resolve(name)
                 if not issn:raise ValueError("ISSN unbekannt")
                 found=set()
+                staged={}
                 for candidate_issn in journal_issns(issn):
                     for mode in ("online","",):
                         # Crossref supports from-online-pub-date and from-pub-date.
@@ -82,7 +83,7 @@ def main():
                             doi=(item.get("DOI") or "").lower().strip()
                             if not doi:continue
                             found.add(doi)
-                            previous=observed.get(doi,{})
+                            previous=dict(staged.get(doi,observed.get(doi,{})))
                             online=collect.date_field(item,"published-online")
                             published=collect.date_field(item,"published")
                             previous.setdefault("matched_months",[])
@@ -96,7 +97,7 @@ def main():
                                 "url":item.get("URL") or "https://doi.org/"+doi,
                                 "last_seen":dt.date.today().isoformat()})
                             previous.setdefault("first_seen",dt.date.today().isoformat())
-                            observed[doi]=previous
+                            staged[doi]=previous
                 # A zero-hit ISSN search is not evidence that the journal was empty.
                 # Search by exact journal title as a second Crossref discovery path.
                 if not found:
@@ -105,7 +106,7 @@ def main():
                             doi=(item.get("DOI") or "").lower().strip()
                             if not doi or doi in found:continue
                             found.add(doi)
-                            previous=observed.get(doi,{})
+                            previous=dict(staged.get(doi,observed.get(doi,{})))
                             previous.setdefault("matched_months",[])
                             if args.month not in previous["matched_months"]:previous["matched_months"].append(args.month)
                             previous.update({
@@ -118,7 +119,8 @@ def main():
                                 "url":item.get("URL") or "https://doi.org/"+doi,
                                 "last_seen":dt.date.today().isoformat()})
                             previous.setdefault("first_seen",dt.date.today().isoformat())
-                            observed[doi]=previous
+                            staged[doi]=previous
+                observed.update(staged)
                 counts[name]=len(found)
             except Exception as exc:
                 errors[name]=str(exc)[:200]
