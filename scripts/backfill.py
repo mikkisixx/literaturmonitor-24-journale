@@ -24,6 +24,29 @@ def fetch_pages(issn, start, end, mode):
         if len(items)<200 or not nxt or nxt==cursor:break
         cursor=nxt
         time.sleep(.12)
+def fetch_title_pages(journal, start, end, mode):
+    """Fallback discovery when ISSN queries yield no articles.
+
+    Crossref title search is broad: retain only records whose container-title
+    exactly matches the configured journal or its known alias.
+    """
+    filters=f"from-{mode+'-' if mode else ''}pub-date:{start},until-{mode+'-' if mode else ''}pub-date:{end},type:journal-article"
+    cursor="*"
+    expected={collect.norm(journal),collect.norm(collect.ALIASES.get(journal,journal))}
+    while True:
+        msg=collect.get(collect.url("works",{
+            "filter":filters,"query.container-title":journal,
+            "rows":200,"cursor":cursor,
+            "select":"DOI,title,published-online,published-print,published,created,indexed,container-title,ISSN,URL,author,type"}))
+        items=msg.get("items",[])
+        for item in items:
+            if any(collect.norm(title) in expected for title in item.get("container-title",[])):
+                yield item
+        nxt=msg.get("next-cursor")
+        if len(items)<200 or not nxt or nxt==cursor:break
+        cursor=nxt
+        time.sleep(.12)
+
 def journal_issns(primary):
     """Include both print and electronic ISSNs, falling back to the known ISSN."""
     try:
@@ -64,6 +87,28 @@ def main():
                                 "journal":name,"category":group,
                                 "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8],
                                 "online_date":online,"published_date":published,
+                                "print_date":collect.date_field(item,"published-print"),
+                                "url":item.get("URL") or "https://doi.org/"+doi,
+                                "last_seen":dt.date.today().isoformat()})
+                            previous.setdefault("first_seen",dt.date.today().isoformat())
+                            observed[doi]=previous
+                # A zero-hit ISSN search is not evidence that the journal was empty.
+                # Search by exact journal title as a second Crossref discovery path.
+                if not found:
+                    for mode in ("online","",):
+                        for item in fetch_title_pages(name,start.isoformat(),end.isoformat(),mode):
+                            doi=(item.get("DOI") or "").lower().strip()
+                            if not doi or doi in found:continue
+                            found.add(doi)
+                            previous=observed.get(doi,{})
+                            previous.setdefault("matched_months",[])
+                            if args.month not in previous["matched_months"]:previous["matched_months"].append(args.month)
+                            previous.update({
+                                "doi":doi,"title":(item.get("title") or [""])[0],
+                                "journal":name,"category":group,
+                                "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8],
+                                "online_date":collect.date_field(item,"published-online"),
+                                "published_date":collect.date_field(item,"published"),
                                 "print_date":collect.date_field(item,"published-print"),
                                 "url":item.get("URL") or "https://doi.org/"+doi,
                                 "last_seen":dt.date.today().isoformat()})
