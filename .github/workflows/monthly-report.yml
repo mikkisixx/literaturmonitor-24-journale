@@ -17,6 +17,7 @@ on:
       - 'scripts/verify_publishers.py'
       - 'scripts/audit_candidates.py'
       - 'scripts/audit_coverage.py'
+      - 'data/publisher-evidence/**'
 permissions:
   contents: write
 concurrency:
