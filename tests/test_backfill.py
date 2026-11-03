@@ -53,6 +53,18 @@ class JournalIssnTests(unittest.TestCase):
         self.assertEqual(calls["count"],10)
 
 
+    def test_issn_pagination_stall_fails_closed(self):
+        records=[{"DOI":f"10.1234/{i}"} for i in range(200)]
+        with patch.object(backfill.collect,"get",return_value={"items":records,"next-cursor":"*"}):
+            with self.assertRaisesRegex(RuntimeError,"pagination stalled"):
+                list(backfill.fetch_pages("1234-5678","2026-10-01","2026-10-31","online"))
+
+    def test_title_pagination_stall_fails_closed(self):
+        records=[{"DOI":f"10.1234/{i}","container-title":["Unrelated"]} for i in range(200)]
+        with patch.object(backfill.collect,"get",return_value={"items":records,"next-cursor":"*"}):
+            with self.assertRaisesRegex(RuntimeError,"pagination stalled"):
+                list(backfill.fetch_title_pages("Clinical Oral Investigations","2026-10-01","2026-10-31","online"))
+
     def test_failed_journal_does_not_commit_partial_discoveries(self):
         import json
         import tempfile
