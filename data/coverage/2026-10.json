@@ -1,0 +1,252 @@
+{
+  "month": "2026-10",
+  "journals_expected": 24,
+  "journals_queried": 24,
+  "query_errors": 0,
+  "zero_hit_journals": 6,
+  "journals_independently_verified": 0,
+  "complete": false,
+  "reason": "No independent publisher-by-publisher exhaustive article enumeration has been performed.",
+  "journals": [
+    {
+      "journal": "Journal of Dental Research",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 20,
+      "crossref_online": 20,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Dental Materials",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 41,
+      "crossref_online": 0,
+      "other_candidates": 41,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of Dentistry",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 88,
+      "crossref_online": 0,
+      "other_candidates": 88,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "American Journal of Dentistry",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 0,
+      "crossref_online": 0,
+      "other_candidates": 0,
+      "status": "zero_hits_requires_independent_check",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of Adhesive Dentistry",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 0,
+      "crossref_online": 0,
+      "other_candidates": 0,
+      "status": "zero_hits_requires_independent_check",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of Prosthetic Dentistry",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 93,
+      "crossref_online": 0,
+      "other_candidates": 93,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "International Journal of Prosthodontics",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 0,
+      "crossref_online": 0,
+      "other_candidates": 0,
+      "status": "zero_hits_requires_independent_check",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Quintessence International",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 0,
+      "crossref_online": 0,
+      "other_candidates": 0,
+      "status": "zero_hits_requires_independent_check",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Operative Dentistry",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 10,
+      "crossref_online": 0,
+      "other_candidates": 10,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 0,
+      "crossref_online": 0,
+      "other_candidates": 0,
+      "status": "zero_hits_requires_independent_check",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "European Journal of Oral Sciences",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 13,
+      "crossref_online": 13,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "The Journal of Esthetic and Restorative Dentistry",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 19,
+      "crossref_online": 19,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "International Endodontic Journal",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 21,
+      "crossref_online": 21,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of Endodontics",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 38,
+      "crossref_online": 0,
+      "other_candidates": 38,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Dental Traumatology",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 19,
+      "crossref_online": 19,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "International Journal of Paediatric Dentistry",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 11,
+      "crossref_online": 11,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "BMC Oral Health",
+      "group": "Zahnmedizin",
+      "crossref_query_count": 291,
+      "crossref_online": 291,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
+      "group": "Biomaterialien",
+      "crossref_query_count": 40,
+      "crossref_online": 0,
+      "other_candidates": 40,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of Materials Science: Materials in Medicine",
+      "group": "Biomaterialien",
+      "crossref_query_count": 0,
+      "crossref_online": 0,
+      "other_candidates": 0,
+      "status": "zero_hits_requires_independent_check",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Acta Biomaterialia",
+      "group": "Biomaterialien",
+      "crossref_query_count": 124,
+      "crossref_online": 0,
+      "other_candidates": 124,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of Oral Rehabilitation",
+      "group": "Biomaterialien",
+      "crossref_query_count": 34,
+      "crossref_online": 34,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of the American Ceramic Society",
+      "group": "Engineering",
+      "crossref_query_count": 76,
+      "crossref_online": 76,
+      "other_candidates": 0,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of the European Ceramic Society",
+      "group": "Engineering",
+      "crossref_query_count": 55,
+      "crossref_online": 0,
+      "other_candidates": 55,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    },
+    {
+      "journal": "Journal of Biomechanics",
+      "group": "Engineering",
+      "crossref_query_count": 46,
+      "crossref_online": 0,
+      "other_candidates": 46,
+      "status": "source_completeness_unverified",
+      "error": null,
+      "publisher_coverage_verified": false
+    }
+  ]
+}

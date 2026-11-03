@@ -8256,5 +8256,15 @@
         "status": "not_indexed_by_exact_doi"
       }
     }
-  ]
+  ],
+  "coverage_summary": {
+    "month": "2026-10",
+    "journals_expected": 24,
+    "journals_queried": 24,
+    "query_errors": 0,
+    "zero_hit_journals": 6,
+    "journals_independently_verified": 0,
+    "complete": false,
+    "reason": "No independent publisher-by-publisher exhaustive article enumeration has been performed."
+  }
 }
