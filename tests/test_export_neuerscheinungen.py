@@ -79,5 +79,18 @@ class ReaderTests(unittest.TestCase):
                     ("citation_publication_date","2026-10-03")])):
             _,record=recover_publisher_online_dates.inspect({"doi":"10.1234/example"})
         self.assertEqual(record["status"],"no_explicit_online_date")
+    def test_publisher_recovery_preserves_conflicting_existing_online_date(self):
+        observed_path=self.root/"data"/"observed.json"
+        observed_path.write_text(json.dumps({"10.1234/two":{"doi":"10.1234/two","online_date":"2026-09-30"}}))
+        def fake_inspect(article):
+            return article["doi"],{"status":"publisher_online_date_verified","online_date":"2026-10-03","publisher_url":"https://publisher.example/article","evidence":[]}
+        with patch.object(recover_publisher_online_dates,"ROOT",self.root), patch.object(recover_publisher_online_dates,"inspect",side_effect=fake_inspect):
+            recover_publisher_online_dates.recover(self.month,workers=1)
+        saved=json.loads(observed_path.read_text())
+        self.assertEqual(saved["10.1234/two"]["online_date"],"2026-09-30")
+        audit=json.loads((self.root/"data/publisher-candidate-checks"/(self.month+".json")).read_text())
+        self.assertEqual(audit["existing_date_conflicts"],1)
+        self.assertEqual(audit["records"]["10.1234/two"]["status"],"conflict_with_existing_online_date")
+
 if __name__=="__main__":
     unittest.main()
