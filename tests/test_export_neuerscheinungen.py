@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from scripts import export_neuerscheinungen, prepare_simple_report, backfill
+from scripts import export_neuerscheinungen, prepare_simple_report, backfill, audit_missing_journals, recover_publisher_online_dates
 
 class ReaderTests(unittest.TestCase):
     def setUp(self):
@@ -55,5 +55,29 @@ class ReaderTests(unittest.TestCase):
             prepare_simple_report.prepare(self.month)
         self.assertEqual(quality_path.read_bytes(),old_quality)
         self.assertEqual(coverage_path.read_bytes(),old_coverage)
+    def test_missing_journals_are_not_silently_declared_inactive(self):
+        with patch.object(audit_missing_journals,"ROOT",self.root):
+            result=audit_missing_journals.audit(self.month)
+        self.assertEqual(result["journals_expected"],24)
+        self.assertEqual(result["journals_absent_from_html"],24)
+        self.assertEqual(len(result["missing_journals"]),24)
+        self.assertTrue(all("not_proof_of_inactivity" in j["status"] for j in result["missing_journals"]))
+
+    def test_publisher_recovery_rejects_conflicting_online_dates(self):
+        article={"doi":"10.1234/example"}
+        with patch.object(recover_publisher_online_dates,"get_publisher",return_value=(
+                "https://publisher.example/article",[
+                    ("citation_online_date","2026-10-03"),
+                    ("citation_online_date","2026-10-04")])):
+            doi,record=recover_publisher_online_dates.inspect(article)
+        self.assertEqual(doi,"10.1234/example")
+        self.assertEqual(record["status"],"conflicting_online_dates")
+
+    def test_publisher_recovery_rejects_generic_publication_date(self):
+        with patch.object(recover_publisher_online_dates,"get_publisher",return_value=(
+                "https://publisher.example/article",[
+                    ("citation_publication_date","2026-10-03")])):
+            _,record=recover_publisher_online_dates.inspect({"doi":"10.1234/example"})
+        self.assertEqual(record["status"],"no_explicit_online_date")
 if __name__=="__main__":
     unittest.main()
