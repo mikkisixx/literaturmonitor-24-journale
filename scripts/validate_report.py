@@ -48,6 +48,15 @@ def validate(month, data=DATA):
     assert evidence.get("month",month)==month, "Publisher evidence month mismatch"
     evidence_dois=[str(item["doi"]).strip().lower() for item in findings]
     assert len(evidence_dois)==len(set(evidence_dois)), "Duplicate publisher evidence DOI"
+    # Evidence for an already indexed DOI must identify the same journal.
+    # Otherwise a wrong publisher attribution could silently pass validation.
+    article_journals={a["doi"].strip().lower():a["journal"] for a in articles}
+    known_journals={r["journal"] for r in coverage["journals"]}
+    for item in findings:
+        doi=item["doi"].strip().lower()
+        assert item["journal"] in known_journals, "Unknown publisher evidence journal"
+        assert doi not in article_journals or item["journal"]==article_journals[doi], (
+            f"Publisher evidence journal mismatch for {doi}")
     expected_missing=[item for item in findings if item["doi"].strip().lower() not in dois]
     assert coverage["publisher_examples_checked"]==len(findings), "Publisher evidence count mismatch"
     assert coverage["confirmed_missing_publisher_articles"]==len(expected_missing), "Missing publisher evidence count mismatch"
