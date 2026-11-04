@@ -14,6 +14,7 @@ on:
       - 'scripts/prepare_simple_report.py'
       - 'scripts/augment_online_dates.py'
       - 'scripts/recover_publisher_online_dates.py'
+      - 'scripts/verify_publishers.py'
       - 'scripts/report_provenance.py'
       - 'scripts/audit_missing_journals.py'
       - 'scripts/backfill.py'
