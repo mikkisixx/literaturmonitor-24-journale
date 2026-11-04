@@ -20,7 +20,7 @@ def make(month):
     rows=[]
     for group,names in collect.JOURNALS.items():
         for name in names:
-            included=[a for a in records if a.get("journal")==name and a.get("online_date","").startswith(month) and a.get("date_basis") in ("crossref_online","publisher_online")]
+            included=[a for a in records if a.get("journal")==name and (a.get("online_date") or "").startswith(month) and a.get("date_basis") in ("crossref_online","publisher_online")]
             publisher=[a for a in included if a.get("date_basis")=="publisher_online"]
             checks=[a for a in verified.get("records",[]) if a.get("journal")==name]
             rows.append({"journal":name,"group":group,"crossref_publication_candidates":back.get("counts",{}).get(name,0),
