@@ -37,10 +37,11 @@ def augment(month):
                         old=observed.get(doi,{})
                         if old.get("journal") and old["journal"]!=name:
                             continue
+                        preserved_online=old.get("online_date") if old.get("publisher_online_verified") else None
                         old.update({"doi":doi,"journal":name,"category":group,
                             "title":(item.get("title") or [""])[0] or old.get("title",""),
                             "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8] or old.get("authors",[]),
-                            "online_date":online,"url":"https://doi.org/"+doi})
+                            "online_date":preserved_online or online,"url":"https://doi.org/"+doi})
                         old.setdefault("matched_months",[])
                         if month not in old["matched_months"]:old["matched_months"].append(month)
                         observed[doi]=old
