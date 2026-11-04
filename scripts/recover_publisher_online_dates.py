@@ -39,11 +39,18 @@ def recover(month,workers=6):
     observed_path=ROOT/"data/observed.json"
     observed=json.loads(observed_path.read_text())
     updated=0
+    conflicts=0
     for doi,record in results.items():
         if record["status"]!="publisher_online_date_verified":continue
         existing=observed.get(doi)
         if not existing or existing.get("publisher_online_verified"):continue
         online=record["online_date"]
+        previous_online=existing.get("online_date")
+        if previous_online and previous_online != online:
+            record["status"]="conflict_with_existing_online_date"
+            record["existing_online_date"]=previous_online
+            conflicts+=1
+            continue
         existing.update({"online_date":online,"publisher_online_verified":True,
                          "publisher_date_source":record["publisher_url"],
                          "publisher_date_evidence":record["evidence"]})
@@ -52,7 +59,7 @@ def recover(month,workers=6):
     output=ROOT/"data/publisher-candidate-checks"/(month+".json")
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps({"month":month,"candidates_checked":len(candidates),
-        "publisher_dates_recovered":updated,"statuses":{k:sum(v["status"]==k for v in results.values()) for k in sorted({v["status"] for v in results.values()})},
+        "publisher_dates_recovered":updated,"existing_date_conflicts":conflicts,"statuses":{k:sum(v["status"]==k for v in results.values()) for k in sorted({v["status"] for v in results.values()})},
         "records":results},ensure_ascii=False,indent=2)+"\n")
     print("Publisher candidate audit:",len(candidates),"checked;",updated,"dates recovered")
 if __name__=="__main__":
