@@ -64,6 +64,14 @@ def journal_issns(primary):
     except Exception:
         return [primary]
 
+def preserve_known_dates(previous, online, published, printed):
+    """Crossref result variants can omit dates; never erase a known date with None."""
+    return {
+        "online_date": online or previous.get("online_date"),
+        "published_date": published or previous.get("published_date"),
+        "print_date": printed or previous.get("print_date"),
+    }
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--month",required=True,help="YYYY-MM")
@@ -96,8 +104,7 @@ def main():
                                 "doi":doi,"title":(item.get("title") or [""])[0],
                                 "journal":name,"category":group,
                                 "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8],
-                                "online_date":online,"published_date":published,
-                                "print_date":collect.date_field(item,"published-print"),
+                                **preserve_known_dates(previous,online,published,collect.date_field(item,"published-print")),
                                 "url":item.get("URL") or "https://doi.org/"+doi,
                                 "last_seen":dt.date.today().isoformat()})
                             previous.setdefault("first_seen",dt.date.today().isoformat())
@@ -117,9 +124,7 @@ def main():
                                 "doi":doi,"title":(item.get("title") or [""])[0],
                                 "journal":name,"category":group,
                                 "authors":[(a.get("family","")+" "+a.get("given","")).strip() for a in item.get("author",[])][:8],
-                                "online_date":collect.date_field(item,"published-online"),
-                                "published_date":collect.date_field(item,"published"),
-                                "print_date":collect.date_field(item,"published-print"),
+                                **preserve_known_dates(previous,collect.date_field(item,"published-online"),collect.date_field(item,"published"),collect.date_field(item,"published-print")),
                                 "url":item.get("URL") or "https://doi.org/"+doi,
                                 "last_seen":dt.date.today().isoformat()})
                             previous.setdefault("first_seen",dt.date.today().isoformat())
