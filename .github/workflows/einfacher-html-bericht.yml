@@ -14,6 +14,7 @@ on:
       - 'scripts/prepare_simple_report.py'
       - 'scripts/augment_online_dates.py'
       - 'scripts/report_provenance.py'
+      - 'scripts/audit_missing_journals.py'
       - 'scripts/backfill.py'
       - 'tests/test_export_neuerscheinungen.py'
 permissions:
@@ -70,6 +71,10 @@ jobs:
         env:
           MONTH: ${{ inputs.month || '2026-10' }}
         run: python scripts/export_neuerscheinungen.py "$MONTH" --output exports
+      - name: Fehlende Zeitschriften und ungeklärte Artikel gesondert prüfen
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/audit_missing_journals.py --month "$MONTH"
       - name: Quellen- und Vollständigkeitsprotokoll für alle 24 Zeitschriften erstellen
         env:
           MONTH: ${{ inputs.month || '2026-10' }}
@@ -79,6 +84,12 @@ jobs:
         with:
           name: Quellenprotokoll-${{ inputs.month || '2026-10' }}
           path: data/online-audit/*-provenance.json
+          if-no-files-found: error
+      - name: Fehlende Zeitschriften als Prüfliste zum Download bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Fehlende-Zeitschriften-${{ inputs.month || '2026-10' }}
+          path: data/missing-journals/${{ inputs.month || '2026-10' }}.json
           if-no-files-found: error
       - name: Fertige HTML-Datei zum Download bereitstellen
         uses: actions/upload-artifact@v4
