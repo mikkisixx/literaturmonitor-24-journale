@@ -35,6 +35,29 @@ class ReaderTests(unittest.TestCase):
             self.assertNotIn(excluded,page)
         self.assertIn("2 Artikel mit ausgewiesenem Online-Veröffentlichungsdatum",page)
         self.assertIn("Publisher verified",page)
+    def test_alternative_month_selection_creates_correct_standalone_report(self):
+        alternative="2026-08"
+        articles=[
+            {"journal":"Journal A","title":"August online article","doi":"10.1234/aug",
+             "online_date":"2026-08-14","date_basis":"crossref_online"},
+            {"journal":"Journal B","title":"October online article","doi":"10.1234/oct",
+             "online_date":"2026-10-14","date_basis":"crossref_online"}]
+        (self.root/"data/months"/(alternative+".json")).write_text(
+            json.dumps({"month":alternative,"count":len(articles),"articles":articles}))
+        (self.root/"data/quality"/(alternative+".json")).write_text(json.dumps({}))
+        (self.root/"data/coverage"/(alternative+".json")).write_text(
+            json.dumps({"journals_expected":24,"journals_queried":24}))
+        with patch.object(export_neuerscheinungen,"ROOT",self.root):
+            target=export_neuerscheinungen.export(alternative,self.root/"out")
+        page=target.read_text(encoding="utf-8")
+        self.assertEqual(target.name,"Neuerscheinungen_2026-08.html")
+        self.assertIn("Neuerscheinungen August 2026",page)
+        self.assertIn("August online article",page)
+        self.assertNotIn("October online article",page)
+        self.assertIn("<style>",page)
+        self.assertNotIn("<script src=",page)
+        self.assertNotIn("Artikel oder Zeitschrift suchen",page)
+
     def test_publisher_verified_date_survives_crossref_backfill(self):
         previous={"online_date":"2026-10-02","publisher_online_verified":True,"published_date":"2026-10-09"}
         result=backfill.preserve_known_dates(previous,"2026-10-09","2026-10-09",None)
