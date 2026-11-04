@@ -87,6 +87,23 @@ class ReportValidationTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             validate(MONTH, self.data)
 
+    def test_publisher_evidence_wrong_journal_is_rejected(self):
+        report = json.loads((self.data / f"months/{MONTH}.json").read_text())
+        evidence = json.loads((self.data / f"publisher-evidence/{MONTH}.json").read_text())
+        indexed = {a["doi"].lower(): a["journal"] for a in report["articles"]}
+        matching = next((i for i, item in enumerate(evidence["findings"])
+                         if item["doi"].lower() in indexed), None)
+        if matching is None:
+            self.skipTest("No publisher evidence DOI currently indexed in report")
+        original = evidence["findings"][matching]["journal"]
+        alternative = next(row["journal"] for row in
+                           json.loads((self.data / f"coverage/{MONTH}.json").read_text())["journals"]
+                           if row["journal"] != original)
+        self.mutate(f"publisher-evidence/{MONTH}.json",
+                    lambda obj: obj["findings"][matching].update(journal=alternative))
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
     def test_false_editorial_release_is_rejected(self):
         self.mutate(f"quality/{MONTH}.json",
                     lambda obj: obj.update(publication_ready=True, release_status="approved"))
