@@ -26,7 +26,7 @@ def prepare(month):
         # Never overwrite prior independent publisher evidence or editorial review. 
         # This helper supplies missing provisional metadata only. 
         if not target.exists(): 
-            target.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\\n")
+            target.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\n")
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("month")
