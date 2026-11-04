@@ -36,6 +36,17 @@ def validate(month, data=DATA):
     assert coverage["journals_queried"]==24 and coverage["query_errors"]==0, "Crossref queries incomplete"
     assert coverage["zero_hit_journals"]==sum(r["crossref_query_count"]==0 for r in coverage["journals"]), "Zero-hit mismatch"
     assert coverage["confirmed_missing_publisher_articles"]==len(coverage["missing_publisher_articles"]), "Publisher evidence mismatch"
+    truncated=coverage.get("title_fallback_truncated",[])
+    assert isinstance(truncated,list) and len(truncated)==len(set(truncated)), "Duplicate title fallback truncation"
+    known_rows={row["journal"]:row for row in coverage["journals"]}
+    assert set(truncated)=={name for name,row in known_rows.items() if row.get("title_fallback_truncated") is True}, "Title fallback truncation summary differs from journal rows"
+    for name in truncated:
+        assert name in known_rows, "Unknown truncated journal"
+        assert known_rows[name]["status"] in ("title_fallback_truncated_requires_publisher_check","confirmed_missing_publisher_articles"), "Truncated title search incorrectly marked complete"
+    conflicts=coverage.get("publisher_date_conflicts",[])
+    assert coverage.get("publisher_date_conflict_count",0)==len(conflicts), "Publisher date conflict count mismatch"
+    assert len({str(c["doi"]).strip().lower() for c in conflicts})==len(conflicts), "Duplicate publisher date conflict"
+
     for item in coverage["missing_publisher_articles"]:
         assert item["doi"].lower() not in dois, "Publisher article already in monthly report"
         assert item["journal"] in {r["journal"] for r in coverage["journals"]}, "Unknown evidence journal"
@@ -69,6 +80,19 @@ def validate(month, data=DATA):
         for field in ("journal","publisher_online_date","source"):
             assert actual[field]==original[field], f"Publisher evidence {field} altered for {doi}"
         assert actual.get("in_monthly_report") is False, "Missing publisher DOI marked present"
+    expected_conflicts={}
+    for item in findings:
+        doi=item["doi"].strip().lower()
+        article=next((a for a in articles if a["doi"].strip().lower()==doi),None)
+        if article is not None:
+            reported=article.get("online_date") or article.get("date")
+            if reported!=item["publisher_online_date"]:
+                expected_conflicts[doi]=(item["journal"],item["publisher_online_date"],reported,item["source"])
+    actual_conflicts={}
+    for item in conflicts:
+        doi=item["doi"].strip().lower()
+        actual_conflicts[doi]=(item["journal"],item["publisher_online_date"],item["reported_online_date"],item["source"])
+    assert actual_conflicts==expected_conflicts, "Publisher date conflicts do not match evidence"
     for row in coverage["journals"]:
         expected=sum(item["journal"]==row["journal"] for item in expected_missing)
         assert row["publisher_examples_missing"]==expected, "Per-journal publisher gap count mismatch"
