@@ -184,7 +184,7 @@ def main():
             try:
                 pubmed=pubmed_check(doi,date)
                 record["pubmed"]=pubmed
-                if pubmed["status"]=="date_match":record["status"]="pubmed_date_match"
+                if pubmed["status"]=="date_match" and record["status"]!="date_conflict":record["status"]="pubmed_date_match"
                 elif pubmed["status"]=="date_conflict":record["status"]="date_conflict"
             except Exception as exc:
                 record["pubmed"]={"status":"lookup_error","reason":str(exc)[:120]}
