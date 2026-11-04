@@ -82,8 +82,8 @@ for entry in records:
     j=by_journal.setdefault(entry["journal"],{"total":0,"statuses":{}})
     j["total"]+=1
     j["statuses"][entry["status"]]=j["statuses"].get(entry["status"],0)+1
-verified=sum(v.get("status") in ("publisher_date_match","pubmed_date_match") for v in checks.values())
-unresolved=sum(v.get("status") not in ("publisher_date_match","pubmed_date_match") for v in checks.values())
+from quality_counts import online_corroboration_counts
+verified,unresolved=online_corroboration_counts(report["articles"],checks)
 quality={"month":MONTH,"publication_ready":False,"release_status":"review_required",
          "note":"Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
          "crossref_online_articles":report["verified_online_count"],
