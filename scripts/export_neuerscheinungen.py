@@ -29,7 +29,7 @@ def export(month, output):
     groups=defaultdict(list)
     for item in report["articles"]:
         online=item.get("online_date")
-        if item.get("date_basis")!="crossref_online" or not online:
+        if item.get("date_basis") not in ("crossref_online","publisher_online") or not online:
             continue
         try:
             if date.fromisoformat(online).strftime("%Y-%m") != month:
@@ -50,7 +50,7 @@ def export(month, output):
             if not url.startswith(("https://","http://")): url=""
             authors=item.get("authors") or []
             if isinstance(authors,list): authors=", ".join(authors[:3])+(", et al." if len(authors)>3 else "")
-            date_label=human_date(item.get("online_date")) if item.get("date_basis")=="crossref_online" else "Online-Erstveröffentlichung nicht bestätigt"
+            date_label=human_date(item.get("online_date")) if item.get("date_basis") in ("crossref_online","publisher_online") else "Online-Erstveröffentlichung nicht bestätigt"
             doi_html=f'<span class="doi">DOI: {esc(doi)}</span>' if doi else ""
             link=f'<a class="open" href="{esc(url)}" target="_blank" rel="noopener noreferrer">Artikel öffnen ↗</a>' if url else ""
             title=f'<a class="title" href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(item.get("title") or "Ohne Titel")}</a>' if url else f'<span class="title">{esc(item.get("title") or "Ohne Titel")}</span>'
@@ -83,7 +83,7 @@ article{position:relative;padding:22px 24px;border-bottom:1px solid var(--line)}
     page=f'''<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(heading)}</title><style>{css}</style></head><body>
 <header><div class="wrap"><div class="eyebrow">Wissenschaftlicher Literaturmonitor · Online First</div><h1>{esc(heading)}</h1><div>Monatliche Neuerscheinungen aus 24 Fachzeitschriften</div></div></header>
 <main>
-<div class="summary"><div class="note">{selected_count} Artikel mit Crossref-Online-Erstveröffentlichungsdatum im ausgewählten Monat · {len(groups)} Zeitschriften mit Treffern</div><nav id="nav">{"".join(nav)}</nav></div>
+<div class="summary"><div class="note">{selected_count} Artikel mit ausgewiesenem Online-Veröffentlichungsdatum im ausgewählten Monat · {len(groups)} Zeitschriften mit Treffern</div><nav id="nav">{"".join(nav)}</nav></div>
 <div id="sections">{"".join(sections)}</div></main>
 
 </body></html>'''
