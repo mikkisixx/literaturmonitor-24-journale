@@ -21,3 +21,12 @@ October coverage reports 24/24 queried, zero query errors, four zero-count journ
 ## Next
 
 Confirm fast tests and full monthly run. Expand reproducible publisher-by-publisher first-online inventories for zero-hit journals; treat publisher examples and Crossref title fallbacks as partial evidence only.
+
+
+## 2026-11-04 – Additional fail-closed coverage checks
+
+- Added validation that the top-level list of truncated Crossref title searches exactly matches per-journal truncation flags. Truncated searches cannot silently be relabeled as complete.
+- Added validation that publisher first-online date conflicts are reconstructed from the independent evidence file and the report, rather than trusting a summary count or arbitrary conflict records.
+- Added three regression tests for erased truncation flags, falsified conflict counts, and fabricated conflict records.
+- Commits: `85bd99c6` (validator), `29397556` (tests). GitHub Actions runs `41791797958` (quick tests) and `41791797953` (monthly) were queued at inspection; success not yet confirmed.
+- No publisher-by-publisher exhaustive inventory has been established. No editorial approval was granted; publication remains blocked.
