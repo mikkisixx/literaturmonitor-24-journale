@@ -23,7 +23,10 @@ def prepare(month):
     for folder,obj in (("coverage",coverage),("quality",quality)):
         target=data/folder/f"{month}.json"
         target.parent.mkdir(parents=True,exist_ok=True)
-        # Never overwrite prior independent publisher evidence or editorial review.\n        # This helper supplies missing provisional metadata only.\n        if not target.exists():\n            target.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\\n")
+        # Never overwrite prior independent publisher evidence or editorial review. 
+        # This helper supplies missing provisional metadata only. 
+        if not target.exists(): 
+            target.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\\n")
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("month")
