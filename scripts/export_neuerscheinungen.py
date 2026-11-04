@@ -27,7 +27,17 @@ def export(month, output):
     year,number=map(int,month.split("-"))
     heading=f"Neuerscheinungen {MONTHS[number-1]} {year}"
     groups=defaultdict(list)
-    for item in report["articles"]: groups[item["journal"]].append(item)
+    for item in report["articles"]:
+        online=item.get("online_date")
+        if item.get("date_basis")!="crossref_online" or not online:
+            continue
+        try:
+            if date.fromisoformat(online).strftime("%Y-%m") != month:
+                continue
+        except (ValueError, TypeError):
+            continue
+        groups[item["journal"]].append(item)
+    selected_count=sum(map(len,groups.values()))
     nav=[]
     sections=[]
     for journal,items in sorted(groups.items()):
@@ -69,14 +79,16 @@ article{position:relative;padding:22px 24px;border-bottom:1px solid var(--line)}
 @media(max-width:650px){header{padding:28px 20px}h1{font-size:1.65rem}.title{padding-right:0}.open{position:static;display:inline-block;margin-top:10px}article{padding:19px}.journal-head{padding:17px 19px}}
 @media print{body{background:white}.panel{display:none}header{background:white;color:black;padding:15px 0}main{margin-top:0}section,.summary{break-inside:avoid;border-color:#bbb}.open{display:none}}
 """
-    warning="Rechercheentwurf: Die unabhängige Vollständigkeit aller 24 Zeitschriften und einige Online-Erstveröffentlichungsdaten sind noch nicht bestätigt."
+
     page=f'''<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(heading)}</title><style>{css}</style></head><body>
 <header><div class="wrap"><div class="eyebrow">Wissenschaftlicher Literaturmonitor · Online First</div><h1>{esc(heading)}</h1><div>Monatliche Neuerscheinungen aus 24 Fachzeitschriften</div></div></header>
-<main><div class="warning">{esc(warning)}</div><div class="panel"><label for="filter">Artikel oder Zeitschrift suchen</label><input id="filter" type="search" placeholder="Titel, Autoren, DOI oder Zeitschrift"></div>
-<div class="summary"><div class="note">{report["count"]} Artikel und Kandidaten · {len(groups)} Journals mit Treffern · nach Journal gruppiert · {report["verified_online_count"]} Crossref-Online-Daten bestätigt · {report["candidate_count"]} Kandidaten unbestätigt</div><nav id="nav">{"".join(nav)}</nav></div>
-<div id="sections">{"".join(sections)}</div><p class="note">Die Artikelzahlen sind Recherchetreffer, keine Vollständigkeitsgarantie. Datum nur als Online-Erstveröffentlichung ausgewiesen, wenn Crossref ein Online-Datum liefert.</p></main>
-<script>document.getElementById('filter').addEventListener('input',function(){{const q=this.value.toLocaleLowerCase('de');document.querySelectorAll('section').forEach(s=>{{let any=false;s.querySelectorAll('article').forEach(a=>{{let show=a.textContent.toLocaleLowerCase('de').includes(q)||s.querySelector('h2').textContent.toLocaleLowerCase('de').includes(q);a.hidden=!show;any=any||show}});s.hidden=!any}})}})</script>
+<main>
+<div class="summary"><div class="note">{selected_count} Artikel mit Crossref-Online-Erstveröffentlichungsdatum im ausgewählten Monat · {len(groups)} Zeitschriften mit Treffern</div><nav id="nav">{"".join(nav)}</nav></div>
+<div id="sections">{"".join(sections)}</div></main>
+
 </body></html>'''
+    if "Rechercheentwurf:" in page or "Artikel oder Zeitschrift suchen" in page:
+        raise AssertionError("Unerwünschte Berichtselemente")
     output.mkdir(parents=True,exist_ok=True)
     target=output/("Neuerscheinungen_"+month+".html")
     target.write_text(page,encoding="utf-8")
