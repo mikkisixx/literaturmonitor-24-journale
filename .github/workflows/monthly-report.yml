@@ -13,6 +13,8 @@ on:
     paths:
       - '.github/workflows/monthly-report.yml'
       - 'scripts/backfill.py'
+      - 'scripts/discover_springer.py'
+      - 'tests/test_discover_springer.py'
       - 'scripts/build_months.py'
       - 'scripts/verify_publishers.py'
       - 'scripts/audit_candidates.py'
@@ -53,6 +55,10 @@ jobs:
           echo "month=$MONTH" >> "$GITHUB_OUTPUT"
       - name: Monat bei Crossref nachrecherchieren
         run: python scripts/backfill.py --month "${{ steps.period.outputs.month }}"
+      - name: Springer-Verlagsinventur unabhängig von Crossref versuchen
+        run: python scripts/discover_springer.py --month "${{ steps.period.outputs.month }}"
+      - name: Springer-Inventurtests
+        run: python -m unittest discover -s tests -p 'test_discover_springer.py' -v
       - name: HTML-Daten neu erzeugen
         run: python scripts/build_months.py
       - name: Verlagsdaten artikelweise abgleichen
@@ -78,7 +84,7 @@ jobs:
           name: Recherche-Diagnose-${{ steps.period.outputs.month }}-${{ github.run_id }}
           path: |
             data/backfill-${{ steps.period.outputs.month }}.json
-            data/coverage/${{ steps.period.outputs.month }}.json
+            data/coverage/ data/publisher-inventory/${{ steps.period.outputs.month }}.json
             data/quality/${{ steps.period.outputs.month }}.json
           if-no-files-found: warn
           retention-days: 30
