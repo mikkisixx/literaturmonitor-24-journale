@@ -6,14 +6,14 @@
   "counts": {
     "Journal of Dental Research": 20,
     "Dental Materials": 41,
-    "Journal of Dentistry": 88,
+    "Journal of Dentistry": 87,
     "American Journal of Dentistry": 0,
     "Journal of Adhesive Dentistry": 0,
     "Journal of Prosthetic Dentistry": 93,
     "International Journal of Prosthodontics": 0,
     "Quintessence International": 0,
     "Operative Dentistry": 10,
-    "Clinical Oral Investigations": 0,
+    "Clinical Oral Investigations": 56,
     "European Journal of Oral Sciences": 13,
     "The Journal of Esthetic and Restorative Dentistry": 19,
     "International Endodontic Journal": 21,
@@ -22,13 +22,18 @@
     "International Journal of Paediatric Dentistry": 11,
     "BMC Oral Health": 291,
     "Journal of the Mechanical Behavior of Biomedical Materials": 39,
-    "Journal of Materials Science: Materials in Medicine": 0,
+    "Journal of Materials Science: Materials in Medicine": 3,
     "Acta Biomaterialia": 124,
     "Journal of Oral Rehabilitation": 34,
     "Journal of the American Ceramic Society": 76,
     "Journal of the European Ceramic Society": 54,
-    "Journal of Biomechanics": 46
+    "Journal of Biomechanics": 42
   },
-  "distinct_doi_in_register": 72211,
+  "title_fallback_truncated": [
+    "American Journal of Dentistry",
+    "International Journal of Prosthodontics",
+    "Quintessence International"
+  ],
+  "distinct_doi_in_register": 72270,
   "warning": "Published date alone is NOT confirmed online-first; publication dates can be updated."
 }

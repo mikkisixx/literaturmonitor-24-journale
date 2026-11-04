@@ -3,8 +3,8 @@
   "publication_ready": false,
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
-  "crossref_online_articles": 504,
-  "independently_corroborrated_online_dates": 420,
+  "crossref_online_articles": 563,
+  "independently_corroborrated_online_dates": 479,
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
@@ -8262,69 +8262,17 @@
     "journals_expected": 24,
     "journals_queried": 24,
     "query_errors": 0,
-    "zero_hit_journals": 6,
+    "title_fallback_truncated": [
+      "American Journal of Dentistry",
+      "International Journal of Prosthodontics",
+      "Quintessence International"
+    ],
+    "zero_hit_journals": 4,
     "journals_independently_verified": 0,
     "complete": false,
     "publisher_examples_checked": 8,
-    "confirmed_missing_publisher_articles": 8,
-    "missing_publisher_articles": [
-      {
-        "journal": "Clinical Oral Investigations",
-        "doi": "10.1007/s00784-026-07203-0",
-        "publisher_online_date": "2026-10-17",
-        "source": "https://link.springer.com/article/10.1007/s00784-026-07203-0",
-        "in_monthly_report": false
-      },
-      {
-        "journal": "Clinical Oral Investigations",
-        "doi": "10.1007/s00784-026-07179-x",
-        "publisher_online_date": "2026-10-15",
-        "source": "https://link.springer.com/article/10.1007/s00784-026-07179-x",
-        "in_monthly_report": false
-      },
-      {
-        "journal": "Clinical Oral Investigations",
-        "doi": "10.1007/s00784-026-07204-z",
-        "publisher_online_date": "2026-10-09",
-        "source": "https://link.springer.com/article/10.1007/s00784-026-07204-z",
-        "in_monthly_report": false
-      },
-      {
-        "journal": "Clinical Oral Investigations",
-        "doi": "10.1007/s00784-026-07177-z",
-        "publisher_online_date": "2026-10-03",
-        "source": "https://link.springer.com/article/10.1007/s00784-026-07177-z",
-        "in_monthly_report": false
-      },
-      {
-        "journal": "Clinical Oral Investigations",
-        "doi": "10.1007/s00784-026-07217-8",
-        "publisher_online_date": "2026-10-13",
-        "source": "https://link.springer.com/article/10.1007/s00784-026-07217-8",
-        "in_monthly_report": false
-      },
-      {
-        "journal": "Journal of Materials Science: Materials in Medicine",
-        "doi": "10.1007/s10856-026-07117-z",
-        "publisher_online_date": "2026-10-28",
-        "source": "https://link.springer.com/article/10.1007/s10856-026-07117-z",
-        "in_monthly_report": false
-      },
-      {
-        "journal": "Journal of Materials Science: Materials in Medicine",
-        "doi": "10.1007/s10856-026-07118-y",
-        "publisher_online_date": "2026-10-31",
-        "source": "https://link.springer.com/article/10.1007/s10856-026-07118-y",
-        "in_monthly_report": false
-      },
-      {
-        "journal": "Journal of Materials Science: Materials in Medicine",
-        "doi": "10.1007/s10856-026-07135-x",
-        "publisher_online_date": "2026-10-31",
-        "source": "https://link.springer.com/article/10.1007/s10856-026-07135-x",
-        "in_monthly_report": false
-      }
-    ],
+    "confirmed_missing_publisher_articles": 0,
+    "missing_publisher_articles": [],
     "reason": "No independent publisher-by-publisher exhaustive article enumeration has been performed."
   }
 }

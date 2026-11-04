@@ -3,69 +3,17 @@
   "journals_expected": 24,
   "journals_queried": 24,
   "query_errors": 0,
-  "zero_hit_journals": 6,
+  "title_fallback_truncated": [
+    "American Journal of Dentistry",
+    "International Journal of Prosthodontics",
+    "Quintessence International"
+  ],
+  "zero_hit_journals": 4,
   "journals_independently_verified": 0,
   "complete": false,
   "publisher_examples_checked": 8,
-  "confirmed_missing_publisher_articles": 8,
-  "missing_publisher_articles": [
-    {
-      "journal": "Clinical Oral Investigations",
-      "doi": "10.1007/s00784-026-07203-0",
-      "publisher_online_date": "2026-10-17",
-      "source": "https://link.springer.com/article/10.1007/s00784-026-07203-0",
-      "in_monthly_report": false
-    },
-    {
-      "journal": "Clinical Oral Investigations",
-      "doi": "10.1007/s00784-026-07179-x",
-      "publisher_online_date": "2026-10-15",
-      "source": "https://link.springer.com/article/10.1007/s00784-026-07179-x",
-      "in_monthly_report": false
-    },
-    {
-      "journal": "Clinical Oral Investigations",
-      "doi": "10.1007/s00784-026-07204-z",
-      "publisher_online_date": "2026-10-09",
-      "source": "https://link.springer.com/article/10.1007/s00784-026-07204-z",
-      "in_monthly_report": false
-    },
-    {
-      "journal": "Clinical Oral Investigations",
-      "doi": "10.1007/s00784-026-07177-z",
-      "publisher_online_date": "2026-10-03",
-      "source": "https://link.springer.com/article/10.1007/s00784-026-07177-z",
-      "in_monthly_report": false
-    },
-    {
-      "journal": "Clinical Oral Investigations",
-      "doi": "10.1007/s00784-026-07217-8",
-      "publisher_online_date": "2026-10-13",
-      "source": "https://link.springer.com/article/10.1007/s00784-026-07217-8",
-      "in_monthly_report": false
-    },
-    {
-      "journal": "Journal of Materials Science: Materials in Medicine",
-      "doi": "10.1007/s10856-026-07117-z",
-      "publisher_online_date": "2026-10-28",
-      "source": "https://link.springer.com/article/10.1007/s10856-026-07117-z",
-      "in_monthly_report": false
-    },
-    {
-      "journal": "Journal of Materials Science: Materials in Medicine",
-      "doi": "10.1007/s10856-026-07118-y",
-      "publisher_online_date": "2026-10-31",
-      "source": "https://link.springer.com/article/10.1007/s10856-026-07118-y",
-      "in_monthly_report": false
-    },
-    {
-      "journal": "Journal of Materials Science: Materials in Medicine",
-      "doi": "10.1007/s10856-026-07135-x",
-      "publisher_online_date": "2026-10-31",
-      "source": "https://link.springer.com/article/10.1007/s10856-026-07135-x",
-      "in_monthly_report": false
-    }
-  ],
+  "confirmed_missing_publisher_articles": 0,
+  "missing_publisher_articles": [],
   "reason": "No independent publisher-by-publisher exhaustive article enumeration has been performed.",
   "journals": [
     {
@@ -76,6 +24,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -87,17 +36,19 @@
       "other_candidates": 41,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Dentistry",
       "group": "Zahnmedizin",
-      "crossref_query_count": 88,
+      "crossref_query_count": 87,
       "crossref_online": 0,
       "other_candidates": 88,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -107,8 +58,9 @@
       "crossref_query_count": 0,
       "crossref_online": 0,
       "other_candidates": 0,
-      "status": "zero_hits_requires_independent_check",
+      "status": "title_fallback_truncated_requires_publisher_check",
       "error": null,
+      "title_fallback_truncated": true,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -120,6 +72,7 @@
       "other_candidates": 0,
       "status": "zero_hits_requires_independent_check",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -131,6 +84,7 @@
       "other_candidates": 93,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -140,8 +94,9 @@
       "crossref_query_count": 0,
       "crossref_online": 0,
       "other_candidates": 0,
-      "status": "zero_hits_requires_independent_check",
+      "status": "title_fallback_truncated_requires_publisher_check",
       "error": null,
+      "title_fallback_truncated": true,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -151,8 +106,9 @@
       "crossref_query_count": 0,
       "crossref_online": 0,
       "other_candidates": 0,
-      "status": "zero_hits_requires_independent_check",
+      "status": "title_fallback_truncated_requires_publisher_check",
       "error": null,
+      "title_fallback_truncated": true,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -164,19 +120,21 @@
       "other_candidates": 10,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
     {
       "journal": "Clinical Oral Investigations",
       "group": "Zahnmedizin",
-      "crossref_query_count": 0,
-      "crossref_online": 0,
+      "crossref_query_count": 56,
+      "crossref_online": 56,
       "other_candidates": 0,
-      "status": "confirmed_missing_publisher_articles",
+      "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
-      "publisher_examples_missing": 5
+      "publisher_examples_missing": 0
     },
     {
       "journal": "European Journal of Oral Sciences",
@@ -186,6 +144,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -197,6 +156,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -208,6 +168,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -219,6 +180,7 @@
       "other_candidates": 38,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -230,6 +192,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -241,6 +204,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -252,6 +216,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -263,19 +228,21 @@
       "other_candidates": 40,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Materials Science: Materials in Medicine",
       "group": "Biomaterialien",
-      "crossref_query_count": 0,
-      "crossref_online": 0,
+      "crossref_query_count": 3,
+      "crossref_online": 3,
       "other_candidates": 0,
-      "status": "confirmed_missing_publisher_articles",
+      "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
-      "publisher_examples_missing": 3
+      "publisher_examples_missing": 0
     },
     {
       "journal": "Acta Biomaterialia",
@@ -285,6 +252,7 @@
       "other_candidates": 124,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -296,6 +264,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -307,6 +276,7 @@
       "other_candidates": 0,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
@@ -318,17 +288,19 @@
       "other_candidates": 55,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     },
     {
       "journal": "Journal of Biomechanics",
       "group": "Engineering",
-      "crossref_query_count": 46,
+      "crossref_query_count": 42,
       "crossref_online": 0,
       "other_candidates": 46,
       "status": "source_completeness_unverified",
       "error": null,
+      "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
       "publisher_examples_missing": 0
     }
