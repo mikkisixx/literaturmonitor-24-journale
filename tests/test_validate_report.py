@@ -116,5 +116,31 @@ class ReportValidationTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             validate(MONTH, self.data)
 
+    def test_truncated_title_search_summary_cannot_be_silently_cleared(self):
+        self.mutate(f"coverage/{MONTH}.json",
+                    lambda obj: obj.update(title_fallback_truncated=[]))
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
+    def test_publisher_date_conflict_count_cannot_be_falsified(self):
+        self.mutate(f"coverage/{MONTH}.json",
+                    lambda obj: obj.update(publisher_date_conflict_count=1))
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
+    def test_fabricated_publisher_date_conflict_is_rejected(self):
+        def fabricate(obj):
+            obj["publisher_date_conflicts"]=[{
+                "doi":"10.9999/fabricated",
+                "journal":"Clinical Oral Investigations",
+                "publisher_online_date":"2026-10-01",
+                "reported_online_date":"2026-10-02",
+                "source":"https://example.org/fiction"
+            }]
+            obj["publisher_date_conflict_count"]=1
+        self.mutate(f"coverage/{MONTH}.json", fabricate)
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
 if __name__ == "__main__":
     unittest.main()
