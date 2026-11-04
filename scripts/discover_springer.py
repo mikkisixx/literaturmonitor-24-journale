@@ -18,7 +18,7 @@ JOURNALS = {
     "Clinical Oral Investigations": "784",
     "Journal of Materials Science: Materials in Medicine": "10856",
 }
-DOI = re.compile(r"10\\.1007/(?:s00784|s10856)-[0-9]{4}-[0-9a-z-]+", re.I)
+DOI = re.compile(r"10\.1007/(?:s00784|s10856)-[0-9]{4}-[0-9a-z-]+", re.I)
 
 class Links(HTMLParser):
     def __init__(self):
