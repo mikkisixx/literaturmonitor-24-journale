@@ -1,0 +1,39 @@
+name: Einfacher HTML-Literaturbericht
+on:
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Berichtsmonat YYYY-MM (vorhandene Monatsdaten)'
+        required: true
+        default: '2026-10'
+permissions:
+  contents: read
+jobs:
+  html:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Schöne eigenständige HTML-Webseite aus vorhandenen Monatsdaten erstellen
+        env:
+          MONTH: ${{ inputs.month }}
+        run: |
+          python - <<'PY'
+          import os, pathlib, re, sys
+          sys.path.insert(0, "scripts")
+          import export_html
+          month=os.environ["MONTH"]
+          if not re.fullmatch(r"20[0-9]{2}-(0[1-9]|1[0-2])",month):
+              raise SystemExit("Ungültiger Berichtsmonat")
+          if not pathlib.Path(f"data/months/{month}.json").exists():
+              raise SystemExit(f"Für {month} fehlen Monatsdaten; zuerst die Monatsrecherche starten")
+          export_html.export(month,pathlib.Path("exports"))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Literaturbericht-${{ inputs.month }}-Webseite
+          path: exports/*.html
+          retention-days: 90
