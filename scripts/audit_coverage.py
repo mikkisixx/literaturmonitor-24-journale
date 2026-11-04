@@ -26,6 +26,17 @@ for group,names in collect.JOURNALS.items():
         issue="query_error" if err or count is None else ("zero_hits_requires_independent_check" if count==0 else "source_completeness_unverified")
         if truncated and not err: issue="title_fallback_truncated_requires_publisher_check"
         rows.append({"journal":name,"group":group,"crossref_query_count":count,"crossref_online":entries.get("crossref_online",0),"other_candidates":entries.get("other_candidates",0),"status":issue,"error":err,"title_fallback_truncated":truncated,"publisher_coverage_verified":False})
+# Independent publisher inventory is a separate discovery path, not a completeness certificate.
+inventory_path=data/"publisher-inventory"/(month+"-coverage.json")
+inventory=json.loads(inventory_path.read_text()) if inventory_path.exists() else {"journals":[]}
+publisher_rows={r["journal"]:r for r in inventory.get("journals",[])}
+for row in rows:
+    independent=publisher_rows.get(row["journal"],{})
+    row["publisher_platform"]=independent.get("publisher_platform","unmapped")
+    row["publisher_listing_status"]=independent.get("publisher_listing_status","not_implemented")
+    row["publisher_candidate_count"]=independent.get("publisher_candidate_count",0)
+    row["publisher_article_dates_verified"]=independent.get("publisher_article_dates_verified",0)
+    row["publisher_coverage_verified"]=False
 evidence_path=data/"publisher-evidence"/(month+".json")
 evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"findings":[]}
 existing_dois={a["doi"].lower() for a in report["articles"]}
