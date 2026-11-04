@@ -8273,6 +8273,8 @@
     "publisher_examples_checked": 8,
     "confirmed_missing_publisher_articles": 0,
     "missing_publisher_articles": [],
+    "publisher_date_conflicts": [],
+    "publisher_date_conflict_count": 0,
     "reason": "No independent publisher-by-publisher exhaustive article enumeration has been performed."
   }
 }
