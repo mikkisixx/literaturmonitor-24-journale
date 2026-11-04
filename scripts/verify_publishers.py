@@ -163,6 +163,14 @@ def pubmed_check(doi,expected):
                 "dates":dates,"pmid":article.findtext("./MedlineCitation/PMID")}
     return {"status":"doi_not_matched"}
 
+def reconcile_status(publisher_status,pubmed_status):
+    """Never erase an explicit publisher/metadata date conflict."""
+    if publisher_status=="date_conflict" or pubmed_status=="date_conflict":
+        return "date_conflict"
+    if pubmed_status=="date_match":
+        return "pubmed_date_match"
+    return publisher_status
+
 def main():
     report=json.loads(SOURCE.read_text(encoding="utf-8"))
     existing=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
@@ -184,8 +192,7 @@ def main():
             try:
                 pubmed=pubmed_check(doi,date)
                 record["pubmed"]=pubmed
-                if pubmed["status"]=="date_match" and record["status"]!="date_conflict":record["status"]="pubmed_date_match"
-                elif pubmed["status"]=="date_conflict":record["status"]="date_conflict"
+                record["status"]=reconcile_status(record["status"],pubmed["status"])
             except Exception as exc:
                 record["pubmed"]={"status":"lookup_error","reason":str(exc)[:120]}
         existing[doi]=record
