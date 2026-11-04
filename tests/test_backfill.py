@@ -9,6 +9,17 @@ import backfill
 
 
 class JournalIssnTests(unittest.TestCase):
+    def test_missing_crossref_dates_do_not_erase_prior_evidence(self):
+        previous={"online_date":"2026-10-12","published_date":"2026-10-13","print_date":"2026-12-01"}
+        result=backfill.preserve_known_dates(previous,None,None,None)
+        self.assertEqual(result,previous)
+
+    def test_new_crossref_date_updates_previous_evidence(self):
+        previous={"online_date":"2026-10-12","published_date":None,"print_date":None}
+        result=backfill.preserve_known_dates(previous,"2026-10-14","2026-10-14",None)
+        self.assertEqual(result["online_date"],"2026-10-14")
+        self.assertEqual(result["published_date"],"2026-10-14")
+
     def test_uses_both_issns_and_deduplicates(self):
         with patch.object(backfill.collect, "get", return_value={"ISSN": ["1234-5678", "9876-5432", "1234-5678"]}):
             self.assertEqual(backfill.journal_issns("1234-5678"), ["1234-5678", "9876-5432"])
