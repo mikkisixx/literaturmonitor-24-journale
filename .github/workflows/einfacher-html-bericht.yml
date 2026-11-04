@@ -1,5 +1,9 @@
 name: Einfacher HTML-Literaturbericht
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/einfacher-html-bericht.yml'
   workflow_dispatch:
     inputs:
       month:
@@ -19,7 +23,7 @@ jobs:
           python-version: '3.12'
       - name: Schöne eigenständige HTML-Webseite aus vorhandenen Monatsdaten erstellen
         env:
-          MONTH: ${{ inputs.month }}
+          MONTH: ${{ inputs.month || '2026-10' }}
         run: |
           python - <<'PY'
           import os, pathlib, re, sys
@@ -34,6 +38,6 @@ jobs:
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: Literaturbericht-${{ inputs.month }}-Webseite
+          name: Literaturbericht-${{ inputs.month || '2026-10' }}-Webseite
           path: exports/*.html
           retention-days: 90
