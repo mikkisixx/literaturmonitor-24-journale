@@ -12,6 +12,7 @@ on:
       - '.github/workflows/einfacher-html-bericht.yml'
       - 'scripts/export_neuerscheinungen.py'
       - 'scripts/prepare_simple_report.py'
+      - 'tests/test_export_neuerscheinungen.py'
 permissions:
   contents: read
 jobs:
@@ -23,6 +24,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Regressionstests für HTML und Erhalt von Prüfdaten
+        run: python -m unittest discover -s tests -p 'test_export_neuerscheinungen.py' -v
       - name: Berichtsmonat prüfen
         env:
           MONTH: ${{ inputs.month || '2026-10' }}
