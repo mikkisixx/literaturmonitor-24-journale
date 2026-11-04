@@ -22,18 +22,18 @@ for doi,item in observed.items():
     if not online and published and "2026-01"<=published[:7]<=current:eligible.add(published[:7])
     for month in eligible:
         explicit=bool(online and online.startswith(month))
-        basis="crossref_online" if explicit else "crossref_published_unverified"
+        basis=("publisher_online" if item.get("publisher_online_verified") else "crossref_online") if explicit else "crossref_published_unverified"
         record={"doi":doi,"title":item.get("title",""),"journal":item.get("journal",""),
             "category":item.get("category",""),"authors":item.get("authors",[]),"online_date":online if explicit else None,
             "display_date":online if explicit else (published if published and published.startswith(month) else month+" (Filtertreffer)"),
-            "date_basis":basis,"url":"https://doi.org/"+doi}
+            "date_basis":basis,"publisher_date_source":item.get("publisher_date_source") if basis=="publisher_online" else None,"url":"https://doi.org/"+doi}
         months.setdefault(month,[]).append(record)
 index=[]
 for month,items in sorted(months.items()):
     items.sort(key=lambda x:(x["journal"],x["display_date"],x["title"]))
     report={"month":month,"classification":"Crossref online dates and unverified publication-month candidates; not publisher validated",
-        "count":len(items),"verified_online_count":sum(a["date_basis"]=="crossref_online" for a in items),
-        "candidate_count":sum(a["date_basis"]!="crossref_online" for a in items),"articles":items}
+        "count":len(items),"verified_online_count":sum(a["date_basis"] in ("crossref_online","publisher_online") for a in items),
+        "candidate_count":sum(a["date_basis"] not in ("crossref_online","publisher_online") for a in items),"articles":items}
     (out/(month+".json")).write_text(json.dumps(report,ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf-8")
     index.append({"month":month,"count":len(items)})
 (out/"index.json").write_text(json.dumps({"months":index,"warning":"Ungeprüfte Crossref-Kandidaten werden getrennt angezeigt. Der Filtertreffer allein bestätigt kein Online-First-Datum."},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
