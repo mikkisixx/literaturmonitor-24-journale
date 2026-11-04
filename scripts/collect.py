@@ -67,7 +67,7 @@ def main():
                         seen+=1
                         online=date_field(a,"published-online")
                         entry=old.get(doi,{})
-                        entry.update({"doi":doi,"title":(a.get("title") or [""])[0],"journal":name,"category":group,"online_date":online,"published_date":date_field(a,"published"),"print_date":date_field(a,"published-print"),"url":a.get("URL") or "https://doi.org/"+doi,"last_seen":today.isoformat()})
+                        entry.update({"doi":doi,"title":(a.get("title") or [""])[0],"journal":name,"category":group,"online_date":entry.get("online_date") if entry.get("publisher_online_verified") else (online or entry.get("online_date")),"published_date":date_field(a,"published"),"print_date":date_field(a,"published-print"),"url":a.get("URL") or "https://doi.org/"+doi,"last_seen":today.isoformat()})
                         entry.setdefault("first_seen",today.isoformat())
                         old[doi]=entry
                         if not online:candidates[doi]=name
