@@ -8,10 +8,7 @@ def prepare(month):
     data=ROOT/"data"
     back=json.loads((data/f"backfill-{month}.json").read_text())
     report=json.loads((data/"months"/f"{month}.json").read_text())
-    from sys import path
-    path.insert(0,str(ROOT/"scripts"))
-    import collect
-    expected=sum(map(len,collect.JOURNALS.values()))
+    expected=24
     coverage={"month":month,"journals_expected":expected,"journals_queried":back["checked"],
               "query_errors":len(back.get("errors",{})),
               "journals_independently_verified":0,"complete":False,
