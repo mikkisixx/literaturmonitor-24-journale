@@ -13,6 +13,7 @@ on:
       - 'scripts/export_neuerscheinungen.py'
       - 'scripts/prepare_simple_report.py'
       - 'scripts/augment_online_dates.py'
+      - 'scripts/recover_publisher_online_dates.py'
       - 'scripts/report_provenance.py'
       - 'scripts/audit_missing_journals.py'
       - 'scripts/backfill.py'
@@ -61,6 +62,10 @@ jobs:
         env:
           MONTH: ${{ inputs.month || '2026-10' }}
         run: python scripts/augment_online_dates.py --month "$MONTH"
+      - name: Fehlende Online-Erstveröffentlichungsdaten direkt bei Verlagen nachermitteln
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/recover_publisher_online_dates.py --month "$MONTH"
       - name: Monatsdaten mit zusätzlich bestätigten Datumsangaben neu zusammenstellen
         run: python scripts/build_months.py
       - name: Recherchegrenzen für diesen Lauf kennzeichnen
@@ -84,6 +89,12 @@ jobs:
         with:
           name: Quellenprotokoll-${{ inputs.month || '2026-10' }}
           path: data/online-audit/*-provenance.json
+          if-no-files-found: error
+      - name: Einzelbelege der Verlagsprüfung bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Verlagsdatumspruefung-${{ inputs.month || '2026-10' }}
+          path: data/publisher-candidate-checks/${{ inputs.month || '2026-10' }}.json
           if-no-files-found: error
       - name: Fehlende Zeitschriften als Prüfliste zum Download bereitstellen
         uses: actions/upload-artifact@v4
