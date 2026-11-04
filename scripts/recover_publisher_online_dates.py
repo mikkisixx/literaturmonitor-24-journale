@@ -58,7 +58,7 @@ def recover(month,workers=6):
     observed_path.write_text(json.dumps(observed,ensure_ascii=False,indent=2,sort_keys=True)+"\n")
     output=ROOT/"data/publisher-candidate-checks"/(month+".json")
     output.parent.mkdir(parents=True,exist_ok=True)
-    output.write_text(json.dumps({"month":month,"candidates_checked":len(candidates),
+    journal_statuses={}\n    for candidate in candidates:\n        journal=candidate.get("journal") or "Unbekannt"\n        status=results[candidate["doi"].lower()]["status"]\n        bucket=journal_statuses.setdefault(journal,{"candidates":0,"statuses":{}})\n        bucket["candidates"]+=1\n        bucket["statuses"][status]=bucket["statuses"].get(status,0)+1\n    output.write_text(json.dumps({"month":month,"candidates_checked":len(candidates),\n        "journal_statuses":journal_statuses,
         "publisher_dates_recovered":updated,"existing_date_conflicts":conflicts,"statuses":{k:sum(v["status"]==k for v in results.values()) for k in sorted({v["status"] for v in results.values()})},
         "records":results},ensure_ascii=False,indent=2)+"\n")
     print("Publisher candidate audit:",len(candidates),"checked;",updated,"dates recovered")
