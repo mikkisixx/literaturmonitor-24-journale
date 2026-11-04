@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from scripts import export_neuerscheinungen, prepare_simple_report
+from scripts import export_neuerscheinungen, prepare_simple_report, backfill
 
 class ReaderTests(unittest.TestCase):
     def setUp(self):
@@ -35,6 +35,11 @@ class ReaderTests(unittest.TestCase):
             self.assertNotIn(excluded,page)
         self.assertIn("2 Artikel mit ausgewiesenem Online-Veröffentlichungsdatum",page)
         self.assertIn("Publisher verified",page)
+    def test_publisher_verified_date_survives_crossref_backfill(self):
+        previous={"online_date":"2026-10-02","publisher_online_verified":True,"published_date":"2026-10-09"}
+        result=backfill.preserve_known_dates(previous,"2026-10-09","2026-10-09",None)
+        self.assertEqual(result["online_date"],"2026-10-02")
+        self.assertEqual(result["published_date"],"2026-10-09")
     def test_missing_journal_query_blocks_export(self):
         self.write("coverage",{"journals_expected":24,"journals_queried":23})
         with patch.object(export_neuerscheinungen,"ROOT",self.root):
