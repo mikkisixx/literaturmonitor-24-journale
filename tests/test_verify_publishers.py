@@ -14,6 +14,12 @@ class PublisherDateConflictTests(unittest.TestCase):
     def test_pubmed_conflict_cannot_be_overridden_by_matching_publisher(self):
         self.assertEqual(reconcile_status("publisher_date_match", "date_conflict"), "date_conflict")
 
+    def test_matching_pubmed_does_not_demote_publisher_provenance(self):
+        self.assertEqual(reconcile_status("publisher_date_match", "date_match"), "publisher_date_match")
+
+    def test_publisher_match_preserved_without_pubmed_record(self):
+        self.assertEqual(reconcile_status("publisher_date_match", "not_indexed"), "publisher_date_match")
+
     def test_pubmed_match_only_promotes_unverified_publisher(self):
         self.assertEqual(reconcile_status("needs_manual_review", "date_match"), "pubmed_date_match")
 
