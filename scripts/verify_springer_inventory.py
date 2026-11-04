@@ -38,7 +38,7 @@ def publisher_online_date(html, expected_doi):
     normalized = []
     for raw in dates:
         value = raw.strip()
-        if re.fullmatch(r"\\d{4}[-/]\\d{2}[-/]\\d{2}", value):
+        if re.fullmatch(r"\d{4}[-/]\d{2}[-/]\d{2}", value):
             try:
                 normalized.append(dt.date.fromisoformat(value.replace("/", "-")).isoformat())
             except ValueError:
