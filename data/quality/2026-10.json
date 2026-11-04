@@ -4,8 +4,8 @@
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
   "crossref_online_articles": 563,
-  "independently_corroborrated_online_dates": 476,
-  "online_dates_not_corroborrated": 87,
+  "independently_corroborrated_online_dates": 479,
+  "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
     "europe_pmc_electronic_month_match": 171,
@@ -276,22 +276,6 @@
       }
     },
     {
-      "doi": "10.1016/j.actbio.2026.10.064",
-      "journal": "Acta Biomaterialia",
-      "title": "AGE-RELATED BIOMECHANICAL AND STRUCTURAL REMODELING OF HUMAN MIDDLE CEREBRAL ARTERIES",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-30",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
-      "europe_pmc": {
-        "source": "MED",
-        "id": "42962843",
-        "electronic_publication_date": "2026-10-30",
-        "first_publication_date": "2026-10-30",
-        "electronic_date_month_match": true
-      }
-    },
-    {
       "doi": "10.1016/j.actbio.2026.10.015",
       "journal": "Acta Biomaterialia",
       "title": "Acid-degradable hollow calcium-manganese nanocarriers integrate calcium stress, redox catalysis, and antitumor immunity for lung cancer therapy",
@@ -336,6 +320,22 @@
         "id": "42860195",
         "electronic_publication_date": "2026-10-11",
         "first_publication_date": "2026-10-11",
+        "electronic_date_month_match": true
+      }
+    },
+    {
+      "doi": "10.1016/j.actbio.2026.10.064",
+      "journal": "Acta Biomaterialia",
+      "title": "Age-related biomechanical and structural remodeling of human middle cerebral arteries",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-30",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "europe_pmc": {
+        "source": "MED",
+        "id": "42962843",
+        "electronic_publication_date": "2026-10-30",
+        "first_publication_date": "2026-10-30",
         "electronic_date_month_match": true
       }
     },
