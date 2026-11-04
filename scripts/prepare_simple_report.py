@@ -15,8 +15,8 @@ def prepare(month):
               "missing_publisher_articles":[],"confirmed_missing_publisher_articles":0,
               "reason":"Crossref search is not exhaustive independent publisher verification."}
     quality={"month":month,"publication_ready":False,"release_status":"review_required",
-             "crossref_online_articles":report["verified_online_count"],
-             "candidate_count":report["candidate_count"]}
+             "crossref_online_articles":report.get("verified_online_count", sum(1 for a in report.get("articles", []) if a.get("date_basis") == "crossref_online")),
+             "candidate_count":report.get("candidate_count", len(report.get("articles", [])))}
     for folder,obj in (("coverage",coverage),("quality",quality)):
         target=data/folder/f"{month}.json"
         target.parent.mkdir(parents=True,exist_ok=True)
