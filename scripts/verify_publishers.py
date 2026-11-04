@@ -167,6 +167,8 @@ def reconcile_status(publisher_status,pubmed_status):
     """Never erase an explicit publisher/metadata date conflict."""
     if publisher_status=="date_conflict" or pubmed_status=="date_conflict":
         return "date_conflict"
+    if publisher_status=="publisher_date_match":
+        return "publisher_date_match"
     if pubmed_status=="date_match":
         return "pubmed_date_match"
     return publisher_status
