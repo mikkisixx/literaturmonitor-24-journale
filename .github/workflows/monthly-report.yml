@@ -15,6 +15,8 @@ on:
       - 'scripts/backfill.py'
       - 'scripts/discover_springer.py'
       - 'scripts/verify_springer_inventory.py'
+      - 'scripts/audit_publisher_inventory.py'
+      - 'tests/test_audit_publisher_inventory.py'
       - 'tests/test_verify_springer_inventory.py'
       - 'tests/test_discover_springer.py'
       - 'scripts/build_months.py'
@@ -67,6 +69,10 @@ jobs:
         run: python scripts/verify_springer_inventory.py --month "${{ steps.period.outputs.month }}"
       - name: Tests unabhängige Springer-Verlagsdatierung
         run: python -m unittest discover -s tests -p 'test_verify_springer_inventory.py' -v
+      - name: Unabhängige Verlagsabdeckung aller 24 Zeitschriften dokumentieren
+        run: python scripts/audit_publisher_inventory.py --month "${{ steps.period.outputs.month }}"
+      - name: Tests Verlagsabdeckung aller 24 Zeitschriften
+        run: python -m unittest discover -s tests -p 'test_audit_publisher_inventory.py' -v
       - name: Verlagsdaten artikelweise abgleichen
         run: python scripts/verify_publishers.py "$REPORT_MONTH"
         env:
