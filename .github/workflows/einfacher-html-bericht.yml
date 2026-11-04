@@ -1,44 +1,67 @@
-name: Einfacher HTML-Literaturbericht
+name: Neuerscheinungen – Monat auswählen und sammeln
 on:
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Gewünschter Monat (YYYY-MM), z. B. 2026-08'
+        required: true
+        default: '2026-10'
   push:
     branches: [main]
     paths:
       - '.github/workflows/einfacher-html-bericht.yml'
       - 'scripts/export_neuerscheinungen.py'
-  workflow_dispatch:
-    inputs:
-      month:
-        description: 'Berichtsmonat YYYY-MM (vorhandene Monatsdaten)'
-        required: true
-        default: '2026-10'
+      - 'scripts/prepare_simple_report.py'
 permissions:
   contents: read
 jobs:
-  html:
+  neuerscheinungen:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Schöne eigenständige HTML-Webseite aus vorhandenen Monatsdaten erstellen
+      - name: Berichtsmonat prüfen
         env:
           MONTH: ${{ inputs.month || '2026-10' }}
         run: |
           python - <<'PY'
-          import os, pathlib, re, sys
-          sys.path.insert(0, "scripts")
-          import export_neuerscheinungen
-          month=os.environ["MONTH"]
-          if not re.fullmatch(r"20[0-9]{2}-(0[1-9]|1[0-2])",month):
-              raise SystemExit("Ungültiger Berichtsmonat")
-          if not pathlib.Path(f"data/months/{month}.json").exists():
-              raise SystemExit(f"Für {month} fehlen Monatsdaten; zuerst die Monatsrecherche starten")
-          export_neuerscheinungen.export(month,pathlib.Path("exports"))
+          import os,re,datetime
+          m=os.environ["MONTH"]
+          if not re.fullmatch(r"20[0-9]{2}-(0[1-9]|1[0-2])",m):
+              raise SystemExit("Monat muss YYYY-MM sein")
+          if datetime.date.fromisoformat(m+"-01") > datetime.date.today().replace(day=1):
+              raise SystemExit("Zukünftiger Monat nicht erlaubt")
+          print("Sammle Artikel für",m)
           PY
-      - uses: actions/upload-artifact@v4
+      - name: Artikel der 24 Journale für ausgewählten Monat sammeln
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/backfill.py --month "$MONTH"
+      - name: Monatsartikel zusammenstellen
+        run: python scripts/build_months.py
+      - name: Recherchegrenzen für diesen Lauf kennzeichnen
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/prepare_simple_report.py "$MONTH"
+      - name: Neuerscheinungen-Webseite im vertrauten Layout erstellen
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/export_neuerscheinungen.py "$MONTH" --output exports
+      - name: Fertige HTML-Datei zum Download bereitstellen
+        uses: actions/upload-artifact@v4
         with:
-          name: Literaturbericht-${{ inputs.month || '2026-10' }}-Webseite
-          path: exports/*.html
+          name: Neuerscheinungen-${{ inputs.month || '2026-10' }}
+          path: exports/Neuerscheinungen_*.html
+          if-no-files-found: error
           retention-days: 90
+      - name: Recherche-Diagnose bei Fehlern
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Recherchefehler-${{ inputs.month || '2026-10' }}
+          path: |
+            data/backfill-${{ inputs.month || '2026-10' }}.json
+          if-no-files-found: ignore
