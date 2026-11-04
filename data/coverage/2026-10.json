@@ -28,6 +28,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "sage",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -40,6 +44,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -52,6 +60,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -64,6 +76,10 @@
       "error": null,
       "title_fallback_truncated": true,
       "publisher_coverage_verified": false,
+      "publisher_platform": "american_journal_of_dentistry",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -76,6 +92,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "quintessence_publishing",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -88,6 +108,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -100,6 +124,10 @@
       "error": null,
       "title_fallback_truncated": true,
       "publisher_coverage_verified": false,
+      "publisher_platform": "quintessence_publishing",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -112,6 +140,10 @@
       "error": null,
       "title_fallback_truncated": true,
       "publisher_coverage_verified": false,
+      "publisher_platform": "quintessence_publishing",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -124,6 +156,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "operative_dentistry",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -136,6 +172,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "springer_link",
+      "publisher_listing_status": "unparseable_or_empty_listing",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -148,6 +188,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -160,6 +204,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -172,6 +220,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -184,6 +236,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -196,6 +252,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -208,6 +268,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -220,6 +284,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "bmc_springer_nature",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -232,6 +300,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -244,6 +316,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "springer_link",
+      "publisher_listing_status": "unparseable_or_empty_listing",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -256,6 +332,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -268,6 +348,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -280,6 +364,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -292,6 +380,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     },
     {
@@ -304,6 +396,10 @@
       "error": null,
       "title_fallback_truncated": false,
       "publisher_coverage_verified": false,
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_status": "not_implemented",
+      "publisher_candidate_count": 0,
+      "publisher_article_dates_verified": 0,
       "publisher_examples_missing": 0
     }
   ]
