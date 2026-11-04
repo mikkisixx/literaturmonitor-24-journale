@@ -12,6 +12,7 @@ on:
       - '.github/workflows/einfacher-html-bericht.yml'
       - 'scripts/export_neuerscheinungen.py'
       - 'scripts/prepare_simple_report.py'
+      - 'scripts/augment_online_dates.py'
       - 'tests/test_export_neuerscheinungen.py'
 permissions:
   contents: read
@@ -44,6 +45,20 @@ jobs:
           MONTH: ${{ inputs.month || '2026-10' }}
         run: python scripts/backfill.py --month "$MONTH"
       - name: Monatsartikel zusammenstellen
+        run: python scripts/build_months.py
+      - name: Springer-Verlagsseiten zusätzlich nach Artikeln durchsuchen
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/discover_springer.py --month "$MONTH"
+      - name: Online-Erstveröffentlichung direkt bei Springer prüfen
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/verify_springer_inventory.py --month "$MONTH"
+      - name: Alle 24 Zeitschriften gezielt nach Online-Veröffentlichungsdatum abfragen
+        env:
+          MONTH: ${{ inputs.month || '2026-10' }}
+        run: python scripts/augment_online_dates.py --month "$MONTH"
+      - name: Monatsdaten mit zusätzlich bestätigten Datumsangaben neu zusammenstellen
         run: python scripts/build_months.py
       - name: Recherchegrenzen für diesen Lauf kennzeichnen
         env:
