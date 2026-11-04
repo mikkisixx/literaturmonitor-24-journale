@@ -69,7 +69,7 @@ def journal_issns(primary):
 def preserve_known_dates(previous, online, published, printed):
     """Crossref result variants can omit dates; never erase a known date with None."""
     return {
-        "online_date": online or previous.get("online_date"),
+        "online_date": previous.get("online_date") if previous.get("publisher_online_verified") and previous.get("online_date") else (online or previous.get("online_date")),
         "published_date": published or previous.get("published_date"),
         "print_date": printed or previous.get("print_date"),
     }
