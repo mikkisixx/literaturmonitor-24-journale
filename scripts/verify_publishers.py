@@ -69,8 +69,11 @@ def get_publisher(doi):
     visible=" ".join(p.visible)
     host=urllib.parse.urlsplit(final).hostname or ""
     if host.endswith("springer.com") or host.endswith("nature.com"):
-        for m in re.finditer(r"(?:Published|Published online|First published online)\\s*:?\\s*([0-3]?[0-9]\\s+[A-Za-z]+\\s+[12][0-9]{3})",visible,re.I):
+        for m in re.finditer(r"(?:Published online|First published online)\\s*:?\\s*([0-3]?[0-9]\\s+[A-Za-z]+\\s+[12][0-9]{3})",visible,re.I):
             dates.append(("springer_visible_published",m.group(1)))
+    if host.endswith("sciencedirect.com") or host.endswith("elsevier.com"):
+        for m in re.finditer(r"Available\\s+online\\s*:?\\s*([0-3]?[0-9]\\s+[A-Za-z]+\\s+[12][0-9]{3})",visible,re.I):
+            dates.append(("elsevier_available_online",m.group(1)))
     return final,dates
 def normalize_date(value):
     """Accept ISO, publisher dd Month yyyy, and common slash dates without guessing."""
@@ -84,7 +87,7 @@ def normalize_date(value):
         except ValueError:pass
     return None
 
-ONLINE_KEYS={"citation_online_date","citation_date_online","article:published_time","springer_visible_published"}
+ONLINE_KEYS={"citation_online_date","citation_date_online","article:published_time","springer_visible_published","elsevier_available_online"}
 GENERIC_KEYS={"citation_publication_date","citation_date","dc.date.issued","dc.date","prism.publicationdate","datepublished","article:published","datePublished"}
 
 def classify(dates,expected):
