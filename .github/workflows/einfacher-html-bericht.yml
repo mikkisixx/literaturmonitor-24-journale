@@ -128,7 +128,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Neuerscheinungen-${{ inputs.month || '2026-10' }}
-          path: exports/Neuerscheinungen_*.html
+          path: exports/Neuerscheinungen_${{ inputs.month || '2026-10' }}.html
           if-no-files-found: error
           retention-days: 90
       - name: Recherche-Diagnose bei Fehlern
