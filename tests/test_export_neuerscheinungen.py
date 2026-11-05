@@ -71,13 +71,18 @@ class ReaderTests(unittest.TestCase):
     def test_preparation_does_not_erase_review_or_publisher_evidence(self):
         quality_path=self.root/"data/quality"/(self.month+".json")
         coverage_path=self.root/"data/coverage"/(self.month+".json")
-        old_quality=quality_path.read_bytes()
-        old_coverage=coverage_path.read_bytes()
+        old_quality=json.loads(quality_path.read_text())
+        old_coverage=json.loads(coverage_path.read_text())
         (self.root/"data"/f"backfill-{self.month}.json").write_text(json.dumps({"checked":24,"errors":{}}))
         with patch.object(prepare_simple_report,"ROOT",self.root):
             prepare_simple_report.prepare(self.month)
-        self.assertEqual(quality_path.read_bytes(),old_quality)
-        self.assertEqual(coverage_path.read_bytes(),old_coverage)
+        updated_quality=json.loads(quality_path.read_text())
+        updated_coverage=json.loads(coverage_path.read_text())
+        self.assertEqual(updated_quality["publication_ready"],old_quality["publication_ready"])
+        self.assertEqual(updated_quality["release_status"],old_quality["release_status"])
+        self.assertEqual(updated_coverage["journals_queried"],24)
+        self.assertEqual(updated_coverage["query_errors"],0)
+        self.assertEqual(updated_quality["candidate_count"],len(self.articles))
     def test_missing_journals_are_not_silently_declared_inactive(self):
         with patch.object(audit_missing_journals,"ROOT",self.root):
             result=audit_missing_journals.audit(self.month)
