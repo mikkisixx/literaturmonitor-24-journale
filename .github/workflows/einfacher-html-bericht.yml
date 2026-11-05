@@ -4,7 +4,7 @@ on:
     inputs:
       month:
         description: 'Gewünschter Monat (YYYY-MM), z. B. 2026-08'
-        required: true
+        required: false
         default: ''
   push:
     branches: [main]
