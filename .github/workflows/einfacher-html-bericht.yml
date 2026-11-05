@@ -114,7 +114,37 @@ jobs:
                   raise SystemExit(f"Unerwünschtes Element im Bericht: {forbidden}")
           if "<style" not in html.lower():
               raise SystemExit("Eigenständige HTML-Gestaltung fehlt")
-          print(f"HTML-Artefakt geprüft: {target} ({len(html)} Zeichen)")
+          import json, re
+          from datetime import date
+          from html.parser import HTMLParser
+          report=json.loads((Path("data/months") / (month+".json")).read_text(encoding="utf-8"))
+          expected={
+              str(a["doi"]).strip().lower()
+              for a in report["articles"]
+              if a.get("date_basis") in ("crossref_online","publisher_online")
+              and a.get("online_date")
+              and date.fromisoformat(a["online_date"]).strftime("%Y-%m")==month
+          }
+          class ReportParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.dois=[]
+                  self.article_count=0
+              def handle_starttag(self, tag, attrs):
+                  if tag=="article":
+                      self.article_count+=1
+              def handle_data(self, data):
+                  self.dois.extend(x.lower() for x in re.findall(r"DOI:\\s*(10\\.\\d{4,9}/[^\\s]+)",data))
+          parsed=ReportParser()
+          parsed.feed(html)
+          actual=set(parsed.dois)
+          if len(parsed.dois)!=len(actual) or actual!=expected or parsed.article_count!=len(expected):
+              raise SystemExit(
+                  f"HTML-Inhaltsprüfung fehlgeschlagen: erwartet {len(expected)} eindeutige DOI, "
+                  f"gefunden {parsed.article_count} Artikel / {len(parsed.dois)} DOI; "
+                  f"fehlend={sorted(expected-actual)[:5]}, unerwartet={sorted(actual-expected)[:5]}"
+              )
+          print(f"HTML-Artefakt einschließlich {len(expected)} DOI geprüft: {target} ({len(html)} Zeichen)")
           PY
       - name: Fehlende Zeitschriften und ungeklärte Artikel gesondert prüfen
         env:
