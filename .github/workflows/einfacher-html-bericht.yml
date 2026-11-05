@@ -134,7 +134,7 @@ jobs:
                   if tag=="article":
                       self.article_count+=1
               def handle_data(self, data):
-                  self.dois.extend(x.lower() for x in re.findall(r"DOI:\\s*(10\\.\\d{4,9}/[^\\s]+)",data))
+                  self.dois.extend(x.lower() for x in re.findall(r"DOI:\s*(10\.\d{4,9}/[^\s]+)",data))
           parsed=ReportParser()
           parsed.feed(html)
           actual=set(parsed.dois)
