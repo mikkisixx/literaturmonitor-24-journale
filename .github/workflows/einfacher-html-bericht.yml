@@ -18,6 +18,10 @@ on:
       - 'scripts/report_provenance.py'
       - 'scripts/audit_missing_journals.py'
       - 'scripts/backfill.py'
+      - 'scripts/validate_report.py'
+      - 'scripts/build_months.py'
+      - 'scripts/discover_springer.py'
+      - 'scripts/verify_springer_inventory.py'
       - 'tests/**'
 permissions:
   contents: read
@@ -83,6 +87,10 @@ jobs:
         env:
           MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/prepare_simple_report.py "$MONTH"
+      - name: Monatliche Daten, DOI-Eindeutigkeit und Quellenbelege streng validieren
+        env:
+          MONTH: ${{ env.REPORT_MONTH }}
+        run: python scripts/validate_report.py "$MONTH"
       - name: Neuerscheinungen-Webseite im vertrauten Layout erstellen
         env:
           MONTH: ${{ env.REPORT_MONTH }}
