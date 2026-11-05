@@ -18,7 +18,7 @@ on:
       - 'scripts/report_provenance.py'
       - 'scripts/audit_missing_journals.py'
       - 'scripts/backfill.py'
-      - 'tests/test_export_neuerscheinungen.py'
+      - 'tests/**'
 permissions:
   contents: read
 jobs:
@@ -30,8 +30,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Regressionstests für HTML und Erhalt von Prüfdaten
-        run: python -m unittest discover -s tests -p 'test_export_neuerscheinungen.py' -v
+      - name: Alle Regressionstests einschließlich monatlicher Qualitätsmetadaten
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Berichtsmonat prüfen
         env:
           MONTH: ${{ inputs.month || '2026-10' }}
