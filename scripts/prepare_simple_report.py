@@ -31,7 +31,7 @@ def prepare(month):
             if key in previous:
                 obj[key]=previous[key]
         previous.update(obj)
-        target.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+"\\n")
+        target.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+"\n")
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("month")
