@@ -31,10 +31,12 @@ class HtmlExportTests(unittest.TestCase):
         self.assertEqual(paths[0].suffix,".html")
         html=paths[0].read_text()
         self.assertIn("<!doctype html>",html)
-        self.assertIn("NICHT REDAKTIONELL FREIGEGEBEN",html)
-        self.assertIn("Unsafe &lt;script&gt;",html)
+        self.assertIn("Die unabhängige Vollständigkeit aller 24 Zeitschriften ist nicht nachgewiesen",html)
+        self.assertNotIn("Unsafe &lt;script&gt;",html)
         self.assertNotIn("Unsafe <script>",html)
-        self.assertIn("https://doi.org/10.1234/test",html)
+        self.assertNotIn("https://doi.org/10.1234/test",html)
+        self.assertNotIn("Rechercheentwurf",html)
+        self.assertNotIn("<input",html)
     def test_missing_journal_query_blocks_export(self):
         self.coverage["journals_queried"]=23
         self.save()
