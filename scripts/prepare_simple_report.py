@@ -22,8 +22,16 @@ def prepare(month):
         target.parent.mkdir(parents=True,exist_ok=True)
         # Never overwrite prior independent publisher evidence or editorial review. 
         # This helper supplies missing provisional metadata only. 
-        if not target.exists(): 
-            target.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\n")
+        previous=json.loads(target.read_text()) if target.exists() else {}
+        if not isinstance(previous,dict):
+            raise ValueError(f"Invalid metadata object: {target}")
+        preserve=("missing_publisher_articles","confirmed_missing_publisher_articles",
+                  "journals_independently_verified","complete") if folder=="coverage" else ("publication_ready","release_status")
+        for key in preserve:
+            if key in previous:
+                obj[key]=previous[key]
+        previous.update(obj)
+        target.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+"\\n")
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("month")
