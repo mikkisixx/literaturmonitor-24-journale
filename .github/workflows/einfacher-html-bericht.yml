@@ -5,7 +5,7 @@ on:
       month:
         description: 'Gewünschter Monat (YYYY-MM), z. B. 2026-08'
         required: true
-        default: '2026-10'
+        default: ''
   push:
     branches: [main]
     paths:
@@ -32,9 +32,19 @@ jobs:
           python-version: '3.12'
       - name: Alle Regressionstests einschließlich monatlicher Qualitätsmetadaten
         run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Berichtsmonat dynamisch bestimmen
+        env:
+          REQUESTED_MONTH: ${{ inputs.month }}
+        run: |
+          if [ -n "$REQUESTED_MONTH" ]; then
+            MONTH="$REQUESTED_MONTH"
+          else
+            MONTH="$(date -u -d "$(date -u +%Y-%m-01) -1 day" +%Y-%m)"
+          fi
+          echo "REPORT_MONTH=$MONTH" >> "$GITHUB_ENV"
       - name: Berichtsmonat prüfen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: |
           python - <<'PY'
           import os,re,datetime
@@ -47,39 +57,39 @@ jobs:
           PY
       - name: Artikel der 24 Journale für ausgewählten Monat sammeln
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/backfill.py --month "$MONTH"
       - name: Monatsartikel zusammenstellen
         run: python scripts/build_months.py
       - name: Springer-Verlagsseiten zusätzlich nach Artikeln durchsuchen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/discover_springer.py --month "$MONTH"
       - name: Online-Erstveröffentlichung direkt bei Springer prüfen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/verify_springer_inventory.py --month "$MONTH"
       - name: Alle 24 Zeitschriften gezielt nach Online-Veröffentlichungsdatum abfragen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/augment_online_dates.py --month "$MONTH"
       - name: Fehlende Online-Erstveröffentlichungsdaten direkt bei Verlagen nachermitteln
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/recover_publisher_online_dates.py --month "$MONTH"
       - name: Monatsdaten mit zusätzlich bestätigten Datumsangaben neu zusammenstellen
         run: python scripts/build_months.py
       - name: Recherchegrenzen für diesen Lauf kennzeichnen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/prepare_simple_report.py "$MONTH"
       - name: Neuerscheinungen-Webseite im vertrauten Layout erstellen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/export_neuerscheinungen.py "$MONTH" --output exports
       - name: Erzeugtes HTML-Artefakt auf Monat und unerwünschte Elemente prüfen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: |
           python - <<'PY'
           import os
@@ -100,42 +110,42 @@ jobs:
           PY
       - name: Fehlende Zeitschriften und ungeklärte Artikel gesondert prüfen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/audit_missing_journals.py --month "$MONTH"
       - name: Quellen- und Vollständigkeitsprotokoll für alle 24 Zeitschriften erstellen
         env:
-          MONTH: ${{ inputs.month || '2026-10' }}
+          MONTH: ${{ env.REPORT_MONTH }}
         run: python scripts/report_provenance.py --month "$MONTH"
       - name: Quellenprotokoll zum Download bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: Quellenprotokoll-${{ inputs.month || '2026-10' }}
-          path: data/online-audit/${{ inputs.month || '2026-10' }}-provenance.json
+          name: Quellenprotokoll-${{ env.REPORT_MONTH }}
+          path: data/online-audit/${{ env.REPORT_MONTH }}-provenance.json
           if-no-files-found: error
       - name: Einzelbelege der Verlagsprüfung bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: Verlagsdatumspruefung-${{ inputs.month || '2026-10' }}
-          path: data/publisher-candidate-checks/${{ inputs.month || '2026-10' }}.json
+          name: Verlagsdatumspruefung-${{ env.REPORT_MONTH }}
+          path: data/publisher-candidate-checks/${{ env.REPORT_MONTH }}.json
           if-no-files-found: error
       - name: Fehlende Zeitschriften als Prüfliste zum Download bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: Fehlende-Zeitschriften-${{ inputs.month || '2026-10' }}
-          path: data/missing-journals/${{ inputs.month || '2026-10' }}.json
+          name: Fehlende-Zeitschriften-${{ env.REPORT_MONTH }}
+          path: data/missing-journals/${{ env.REPORT_MONTH }}.json
           if-no-files-found: error
       - name: Fertige HTML-Datei zum Download bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: Neuerscheinungen-${{ inputs.month || '2026-10' }}
-          path: exports/Neuerscheinungen_${{ inputs.month || '2026-10' }}.html
+          name: Neuerscheinungen-${{ env.REPORT_MONTH }}
+          path: exports/Neuerscheinungen_${{ env.REPORT_MONTH }}.html
           if-no-files-found: error
           retention-days: 90
       - name: Recherche-Diagnose bei Fehlern
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: Recherchefehler-${{ inputs.month || '2026-10' }}
+          name: Recherchefehler-${{ env.REPORT_MONTH }}
           path: |
-            data/backfill-${{ inputs.month || '2026-10' }}.json
+            data/backfill-${{ env.REPORT_MONTH }}.json
           if-no-files-found: ignore
