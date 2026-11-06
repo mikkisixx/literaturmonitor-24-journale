@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 166,
+    "europe_pmc_electronic_month_match": 173,
     "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 97
+    "needs_manual_review": 90
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -33,7 +33,8 @@
       "total": 46,
       "statuses": {
         "europe_pmc_electronic_other_month": 33,
-        "needs_manual_review": 13
+        "europe_pmc_electronic_month_match": 5,
+        "needs_manual_review": 8
       }
     },
     "Journal of Dentistry": {
@@ -70,7 +71,8 @@
       "total": 40,
       "statuses": {
         "europe_pmc_electronic_other_month": 35,
-        "needs_manual_review": 5
+        "needs_manual_review": 3,
+        "europe_pmc_electronic_month_match": 2
       }
     },
     "Operative Dentistry": {
@@ -2825,24 +2827,32 @@
       "doi": "10.1016/j.jbiomech.2026.113639",
       "journal": "Journal of Biomechanics",
       "title": "Comparing Theia3D software versions for gait kinematics in typically developing children",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-23",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "42976751",
+        "electronic_publication_date": "2026-10-23",
+        "first_publication_date": "2026-10-23",
+        "electronic_date_month_match": true
       }
     },
     {
       "doi": "10.1016/j.jbiomech.2026.113643",
       "journal": "Journal of Biomechanics",
       "title": "Concurrent electrical and mechanical adaptations of forearm muscles across graded handgrip intensities: Evidence from EMG and myotonometry",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-31",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "42981778",
+        "electronic_publication_date": "2026-10-31",
+        "first_publication_date": "2026-10-31",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -2865,12 +2875,16 @@
       "doi": "10.1016/j.jbiomech.2026.113641",
       "journal": "Journal of Biomechanics",
       "title": "Diffuse adverse coronary hemodynamics associated with type 2 diabetes: A CCTA-CFD phenotyping study",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-30",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "42976749",
+        "electronic_publication_date": "2026-10-30",
+        "first_publication_date": "2026-10-30",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -2905,12 +2919,16 @@
       "doi": "10.1016/j.jbiomech.2026.113652",
       "journal": "Journal of Biomechanics",
       "title": "Effects of forkball pitching on forearm flexor-pronator muscle stiffness and grip strength",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-29",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "42976752",
+        "electronic_publication_date": "2026-10-29",
+        "first_publication_date": "2026-10-29",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -3053,12 +3071,16 @@
       "doi": "10.1016/j.jbiomech.2026.113648",
       "journal": "Journal of Biomechanics",
       "title": "Mechanisms of body rotation in the discus throw: contributions of ground reaction forces and the free moment to the angular momentum of the body–discus system in male throwers",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-28",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "42976753",
+        "electronic_publication_date": "2026-10-28",
+        "first_publication_date": "2026-10-28",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -7628,12 +7650,16 @@
       "doi": "10.1016/j.jmbbm.2026.107689",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Bioinspired viscoelastic-piezoelectric hydrogels reconstruct the mechano-electrical microenvironment to cellular responses associated with osteogenesis in vitro",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-17",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "42981995",
+        "electronic_publication_date": "2026-10-17",
+        "first_publication_date": "2026-10-17",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -7796,12 +7822,16 @@
       "doi": "10.1016/j.jmbbm.2026.107701",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Evaluating mechanical response from kinetic threats in surrogate tissue materials and bone-tissue boundaries",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-29",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "42976722",
+        "electronic_publication_date": "2026-10-29",
+        "first_publication_date": "2026-10-29",
+        "electronic_date_month_match": true
       }
     },
     {

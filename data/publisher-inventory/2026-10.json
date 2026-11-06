@@ -1,0 +1,33 @@
+{
+  "month": "2026-10",
+  "source": "Springer Nature journal article listings (independent of Crossref)",
+  "coverage_complete": false,
+  "journals": {
+    "Clinical Oral Investigations": {
+      "status": "unparseable_or_empty_listing",
+      "error": null,
+      "pages": [
+        {
+          "url": "https://link.springer.com/journal/784/articles?sort=PubDate&page=1",
+          "doi_count": 0
+        }
+      ],
+      "candidate_dois": [],
+      "online_first_month_verified": false,
+      "warning": "Listing may include other months; article-level first-online date must be checked."
+    },
+    "Journal of Materials Science: Materials in Medicine": {
+      "status": "unparseable_or_empty_listing",
+      "error": null,
+      "pages": [
+        {
+          "url": "https://link.springer.com/journal/10856/articles?sort=PubDate&page=1",
+          "doi_count": 0
+        }
+      ],
+      "candidate_dois": [],
+      "online_first_month_verified": false,
+      "warning": "Listing may include other months; article-level first-online date must be checked."
+    }
+  }
+}

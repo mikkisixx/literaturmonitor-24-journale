@@ -1,0 +1,8 @@
+{
+  "month": "2026-10",
+  "coverage_complete": false,
+  "articles_checked": 0,
+  "verified_month_missing_from_report": [],
+  "records": [],
+  "warning": "Only DOI candidates found on bounded publisher listings were checked; absence does not establish completeness."
+}
