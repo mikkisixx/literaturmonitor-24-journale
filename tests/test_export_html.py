@@ -40,6 +40,44 @@ class HtmlExportTests(unittest.TestCase):
         self.assertIn("Quellen- und Vollständigkeitsprüfung aller 24 Zeitschriften",html)
         self.assertIn("Journal &lt;A&gt;",html)
         self.assertEqual(html.count("<tr>"),25)
+    def test_only_verified_online_dates_in_selected_month_are_exported(self):
+        self.report={"month":self.month,"count":3,"verified_online_count":2,"candidate_count":1,
+                     "articles":[
+                         {"journal":"Journal <A>","title":"Included online","doi":"10.1234/included",
+                          "date_basis":"publisher_online","online_date":"2026-10-12"},
+                         {"journal":"Journal <A>","title":"Wrong month","doi":"10.1234/wrong-month",
+                          "date_basis":"crossref_online","online_date":"2026-09-30"},
+                         {"journal":"Journal <A>","title":"Unverified","doi":"10.1234/unverified",
+                          "date_basis":"crossref_published_unverified","online_date":"2026-10-15"}]}
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            export_html.export(self.month,self.root/"out")
+        html=(self.root/"out"/"Literaturbericht-2026-10.html").read_text()
+        self.assertIn("10.1234/included",html)
+        self.assertNotIn("10.1234/wrong-month",html)
+        self.assertNotIn("10.1234/unverified",html)
+
+    def test_invalid_online_date_blocks_export(self):
+        self.report={"month":self.month,"count":1,"verified_online_count":1,"candidate_count":0,
+                     "articles":[{"journal":"Journal <A>","title":"Invalid date",
+                                  "doi":"10.1234/invalid","date_basis":"publisher_online",
+                                  "online_date":"2026-10-99"}]}
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            with self.assertRaises(ValueError):
+                export_html.export(self.month,self.root/"out")
+
+    def test_duplicate_verified_doi_blocks_export(self):
+        self.report={"month":self.month,"count":2,"verified_online_count":2,"candidate_count":0,
+                     "articles":[{"journal":"Journal <A>","title":"First","doi":"10.1234/SAME",
+                                  "date_basis":"publisher_online","online_date":"2026-10-12"},
+                                 {"journal":"Journal <A>","title":"Duplicate","doi":"10.1234/same",
+                                  "date_basis":"crossref_online","online_date":"2026-10-13"}]}
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"Duplicate verified DOI"):
+                export_html.export(self.month,self.root/"out")
+
     def test_missing_journal_audit_blocks_export(self):
         self.coverage["journals"].pop()
         self.save()
