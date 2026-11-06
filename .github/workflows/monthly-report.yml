@@ -131,7 +131,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/quality/ data/coverage/
+          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/publisher-inventory/ data/quality/ data/coverage/
           if ! git diff --cached --quiet; then
             git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
             # Never silently resolve conflicts in scientific evidence or review files.
