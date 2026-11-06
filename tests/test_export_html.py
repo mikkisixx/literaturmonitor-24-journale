@@ -18,7 +18,7 @@ class HtmlExportTests(unittest.TestCase):
                      "articles":[{"journal":"Journal <A>","title":"Unsafe <script>alert(1)</script>","doi":"10.1234/test",
                                   "date_basis":"crossref_published_unverified","display_date":"2026-10"}]}
         self.quality={"publication_ready":False,"release_status":"review_required"}
-        self.coverage={"journals_expected":24,"journals_queried":24,"query_errors":0,"confirmed_missing_publisher_articles":0,"journals_independently_verified":0,"missing_publisher_articles":[]}
+        self.coverage={"journals_expected":24,"journals_queried":24,"query_errors":0,"confirmed_missing_publisher_articles":0,"journals_independently_verified":0,"missing_publisher_articles":[], "journals":[{"journal":"Journal <A>" if i == 0 else f"Journal {i+1}", "publisher_platform":"Example Publisher", "publisher_listing_status":"not_implemented", "publisher_coverage_verified":False} for i in range(24)]}
         self.save()
     def save(self):
         for folder,obj in (("months",self.report),("quality",self.quality),("coverage",self.coverage)):
@@ -37,6 +37,15 @@ class HtmlExportTests(unittest.TestCase):
         self.assertNotIn("https://doi.org/10.1234/test",html)
         self.assertNotIn("Rechercheentwurf",html)
         self.assertNotIn("<input",html)
+        self.assertIn("Quellen- und Vollständigkeitsprüfung aller 24 Zeitschriften",html)
+        self.assertIn("Journal &lt;A&gt;",html)
+        self.assertEqual(html.count("<tr>"),25)
+    def test_missing_journal_audit_blocks_export(self):
+        self.coverage["journals"].pop()
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"Expected 24 distinct journal audit records"):
+                export_html.export(self.month,self.root/"out")
     def test_missing_journal_query_blocks_export(self):
         self.coverage["journals_queried"]=23
         self.save()
