@@ -17,8 +17,8 @@ class HtmlExportTests(unittest.TestCase):
         self.report={"month":self.month,"count":1,"verified_online_count":0,"candidate_count":1,
                      "articles":[{"journal":"Journal <A>","title":"Unsafe <script>alert(1)</script>","doi":"10.1234/test",
                                   "date_basis":"crossref_published_unverified","display_date":"2026-10"}]}
-        self.quality={"publication_ready":False,"release_status":"review_required"}
-        self.coverage={"journals_expected":24,"journals_queried":24,"query_errors":0,"confirmed_missing_publisher_articles":0,"journals_independently_verified":0,"missing_publisher_articles":[], "journals":[{"journal":"Journal <A>" if i == 0 else f"Journal {i+1}", "publisher_platform":"Example Publisher", "publisher_listing_status":"not_implemented", "publisher_coverage_verified":False} for i in range(24)]}
+        self.quality={"month":self.month,"publication_ready":False,"release_status":"review_required"}
+        self.coverage={"month":self.month,"journals_expected":24,"journals_queried":24,"query_errors":0,"confirmed_missing_publisher_articles":0,"journals_independently_verified":0,"missing_publisher_articles":[], "journals":[{"journal":"Journal <A>" if i == 0 else f"Journal {i+1}", "publisher_platform":"Example Publisher", "publisher_listing_status":"not_implemented", "publisher_coverage_verified":False} for i in range(24)]}
         self.save()
     def save(self):
         for folder,obj in (("months",self.report),("quality",self.quality),("coverage",self.coverage)):
@@ -78,6 +78,21 @@ class HtmlExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,"Duplicate verified DOI"):
                 export_html.export(self.month,self.root/"out")
 
+    def test_mismatched_month_blocks_export(self):
+        self.coverage["month"]="2026-09"
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"months must match"):
+                export_html.export(self.month,self.root/"out")
+
+    def test_inconsistent_verified_count_blocks_export(self):
+        self.report["verified_online_count"]=1
+        self.report["candidate_count"]=0
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"Verified online article count"):
+                export_html.export(self.month,self.root/"out")
+
     def test_missing_journal_audit_blocks_export(self):
         self.coverage["journals"].pop()
         self.save()
@@ -97,7 +112,7 @@ class HtmlExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,"Publisher gap evidence inconsistent"):
                 export_html.export(self.month,self.root/"out")
     def test_explicit_approval_never_auto_exported(self):
-        self.quality={"publication_ready":True,"release_status":"approved"}
+        self.quality={"month":self.month,"publication_ready":True,"release_status":"approved"}
         self.save()
         with patch.object(export_html,"ROOT",self.root):
             with self.assertRaises(ValueError):
