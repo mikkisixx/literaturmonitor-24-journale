@@ -11,6 +11,8 @@ def export(month, output):
     report=json.loads((ROOT/"data/months"/(month+".json")).read_text())
     quality=json.loads((ROOT/"data/quality"/(month+".json")).read_text())
     coverage=json.loads((ROOT/"data/coverage"/(month+".json")).read_text())
+    if any(obj.get("month") != month for obj in (report, quality, coverage)):
+        raise ValueError("Report, quality and coverage months must match selected month")
     if report.get("count") != len(report.get("articles", [])):
         raise ValueError("Article count mismatch; refusing reader HTML export")
     if report.get("verified_online_count", 0) + report.get("candidate_count", 0) != report["count"]:
@@ -31,6 +33,8 @@ def export(month, output):
                 and str(a.get("online_date") or "").startswith(month + "-")]
     for a in eligible:
         dt.date.fromisoformat(a["online_date"])
+    if len(eligible) != report["verified_online_count"]:
+        raise ValueError("Verified online article count differs from exportable articles")
     if len({a["doi"].strip().lower() for a in eligible}) != len(eligible):
         raise ValueError("Duplicate verified DOI")
     journals={}
