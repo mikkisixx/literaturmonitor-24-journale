@@ -41,7 +41,7 @@ class HtmlExportTests(unittest.TestCase):
         self.assertIn("Journal &lt;A&gt;",html)
         self.assertEqual(html.count("<tr>"),25)
     def test_only_verified_online_dates_in_selected_month_are_exported(self):
-        self.report={"month":self.month,"count":3,"verified_online_count":2,"candidate_count":1,
+        self.report={"month":self.month,"count":3,"verified_online_count":1,"candidate_count":2,
                      "articles":[
                          {"journal":"Journal <A>","title":"Included online","doi":"10.1234/included",
                           "date_basis":"publisher_online","online_date":"2026-10-12"},
