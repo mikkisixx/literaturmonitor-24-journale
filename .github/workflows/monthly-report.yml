@@ -121,6 +121,60 @@ jobs:
         run: python scripts/export_html.py "$REPORT_MONTH" --output exports
         env:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
+      - name: HTML-Artefakt vor Upload unabhängig prüfen
+        env:
+          REPORT_MONTH: ${{ steps.period.outputs.month }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          month = os.environ["REPORT_MONTH"]
+          page = Path("exports") / f"Literaturbericht-{month}.html"
+          content = page.read_text(encoding="utf-8")
+          report = json.loads((Path("data/months") / f"{month}.json").read_text(encoding="utf-8"))
+          coverage = json.loads((Path("data/coverage") / f"{month}.json").read_text(encoding="utf-8"))
+
+          class Inspect(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.articles = 0
+                  self.doi_links = []
+                  self.tables = 0
+                  self.rows = 0
+                  self.in_tbody = False
+                  self.inputs = 0
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "article":
+                      self.articles += 1
+                  if tag == "a" and attrs.get("href", "").startswith("https://doi.org/"):
+                      self.doi_links.append(attrs["href"])
+                  if tag == "tbody":
+                      self.in_tbody = True
+                      self.tables += 1
+                  if tag == "tr" and self.in_tbody:
+                      self.rows += 1
+                  if tag == "input":
+                      self.inputs += 1
+              def handle_endtag(self, tag):
+                  if tag == "tbody":
+                      self.in_tbody = False
+
+          parser = Inspect()
+          parser.feed(content)
+          assert content.lstrip().lower().startswith("<!doctype html>"), "Not a standalone HTML document"
+          assert parser.articles == report["verified_online_count"], "Article count differs from verified dataset"
+          assert len(parser.doi_links) == parser.articles, "DOI links missing"
+          assert len(set(parser.doi_links)) == len(parser.doi_links), "Duplicate DOI links"
+          assert parser.tables == 1 and parser.rows == 24, "24 journal audit rows missing"
+          assert coverage["journals_expected"] == 24, "Unexpected journal coverage"
+          assert parser.inputs == 0, "Search/input field present"
+          assert "Rechercheentwurf" not in content, "Draft marker present"
+          print(f"Validated {page}: {parser.articles} DOI entries, {parser.rows} audit rows")
+          PY
       - name: Berichtspaket als GitHub-Artefakt bereitstellen
         uses: actions/upload-artifact@v4
         with:
