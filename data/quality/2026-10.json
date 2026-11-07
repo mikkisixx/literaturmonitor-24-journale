@@ -4,21 +4,21 @@
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
   "crossref_online_articles": 563,
-  "independently_corroborrated_online_dates": 479,
-  "online_dates_not_corroborrated": 84,
+  "independently_corroborrated_online_dates": 478,
+  "online_dates_not_corroborrated": 85,
   "candidate_count": 535,
   "candidate_status_counts": {
     "europe_pmc_electronic_month_match": 165,
-    "europe_pmc_electronic_other_month": 271,
-    "needs_manual_review": 99
+    "europe_pmc_electronic_other_month": 267,
+    "needs_manual_review": 103
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 64,
-        "europe_pmc_electronic_other_month": 56,
-        "needs_manual_review": 4
+        "europe_pmc_electronic_month_match": 65,
+        "europe_pmc_electronic_other_month": 57,
+        "needs_manual_review": 2
       }
     },
     "Dental Materials": {
@@ -39,17 +39,17 @@
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
-        "europe_pmc_electronic_other_month": 59,
+        "europe_pmc_electronic_other_month": 57,
         "europe_pmc_electronic_month_match": 28,
-        "needs_manual_review": 1
+        "needs_manual_review": 3
       }
     },
     "Journal of Endodontics": {
       "total": 38,
       "statuses": {
-        "europe_pmc_electronic_other_month": 16,
-        "europe_pmc_electronic_month_match": 16,
-        "needs_manual_review": 6
+        "needs_manual_review": 8,
+        "europe_pmc_electronic_other_month": 15,
+        "europe_pmc_electronic_month_match": 15
       }
     },
     "Journal of Prosthetic Dentistry": {
@@ -69,8 +69,8 @@
     "Journal of the Mechanical Behavior of Biomedical Materials": {
       "total": 40,
       "statuses": {
-        "europe_pmc_electronic_other_month": 35,
-        "needs_manual_review": 5
+        "europe_pmc_electronic_other_month": 33,
+        "needs_manual_review": 7
       }
     },
     "Operative Dentistry": {
@@ -597,26 +597,32 @@
       "doi": "10.1016/j.actbio.2026.08.044",
       "journal": "Acta Biomaterialia",
       "title": "Controlling viscoelastic behavior and microstructural organization in engineered living materials using synthetic adhesins and rheometry",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-08",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "HTTP Error 503: "
+        "source": "MED",
+        "id": "42710705",
+        "electronic_publication_date": "2026-09-08",
+        "first_publication_date": "2026-09-08",
+        "electronic_date_month_match": false
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.09.056",
       "journal": "Acta Biomaterialia",
       "title": "Cooperative poly(ethylene glycol) dehydration and ion-dependent electrostatic interactions drive thermally irreversible polyion complex flower micelle hydrogels",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-01",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "HTTP Error 503: "
+        "source": "MED",
+        "id": "42822745",
+        "electronic_publication_date": "2026-10-01",
+        "first_publication_date": "2026-10-01",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -3695,16 +3701,13 @@
       "doi": "10.1016/j.jdent.2026.106787",
       "journal": "Journal of Dentistry",
       "title": "Burnout in dentistry and its silent impact. A literature review",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-26",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42203098",
-        "electronic_publication_date": "2026-05-26",
-        "first_publication_date": "2026-05-26",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -4779,48 +4782,39 @@
       "doi": "10.1016/j.jdent.2026.106772",
       "journal": "Journal of Dentistry",
       "title": "Zirconia in dentistry: A 25-year bibliometric analysis of research trends, thematic evolution, and emerging frontiers",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-19",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42162783",
-        "electronic_publication_date": "2026-05-19",
-        "first_publication_date": "2026-05-19",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.joen.2026.06.007",
       "journal": "Journal of Endodontics",
       "title": "AI-based 3D Measurement of Root Canal Curvature from CBCT: Validation of an Automated Schneider Angle Analysis",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-06-26",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42362143",
-        "electronic_publication_date": "2026-06-26",
-        "first_publication_date": "2026-06-26",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.joen.2026.09.014",
       "journal": "Journal of Endodontics",
       "title": "Analytical methods for biomarker-based diagnosis of pulpitis in minimally invasive biological fluids: a systematic review",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-06",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42838192",
-        "electronic_publication_date": "2026-10-06",
-        "first_publication_date": "2026-10-06",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7882,16 +7876,13 @@
       "doi": "10.1016/j.jmbbm.2026.107541",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Impact of cold storage protocols on passive arterial wall mechanical behavior",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-13",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42456493",
-        "electronic_publication_date": "2026-07-13",
-        "first_publication_date": "2026-07-13",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7978,16 +7969,13 @@
       "doi": "10.1016/j.jmbbm.2026.107554",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Mechanical assessment of novel versus state of the art high-strength sutures and tapes, and cerclage wires – A comparative study",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42492097",
-        "electronic_publication_date": "2026-07-09",
-        "first_publication_date": "2026-07-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
