@@ -22,7 +22,7 @@ class ReaderTests(unittest.TestCase):
             {"journal":"Journal B","title":"Malformed date","doi":"10.1234/four","online_date":"2026-10-99","date_basis":"crossref_online"}]
         self.write("months",{"month":self.month,"count":len(self.articles),"articles":self.articles})
         self.write("quality",{"publication_ready":False,"release_status":"review_required"})
-        self.write("coverage",{"journals_expected":24,"journals_queried":24})
+        self.write("coverage",{"journals_expected":24,"journals_queried":24,"journals":[{"journal":f"Journal {i:02d}","crossref_query_count":0} for i in range(24)]})
     def write(self,folder,obj):
         (self.root/"data"/folder/(self.month+".json")).write_text(json.dumps(obj))
     def test_only_explicit_month_matching_online_dates(self):
@@ -46,7 +46,7 @@ class ReaderTests(unittest.TestCase):
             json.dumps({"month":alternative,"count":len(articles),"articles":articles}))
         (self.root/"data/quality"/(alternative+".json")).write_text(json.dumps({}))
         (self.root/"data/coverage"/(alternative+".json")).write_text(
-            json.dumps({"journals_expected":24,"journals_queried":24}))
+            json.dumps({"journals_expected":24,"journals_queried":24,"journals":[{"journal":f"Journal {i:02d}","crossref_query_count":0} for i in range(24)]}))
         with patch.object(export_neuerscheinungen,"ROOT",self.root):
             target=export_neuerscheinungen.export(alternative,self.root/"out")
         page=target.read_text(encoding="utf-8")
