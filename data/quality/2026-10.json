@@ -8,17 +8,17 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 166,
+    "europe_pmc_electronic_month_match": 165,
     "europe_pmc_electronic_other_month": 271,
-    "needs_manual_review": 98
+    "needs_manual_review": 99
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 65,
-        "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 2
+        "europe_pmc_electronic_month_match": 64,
+        "europe_pmc_electronic_other_month": 56,
+        "needs_manual_review": 4
       }
     },
     "Dental Materials": {
@@ -39,9 +39,9 @@
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
-        "europe_pmc_electronic_other_month": 58,
+        "europe_pmc_electronic_other_month": 59,
         "europe_pmc_electronic_month_match": 28,
-        "needs_manual_review": 2
+        "needs_manual_review": 1
       }
     },
     "Journal of Endodontics": {
@@ -597,32 +597,26 @@
       "doi": "10.1016/j.actbio.2026.08.044",
       "journal": "Acta Biomaterialia",
       "title": "Controlling viscoelastic behavior and microstructural organization in engineered living materials using synthetic adhesins and rheometry",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-09-08",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42710705",
-        "electronic_publication_date": "2026-09-08",
-        "first_publication_date": "2026-09-08",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "HTTP Error 503: "
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.09.056",
       "journal": "Acta Biomaterialia",
       "title": "Cooperative poly(ethylene glycol) dehydration and ion-dependent electrostatic interactions drive thermally irreversible polyion complex flower micelle hydrogels",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-01",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42822745",
-        "electronic_publication_date": "2026-10-01",
-        "first_publication_date": "2026-10-01",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "HTTP Error 503: "
       }
     },
     {
@@ -3573,13 +3567,16 @@
       "doi": "10.1016/j.jdent.2026.106800",
       "journal": "Journal of Dentistry",
       "title": "Activated irrigation systems and postoperative pain after single-visit root canal treatment: A network meta-analysis",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-28",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42214656",
+        "electronic_publication_date": "2026-05-28",
+        "first_publication_date": "2026-05-28",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -8142,8 +8139,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
