@@ -3,6 +3,7 @@
 import argparse
 import html
 import json
+from urllib.parse import urlsplit
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 def h(value):
@@ -63,6 +64,11 @@ def export(month, output):
     conflicts=coverage.get("publisher_date_conflicts", [])
     if coverage.get("publisher_date_conflict_count", 0) != len(conflicts):
         raise ValueError("Publisher date conflict evidence inconsistent")
+    for article in coverage["missing_publisher_articles"]:
+        source = article.get("source", "")
+        parsed = urlsplit(source)
+        if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+            raise ValueError("Unsafe publisher evidence URL; refusing HTML export")
     missing=''.join('<li>'+h(a["journal"])+' · '+h(a["publisher_online_date"])+' · <a href="'+h(a["source"])+'" target="_blank" rel="noopener noreferrer">'+h(a["doi"])+'</a></li>' for a in coverage["missing_publisher_articles"])
     page='''<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Literaturbericht '''+h(month)+'''</title><style>
 :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172436;background:#f4f7fa}*{box-sizing:border-box}body{margin:0}header{background:#152c47;color:white;padding:2.5rem max(1rem,calc((100vw - 1000px)/2))}main{max-width:1000px;margin:2rem auto;padding:0 1rem}.warning{background:#fff0d6;color:#653c00;border-left:5px solid #c77c00;padding:1.2rem;margin:1.5rem 0;font-weight:650}.stats{display:flex;flex-wrap:wrap;gap:.75rem}.stat{background:white;border:1px solid #d9e1e9;border-radius:10px;padding:1rem;min-width:170px;flex:1}.stat strong{display:block;font-size:1.7rem}.journal{background:white;border:1px solid #d9e1e9;border-radius:12px;margin:1.2rem 0;padding:1rem 1.4rem}.journal h2{border-bottom:1px solid #e1e6ed;padding-bottom:.8rem}.journal small{color:#60728a}.entry{padding:.8rem 0;border-bottom:1px solid #edf0f4}.entry:last-child{border:0}.entry h3{font-size:1rem;margin:0}.entry p{font-size:.9rem;color:#52657b;margin:.35rem 0}a{color:#1264a3;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;font-size:.86rem}th,td{padding:.6rem;text-align:left;border-bottom:1px solid #d9e1e9;vertical-align:top}thead{background:#eaf0f6}.table-wrap{overflow-x:auto}input{width:100%;font:inherit;padding:.8rem;border:1px solid #9aabc0;border-radius:8px}button{font:inherit;padding:.65rem 1rem;border:0;border-radius:8px;background:#205f96;color:white;cursor:pointer}@media print{body{background:white}header{padding:1rem;color:black;background:white}button,input{display:none}.journal{break-inside:avoid}}
