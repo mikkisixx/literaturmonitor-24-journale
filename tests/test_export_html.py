@@ -111,6 +111,23 @@ class HtmlExportTests(unittest.TestCase):
         with patch.object(export_html,"ROOT",self.root):
             with self.assertRaisesRegex(ValueError,"Publisher gap evidence inconsistent"):
                 export_html.export(self.month,self.root/"out")
+    def test_inconsistent_publisher_date_conflicts_block_export(self):
+        self.coverage["publisher_date_conflict_count"]=2
+        self.coverage["publisher_date_conflicts"]=[{"doi":"10.1234/conflict"}]
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"Publisher date conflict evidence inconsistent"):
+                export_html.export(self.month,self.root/"out")
+
+    def test_consistent_publisher_date_conflicts_are_disclosed(self):
+        self.coverage["publisher_date_conflict_count"]=1
+        self.coverage["publisher_date_conflicts"]=[{"doi":"10.1234/conflict"}]
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            export_html.export(self.month,self.root/"out")
+        page=(self.root/"out"/"Literaturbericht-2026-10.html").read_text()
+        self.assertIn("1 dokumentierte Datumsabweichungen",page)
+
     def test_explicit_approval_never_auto_exported(self):
         self.quality={"month":self.month,"publication_ready":True,"release_status":"approved"}
         self.save()
