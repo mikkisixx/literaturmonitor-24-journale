@@ -8,17 +8,17 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 163,
-    "europe_pmc_electronic_other_month": 269,
-    "needs_manual_review": 103
+    "europe_pmc_electronic_month_match": 166,
+    "europe_pmc_electronic_other_month": 272,
+    "needs_manual_review": 97
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 63,
+        "europe_pmc_electronic_month_match": 65,
         "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 4
+        "needs_manual_review": 2
       }
     },
     "Dental Materials": {
@@ -39,9 +39,9 @@
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
-        "europe_pmc_electronic_other_month": 58,
-        "europe_pmc_electronic_month_match": 27,
-        "needs_manual_review": 3
+        "europe_pmc_electronic_other_month": 59,
+        "europe_pmc_electronic_month_match": 28,
+        "needs_manual_review": 1
       }
     },
     "Journal of Endodontics": {
@@ -55,9 +55,9 @@
     "Journal of Prosthetic Dentistry": {
       "total": 93,
       "statuses": {
-        "europe_pmc_electronic_other_month": 52,
+        "europe_pmc_electronic_other_month": 54,
         "europe_pmc_electronic_month_match": 35,
-        "needs_manual_review": 6
+        "needs_manual_review": 4
       }
     },
     "Journal of the European Ceramic Society": {
@@ -405,13 +405,16 @@
       "doi": "10.1016/j.actbio.2026.10.016",
       "journal": "Acta Biomaterialia",
       "title": "Artificial induction of mitochondrial calcification as a trigger for cancer immunotherapy",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-09",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42854939",
+        "electronic_publication_date": "2026-10-09",
+        "first_publication_date": "2026-10-09",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -1610,13 +1613,16 @@
       "doi": "10.1016/j.actbio.2026.10.066",
       "journal": "Acta Biomaterialia",
       "title": "Recent advances in immunomodulatory biomaterial strategies for neural tissue healing",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-30",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42962840",
+        "electronic_publication_date": "2026-10-30",
+        "first_publication_date": "2026-10-30",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -3439,13 +3445,16 @@
       "doi": "10.1016/j.jdent.2026.106746",
       "journal": "Journal of Dentistry",
       "title": "AI framework for dental shade matching under variable lighting conditions",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-12",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42128088",
+        "electronic_publication_date": "2026-05-12",
+        "first_publication_date": "2026-05-12",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -4744,13 +4753,16 @@
       "doi": "10.1016/j.jdent.2026.107131",
       "journal": "Journal of Dentistry",
       "title": "Views and perceptions of oral health and associated care in dependent older adults: semi structured interviews with a range of stakeholders",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-27",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42946116",
+        "electronic_publication_date": "2026-10-27",
+        "first_publication_date": "2026-10-27",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4870,8 +4882,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
@@ -5857,13 +5868,16 @@
       "doi": "10.1016/j.prosdent.2026.06.010",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Dissociation of functional and static mechanical risk indicators for temporomandibular disorders: A cross-sectional study using DC/TMD",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-07-10",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42431823",
+        "electronic_publication_date": "2026-07-10",
+        "first_publication_date": "2026-07-10",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -5882,13 +5896,16 @@
       "doi": "10.1016/j.prosdent.2026.07.001",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Effect of adherence to scanning protocol on the accuracy of digital interocclusal records",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-07-16",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42457513",
+        "electronic_publication_date": "2026-07-16",
+        "first_publication_date": "2026-07-16",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -6753,13 +6770,13 @@
       "title": "Surgical extrusion with the Seif surgical extrusion protocol: Up to seven-year outcomes in 201 consecutive treatments",
       "source": "Europe PMC electronicPublicationDate",
       "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-01",
+      "online_date": "2026-10-02",
       "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
         "source": "MED",
         "id": "42823284",
-        "electronic_publication_date": "2026-10-01",
-        "first_publication_date": "2026-10-01",
+        "electronic_publication_date": "2026-10-02",
+        "first_publication_date": "2026-10-02",
         "electronic_date_month_match": true
       }
     },
@@ -7392,18 +7409,6 @@
       }
     },
     {
-      "doi": "10.1016/j.jeurceramsoc.2026.118992",
-      "journal": "Journal of the European Ceramic Society",
-      "title": "Synergistic Site‑specific substitution and Valence control for High-Capacity Ce Immobilization in Pyrochlore Glass-Ceramics",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
-      "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
-      }
-    },
-    {
       "doi": "10.1016/j.jeurceramsoc.2026.118436",
       "journal": "Journal of the European Ceramic Society",
       "title": "Synergistic effects of decarbonization and presintering on the thermal conductivity of Si₃N₄ ceramics in vat photopolymerization",
@@ -7419,6 +7424,18 @@
       "doi": "10.1016/j.jeurceramsoc.2026.118455",
       "journal": "Journal of the European Ceramic Society",
       "title": "Synergistic local strain for enhanced magnetocrystalline anisotropy via Bi3 + -Co2+ co-substitution in M-type strontium hexaferrite single crystals",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
+      "europe_pmc": {
+        "status": "not_indexed_by_exact_doi"
+      }
+    },
+    {
+      "doi": "10.1016/j.jeurceramsoc.2026.118992",
+      "journal": "Journal of the European Ceramic Society",
+      "title": "Synergistic site‑specific substitution and valence control for high-capacity Ce immobilization in pyrochlore glass-ceramics",
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
