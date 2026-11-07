@@ -38,6 +38,36 @@ def export(month, output):
             continue
         groups[item["journal"]].append(item)
     selected_count=sum(map(len,groups.values()))
+    # Source coverage is not equivalent to an exhaustive publisher inventory.
+    audit_rows=[]
+    for row in sorted(coverage["journals"], key=lambda x:x["journal"].casefold()):
+        publisher=row.get("publisher_platform") or "nicht erfasst"
+        listing=row.get("publisher_listing_status") or "nicht dokumentiert"
+        warnings=[]
+        if row.get("title_fallback_truncated"):
+            warnings.append("Titelsuche abgeschnitten")
+        if row.get("error"):
+            warnings.append("Abfragefehler")
+        if not row.get("publisher_coverage_verified"):
+            warnings.append("Verlagsvollständigkeit nicht bestätigt")
+        audit_rows.append(
+            f'<tr><th scope="row">{esc(row["journal"])}</th>'
+            f'<td>{esc(row.get("crossref_query_count",0))}</td>'
+            f'<td>Crossref; Verlagsplattform: {esc(publisher)} '
+            f'(Inventur: {esc(listing)})</td>'
+            f'<td>{esc("; ".join(warnings))}</td></tr>'
+        )
+    audit_html=(
+        '<section class="audit"><h2>Quellen und Recherchegrenzen je Zeitschrift</h2>'
+        '<p>Alle 24 Zeitschriften wurden über Crossref abgefragt. Die genannte Verlagsplattform '
+        'bezeichnet eine mögliche zusätzliche Quelle, nicht automatisch eine erfolgreich '
+        'durchgeführte Verlagsprüfung. Eine vollständige Erfassung sämtlicher '
+        'Online-Erstveröffentlichungen ist derzeit für keine Zeitschrift unabhängig nachgewiesen. '
+        'Null Treffer bedeuten daher nicht, dass keine Artikel erschienen sind.</p>'
+        '<div class="table-scroll"><table><thead><tr><th>Zeitschrift</th>'
+        '<th>Crossref-Treffer</th><th>Quellen / Inventur</th><th>Prüfstatus</th>'
+        '</tr></thead><tbody>'+''.join(audit_rows)+'</tbody></table></div></section>'
+    )
     nav=[]
     sections=[]
     for journal,items in sorted(groups.items()):
@@ -69,7 +99,7 @@ input{padding:9px;border:1px solid #cfd4dc;border-radius:8px;background:white;wi
 button{border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer;background:var(--accent);color:white}
 .note{color:var(--muted);font-size:.86rem;margin-top:12px}.summary{padding:20px 22px;margin-bottom:24px}
 nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}nav a{text-decoration:none;color:var(--accent);background:#f7f9fc;border:1px solid var(--line);padding:7px 10px;border-radius:8px;font-size:.9rem}nav span{color:var(--muted);margin-left:5px}
-section{margin:20px 0;overflow:hidden}.journal-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 24px;background:#fafafa;border-bottom:1px solid var(--line)}
+section{margin:20px 0;overflow:hidden}.audit{padding:22px 24px}.audit p{color:var(--muted);font-size:.92rem}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.84rem;text-align:left}th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}thead th{background:#f7f9fc}tbody th{font-weight:600}.journal-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 24px;background:#fafafa;border-bottom:1px solid var(--line)}
 h2{font-size:1.3rem;margin:0}.journal-head span{font-size:.85rem;color:var(--muted);white-space:nowrap}
 article{position:relative;padding:22px 24px;border-bottom:1px solid var(--line)}article:last-child{border-bottom:0}
 .title{display:block;color:#173f78;text-decoration:none;font-weight:700;font-size:1.08rem;line-height:1.38;padding-right:135px}.title:hover{text-decoration:underline}
@@ -84,7 +114,7 @@ article{position:relative;padding:22px 24px;border-bottom:1px solid var(--line)}
 <header><div class="wrap"><div class="eyebrow">Wissenschaftlicher Literaturmonitor · Online First</div><h1>{esc(heading)}</h1><div>Monatliche Neuerscheinungen aus 24 Fachzeitschriften</div></div></header>
 <main>
 <div class="summary"><div class="note">{selected_count} Artikel mit ausgewiesenem Online-Veröffentlichungsdatum im ausgewählten Monat · {len(groups)} Zeitschriften mit Treffern</div><nav id="nav">{"".join(nav)}</nav></div>
-<div id="sections">{"".join(sections)}</div></main>
+<div id="sections">{"".join(sections)}</div>{audit_html}</main>
 
 </body></html>'''
     if "Rechercheentwurf:" in page or "Artikel oder Zeitschrift suchen" in page:
