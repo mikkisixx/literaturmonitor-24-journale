@@ -4,21 +4,21 @@
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
   "crossref_online_articles": 563,
-  "independently_corroborrated_online_dates": 479,
-  "online_dates_not_corroborrated": 84,
+  "independently_corroborrated_online_dates": 478,
+  "online_dates_not_corroborrated": 85,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 166,
-    "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 97
+    "europe_pmc_electronic_month_match": 164,
+    "europe_pmc_electronic_other_month": 271,
+    "needs_manual_review": 100
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 65,
-        "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 2
+        "europe_pmc_electronic_month_match": 64,
+        "europe_pmc_electronic_other_month": 56,
+        "needs_manual_review": 4
       }
     },
     "Dental Materials": {
@@ -56,8 +56,8 @@
       "total": 93,
       "statuses": {
         "europe_pmc_electronic_other_month": 54,
-        "europe_pmc_electronic_month_match": 35,
-        "needs_manual_review": 4
+        "europe_pmc_electronic_month_match": 34,
+        "needs_manual_review": 5
       }
     },
     "Journal of the European Ceramic Society": {
@@ -1949,32 +1949,26 @@
       "doi": "10.1016/j.actbio.2026.09.051",
       "journal": "Acta Biomaterialia",
       "title": "Thermosensitive hydroxypropyl chitin-based hydrogel for trigeminal neuralgia: Rapid analgesia, myelin repair, and attenuation of gamma-band hyperactivity in the spinal trigeminal nucleus caudalis",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-01",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42822747",
-        "electronic_publication_date": "2026-10-01",
-        "first_publication_date": "2026-10-01",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.09.002",
       "journal": "Acta Biomaterialia",
       "title": "Transient calcium signaling reprograms YAP mechanosensitivity through actin remodeling",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-09-03",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42692235",
-        "electronic_publication_date": "2026-09-03",
-        "first_publication_date": "2026-09-03",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -4106,7 +4100,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -5564,16 +5559,13 @@
       "doi": "10.1016/j.prosdent.2026.09.011",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Association of pain intensity and pain extent as assessed by pain drawings with clinical and psychosocial factors in patients with temporomandibular disorders",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-24",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42926157",
-        "electronic_publication_date": "2026-10-24",
-        "first_publication_date": "2026-10-24",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
