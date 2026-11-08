@@ -12,6 +12,9 @@ on:
       - '.github/workflows/einfacher-html-bericht.yml'
       - 'scripts/export_neuerscheinungen.py'
       - 'scripts/prepare_simple_report.py'
+      - 'scripts/audit_candidates.py'
+      - 'scripts/audit_coverage.py'
+      - 'scripts/audit_publisher_inventory.py'
       - 'scripts/augment_online_dates.py'
       - 'scripts/recover_publisher_online_dates.py'
       - 'scripts/verify_publishers.py'
@@ -83,10 +86,22 @@ jobs:
         run: python scripts/recover_publisher_online_dates.py --month "$MONTH"
       - name: Monatsdaten mit zusätzlich bestätigten Datumsangaben neu zusammenstellen
         run: python scripts/build_months.py
-      - name: Recherchegrenzen für diesen Lauf kennzeichnen
+      - name: Unabhängige Verlagsabdeckung dokumentieren
         env:
           MONTH: ${{ env.REPORT_MONTH }}
-        run: python scripts/prepare_simple_report.py "$MONTH"
+        run: python scripts/audit_publisher_inventory.py --month "$MONTH"
+      - name: Verlagsdatumsbelege abgleichen
+        env:
+          MONTH: ${{ env.REPORT_MONTH }}
+        run: python scripts/verify_publishers.py "$MONTH"
+      - name: Unbestätigte Kandidaten und Berichtsqualität prüfen
+        env:
+          MONTH: ${{ env.REPORT_MONTH }}
+        run: python scripts/audit_candidates.py "$MONTH"
+      - name: Vollständigkeitsgrenzen aller 24 Journale dokumentieren
+        env:
+          MONTH: ${{ env.REPORT_MONTH }}
+        run: python scripts/audit_coverage.py "$MONTH"
       - name: Monatliche Daten, DOI-Eindeutigkeit und Quellenbelege streng validieren
         env:
           MONTH: ${{ env.REPORT_MONTH }}
