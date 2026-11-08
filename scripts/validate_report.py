@@ -85,6 +85,9 @@ def validate(month, data=DATA):
     for item in findings:
         doi=item["doi"].strip().lower()
         assert item["journal"] in known_journals, "Unknown publisher evidence journal"
+        assert isinstance(item.get("publisher_online_date"), str), "Publisher evidence missing online date"
+        assert dt.date.fromisoformat(item["publisher_online_date"]).strftime("%Y-%m")==month, "Publisher evidence outside report month"
+        assert isinstance(item.get("source"), str) and item["source"].startswith("https://"), "Publisher evidence missing HTTPS source"
         assert doi not in article_journals or item["journal"]==article_journals[doi], (
             f"Publisher evidence journal mismatch for {doi}")
     expected_missing=[item for item in findings if item["doi"].strip().lower() not in dois]
