@@ -178,7 +178,12 @@ def reconcile_status(publisher_status,pubmed_status):
 
 def main():
     report=json.loads(SOURCE.read_text(encoding="utf-8"))
-    existing=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    previous=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    # Never carry evidence for removed or re-dated articles into a new month audit.
+    eligible={a["doi"]:a.get("online_date") for a in report["articles"]
+              if a.get("date_basis")=="crossref_online" and a.get("online_date")}
+    existing={doi:record for doi,record in previous.items()
+              if doi in eligible and record.get("crossref_online_date")==eligible[doi]}
     processed=0
     for a in report["articles"]:
         if a.get("date_basis")!="crossref_online":continue
