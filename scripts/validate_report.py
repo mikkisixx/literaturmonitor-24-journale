@@ -43,6 +43,9 @@ def validate(month, data=DATA):
     assert set(statuses)=={r["status"] for r in reviews}, "Candidate status categories inconsistent"
     assert all(sum(r["status"]==status for r in reviews)==count for status,count in statuses.items()), "Candidate status counts differ from records"
     assert len({r["doi"].strip().lower() for r in reviews})==len(reviews), "Duplicate candidate reviews"
+    candidate_dois={str(a["doi"]).strip().lower() for a in candidates}
+    reviewed_dois={str(r["doi"]).strip().lower() for r in reviews}
+    assert reviewed_dois==candidate_dois, "Candidate review DOIs do not match candidate article DOIs"
     assert quality["crossref_online_articles"]==report["verified_online_count"], "Crossref online count mismatch"
     assert quality["independently_corroborrated_online_dates"]+quality["online_dates_not_corroborrated"]==quality["crossref_online_articles"], "Online corroboration counts inconsistent"
     assert coverage["month"]==quality["month"]==report["month"]==month, "Month mismatch"
