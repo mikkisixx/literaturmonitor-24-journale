@@ -20,6 +20,22 @@ def validate(month, data=DATA):
     assert all(dois) and len(dois)==len(set(dois)), "Missing or duplicate article DOI"
     assert report["count"]==len(articles), "Report count differs from article count"
     assert report["verified_online_count"]+report["candidate_count"]==len(articles), "Online/candidate totals inconsistent"
+    # Validate each article, not only the aggregate verified/candidate totals.
+    eligible_bases={"crossref_online","publisher_online"}
+    eligible=[]
+    candidates=[]
+    for article in articles:
+        basis=article.get("date_basis")
+        online=article.get("online_date")
+        if basis in eligible_bases:
+            assert isinstance(online,str), "Verified article has no online date"
+            parsed=dt.date.fromisoformat(online)
+            assert parsed.strftime("%Y-%m")==month, "Verified article outside selected month"
+            eligible.append(article)
+        else:
+            candidates.append(article)
+    assert len(eligible)==report["verified_online_count"], "Verified article classification mismatch"
+    assert len(candidates)==report["candidate_count"], "Candidate classification mismatch"
     reviews=quality["candidate_reviews"]
     statuses=quality["candidate_status_counts"]
     assert quality["candidate_count"]==len(reviews)==report["candidate_count"], "Candidate review count mismatch"
