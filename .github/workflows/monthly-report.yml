@@ -28,6 +28,7 @@ on:
       - 'scripts/export_html.py'
       - 'tests/test_backfill.py'
       - 'tests/test_validate_report.py'
+      - 'tests/test_verify_publishers.py'
       - 'tests/test_export_html.py'
       - 'data/publisher-evidence/**'
 permissions:
@@ -87,6 +88,8 @@ jobs:
         run: python scripts/verify_publishers.py "$REPORT_MONTH"
         env:
           REPORT_MONTH: ${{ steps.period.outputs.month }}
+      - name: Regressionstest Verlagsdaten und Monatsabgrenzung
+        run: python -m unittest discover -s tests -p 'test_verify_publishers.py' -v
       - name: Zurückgestellte Kandidaten und Berichtsqualität prüfen
         run: python scripts/audit_candidates.py "$REPORT_MONTH"
         env:
