@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
-from verify_publishers import classify, reconcile_status, get_publisher, normalize_date
+from verify_publishers import classify, reconcile_status, get_publisher, normalize_date, retain_current_evidence
 
 class PublisherDateConflictTests(unittest.TestCase):
     def test_publisher_conflict_cannot_be_overridden_by_matching_pubmed(self):
@@ -51,6 +51,22 @@ class PublisherVisibleOnlineDateTests(unittest.TestCase):
         dates = self._extract("www.sciencedirect.com", "Available online 3 November 2026")
         self.assertIn(("elsevier_available_online", "3 November 2026"), dates)
         self.assertEqual(normalize_date(dates[0][1]), "2026-11-03")
+
+class PublisherEvidenceScopeTests(unittest.TestCase):
+    def test_removed_and_redated_dois_are_excluded(self):
+        old = {
+            "10.1/kept": {"crossref_online_date": "2026-10-01", "status": "publisher_date_match"},
+            "10.1/removed": {"crossref_online_date": "2026-10-01"},
+            "10.1/redated": {"crossref_online_date": "2026-09-30"},
+            "10.1/print": {"crossref_online_date": "2026-10-01"},
+        }
+        articles = [
+            {"doi": "10.1/kept", "online_date": "2026-10-01", "date_basis": "crossref_online"},
+            {"doi": "10.1/redated", "online_date": "2026-10-02", "date_basis": "crossref_online"},
+            {"doi": "10.1/print", "online_date": "2026-10-01", "date_basis": "print"},
+        ]
+        self.assertEqual(list(retain_current_evidence(old, articles)), ["10.1/kept"])
+
 
 if __name__ == "__main__":
     unittest.main()
