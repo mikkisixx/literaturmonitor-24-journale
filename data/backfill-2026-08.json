@@ -1,0 +1,39 @@
+{
+  "month": "2026-08",
+  "source": "Crossref journal-article queries using publication/online-publication month filters",
+  "checked": 24,
+  "errors": {},
+  "counts": {
+    "Journal of Dental Research": 14,
+    "Dental Materials": 36,
+    "Journal of Dentistry": 23,
+    "American Journal of Dentistry": 0,
+    "Journal of Adhesive Dentistry": 0,
+    "Journal of Prosthetic Dentistry": 124,
+    "International Journal of Prosthodontics": 0,
+    "Quintessence International": 0,
+    "Operative Dentistry": 0,
+    "Clinical Oral Investigations": 55,
+    "European Journal of Oral Sciences": 8,
+    "The Journal of Esthetic and Restorative Dentistry": 16,
+    "International Endodontic Journal": 21,
+    "Journal of Endodontics": 56,
+    "Dental Traumatology": 13,
+    "International Journal of Paediatric Dentistry": 11,
+    "BMC Oral Health": 296,
+    "Journal of the Mechanical Behavior of Biomedical Materials": 27,
+    "Journal of Materials Science: Materials in Medicine": 5,
+    "Acta Biomaterialia": 73,
+    "Journal of Oral Rehabilitation": 16,
+    "Journal of the American Ceramic Society": 124,
+    "Journal of the European Ceramic Society": 91,
+    "Journal of Biomechanics": 86
+  },
+  "title_fallback_truncated": [
+    "American Journal of Dentistry",
+    "International Journal of Prosthodontics",
+    "Quintessence International"
+  ],
+  "distinct_doi_in_register": 75562,
+  "warning": "Published date alone is NOT confirmed online-first; publication dates can be updated."
+}
