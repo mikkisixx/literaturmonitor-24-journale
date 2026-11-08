@@ -1,0 +1,22 @@
+name: Einmaliger End-to-End-Nachweis August 2026
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-alternative-month.yml'
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+jobs:
+  dispatch-alternative-month:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Beide produktiven Monatsgeneratoren für August 2026 auslösen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh workflow run monthly-report.yml --ref main -f month=2026-08
+          gh workflow run einfacher-html-bericht.yml --ref main -f month=2026-08
+          echo "August 2026 wurde für beide produktiven Workflows angefordert."
