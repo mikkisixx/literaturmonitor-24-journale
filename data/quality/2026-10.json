@@ -8,25 +8,25 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 154,
-    "europe_pmc_electronic_other_month": 267,
-    "needs_manual_review": 114
+    "europe_pmc_electronic_month_match": 166,
+    "europe_pmc_electronic_other_month": 272,
+    "needs_manual_review": 97
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 64,
+        "europe_pmc_electronic_month_match": 65,
         "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 3
+        "needs_manual_review": 2
       }
     },
     "Dental Materials": {
       "total": 41,
       "statuses": {
-        "europe_pmc_electronic_other_month": 17,
-        "europe_pmc_electronic_month_match": 18,
-        "needs_manual_review": 6
+        "europe_pmc_electronic_other_month": 18,
+        "europe_pmc_electronic_month_match": 22,
+        "needs_manual_review": 1
       }
     },
     "Journal of Biomechanics": {
@@ -39,25 +39,25 @@
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
-        "europe_pmc_electronic_other_month": 55,
-        "europe_pmc_electronic_month_match": 26,
-        "needs_manual_review": 7
+        "europe_pmc_electronic_other_month": 59,
+        "europe_pmc_electronic_month_match": 28,
+        "needs_manual_review": 1
       }
     },
     "Journal of Endodontics": {
       "total": 38,
       "statuses": {
         "europe_pmc_electronic_other_month": 16,
-        "europe_pmc_electronic_month_match": 13,
-        "needs_manual_review": 9
+        "europe_pmc_electronic_month_match": 16,
+        "needs_manual_review": 6
       }
     },
     "Journal of Prosthetic Dentistry": {
       "total": 93,
       "statuses": {
         "europe_pmc_electronic_other_month": 54,
-        "europe_pmc_electronic_month_match": 33,
-        "needs_manual_review": 6
+        "europe_pmc_electronic_month_match": 35,
+        "needs_manual_review": 4
       }
     },
     "Journal of the European Ceramic Society": {
@@ -277,13 +277,16 @@
       "doi": "10.1016/j.actbio.2026.10.015",
       "journal": "Acta Biomaterialia",
       "title": "Acid-degradable hollow calcium-manganese nanocarriers integrate calcium stress, redox catalysis, and antitumor immunity for lung cancer therapy",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-09",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42854937",
+        "electronic_publication_date": "2026-10-09",
+        "first_publication_date": "2026-10-09",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -2246,13 +2249,16 @@
       "doi": "10.1016/j.dental.2026.10.013",
       "journal": "Dental Materials",
       "title": "Effect of NMP-assisted surface conditioning on the bonding performance and durability of PEEK to acrylic resin",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-28",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42951776",
+        "electronic_publication_date": "2026-10-28",
+        "first_publication_date": "2026-10-28",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -2339,13 +2345,16 @@
       "doi": "10.1016/j.dental.2026.04.027",
       "journal": "Dental Materials",
       "title": "Fatigue resistance of human carious dentin treated with ammonia- and water-based silver fluoride",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-05",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42091405",
+        "electronic_publication_date": "2026-05-05",
+        "first_publication_date": "2026-05-05",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -2448,13 +2457,16 @@
       "doi": "10.1016/j.dental.2026.09.009",
       "journal": "Dental Materials",
       "title": "Mechanistic insights into oxalate-based desensitizers: Calcium oxalate deposition and reduced calcium release under acid challenge",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-08",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42850098",
+        "electronic_publication_date": "2026-10-08",
+        "first_publication_date": "2026-10-08",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -2541,26 +2553,32 @@
       "doi": "10.1016/j.dental.2026.09.016",
       "journal": "Dental Materials",
       "title": "Preparation, properties and effects on bond strength of a glass coating method for ultra-translucent zirconia (5Y-PSZ)",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-23",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42919726",
+        "electronic_publication_date": "2026-10-23",
+        "first_publication_date": "2026-10-23",
+        "electronic_date_month_match": true
       }
     },
     {
       "doi": "10.1016/j.dental.2026.09.019",
       "journal": "Dental Materials",
       "title": "Reinforcement of glass ionomer cement using ultralong hydroxyapatite nanowires",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-06",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42838825",
+        "electronic_publication_date": "2026-10-06",
+        "first_publication_date": "2026-10-06",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4019,13 +4037,16 @@
       "doi": "10.1016/j.jdent.2026.106737",
       "journal": "Journal of Dentistry",
       "title": "Digital fit and positional trueness analysis of a crown seated on additively manufactured casts fabricated using different manufacturing trinomials and build orientations",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-06",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42103062",
+        "electronic_publication_date": "2026-05-06",
+        "first_publication_date": "2026-05-06",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -4156,13 +4177,16 @@
       "doi": "10.1016/j.jdent.2026.106804",
       "journal": "Journal of Dentistry",
       "title": "External validation of a mHealth tool for detecting gingival inflammation in community-dwelling older adults",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-30",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42217746",
+        "electronic_publication_date": "2026-05-30",
+        "first_publication_date": "2026-05-30",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -4217,13 +4241,16 @@
       "doi": "10.1016/j.jdent.2026.107107",
       "journal": "Journal of Dentistry",
       "title": "From static digital articulation to the dynamic (4D) digital virtual patient: An umbrella review of digital occlusal analysis and jaw-motion tracking",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-13",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42869410",
+        "electronic_publication_date": "2026-10-13",
+        "first_publication_date": "2026-10-13",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4246,13 +4273,16 @@
       "doi": "10.1016/j.jdent.2026.106840",
       "journal": "Journal of Dentistry",
       "title": "In vitro evaluation of antibacterial activity and biocompatibility of silver-doped fluorapatite glass-ceramic/zirconia gradient composites",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-17",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42309378",
+        "electronic_publication_date": "2026-06-17",
+        "first_publication_date": "2026-06-17",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -4371,13 +4401,16 @@
       "doi": "10.1016/j.jdent.2026.107106",
       "journal": "Journal of Dentistry",
       "title": "OCT for evaluation of a universal adhesive in a three-year clinical trial",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-15",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42880480",
+        "electronic_publication_date": "2026-10-15",
+        "first_publication_date": "2026-10-15",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4592,13 +4625,16 @@
       "doi": "10.1016/j.jdent.2026.106846",
       "journal": "Journal of Dentistry",
       "title": "Staging-dependent dysbiosis of plaque microbiota in early childhood caries",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-19",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42320590",
+        "electronic_publication_date": "2026-06-19",
+        "first_publication_date": "2026-06-19",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -4922,8 +4958,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
@@ -4946,13 +4981,16 @@
       "doi": "10.1016/j.joen.2026.09.015",
       "journal": "Journal of Endodontics",
       "title": "Effect of a Calcium Silicate-specific Solvent on Filling Material Removal during Retreatment and Subsequent Multisonic Irrigation: A Micro-CT Study",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-06",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42833551",
+        "electronic_publication_date": "2026-10-06",
+        "first_publication_date": "2026-10-06",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -5023,13 +5061,16 @@
       "doi": "10.1016/j.joen.2026.06.013",
       "journal": "Journal of Endodontics",
       "title": "Ferroptosis in Endodontic Pathobiology: Emerging Evidence, Mechanistic Rationale, and Translational Uncertainties",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-13",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42869377",
+        "electronic_publication_date": "2026-10-13",
+        "first_publication_date": "2026-10-13",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -5083,10 +5124,12 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Europe PMC indexed, but no exact electronic publication date",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42778267",
+        "electronic_publication_date": null,
+        "first_publication_date": "2026-10-01"
       }
     },
     {
@@ -5125,13 +5168,16 @@
       "doi": "10.1016/j.joen.2026.10.007",
       "journal": "Journal of Endodontics",
       "title": "Machine Learning Models for Predicting Periapical Healing after Primary Nonsurgical Endodontic Treatment",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-27",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42946040",
+        "electronic_publication_date": "2026-10-27",
+        "first_publication_date": "2026-10-27",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -6506,13 +6552,16 @@
       "doi": "10.1016/j.prosdent.2026.09.024",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Nanoparticle jetting 3D printing of zirconia: Optimized intaglio microstructures for achieving superior bonding performance and fracture resistance in fixed prosthodontics",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-19",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42897019",
+        "electronic_publication_date": "2026-10-19",
+        "first_publication_date": "2026-10-19",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -6563,13 +6612,16 @@
       "doi": "10.1016/j.prosdent.2026.09.034",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Preservation of the preexisting occlusal plane and vertical dimension in subtotal maxillectomy reconstruction using Jaw-in-a-Day protocol",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-30",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42963280",
+        "electronic_publication_date": "2026-10-30",
+        "first_publication_date": "2026-10-30",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -7581,8 +7633,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
