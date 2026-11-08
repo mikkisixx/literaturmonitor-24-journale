@@ -144,5 +144,33 @@ class HtmlExportTests(unittest.TestCase):
         with patch.object(export_html,"ROOT",self.root):
             with self.assertRaises(ValueError):
                 export_html.export(self.month,self.root/"out")
+    def test_alternative_month_generates_matching_standalone_html(self):
+        """A manually chosen month must not silently fall back to October."""
+        self.month="2026-08"
+        self.report["month"]=self.month
+        self.quality["month"]=self.month
+        self.coverage["month"]=self.month
+        self.report["count"]=2
+        self.report["verified_online_count"]=1
+        self.report["candidate_count"]=1
+        self.report["articles"]=[
+            {"journal":"Journal <A>","title":"August online article",
+             "doi":"10.1234/august","date_basis":"publisher_online",
+             "online_date":"2026-08-19"},
+            {"journal":"Journal <A>","title":"Not verified",
+             "doi":"10.1234/unknown","date_basis":"crossref_published_unverified",
+             "online_date":"2026-08-20"},
+        ]
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            export_html.export(self.month,self.root/"out")
+        page=(self.root/"out"/"Literaturbericht-2026-08.html").read_text(encoding="utf-8")
+        self.assertIn("<title>Literaturbericht 2026-08</title>",page)
+        self.assertIn("10.1234/august",page)
+        self.assertNotIn("10.1234/unknown",page)
+        self.assertNotIn("Rechercheentwurf",page)
+        self.assertNotIn("<input",page)
+        self.assertEqual(page.count("<tr>"),25)
+
 if __name__=="__main__":
     unittest.main()
