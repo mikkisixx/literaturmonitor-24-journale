@@ -176,14 +176,18 @@ def reconcile_status(publisher_status,pubmed_status):
         return "pubmed_date_match"
     return publisher_status
 
+def retain_current_evidence(previous,articles):
+    """Keep only DOI evidence with the same online date in this month."""
+    eligible={a["doi"]:a.get("online_date") for a in articles
+              if a.get("date_basis")=="crossref_online" and a.get("online_date")}
+    return {doi:record for doi,record in previous.items()
+            if doi in eligible and record.get("crossref_online_date")==eligible[doi]}
+
 def main():
     report=json.loads(SOURCE.read_text(encoding="utf-8"))
     previous=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     # Never carry evidence for removed or re-dated articles into a new month audit.
-    eligible={a["doi"]:a.get("online_date") for a in report["articles"]
-              if a.get("date_basis")=="crossref_online" and a.get("online_date")}
-    existing={doi:record for doi,record in previous.items()
-              if doi in eligible and record.get("crossref_online_date")==eligible[doi]}
+    existing=retain_current_evidence(previous,report["articles"])
     processed=0
     for a in report["articles"]:
         if a.get("date_basis")!="crossref_online":continue
