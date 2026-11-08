@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 165,
+    "europe_pmc_electronic_month_match": 166,
     "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 98
+    "needs_manual_review": 97
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -56,8 +56,8 @@
       "total": 93,
       "statuses": {
         "europe_pmc_electronic_other_month": 54,
-        "europe_pmc_electronic_month_match": 34,
-        "needs_manual_review": 5
+        "europe_pmc_electronic_month_match": 35,
+        "needs_manual_review": 4
       }
     },
     "Journal of the European Ceramic Society": {
@@ -5724,13 +5724,16 @@
       "doi": "10.1016/j.prosdent.2026.07.039",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Comments on: Molinero-Mourelle et al \"Oral rehabilitation using a sectional maxillary complete denture and mandibular removable partial denture for a patient with microstomia: A clinical report\"",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-29",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42957531",
+        "electronic_publication_date": "2026-10-29",
+        "first_publication_date": "2026-10-29",
+        "electronic_date_month_match": true
       }
     },
     {
