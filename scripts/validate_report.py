@@ -5,6 +5,19 @@ import json
 import pathlib
 import re
 import sys
+from urllib.parse import urlsplit
+
+
+def valid_https_source(value):
+    if not isinstance(value, str):
+        return False
+    try:
+        parsed = urlsplit(value)
+        return (parsed.scheme == "https" and bool(parsed.hostname)
+                and not parsed.username and not parsed.password
+                and not any(c.isspace() for c in value))
+    except ValueError:
+        return False
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
@@ -71,7 +84,7 @@ def validate(month, data=DATA):
         assert item["journal"] in {r["journal"] for r in coverage["journals"]}, "Unknown evidence journal"
         assert item["publisher_online_date"].startswith(month+"-"), "Publisher evidence outside report month"
         dt.date.fromisoformat(item["publisher_online_date"])
-        assert item["source"].startswith("https://"), "Publisher evidence has no HTTPS source"
+        assert valid_https_source(item.get("source")), "Publisher evidence has no valid HTTPS source"
     evidence_path=data/"publisher-evidence"/(month+".json")
     evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"findings":[]}
     findings=evidence["findings"]
@@ -87,7 +100,7 @@ def validate(month, data=DATA):
         assert item["journal"] in known_journals, "Unknown publisher evidence journal"
         assert isinstance(item.get("publisher_online_date"), str), "Publisher evidence missing online date"
         assert dt.date.fromisoformat(item["publisher_online_date"]).strftime("%Y-%m")==month, "Publisher evidence outside report month"
-        assert isinstance(item.get("source"), str) and item["source"].startswith("https://"), "Publisher evidence missing HTTPS source"
+        assert valid_https_source(item.get("source")), "Publisher evidence missing valid HTTPS source"
         assert doi not in article_journals or item["journal"]==article_journals[doi], (
             f"Publisher evidence journal mismatch for {doi}")
     expected_missing=[item for item in findings if item["doi"].strip().lower() not in dois]
