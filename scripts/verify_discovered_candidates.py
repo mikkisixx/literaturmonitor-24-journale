@@ -37,7 +37,7 @@ def check_candidate(doi, month, fetch=get_publisher):
 
 def audit(month, inventory, report, workers=4, checker=check_candidate):
     in_report = {a["doi"].strip().lower() for a in report.get("articles", []) if a.get("doi")}
-    output = {"month": month, "coverage_complete": False, "journals": {}}
+    output = {"month": month, "coverage_complete": False, "journals": {}, "records": []}
     jobs = []
     for journal, listing in inventory.get("journals", {}).items():
         dois = sorted({d.strip().lower() for d in listing.get("candidate_dois", []) if isinstance(d, str) and d.strip()})
@@ -49,10 +49,15 @@ def audit(month, inventory, report, workers=4, checker=check_candidate):
         checked = list(pool.map(lambda item: checker(item[1], month), jobs))
     for (journal, doi), result in zip(jobs, checked):
         result["in_monthly_report"] = doi in in_report
+        result["journal"] = journal
+        result["in_requested_month"] = result["status"] == "verified_in_month"
+        if result["status"] == "verified_in_month":
+            result["status"] = "publisher_online_date_verified"
+        output["records"].append(result)
         output["journals"][journal]["records"].append(result)
     for row in output["journals"].values():
         row["verified_missing_from_report"] = sum(
-            r["status"] == "verified_in_month" and not r["in_monthly_report"] for r in row["records"])
+            r["status"] == "publisher_online_date_verified" and not r["in_monthly_report"] for r in row["records"])
         row["warning"] = "Publisher listing is not proven exhaustive; candidate dates are article-level checks only."
     return output
 
