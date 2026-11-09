@@ -26,7 +26,7 @@ jobs:
               sleep 10
             done
             if [[ -z "$id" ]]; then echo "::error::Run-ID für $workflow nicht gefunden"; exit 1; fi
-            echo "$workflow=$id" >> "$GITHUB_ENV"
+            if [[ "$workflow" == monthly-report.yml ]]; then echo "monthly_report_yml=$id" >> "$GITHUB_ENV"; else echo "einfacher_html_bericht_yml=$id" >> "$GITHUB_ENV"; fi
             echo "Dispatched $workflow: $id"
           done
       - name: Beide Läufe bis zum erfolgreichen Abschluss überwachen
