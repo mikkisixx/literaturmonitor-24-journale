@@ -91,7 +91,7 @@ jobs:
       - name: Tests unabhängige Springer-Verlagsdatierung
         run: python -m unittest discover -s tests -p 'test_verify_springer_inventory.py' -v
       - name: Unabhängig entdeckte Verlags-DOIs artikelweise prüfen
-        run: python scripts/verify_discovered_candidates.py --month "${{ steps.period.outputs.month }}"
+        run: python scripts/verify_discovered_candidates.py --month "${{ steps.period.outputs.month }}" --fail-on-missing
       - name: Tests der unabhängigen Verlagskandidatenprüfung
         run: python -m unittest discover -s tests -p 'test_verify_discovered_candidates.py' -v
       - name: Unabhängige Verlagsabdeckung aller 24 Zeitschriften dokumentieren
