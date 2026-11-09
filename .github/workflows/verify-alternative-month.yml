@@ -1,22 +1,91 @@
-name: Einmaliger End-to-End-Nachweis August 2026
+name: End-to-End-Nachweis alternativer Monat August 2026
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/verify-alternative-month.yml'
   workflow_dispatch:
 permissions:
   actions: write
   contents: read
 jobs:
-  dispatch-alternative-month:
+  verify-alternative-month:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     steps:
-      - name: Beide produktiven Monatsgeneratoren für August 2026 auslösen
+      - name: Beide Monatsgeneratoren auslösen und ihre Run-IDs erfassen
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+        shell: bash
         run: |
-          gh workflow run monthly-report.yml --ref main -f month=2026-08
-          gh workflow run einfacher-html-bericht.yml --ref main -f month=2026-08
-          echo "August 2026 wurde für beide produktiven Workflows angefordert."
+          set -euo pipefail
+          for workflow in monthly-report.yml einfacher-html-bericht.yml; do
+            started="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            gh workflow run "$workflow" --ref main -f month=2026-08
+            id=""
+            for attempt in $(seq 1 30); do
+              id="$(gh api "repos/$GH_REPO/actions/workflows/$workflow/runs?event=workflow_dispatch&per_page=30" --jq '.workflow_runs[] | select(.created_at >= "'"$started"'") | select(.head_branch == "main") | .id' | head -n 1)"
+              if [[ -n "$id" ]]; then break; fi
+              sleep 10
+            done
+            if [[ -z "$id" ]]; then echo "::error::Run-ID für $workflow nicht gefunden"; exit 1; fi
+            echo "$workflow=$id" >> "$GITHUB_ENV"
+            echo "Dispatched $workflow: $id"
+          done
+      - name: Beide Läufe bis zum erfolgreichen Abschluss überwachen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for workflow in monthly-report.yml einfacher-html-bericht.yml; do
+            if [[ "$workflow" == monthly-report.yml ]]; then id="$monthly_report_yml"; else id="$einfacher_html_bericht_yml"; fi
+            gh run watch "$id" --exit-status --interval 30
+            result="$(gh api "repos/$GH_REPO/actions/runs/$id" --jq '.conclusion')"
+            [[ "$result" == success ]] || { echo "::error::$workflow: $result"; exit 1; }
+          done
+      - name: Artefakte herunterladen und August-HTML inhaltlich prüfen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p checked/monthly checked/simple
+          gh run download "$monthly_report_yml" --name Literaturbericht-2026-08-HTML --dir checked/monthly
+          gh run download "$einfacher_html_bericht_yml" --dir checked/simple
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Inspector(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.articles = 0
+                  self.dois = []
+                  self.inputs = 0
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "article": self.articles += 1
+                  if tag == "input": self.inputs += 1
+                  if tag == "a" and attrs.get("href", "").startswith("https://doi.org/"):
+                      self.dois.append(attrs["href"])
+          files = list(Path("checked/monthly").rglob("*.html"))
+          assert files, "Kein HTML im Monatsbericht-Artefakt"
+          assert list(Path("checked/simple").rglob("*.html")), "Kein HTML im einfachen Berichts-Artefakt"
+          for path in files:
+              html = path.read_text(encoding="utf-8")
+              inspector = Inspector()
+              inspector.feed(html)
+              assert html.lstrip().lower().startswith("<!doctype html>"), path
+              assert "2026-08" in html or "August 2026" in html, "Falscher Monat"
+              assert "Rechercheentwurf" not in html, "Entwurfsmarker"
+              assert inspector.inputs == 0, "Suchfeld"
+              assert inspector.articles == len(inspector.dois), "Fehlende DOI-Links"
+              assert len(inspector.dois) == len(set(inspector.dois)), "DOI-Dubletten"
+              print(f"Geprüft: {path}: {inspector.articles} Artikel")
+          PY
+      - name: Geprüfte HTML-Ergebnisse bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: End-to-End-Nachweis-2026-08
+          path: checked/
+          if-no-files-found: error
+          retention-days: 90
