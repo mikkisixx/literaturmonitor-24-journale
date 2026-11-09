@@ -8,40 +8,40 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 164,
-    "europe_pmc_electronic_other_month": 266,
-    "needs_manual_review": 105
+    "europe_pmc_electronic_month_match": 165,
+    "europe_pmc_electronic_other_month": 271,
+    "needs_manual_review": 99
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 64,
+        "europe_pmc_electronic_month_match": 65,
         "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 3
+        "needs_manual_review": 2
       }
     },
     "Dental Materials": {
       "total": 41,
       "statuses": {
-        "europe_pmc_electronic_other_month": 16,
-        "europe_pmc_electronic_month_match": 22,
-        "needs_manual_review": 3
+        "europe_pmc_electronic_other_month": 18,
+        "europe_pmc_electronic_month_match": 21,
+        "needs_manual_review": 2
       }
     },
     "Journal of Biomechanics": {
       "total": 46,
       "statuses": {
-        "europe_pmc_electronic_other_month": 30,
-        "needs_manual_review": 16
+        "europe_pmc_electronic_other_month": 33,
+        "needs_manual_review": 13
       }
     },
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
         "europe_pmc_electronic_other_month": 58,
-        "europe_pmc_electronic_month_match": 27,
-        "needs_manual_review": 3
+        "europe_pmc_electronic_month_match": 28,
+        "needs_manual_review": 2
       }
     },
     "Journal of Endodontics": {
@@ -941,13 +941,16 @@
       "doi": "10.1016/j.actbio.2026.10.018",
       "journal": "Acta Biomaterialia",
       "title": "Facile fabrication of hierarchically structured, stimulus-responsive sea cucumber collagen fibers and films",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-15",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42880386",
+        "electronic_publication_date": "2026-10-15",
+        "first_publication_date": "2026-10-15",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -2154,13 +2157,16 @@
       "doi": "10.1016/j.dental.2026.04.030",
       "journal": "Dental Materials",
       "title": "Beyond roughness: Lateral surface architecture drives Candida albicans virulence on denture polymers",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-09",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42108115",
+        "electronic_publication_date": "2026-05-09",
+        "first_publication_date": "2026-05-09",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -2259,16 +2265,13 @@
       "doi": "10.1016/j.dental.2026.10.011",
       "journal": "Dental Materials",
       "title": "Effect of epigallocatechin-3-gallate on resin–dentin bond strength: A systematic review and meta-analysis of dentin pretreatment and adhesive incorporation strategies",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-28",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42951775",
-        "electronic_publication_date": "2026-10-28",
-        "first_publication_date": "2026-10-28",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2531,13 +2534,16 @@
       "doi": "10.1016/j.dental.2026.04.023",
       "journal": "Dental Materials",
       "title": "Preparation, microstructure and hydrothermal aging behavior of Ce/Y Co-doped tetragonal zirconia-based dental ceramics",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-02",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42070927",
+        "electronic_publication_date": "2026-05-02",
+        "first_publication_date": "2026-05-02",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -2840,13 +2846,16 @@
       "doi": "10.1016/j.jbiomech.2026.113556",
       "journal": "Journal of Biomechanics",
       "title": "Cycle-dependent mechanical behavior of individual muscles in soft-bodied organisms revealed by scanning probe microscopy",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-04",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42700673",
+        "electronic_publication_date": "2026-09-04",
+        "first_publication_date": "2026-09-04",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -2970,8 +2979,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
@@ -3026,13 +3034,16 @@
       "doi": "10.1016/j.jbiomech.2026.113569",
       "journal": "Journal of Biomechanics",
       "title": "Mechanical functional zoning of the proximal femoral trabecular bone revealed by two-dimensional topology optimization without a predefined structure",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-10",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42731529",
+        "electronic_publication_date": "2026-09-10",
+        "first_publication_date": "2026-09-10",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3139,13 +3150,16 @@
       "doi": "10.1016/j.jbiomech.2026.113520",
       "journal": "Journal of Biomechanics",
       "title": "Robustness of mediolateral stability measures to different operationalizations of the center of mass and base of support",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-08-11",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42691557",
+        "electronic_publication_date": "2026-08-11",
+        "first_publication_date": "2026-08-11",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3780,13 +3794,16 @@
       "doi": "10.1016/j.jdent.2026.106835",
       "journal": "Journal of Dentistry",
       "title": "Comparative evaluation of proximal caries detection methods using human, artificial intelligence, and micro-CT assessments",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-16",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42303112",
+        "electronic_publication_date": "2026-06-16",
+        "first_publication_date": "2026-06-16",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3809,13 +3826,16 @@
       "doi": "10.1016/j.jdent.2026.107136",
       "journal": "Journal of Dentistry",
       "title": "Comparison of digital, semi-digital, and conventional fit evaluation methods for additively and subtractively manufactured zirconia three-unit fixed dental prostheses",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-26",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42933589",
+        "electronic_publication_date": "2026-10-26",
+        "first_publication_date": "2026-10-26",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4266,16 +4286,13 @@
       "doi": "10.1016/j.jdent.2026.106755",
       "journal": "Journal of Dentistry",
       "title": "In vitro evaluation of automated single-unit crown design using artificial intelligence: Design time, marginal misfit, dental morphology, and contact points",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-15",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42142614",
-        "electronic_publication_date": "2026-05-15",
-        "first_publication_date": "2026-05-15",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
