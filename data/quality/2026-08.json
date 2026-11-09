@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 129,
   "candidate_count": 516,
   "candidate_status_counts": {
-    "europe_pmc_electronic_other_month": 350,
+    "europe_pmc_electronic_other_month": 351,
     "europe_pmc_electronic_month_match": 55,
-    "needs_manual_review": 111
+    "needs_manual_review": 110
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -68,8 +68,8 @@
     "Journal of the Mechanical Behavior of Biomedical Materials": {
       "total": 27,
       "statuses": {
-        "europe_pmc_electronic_other_month": 25,
-        "needs_manual_review": 2
+        "europe_pmc_electronic_other_month": 26,
+        "needs_manual_review": 1
       }
     }
   },
@@ -7689,13 +7689,16 @@
       "doi": "10.1016/j.jmbbm.2026.107476",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "From human joints to bioreactor setups: Quantifying mechanical stimuli in cartilage physiology and regeneration",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-01",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42235116",
+        "electronic_publication_date": "2026-06-01",
+        "first_publication_date": "2026-06-01",
+        "electronic_date_month_match": false
       }
     },
     {
