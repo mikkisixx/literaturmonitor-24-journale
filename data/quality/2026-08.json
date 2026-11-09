@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 129,
   "candidate_count": 516,
   "candidate_status_counts": {
-    "europe_pmc_electronic_other_month": 351,
-    "europe_pmc_electronic_month_match": 55,
-    "needs_manual_review": 110
+    "europe_pmc_electronic_other_month": 348,
+    "europe_pmc_electronic_month_match": 54,
+    "needs_manual_review": 114
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -32,8 +32,8 @@
     "Journal of Biomechanics": {
       "total": 86,
       "statuses": {
-        "europe_pmc_electronic_other_month": 85,
-        "needs_manual_review": 1
+        "europe_pmc_electronic_other_month": 82,
+        "needs_manual_review": 4
       }
     },
     "Journal of Dentistry": {
@@ -46,9 +46,9 @@
     "Journal of Endodontics": {
       "total": 56,
       "statuses": {
-        "europe_pmc_electronic_month_match": 32,
+        "needs_manual_review": 6,
         "europe_pmc_electronic_other_month": 19,
-        "needs_manual_review": 5
+        "europe_pmc_electronic_month_match": 31
       }
     },
     "Journal of Prosthetic Dentistry": {
@@ -2746,16 +2746,13 @@
       "doi": "10.1016/j.jbiomech.2026.113389",
       "journal": "Journal of Biomechanics",
       "title": "Optimising soccer passing mechanics: a two-dimensional simulation of flight time and playable arrival height",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-06-06",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42269201",
-        "electronic_publication_date": "2026-06-06",
-        "first_publication_date": "2026-06-06",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -3018,32 +3015,26 @@
       "doi": "10.1016/j.jbiomech.2026.113439",
       "journal": "Journal of Biomechanics",
       "title": "The extrapolated body center of mass predicts subsequent foot placement choice during dynamic single-leg landings",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-06-28",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42378740",
-        "electronic_publication_date": "2026-06-28",
-        "first_publication_date": "2026-06-28",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jbiomech.2026.113379",
       "journal": "Journal of Biomechanics",
       "title": "The gait lab effect: symmetry restoration strategy after anterior cruciate ligament reconstruction is different in natural environments than the gait laboratory",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-22",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42398124",
-        "electronic_publication_date": "2026-05-22",
-        "first_publication_date": "2026-05-22",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -3542,16 +3533,13 @@
       "doi": "10.1016/j.joen.2026.08.007",
       "journal": "Journal of Endodontics",
       "title": "A Histobacteriological Reappraisal of Contemporary Deep and Extremely Deep Caries Management Recommendations",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-08-14",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42600772",
-        "electronic_publication_date": "2026-08-14",
-        "first_publication_date": "2026-08-14",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -4742,7 +4730,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
