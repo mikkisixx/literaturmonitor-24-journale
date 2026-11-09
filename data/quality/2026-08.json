@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 129,
   "candidate_count": 516,
   "candidate_status_counts": {
-    "europe_pmc_electronic_other_month": 347,
-    "europe_pmc_electronic_month_match": 54,
-    "needs_manual_review": 115
+    "europe_pmc_electronic_other_month": 351,
+    "europe_pmc_electronic_month_match": 55,
+    "needs_manual_review": 110
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -25,8 +25,8 @@
       "total": 36,
       "statuses": {
         "europe_pmc_electronic_month_match": 19,
-        "europe_pmc_electronic_other_month": 15,
-        "needs_manual_review": 2
+        "europe_pmc_electronic_other_month": 16,
+        "needs_manual_review": 1
       }
     },
     "Journal of Biomechanics": {
@@ -46,16 +46,16 @@
     "Journal of Endodontics": {
       "total": 56,
       "statuses": {
-        "europe_pmc_electronic_month_match": 31,
+        "europe_pmc_electronic_month_match": 32,
         "europe_pmc_electronic_other_month": 19,
-        "needs_manual_review": 6
+        "needs_manual_review": 5
       }
     },
     "Journal of Prosthetic Dentistry": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_other_month": 113,
-        "needs_manual_review": 9,
+        "europe_pmc_electronic_other_month": 115,
+        "needs_manual_review": 7,
         "europe_pmc_electronic_month_match": 2
       }
     },
@@ -68,8 +68,8 @@
     "Journal of the Mechanical Behavior of Biomedical Materials": {
       "total": 27,
       "statuses": {
-        "europe_pmc_electronic_other_month": 25,
-        "needs_manual_review": 2
+        "europe_pmc_electronic_other_month": 26,
+        "needs_manual_review": 1
       }
     }
   },
@@ -1566,13 +1566,16 @@
       "doi": "10.1016/j.dental.2026.03.148",
       "journal": "Dental Materials",
       "title": "Investigating the protective effect of phosphorylated chitosan on dentin collagen fibres at the bonding interface",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-03-16",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "41846174",
+        "electronic_publication_date": "2026-03-16",
+        "first_publication_date": "2026-03-16",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -4306,13 +4309,16 @@
       "doi": "10.1016/j.joen.2026.08.029",
       "journal": "Journal of Endodontics",
       "title": "Targeting Hypoxic Pathways for Dental Pulp Regeneration",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-08-22",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42628729",
+        "electronic_publication_date": "2026-08-22",
+        "first_publication_date": "2026-08-22",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4951,13 +4957,16 @@
       "doi": "10.1016/j.prosdent.2026.04.020",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Comparison of mechanical properties of implant-supported prostheses fabricated with different materials and abutments: An in vitro study",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-11",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42115093",
+        "electronic_publication_date": "2026-05-11",
+        "first_publication_date": "2026-05-11",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -4996,13 +5005,16 @@
       "doi": "10.1016/j.prosdent.2026.05.031",
       "journal": "Journal of Prosthetic Dentistry",
       "title": "Corrigendum to ‘Effect of material and connector position on the accuracy of CAD-CAM milled posts’ [The Journal of Prosthetic Dentistry (2026), https://doi.org/10.1016/j.prosdent.2026.04.030]",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-12",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42276898",
+        "electronic_publication_date": "2026-06-12",
+        "first_publication_date": "2026-06-12",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -6382,8 +6394,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
@@ -7522,13 +7533,16 @@
       "doi": "10.1016/j.jmbbm.2026.107481",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Aging reduces strain magnitude and heterogeneity while increasing apparent stiffness of the rat proximal tibia",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-27",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42229074",
+        "electronic_publication_date": "2026-05-27",
+        "first_publication_date": "2026-05-27",
+        "electronic_date_month_match": false
       }
     },
     {
