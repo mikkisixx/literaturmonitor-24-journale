@@ -22,6 +22,7 @@ on:
       - 'scripts/build_months.py'
       - 'scripts/verify_publishers.py'
       - 'scripts/recover_publisher_online_dates.py'
+      - 'tests/test_recover_publisher_online_dates.py'
       - 'scripts/audit_candidates.py'
       - 'scripts/audit_coverage.py'
       - 'scripts/validate_report.py'
@@ -79,6 +80,8 @@ jobs:
         run: python scripts/build_months.py
       - name: Fehlende Erst-Online-Daten aus DOI-Verlagsseiten nachermitteln
         run: python scripts/recover_publisher_online_dates.py --month "${{ steps.period.outputs.month }}"
+      - name: Regressionstest Nachermittlung der Online-Erstveröffentlichung
+        run: python -m unittest discover -s tests -p 'test_recover_publisher_online_dates.py' -v
       - name: Monatsdaten mit nachermittelten Verlagsdaten aktualisieren
         run: python scripts/build_months.py
       - name: Unabhängige Springer-Kandidaten anhand von Online-Daten prüfen
