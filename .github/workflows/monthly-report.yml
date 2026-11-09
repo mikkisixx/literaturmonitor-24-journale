@@ -21,6 +21,7 @@ on:
       - 'tests/test_discover_springer.py'
       - 'scripts/build_months.py'
       - 'scripts/verify_publishers.py'
+      - 'scripts/recover_publisher_online_dates.py'
       - 'scripts/audit_candidates.py'
       - 'scripts/audit_coverage.py'
       - 'scripts/validate_report.py'
@@ -76,6 +77,10 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_discover_springer.py' -v
       - name: HTML-Daten neu erzeugen
         run: python scripts/build_months.py
+      - name: Fehlende Erst-Online-Daten aus DOI-Verlagsseiten nachermitteln
+        run: python scripts/recover_publisher_online_dates.py --month "${{ steps.period.outputs.month }}"
+      - name: Monatsdaten mit nachermittelten Verlagsdaten aktualisieren
+        run: python scripts/build_months.py
       - name: Unabhängige Springer-Kandidaten anhand von Online-Daten prüfen
         run: python scripts/verify_springer_inventory.py --month "${{ steps.period.outputs.month }}"
       - name: Tests unabhängige Springer-Verlagsdatierung
@@ -111,6 +116,7 @@ jobs:
             data/backfill-${{ steps.period.outputs.month }}.json
             data/coverage/
             data/publisher-inventory/${{ steps.period.outputs.month }}.json
+            data/publisher-candidate-checks/${{ steps.period.outputs.month }}.json
             data/quality/${{ steps.period.outputs.month }}.json
           if-no-files-found: warn
           retention-days: 30
@@ -189,7 +195,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/publisher-inventory/ data/quality/ data/coverage/
+          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/publisher-candidate-checks/ data/publisher-inventory/ data/quality/ data/coverage/
           if ! git diff --cached --quiet; then
             git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
             # Never silently resolve conflicts in scientific evidence or review files.
