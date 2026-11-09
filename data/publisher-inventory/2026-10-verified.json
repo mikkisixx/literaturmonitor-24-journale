@@ -1,8 +1,29 @@
 {
   "month": "2026-10",
   "coverage_complete": false,
-  "articles_checked": 0,
-  "verified_month_missing_from_report": [],
-  "records": [],
-  "warning": "Only DOI candidates found on bounded publisher listings were checked; absence does not establish completeness."
+  "journals": {
+    "Clinical Oral Investigations": {
+      "listing_status": "unparseable_or_empty_listing",
+      "publisher_listing_urls": [
+        "https://link.springer.com/journal/784/articles?sort=PubDate&page=1"
+      ],
+      "coverage_verified": false,
+      "candidate_count": 0,
+      "records": [],
+      "verified_missing_from_report": 0,
+      "warning": "Publisher listing is not proven exhaustive; candidate dates are article-level checks only."
+    },
+    "Journal of Materials Science: Materials in Medicine": {
+      "listing_status": "unparseable_or_empty_listing",
+      "publisher_listing_urls": [
+        "https://link.springer.com/journal/10856/articles?sort=PubDate&page=1"
+      ],
+      "coverage_verified": false,
+      "candidate_count": 0,
+      "records": [],
+      "verified_missing_from_report": 0,
+      "warning": "Publisher listing is not proven exhaustive; candidate dates are article-level checks only."
+    }
+  },
+  "records": []
 }
