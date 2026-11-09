@@ -66,6 +66,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--month", required=True)
     p.add_argument("--workers", type=int, default=4)
+    p.add_argument("--fail-on-missing", action="store_true", help="Fail if publisher-verified articles are absent from the monthly report")
     args = p.parse_args()
     dt.date.fromisoformat(args.month + "-01")
     if not 1 <= args.workers <= 12:
@@ -77,9 +78,12 @@ def main():
     result = audit(args.month, inventory, report, args.workers)
     out = ROOT / "data/publisher-inventory" / (args.month + "-verified.json")
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    missing = sum(row["verified_missing_from_report"] for row in result["journals"].values())
     print(json.dumps({name: {"candidates": row["candidate_count"],
                              "verified_missing": row["verified_missing_from_report"]}
                       for name, row in result["journals"].items()}))
+    if args.fail_on_missing and missing:
+        raise SystemExit(f"Publication blocked: {missing} publisher-verified in-month DOI candidates are missing from the monthly report. See {out}")
 
 
 if __name__ == "__main__":
