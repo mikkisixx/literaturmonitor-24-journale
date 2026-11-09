@@ -1,0 +1,25 @@
+name: Publisher candidate verification tests
+
+on:
+  push:
+    paths:
+      - 'scripts/verify_discovered_candidates.py'
+      - 'scripts/verify_publishers.py'
+      - 'tests/test_verify_discovered_candidates.py'
+      - '.github/workflows/publisher-candidate-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  candidate-audit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run independent publisher audit unit tests
+        run: python -m unittest discover -s tests -p 'test_verify_discovered_candidates.py' -v
