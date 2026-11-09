@@ -1,0 +1,2742 @@
+{
+  "month": "2026-10",
+  "candidates_checked": 535,
+  "journal_statuses": {
+    "Acta Biomaterialia": {
+      "candidates": 124,
+      "statuses": {
+        "no_explicit_online_date": 124
+      }
+    },
+    "Dental Materials": {
+      "candidates": 41,
+      "statuses": {
+        "no_explicit_online_date": 41
+      }
+    },
+    "Journal of Biomechanics": {
+      "candidates": 46,
+      "statuses": {
+        "no_explicit_online_date": 46
+      }
+    },
+    "Journal of Dentistry": {
+      "candidates": 88,
+      "statuses": {
+        "no_explicit_online_date": 88
+      }
+    },
+    "Journal of Endodontics": {
+      "candidates": 38,
+      "statuses": {
+        "no_explicit_online_date": 38
+      }
+    },
+    "Journal of Prosthetic Dentistry": {
+      "candidates": 93,
+      "statuses": {
+        "no_explicit_online_date": 93
+      }
+    },
+    "Journal of the European Ceramic Society": {
+      "candidates": 55,
+      "statuses": {
+        "no_explicit_online_date": 55
+      }
+    },
+    "Journal of the Mechanical Behavior of Biomedical Materials": {
+      "candidates": 40,
+      "statuses": {
+        "no_explicit_online_date": 40
+      }
+    },
+    "Operative Dentistry": {
+      "candidates": 10,
+      "statuses": {
+        "no_explicit_online_date": 10
+      }
+    }
+  },
+  "publisher_dates_recovered": 0,
+  "existing_date_conflicts": 0,
+  "statuses": {
+    "no_explicit_online_date": 535
+  },
+  "records": {
+    "10.1016/j.actbio.2026.10.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006896",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.057": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600588X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005921",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.047": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005805",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.008": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006781",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.058": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007361",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.052": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005830",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.030": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007087",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.057": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600735X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.024": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007038",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.009": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006793",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.046": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005799",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.015": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600694X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005532",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.010": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006884",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.064": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007427",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.005": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006756",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.053": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005854",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.035": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005672",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.04.018": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600228X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006926",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.022": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007002",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006719",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.021": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006987",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.037": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007154",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.039": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005714",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.02.041": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600125X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.025": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600557X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006720",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.054": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006690",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.01.027": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600036X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.006": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600677X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.044": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005763",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.056": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006707",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.050": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006653",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.043": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006549",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.005": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005945",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.059": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007373",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.03.041": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126001923",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.044": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007221",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.052": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006665",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.049": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005817",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600560X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.062": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007385",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.039": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007178",
+      "dates": []
+    },
+    "10.1016/s1742-7061(26)00648-3": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006483",
+      "dates": []
+    },
+    "10.1016/s1742-7061(26)00682-3": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006823",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.017": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006951",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.040": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600718X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.032": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007099",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.025": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007026",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.02.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126000760",
+      "dates": []
+    },
+    "10.1016/j.actbio.2025.12.014": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706125009080",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.051": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005842",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.018": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006963",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.043": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005751",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.021": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005544",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.042": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007208",
+      "dates": []
+    },
+    "10.1016/j.actbio.2025.12.053": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706125009602",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.04.014": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126002242",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.037": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005659",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600704X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007063",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.055": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007336",
+      "dates": []
+    },
+    "10.1016/j.actbio.2025.12.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612500902X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.01.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126000346",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.042": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600574X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.01.019": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126000279",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.048": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005787",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.027": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005593",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.014": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006938",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.05.037": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126003296",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.041": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005738",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.033": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007130",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.032": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005647",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.038": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007166",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006902",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.011": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006914",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.053": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007312",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.060": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007397",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.041": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007191",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.054": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005866",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.034": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007142",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.02.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126000954",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005581",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005933",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.043": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007233",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.029": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005611",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.029": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007075",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.038": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005726",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.055": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006689",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.061": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007403",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.024": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005556",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.030": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005623",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.036": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007117",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.034": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005696",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.066": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007439",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.036": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005684",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.020": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006999",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.031": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007105",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.002": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006732",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.031": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005635",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005908",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.03.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126001510",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.035": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007129",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.040": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005702",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.056": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005891",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.045": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600721X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.027": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007051",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006744",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.053": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006677",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.048": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006616",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.04.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126002473",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006240",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.063": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007415",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007014",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.054": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126007324",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.051": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006641",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.002": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S174270612600591X",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.019": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006975",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.10.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126006768",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.033": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005660",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.09.006": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005957",
+      "dates": []
+    },
+    "10.1016/j.actbio.2026.08.055": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1742706126005878",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.024": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S010956412600285X",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.05.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002927",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.009": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004665",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.029": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002903",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004616",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.09.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004446",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.030": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002915",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.025": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002873",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002897",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.05.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002976",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.017": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002782",
+      "dates": []
+    },
+    "10.1016/s0109-5641(26)00413-6": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004136",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004707",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.011": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004689",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.09.018": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004562",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.05.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002952",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.008": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004653",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.010": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004677",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.027": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002885",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004598",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.05.004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002939",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004690",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.09.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004343",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.019": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002824",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.05.002": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002940",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.09.009": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004318",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.022": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002836",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002770",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.002": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004586",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.006": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S010956412600463X",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002848",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.09.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004549",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.09.019": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004574",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.021": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002794",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004641",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004604",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.005": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004628",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.09.017": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004550",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.04.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126002861",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.014": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004720",
+      "dates": []
+    },
+    "10.1016/j.dental.2026.10.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0109564126004732",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113573": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004288",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113583": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004392",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113593": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004495",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113588": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004446",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113580": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004367",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113592": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004483",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113557": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004124",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113639": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004951",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113643": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004999",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113556": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004112",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113641": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004975",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113552": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004070",
+      "dates": []
+    },
+    "10.1016/s0021-9290(26)00455-0": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004550",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113652": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026005087",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113555": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004100",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113651": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026005075",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113571": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004264",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113537": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026003921",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113610": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004665",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113591": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004471",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113558": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004136",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113575": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004306",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113569": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004240",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113648": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002192902600504X",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113577": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004331",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113623": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004793",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113578": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004343",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113586": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004422",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113574": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002192902600429X",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113605": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004616",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113520": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026003751",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113579": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004355",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113459": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026003143",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113543": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026003982",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113551": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004069",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113582": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004380",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113594": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004501",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113568": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004239",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113650": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026005063",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113646": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026005026",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113550": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004057",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113572": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004276",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113612": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004689",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113463": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026003180",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113570": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004252",
+      "dates": []
+    },
+    "10.1016/j.jbiomech.2026.113589": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026004458",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106792": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004628",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107124": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007931",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106742": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004124",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106746": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004161",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107104": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007736",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106745": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600415X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106754": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004240",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106791": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004616",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106749": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004197",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106831": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005014",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106808": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004781",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106800": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004707",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106806": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004768",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106834": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600504X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107147": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008171",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106798": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004689",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106842": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005129",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107145": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008158",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106836": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005063",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106787": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004574",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107133": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600802X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106825": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004951",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106850": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005208",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106757": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004276",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106826": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004963",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106835": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005051",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106839": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005099",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107136": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008055",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106807": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600477X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106849": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005191",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106848": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600518X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107080": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007499",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107078": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007475",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107116": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007852",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107099": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007682",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106771": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004410",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106796": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004665",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106847": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005178",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106845": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005154",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106829": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004999",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106737": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004070",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107137": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008067",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106801": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004719",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107127": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007967",
+      "dates": []
+    },
+    "10.1016/s0300-5712(26)00571-3": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005713",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106788": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004586",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106844": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005142",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107126": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007955",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106758": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004288",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106804": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004744",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107117": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007864",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106810": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600480X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107123": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600792X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107107": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007761",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106748": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004185",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106840": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005105",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106755": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004252",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107128": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007979",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107115": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007840",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106794": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004641",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106799": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004690",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107134": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008031",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106841": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005117",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107106": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600775X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107139": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008080",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106747": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004173",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106823": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004938",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106855": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005257",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107108": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007773",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107132": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008018",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106790": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004604",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107143": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008134",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106797": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004677",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106854": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005245",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107141": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008109",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106756": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004264",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106838": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005087",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106846": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005166",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106813": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004835",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106805": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004756",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107140": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008092",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106837": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005075",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106856": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005269",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106811": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004811",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107110": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007797",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107131": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008006",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106783": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004537",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.106772": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004422",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003225",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.09.014": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005236",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.006": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003596",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.008": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005340",
+      "dates": []
+    },
+    "10.1016/s0099-2399(26)00492-9": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926004929",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.005": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005315",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003523",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005297",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005303",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.05.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926002517",
+      "dates": []
+    },
+    "10.1016/s0099-2399(26)00473-5": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926004735",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005285",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.09.015": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005248",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.002": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003559",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.009": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005352",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.006": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005327",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.005": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003584",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003535",
+      "dates": []
+    },
+    "10.1016/s0099-2399(26)00476-0": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926004760",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003602",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.006": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003213",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.09.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S009923992600470X",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003572",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.002": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005273",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005339",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.010": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003250",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.09.017": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005261",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.009": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003249",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003560",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.09.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005224",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005686",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.008": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003614",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.09.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S009923992600525X",
+      "dates": []
+    },
+    "10.1016/s0099-2399(26)00475-9": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926004759",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.07.009": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003638",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.005": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003109",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.10.011": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926005650",
+      "dates": []
+    },
+    "10.1016/j.joen.2026.06.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003080",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.037": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005275",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.041": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005251",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.015": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006475",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005172",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.031": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006700",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.035": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004713",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.021": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004610",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.020": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005330",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.029": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006669",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.08.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005755",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.011": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005159",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.011": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006451",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.008": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004853",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.009": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004865",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.031": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004701",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.10.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600675X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.037": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006268",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004440",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.022": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004658",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.020": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004592",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.04.042": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004373",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.039": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326007006",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005160",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.019": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600524X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.024": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004671",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.039": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005305",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006487",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.033": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004750",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006657",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.013": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006463",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.010": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004518",
+      "dates": []
+    },
+    "10.1016/s0022-3913(26)00614-1": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006141",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004762",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600466X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.032": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005494",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.010": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006414",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.029": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005421",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.021": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005317",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004841",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.027": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006645",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.024": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005354",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.003": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004786",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600541X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005202",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.025": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004683",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.08.028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006359",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.015": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005184",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.025": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005366",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.012": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600644X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.007": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006384",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.010": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005147",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600661X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.019": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006554",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.038": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005263",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.10.002": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006736",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.040": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005287",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004646",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006633",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.025": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006621",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.029": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004695",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.08.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006207",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.017": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005214",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.022": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006591",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.08.026": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006311",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005329",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.033": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006712",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.021": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006542",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.038": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006566",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.05.056": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004385",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004798",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.034": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004749",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.027": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004634",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.08.027": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006347",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.024": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006608",
+      "dates": []
+    },
+    "10.1016/s0022-3913(26)00617-7": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006177",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.023": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004622",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.006": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600483X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.034": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006682",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.018": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006530",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.020": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006578",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.05.055": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004361",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.05.054": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004397",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.10.001": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006724",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.019": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004609",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.031": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005445",
+      "dates": []
+    },
+    "10.1016/s0022-3913(26)00615-3": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006153",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.09.014": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006438",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.036": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S002239132600627X",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.014": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005196",
+      "dates": []
+    },
+    "10.1016/s0022-3913(26)00616-5": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006165",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.016": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004464",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.06.036": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005299",
+      "dates": []
+    },
+    "10.1016/j.prosdent.2026.07.005": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004816",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118460": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003365",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118493": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003699",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.119004": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926008800",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118453": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003298",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118400": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926002761",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118427": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003031",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118489": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003651",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118449": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003250",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118448": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003249",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118401": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926002773",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.119028": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926009040",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118466": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003420",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118495": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003717",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118454": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003304",
+      "dates": []
+    },
+    "10.1016/s0955-2219(26)00398-5": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003985",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118442": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003183",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118488": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S095522192600364X",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.119018": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926008940",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118439": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003158",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118434": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003109",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118451": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003274",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118491": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003675",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.119022": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926008988",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118397": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926002736",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118431": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003079",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118450": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003262",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118492": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003687",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118477": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003535",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118389": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926002657",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118483": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003596",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118456": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003328",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118463": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003390",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118467": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003432",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118443": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003195",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118433": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003092",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118432": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003080",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118447": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003237",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118366": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926002426",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118487": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003638",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118465": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003419",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118485": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003614",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118446": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003225",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118444": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003201",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118418": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926002943",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118464": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003407",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118979": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926008551",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118436": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003122",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118455": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003316",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118992": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S095522192600868X",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118459": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003353",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118435": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003110",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118428": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003043",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118457": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S095522192600333X",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118461": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003377",
+      "dates": []
+    },
+    "10.1016/j.jeurceramsoc.2026.118462": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0955221926003389",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107579": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002481",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107576": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002456",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107553": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002225",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107662": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126003310",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107537": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002067",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107540": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002092",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107529": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126001980",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107689": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126003589",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107562": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002316",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107556": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002250",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107573": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002420",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107555": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002249",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107534": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002031",
+      "dates": []
+    },
+    "10.1016/s1751-6161(26)00255-9": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002559",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107539": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002080",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107559": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002286",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107561": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002304",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107533": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S175161612600202X",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107701": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S175161612600370X",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107580": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002493",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107565": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002341",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107530": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126001992",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107532": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002018",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107548": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002171",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107541": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002109",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107557": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002262",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107538": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002079",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107563": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002328",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107536": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002055",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107570": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002390",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107554": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002237",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107558": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002274",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107566": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002353",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107535": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002043",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107560": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002298",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107531": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002006",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107690": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126003590",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107564": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S175161612600233X",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107568": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1751616126002377",
+      "dates": []
+    },
+    "10.1016/j.jmbbm.2026.107523": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S175161612600192X",
+      "dates": []
+    },
+    "10.2341/25-139-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-139-L/article-10.2341-25-139-L.xml",
+      "dates": []
+    },
+    "10.2341/25-196-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-196-L/article-10.2341-25-196-L.xml",
+      "dates": []
+    },
+    "10.2341/25-119-c": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-119-C/article-10.2341-25-119-C.xml",
+      "dates": []
+    },
+    "10.2341/25-170-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-170-L/article-10.2341-25-170-L.xml",
+      "dates": []
+    },
+    "10.2341/25-100-t": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-100-T/article-10.2341-25-100-T.xml",
+      "dates": []
+    },
+    "10.2341/26-032-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-26-032-L/article-10.2341-26-032-L.xml",
+      "dates": []
+    },
+    "10.2341/25-136-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-136-L/article-10.2341-25-136-L.xml",
+      "dates": []
+    },
+    "10.2341/26-034-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-26-034-L/article-10.2341-26-034-L.xml",
+      "dates": []
+    },
+    "10.2341/26-065-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-26-065-L/article-10.2341-26-065-L.xml",
+      "dates": []
+    },
+    "10.2341/25-186": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-186/article-10.2341-25-186.xml",
+      "dates": []
+    }
+  }
+}
