@@ -71,20 +71,22 @@ jobs:
                   if tag == "input": self.inputs += 1
                   if tag == "a" and attrs.get("href", "").startswith("https://doi.org/"):
                       self.dois.append(attrs["href"])
-          files = list(Path("checked/monthly").rglob("*.html"))
-          assert files, "Kein HTML im Monatsbericht-Artefakt"
-          assert list(Path("checked/simple").rglob("*.html")), "Kein HTML im einfachen Berichts-Artefakt"
-          for path in files:
+          monthly_files = list(Path("checked/monthly").rglob("*.html"))
+          simple_files = list(Path("checked/simple").rglob("*.html"))
+          assert monthly_files, "Kein HTML im Monatsbericht-Artefakt"
+          assert simple_files, "Kein HTML im einfachen Berichts-Artefakt"
+          for path in monthly_files + simple_files:
               html = path.read_text(encoding="utf-8")
               inspector = Inspector()
               inspector.feed(html)
               assert html.lstrip().lower().startswith("<!doctype html>"), path
-              assert "2026-08" in html or "August 2026" in html, "Falscher Monat"
-              assert "Rechercheentwurf" not in html, "Entwurfsmarker"
-              assert inspector.inputs == 0, "Suchfeld"
-              assert inspector.articles == len(inspector.dois), "Fehlende DOI-Links"
-              assert len(inspector.dois) == len(set(inspector.dois)), "DOI-Dubletten"
-              print(f"Geprüft: {path}: {inspector.articles} Artikel")
+              assert "2026-08" in html or "August 2026" in html, f"Falscher Monat: {path}"
+              assert "Rechercheentwurf" not in html, f"Entwurfsmarker: {path}"
+              assert inspector.inputs == 0, f"Suchfeld: {path}"
+              assert len(inspector.dois) == len(set(inspector.dois)), f"DOI-Dubletten: {path}"
+              if path in monthly_files:
+                  assert inspector.articles == len(inspector.dois), f"Fehlende DOI-Links: {path}"
+              print(f"Geprüft: {path}: {inspector.articles} Artikel, {len(inspector.dois)} DOI-Links")
           PY
       - name: Geprüfte HTML-Ergebnisse bereitstellen
         uses: actions/upload-artifact@v4
