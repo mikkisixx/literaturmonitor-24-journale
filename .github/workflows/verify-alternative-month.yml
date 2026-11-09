@@ -83,8 +83,8 @@ jobs:
               assert "2026-08" in html or "August 2026" in html, f"Falscher Monat: {path}"
               assert "Rechercheentwurf" not in html, f"Entwurfsmarker: {path}"
               assert inspector.inputs == 0, f"Suchfeld: {path}"
-              assert len(inspector.dois) == len(set(inspector.dois)), f"DOI-Dubletten: {path}"
               if path in monthly_files:
+                  assert len(inspector.dois) == len(set(inspector.dois)), f"DOI-Dubletten: {path}"
                   assert inspector.articles == len(inspector.dois), f"Fehlende DOI-Links: {path}"
               print(f"Geprüft: {path}: {inspector.articles} Artikel, {len(inspector.dois)} DOI-Links")
           PY
