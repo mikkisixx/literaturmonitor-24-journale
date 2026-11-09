@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""Verify independently discovered publisher DOI candidates against article-level online dates.
+
+This is an audit, not proof of exhaustive publisher pagination. It does not modify
+observed.json or silently add records to the published monthly report.
+"""
+import argparse
+import concurrent.futures
+import datetime as dt
+import json
+import pathlib
+import sys
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from verify_publishers import ONLINE_KEYS, get_publisher, normalize_date
+
+
+def check_candidate(doi, month, fetch=get_publisher):
+    try:
+        url, dates = fetch(doi)
+        explicit = [(key, normalize_date(value)) for key, value in dates if key in ONLINE_KEYS]
+        valid = sorted({value for _, value in explicit if value})
+        if len(valid) > 1:
+            status = "conflicting_online_dates"
+        elif not valid:
+            status = "no_explicit_online_date"
+        elif valid[0].startswith(month + "-"):
+            status = "verified_in_month"
+        else:
+            status = "verified_outside_month"
+        return {"doi": doi, "status": status, "online_date": valid[0] if len(valid) == 1 else None,
+                "publisher_url": url, "evidence": [{"field": k, "date": v} for k, v in explicit if v][:8]}
+    except Exception as exc:
+        return {"doi": doi, "status": "publisher_unavailable", "error": str(exc)[:200]}
+
+
+def audit(month, inventory, report, workers=4, checker=check_candidate):
+    in_report = {a["doi"].strip().lower() for a in report.get("articles", []) if a.get("doi")}
+    output = {"month": month, "coverage_complete": False, "journals": {}}
+    jobs = []
+    for journal, listing in inventory.get("journals", {}).items():
+        dois = sorted({d.strip().lower() for d in listing.get("candidate_dois", []) if isinstance(d, str) and d.strip()})
+        output["journals"][journal] = {"listing_status": listing.get("status", "unknown"),
+            "publisher_listing_urls": [p.get("url") for p in listing.get("pages", [])],
+            "coverage_verified": False, "candidate_count": len(dois), "records": []}
+        jobs.extend((journal, doi) for doi in dois)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+        checked = list(pool.map(lambda item: checker(item[1], month), jobs))
+    for (journal, doi), result in zip(jobs, checked):
+        result["in_monthly_report"] = doi in in_report
+        output["journals"][journal]["records"].append(result)
+    for row in output["journals"].values():
+        row["verified_missing_from_report"] = sum(
+            r["status"] == "verified_in_month" and not r["in_monthly_report"] for r in row["records"])
+        row["warning"] = "Publisher listing is not proven exhaustive; candidate dates are article-level checks only."
+    return output
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--month", required=True)
+    p.add_argument("--workers", type=int, default=4)
+    args = p.parse_args()
+    dt.date.fromisoformat(args.month + "-01")
+    if not 1 <= args.workers <= 12:
+        p.error("--workers must be 1..12")
+    inventory_path = ROOT / "data/publisher-inventory" / (args.month + ".json")
+    report_path = ROOT / "data/months" / (args.month + ".json")
+    inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    result = audit(args.month, inventory, report, args.workers)
+    out = ROOT / "data/publisher-inventory" / (args.month + "-verified.json")
+    out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({name: {"candidates": row["candidate_count"],
+                             "verified_missing": row["verified_missing_from_report"]}
+                      for name, row in result["journals"].items()}))
+
+
+if __name__ == "__main__":
+    main()
