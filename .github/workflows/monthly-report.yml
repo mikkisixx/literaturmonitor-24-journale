@@ -16,6 +16,8 @@ on:
       - 'scripts/discover_springer.py'
       - 'scripts/verify_springer_inventory.py'
       - 'scripts/audit_publisher_inventory.py'
+      - 'scripts/verify_discovered_candidates.py'
+      - 'tests/test_verify_discovered_candidates.py'
       - 'tests/test_audit_publisher_inventory.py'
       - 'tests/test_verify_springer_inventory.py'
       - 'tests/test_discover_springer.py'
@@ -88,6 +90,10 @@ jobs:
         run: python scripts/verify_springer_inventory.py --month "${{ steps.period.outputs.month }}"
       - name: Tests unabhängige Springer-Verlagsdatierung
         run: python -m unittest discover -s tests -p 'test_verify_springer_inventory.py' -v
+      - name: Unabhängig entdeckte Verlags-DOIs artikelweise prüfen
+        run: python scripts/verify_discovered_candidates.py --month "${{ steps.period.outputs.month }}"
+      - name: Tests der unabhängigen Verlagskandidatenprüfung
+        run: python -m unittest discover -s tests -p 'test_verify_discovered_candidates.py' -v
       - name: Unabhängige Verlagsabdeckung aller 24 Zeitschriften dokumentieren
         run: python scripts/audit_publisher_inventory.py --month "${{ steps.period.outputs.month }}"
       - name: Tests Verlagsabdeckung aller 24 Zeitschriften
@@ -119,6 +125,7 @@ jobs:
             data/backfill-${{ steps.period.outputs.month }}.json
             data/coverage/
             data/publisher-inventory/${{ steps.period.outputs.month }}.json
+            data/publisher-inventory/${{ steps.period.outputs.month }}-verified.json
             data/publisher-candidate-checks/${{ steps.period.outputs.month }}.json
             data/quality/${{ steps.period.outputs.month }}.json
           if-no-files-found: warn
