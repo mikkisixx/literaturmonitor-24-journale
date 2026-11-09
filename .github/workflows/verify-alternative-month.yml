@@ -42,9 +42,17 @@ jobs:
           set -euo pipefail
           for workflow in monthly-report.yml einfacher-html-bericht.yml; do
             if [[ "$workflow" == monthly-report.yml ]]; then id="$monthly_report_yml"; else id="$einfacher_html_bericht_yml"; fi
-            gh run watch "$id" --exit-status --interval 30
-            result="$(gh api "repos/$GH_REPO/actions/runs/$id" --jq '.conclusion')"
-            [[ "$result" == success ]] || { echo "::error::$workflow: $result"; exit 1; }
+            result=""
+            for attempt in $(seq 1 180); do
+              status="$(gh api "repos/$GH_REPO/actions/runs/$id" --jq '.status')"
+              if [[ "$status" == completed ]]; then
+                result="$(gh api "repos/$GH_REPO/actions/runs/$id" --jq '.conclusion')"
+                break
+              fi
+              echo "$workflow ($id): $status; poll $attempt/180"
+              sleep 30
+            done
+            [[ "$result" == success ]] || { echo "::error::$workflow: ${result:-timeout}; run $id"; exit 1; }
           done
       - name: Artefakte herunterladen und August-HTML inhaltlich prüfen
         env:
