@@ -78,6 +78,13 @@ class HtmlExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,"Duplicate verified DOI"):
                 export_html.export(self.month,self.root/"out")
 
+    def test_invalid_month_is_rejected_before_file_access(self):
+        for month in ("2026-13", "2026-00", "../2026-10", "2026-10/../../other", "2026-1"):
+            with self.subTest(month=month):
+                with patch.object(export_html, "ROOT", self.root):
+                    with self.assertRaisesRegex(ValueError, "YYYY-MM"):
+                        export_html.export(month, self.root / "out")
+
     def test_mismatched_month_blocks_export(self):
         self.coverage["month"]="2026-09"
         self.save()
