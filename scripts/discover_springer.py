@@ -35,6 +35,8 @@ class Links(HTMLParser):
 def parse_dois(html, journal):
     parser = Links()
     parser.feed(html)
+    if journal not in JOURNALS:
+        raise ValueError(f"Unsupported Springer journal: {journal}")
     prefix = "s00784" if journal == "Clinical Oral Investigations" else "s10856"
     result = set()
     for href in parser.links:
