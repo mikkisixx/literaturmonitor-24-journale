@@ -38,6 +38,12 @@ def export(month, output):
         raise ValueError("Verified online article count differs from exportable articles")
     if len({a["doi"].strip().lower() for a in eligible}) != len(eligible):
         raise ValueError("Duplicate verified DOI")
+    audit_names = [item.get("journal") for item in coverage["journals"]]
+    if len(audit_names) != 24 or len(set(audit_names)) != 24 or any(not name for name in audit_names):
+        raise ValueError("Expected 24 distinct journal audit records")
+    unknown = {a.get("journal") for a in eligible} - set(audit_names)
+    if unknown:
+        raise ValueError("Verified article references a journal absent from the 24-journal audit")
     journals={}
     for a in eligible:
         journals.setdefault(a["journal"],[]).append(a)
