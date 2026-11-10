@@ -50,16 +50,25 @@ def build(month, inventory=None, verification=None):
             listing = inventory.get("journals", {}).get(name)
             checks = by_journal.get(name, [])
             status = "not_implemented" if listing is None else listing.get("status", "unknown")
-            # A bounded listing or DOI check cannot establish exhaustive coverage.
+            # Report the actual listing attempt, rather than a generic coverage warning.
+            pages = listing.get("pages", []) if listing else []
+            urls = [p["url"] for p in pages if isinstance(p, dict) and p.get("url")]
+            if listing is None:
+                reason = "No independent publisher listing attempted for this journal"
+            elif status == "unparseable_or_empty_listing":
+                reason = "Publisher listing attempted but no DOI could be extracted; coverage unverified"
+            else:
+                reason = "Publisher listing not proven exhaustive and first-online dates not fully inventoried"
             rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
                          "publisher_listing_status": status,
+                         "publisher_listing_urls": urls,
                          "publisher_candidate_count": len(listing.get("candidate_dois", [])) if listing else 0,
                          "publisher_article_dates_checked": len(checks),
                          "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" for x in checks),
                          "confirmed_month_missing_from_report": sum(x.get("in_requested_month") and not x.get("in_monthly_report")
                                                                       and x.get("status") == "publisher_online_date_verified" for x in checks),
                          "publisher_coverage_verified": False,
-                         "publisher_coverage_reason": "No independently proven exhaustive publisher listing and original-online-date inventory"})
+                         "publisher_coverage_reason": reason})
     assert len(rows) == 24
     return {"month": month, "journal_count": 24, "journals_independently_verified": 0,
             "complete": False, "journals": rows}
