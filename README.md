@@ -9,7 +9,7 @@ Monatliche DOI-Recherche mit Crossref, ergänzenden Verlagsprüfungen und einem 
 3. Nach Abschluss den Workflow-Lauf öffnen und unter **Artifacts** `Literaturbericht-YYYY-MM-HTML` herunterladen. Das ZIP entpacken und `Literaturbericht-YYYY-MM.html` im Browser öffnen. Das HTML benötigt keinen Webserver.
 4. Ein grüner Workflow-Lauf ist **keine** redaktionelle Freigabe: die Quellen- und Vollständigkeitstabelle im Bericht prüfen.
 
-Der Workflow ist unter [monthly-report.yml](.github/workflows/monthly-report.yml) definiert. Die Ausgabe wird von [export_html.py](scripts/export_html.py) erstellt. Die unabhängige Prüfung eines explizit ausgewählten anderen Monats ist als End-to-End-Nachweis noch offen; die bloße Existenz des Eingabefelds reicht dafür nicht.
+Der Workflow ist unter [monthly-report.yml](.github/workflows/monthly-report.yml) definiert. Die Ausgabe wird von [export_html.py](scripts/export_html.py) erstellt. Ein manueller End-to-End-Lauf für **August 2026** ist belegt ([Run 42648802202](https://github.com/mikkisixx/literaturmonitor-24-journale/actions/runs/42648802202), Artefakt 13692656117). Das heruntergeladene ZIP enthält eine eigenständige HTML-Datei mit **579 Artikeln**, **579 eindeutigen DOI-Links**, **24 Journal-Prüfzeilen**, **keinem Suchfeld** und **keinem Rechercheentwurf-Hinweis**. Für **Oktober 2026** ist ein erfolgreicher produktiver Lauf belegt ([Run 42776085078](https://github.com/mikkisixx/literaturmonitor-24-journale/actions/runs/42776085078), Artefakt 13747954794). Diese Nachweise belegen die technische Monatsauswahl und HTML-Ausgabe für zwei Monate, **nicht** die unabhängige bibliografische Vollständigkeit aller 24 Zeitschriften.
 
 ## Datenherkunft und Einschränkungen
 
