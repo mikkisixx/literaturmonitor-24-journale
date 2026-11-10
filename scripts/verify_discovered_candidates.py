@@ -36,7 +36,12 @@ def check_candidate(doi, month, fetch=get_publisher):
         url, dates = fetch(doi)
         explicit = [(key, normalize_date(value)) for key, value in dates if key in ONLINE_KEYS]
         valid = sorted({value for _, value in explicit if value})
-        if len(valid) > 1:
+        # A malformed explicit online date is not evidence that can be ignored.
+        # Otherwise a valid date beside an unparseable conflicting date could
+        # incorrectly pass the publication gate.
+        if any(value is None for _, value in explicit):
+            status = "unparseable_online_date"
+        elif len(valid) > 1:
             status = "conflicting_online_dates"
         elif not valid:
             status = "no_explicit_online_date"
