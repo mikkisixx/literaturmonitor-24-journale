@@ -3,10 +3,23 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
-from verify_discovered_candidates import audit, check_candidate
+from verify_discovered_candidates import audit, check_candidate, canonical_doi
 
 
 class IndependentPublisherAuditTests(unittest.TestCase):
+    def test_canonical_doi_formats(self):
+        self.assertEqual(canonical_doi("https://doi.org/10.1000%2FABC"), "10.1000/abc")
+        self.assertEqual(canonical_doi("DOI: 10.1000/ABC"), "10.1000/abc")
+        self.assertEqual(canonical_doi("not-a-doi"), "")
+
+    def test_doi_url_matches_plain_report_doi(self):
+        inventory = {"journals": {"Example": {"candidate_dois": ["https://doi.org/10.1000%2FABC"]}}}
+        report = {"articles": [{"doi": "10.1000/abc"}]}
+        def checker(doi, month):
+            return {"doi": doi, "status": "verified_in_month", "online_date": "2026-08-01"}
+        result = audit("2026-08", inventory, report, workers=1, checker=checker)
+        self.assertEqual(result["journals"]["Example"]["verified_missing_from_report"], 0)
+
     def test_explicit_online_date_only(self):
         def fetch(_):
             return "https://publisher.example/article", [("citation_publication_date", "2026-08-03")]
