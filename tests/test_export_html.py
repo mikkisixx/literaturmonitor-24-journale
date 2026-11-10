@@ -99,6 +99,16 @@ class HtmlExportTests(unittest.TestCase):
         with patch.object(export_html,"ROOT",self.root):
             with self.assertRaisesRegex(ValueError,"Expected 24 distinct journal audit records"):
                 export_html.export(self.month,self.root/"out")
+    def test_verified_article_without_audit_journal_blocks_export(self):
+        self.report={"month":self.month,"count":1,"verified_online_count":1,"candidate_count":0,
+                     "articles":[{"journal":"Unexpected Journal","title":"Misassigned",
+                                  "doi":"10.1234/unexpected","date_basis":"publisher_online",
+                                  "online_date":"2026-10-12"}]}
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"absent from the 24-journal audit"):
+                export_html.export(self.month,self.root/"out")
+
     def test_missing_journal_query_blocks_export(self):
         self.coverage["journals_queried"]=23
         self.save()
