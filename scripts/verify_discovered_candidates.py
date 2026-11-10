@@ -10,6 +10,20 @@ import datetime as dt
 import json
 import pathlib
 import sys
+import urllib.parse
+
+
+def canonical_doi(value):
+    """Normalize DOI strings and doi.org links without changing DOI identity."""
+    if not isinstance(value, str):
+        return ""
+    value = value.strip()
+    if value.lower().startswith(("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/")):
+        value = urllib.parse.urlsplit(value).path.lstrip("/")
+    elif value.lower().startswith("doi:"):
+        value = value[4:].strip()
+    value = urllib.parse.unquote(value).strip().lower()
+    return value if value.startswith("10.") and "/" in value else ""
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -36,11 +50,11 @@ def check_candidate(doi, month, fetch=get_publisher):
 
 
 def audit(month, inventory, report, workers=4, checker=check_candidate):
-    in_report = {a["doi"].strip().lower() for a in report.get("articles", []) if a.get("doi")}
+    in_report = {canonical_doi(a.get("doi")) for a in report.get("articles", [])} - {""}
     output = {"month": month, "coverage_complete": False, "journals": {}, "records": []}
     jobs = []
     for journal, listing in inventory.get("journals", {}).items():
-        dois = sorted({d.strip().lower() for d in listing.get("candidate_dois", []) if isinstance(d, str) and d.strip()})
+        dois = sorted({canonical_doi(d) for d in listing.get("candidate_dois", [])} - {""})
         output["journals"][journal] = {"listing_status": listing.get("status", "unknown"),
             "publisher_listing_urls": [p.get("url") for p in listing.get("pages", [])],
             "coverage_verified": False, "candidate_count": len(dois), "records": []}
