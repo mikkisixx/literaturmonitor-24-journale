@@ -72,10 +72,10 @@ def export(month, output):
         platform=item.get("publisher_platform") or "nicht angegeben"
         listing=item.get("publisher_listing_status") or "nicht geprüft"
         verified="Ja" if item.get("publisher_coverage_verified") else "Nein"
-        audit_rows.append('<tr><th scope="row">'+h(name)+'</th><td>'+str(count)+'</td><td>'+h(platform)+'</td><td>'+h(listing)+'</td><td>'+verified+'</td></tr>')
+        audit_rows.append('<tr><th scope="row">'+h(name)+'</th><td>'+str(count)+'</td><td>'+h(platform)+'</td><td>'+h(listing)+'</td><td>'+verified+'</td><td>'+h(item.get("publisher_coverage_reason") or ("Unabhängige Vollständigkeit nicht belegt" if not item.get("publisher_coverage_verified") else "Unabhängig verifiziert"))+'</td></tr>')
     if len(audit_rows)!=24 or len({j.get("journal") for j in coverage["journals"]})!=24:
         raise ValueError("Expected 24 distinct journal audit records")
-    audit_table='<section><h2>Quellen- und Vollständigkeitsprüfung aller 24 Zeitschriften</h2><p>Crossref liefert DOI- und Online-Datumsmetadaten. Die Verlagsplattform und der Status ihrer unabhängigen Artikelliste werden für jede Zeitschrift getrennt ausgewiesen. Null bestätigte Artikel bedeuten nicht, dass keine Artikel erschienen sind.</p><div class="table-wrap"><table><thead><tr><th>Zeitschrift</th><th>Bestätigte Artikel</th><th>Verlagsplattform</th><th>Verlagsinventur</th><th>Vollständigkeit geprüft</th></tr></thead><tbody>'+''.join(audit_rows)+'</tbody></table></div></section>'
+    audit_table='<section><h2>Quellen- und Vollständigkeitsprüfung aller 24 Zeitschriften</h2><p>Crossref liefert DOI- und Online-Datumsmetadaten. Die Verlagsplattform und der Status ihrer unabhängigen Artikelliste werden für jede Zeitschrift getrennt ausgewiesen. Null bestätigte Artikel bedeuten nicht, dass keine Artikel erschienen sind.</p><div class="table-wrap"><table><thead><tr><th>Zeitschrift</th><th>Bestätigte Artikel</th><th>Verlagsplattform</th><th>Verlagsinventur</th><th>Vollständigkeit geprüft</th><th>Begründung / Einschränkung</th></tr></thead><tbody>'+''.join(audit_rows)+'</tbody></table></div></section>'
     conflicts=coverage.get("publisher_date_conflicts", [])
     if coverage.get("publisher_date_conflict_count", 0) != len(conflicts):
         raise ValueError("Publisher date conflict evidence inconsistent")
