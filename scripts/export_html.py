@@ -35,8 +35,14 @@ def export(month, output):
     eligible = [a for a in report["articles"]
                 if a.get("date_basis") in ("crossref_online", "publisher_online")
                 and str(a.get("online_date") or "").startswith(month + "-")]
-    for a in eligible:
-        dt.date.fromisoformat(a["online_date"])
+    for a in report["articles"]:
+        if a.get("date_basis") in ("crossref_online", "publisher_online"):
+            online = a.get("online_date")
+            if not isinstance(online, str):
+                raise ValueError("Verified article has no online date")
+            parsed = dt.date.fromisoformat(online)
+            if parsed.strftime("%Y-%m") != month:
+                raise ValueError("Verified article outside selected month")
     if len(eligible) != report["verified_online_count"]:
         raise ValueError("Verified online article count differs from exportable articles")
     if len({a["doi"].strip().lower() for a in eligible}) != len(eligible):
