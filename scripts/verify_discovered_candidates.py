@@ -28,6 +28,7 @@ def canonical_doi(value):
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from verify_publishers import ONLINE_KEYS, get_publisher, normalize_date
+import collect
 
 
 def check_candidate(doi, month, fetch=get_publisher):
@@ -51,7 +52,13 @@ def check_candidate(doi, month, fetch=get_publisher):
 
 def audit(month, inventory, report, workers=4, checker=check_candidate):
     in_report = {canonical_doi(a.get("doi")) for a in report.get("articles", [])} - {""}
-    output = {"month": month, "coverage_complete": False, "journals": {}, "records": []}
+    expected = {name for names in collect.JOURNALS.values() for name in names}
+    listed = set(inventory.get("journals", {}))
+    output = {"month": month, "coverage_complete": False,
+              "expected_journal_count": len(expected),
+              "journals_without_listing": sorted(expected - listed),
+              "unexpected_journals": sorted(listed - expected),
+              "journals": {}, "records": []}
     jobs = []
     for journal, listing in inventory.get("journals", {}).items():
         dois = sorted({canonical_doi(d) for d in listing.get("candidate_dois", [])} - {""})
