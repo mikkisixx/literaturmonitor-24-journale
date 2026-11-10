@@ -20,6 +20,13 @@ class IndependentPublisherAuditTests(unittest.TestCase):
         result = audit("2026-08", inventory, report, workers=1, checker=checker)
         self.assertEqual(result["journals"]["Example"]["verified_missing_from_report"], 0)
 
+    def test_missing_journal_listings_are_explicit(self):
+        result = audit("2026-08", {"journals": {}}, {"articles": []}, workers=1)
+        self.assertEqual(result["expected_journal_count"], 24)
+        self.assertEqual(len(result["journals_without_listing"]), 24)
+        self.assertEqual(result["unexpected_journals"], [])
+        self.assertFalse(result["coverage_complete"])
+
     def test_explicit_online_date_only(self):
         def fetch(_):
             return "https://publisher.example/article", [("citation_publication_date", "2026-08-03")]
