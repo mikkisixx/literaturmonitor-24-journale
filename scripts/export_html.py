@@ -3,12 +3,15 @@
 import argparse
 import html
 import json
+import re
 from urllib.parse import urlsplit
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 def h(value):
     return html.escape(str(value if value is not None else ""), quote=True)
 def export(month, output):
+    if not re.fullmatch(r"20[0-9]{2}-(0[1-9]|1[0-2])", month):
+        raise ValueError("Month must use YYYY-MM format")
     report=json.loads((ROOT/"data/months"/(month+".json")).read_text())
     quality=json.loads((ROOT/"data/quality"/(month+".json")).read_text())
     coverage=json.loads((ROOT/"data/coverage"/(month+".json")).read_text())
