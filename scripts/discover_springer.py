@@ -11,6 +11,7 @@ import json
 import pathlib
 import re
 import urllib.request
+import urllib.parse
 from html.parser import HTMLParser
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -37,7 +38,9 @@ def parse_dois(html, journal):
     prefix = "s00784" if journal == "Clinical Oral Investigations" else "s10856"
     result = set()
     for href in parser.links:
-        for match in DOI.findall(href):
+        # Springer may percent-encode the DOI slash in article hrefs. Decode
+        # URL escapes before matching, without accepting DOI text outside links.
+        for match in DOI.findall(urllib.parse.unquote(href)):
             if match.lower().startswith("10.1007/" + prefix + "-"):
                 result.add(match.lower().rstrip("/"))
     return sorted(result)
