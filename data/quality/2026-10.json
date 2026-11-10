@@ -4,8 +4,8 @@
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
   "crossref_online_articles": 563,
-  "independently_corroborrated_online_dates": 478,
-  "online_dates_not_corroborrated": 85,
+  "independently_corroborrated_online_dates": 479,
+  "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
     "europe_pmc_electronic_month_match": 174,
