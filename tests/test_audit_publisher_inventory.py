@@ -22,5 +22,21 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertFalse(row["publisher_coverage_verified"])
         self.assertEqual(row["publisher_candidate_count"], 1)
 
+    def test_listing_failures_and_sources_are_explicit(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "unparseable_or_empty_listing",
+            "pages": [{"url": "https://link.springer.com/journal/784/articles?page=1", "doi_count": 0}],
+            "candidate_dois": []}}}
+        result = audit.build("2026-10", inventory)
+        rows = {row["journal"]: row for row in result["journals"]}
+        attempted = rows["Clinical Oral Investigations"]
+        absent = rows["Dental Materials"]
+        self.assertEqual(attempted["publisher_listing_urls"], ["https://link.springer.com/journal/784/articles?page=1"])
+        self.assertIn("no DOI could be extracted", attempted["publisher_coverage_reason"])
+        self.assertEqual(absent["publisher_listing_urls"], [])
+        self.assertIn("No independent publisher listing attempted", absent["publisher_coverage_reason"])
+        self.assertFalse(attempted["publisher_coverage_verified"])
+        self.assertFalse(absent["publisher_coverage_verified"])
+
 if __name__ == "__main__":
     unittest.main()
