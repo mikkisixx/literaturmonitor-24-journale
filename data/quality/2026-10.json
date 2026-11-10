@@ -8,17 +8,17 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 174,
-    "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 89
+    "europe_pmc_electronic_month_match": 172,
+    "europe_pmc_electronic_other_month": 271,
+    "needs_manual_review": 92
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 65,
-        "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 2
+        "europe_pmc_electronic_month_match": 64,
+        "europe_pmc_electronic_other_month": 56,
+        "needs_manual_review": 4
       }
     },
     "Dental Materials": {
@@ -49,8 +49,8 @@
       "total": 38,
       "statuses": {
         "europe_pmc_electronic_other_month": 16,
-        "europe_pmc_electronic_month_match": 16,
-        "needs_manual_review": 6
+        "europe_pmc_electronic_month_match": 15,
+        "needs_manual_review": 7
       }
     },
     "Journal of Prosthetic Dentistry": {
@@ -1263,16 +1263,13 @@
       "doi": "10.1016/j.actbio.2026.08.032",
       "journal": "Acta Biomaterialia",
       "title": "Multiscale analysis reveals distinct temporal trajectories of morphological reconstruction and mechanical maturation during mouse digit tip regeneration",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-19",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42617780",
-        "electronic_publication_date": "2026-08-19",
-        "first_publication_date": "2026-08-19",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1343,16 +1340,13 @@
       "doi": "10.1016/j.actbio.2026.10.060",
       "journal": "Acta Biomaterialia",
       "title": "Nanozyme-Powered Immunotherapy via Concurrent Niche Disruption and Checkpoint Blockade for Acute Myeloid Leukemia",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-29",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42956951",
-        "electronic_publication_date": "2026-10-29",
-        "first_publication_date": "2026-10-29",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -5382,16 +5376,13 @@
       "doi": "10.1016/j.joen.2026.10.011",
       "journal": "Journal of Endodontics",
       "title": "The Global Periapical Health Study: Treatment-Related Factors Associated With Post-Treatment Periapical Radiolucencies in Endodontically Treated Teeth",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-27",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42946043",
-        "electronic_publication_date": "2026-10-27",
-        "first_publication_date": "2026-10-27",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {

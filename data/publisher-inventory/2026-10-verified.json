@@ -1,6 +1,32 @@
 {
   "month": "2026-10",
   "coverage_complete": false,
+  "expected_journal_count": 24,
+  "journals_without_listing": [
+    "Acta Biomaterialia",
+    "American Journal of Dentistry",
+    "BMC Oral Health",
+    "Dental Materials",
+    "Dental Traumatology",
+    "European Journal of Oral Sciences",
+    "International Endodontic Journal",
+    "International Journal of Paediatric Dentistry",
+    "International Journal of Prosthodontics",
+    "Journal of Adhesive Dentistry",
+    "Journal of Biomechanics",
+    "Journal of Dental Research",
+    "Journal of Dentistry",
+    "Journal of Endodontics",
+    "Journal of Oral Rehabilitation",
+    "Journal of Prosthetic Dentistry",
+    "Journal of the American Ceramic Society",
+    "Journal of the European Ceramic Society",
+    "Journal of the Mechanical Behavior of Biomedical Materials",
+    "Operative Dentistry",
+    "Quintessence International",
+    "The Journal of Esthetic and Restorative Dentistry"
+  ],
+  "unexpected_journals": [],
   "journals": {
     "Clinical Oral Investigations": {
       "listing_status": "unparseable_or_empty_listing",
