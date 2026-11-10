@@ -13,6 +13,11 @@ class SpringerInventoryTests(unittest.TestCase):
         html = '<a href="/article/10.1007%2Fs00784-2026-07203-0?source=journal">A</a>'
         self.assertEqual(ds.parse_dois(html, "Clinical Oral Investigations"), ["10.1007/s00784-2026-07203-0"])
         self.assertEqual(ds.parse_dois(html, "Journal of Materials Science: Materials in Medicine"), [])
+    def test_unknown_journal_fails_closed(self):
+        html = '<a href="/article/10.1007/s10856-2026-07117-z">A</a>'
+        with self.assertRaises(ValueError):
+            ds.parse_dois(html, "Unconfigured Journal")
+
     def test_bounded_listing_never_claims_complete(self):
         def fetch(url):
             return '<a href="/article/10.1007/s00784-2026-07203-0">A</a>' if "/784/" in url else '<a href="/article/10.1007/s10856-2026-07117-z">B</a>'
