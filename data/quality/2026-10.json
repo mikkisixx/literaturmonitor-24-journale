@@ -9,16 +9,16 @@
   "candidate_count": 535,
   "candidate_status_counts": {
     "europe_pmc_electronic_month_match": 173,
-    "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 90
+    "europe_pmc_electronic_other_month": 271,
+    "needs_manual_review": 91
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
         "europe_pmc_electronic_month_match": 64,
-        "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 3
+        "europe_pmc_electronic_other_month": 56,
+        "needs_manual_review": 4
       }
     },
     "Dental Materials": {
@@ -471,13 +471,16 @@
       "doi": "10.1016/j.actbio.2026.10.037",
       "journal": "Acta Biomaterialia",
       "title": "Biomaterial characteristics and biofluid composition differentially modulate protein adsorption and macrophage phenotype on common surgical polymers with proteome-transcriptome concordance",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-20",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42901352",
+        "electronic_publication_date": "2026-10-20",
+        "first_publication_date": "2026-10-20",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -1132,16 +1135,13 @@
       "doi": "10.1016/j.actbio.2026.08.042",
       "journal": "Acta Biomaterialia",
       "title": "Lauroylated peptide dendrimers with potent and broad-spectrum antimicrobial activity against multidrug-resistant bacteria",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-21",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42628864",
-        "electronic_publication_date": "2026-08-21",
-        "first_publication_date": "2026-08-21",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1196,16 +1196,13 @@
       "doi": "10.1016/j.actbio.2026.10.014",
       "journal": "Acta Biomaterialia",
       "title": "Metformin-loaded multi-enzymatic metal-organic framework nanozyme mediates metabolic reprogramming via multiple energy blockades to boost tumor immunotherapy",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42854938",
-        "electronic_publication_date": "2026-10-09",
-        "first_publication_date": "2026-10-09",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "HTTP Error 503: "
       }
     },
     {
@@ -5912,8 +5909,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
