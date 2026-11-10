@@ -41,6 +41,14 @@ class IndependentPublisherAuditTests(unittest.TestCase):
         self.assertEqual(check_candidate("10.1000/example", "2026-08", fetch)["status"],
                          "conflicting_online_dates")
 
+    def test_unparseable_explicit_online_date_is_not_verified(self):
+        def fetch(_):
+            return "https://publisher.example/article", [
+                ("citation_online_date", "2026-08-03"),
+                ("citation_date_online", "unknown")]
+        result = check_candidate("10.1000/example", "2026-08", fetch)
+        self.assertEqual(result["status"], "unparseable_online_date")
+
     def test_missing_from_report_is_reported_not_inserted(self):
         inventory = {"journals": {"Example": {"status": "page_limit_reached",
             "candidate_dois": ["10.1000/A", "10.1000/B"], "pages": [{"url": "https://example.org"}]}}}
