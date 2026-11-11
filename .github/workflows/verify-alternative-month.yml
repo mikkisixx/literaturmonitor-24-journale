@@ -11,7 +11,7 @@ permissions:
 jobs:
   verify-alternative-month:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     steps:
       - name: Beide Monatsgeneratoren auslösen und ihre Run-IDs erfassen
         env:
