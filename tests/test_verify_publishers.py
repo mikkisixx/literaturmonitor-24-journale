@@ -27,6 +27,21 @@ class PublisherDateConflictTests(unittest.TestCase):
     def test_unverified_remains_unverified_without_evidence(self):
         self.assertEqual(reconcile_status("needs_manual_review", "not_indexed"), "needs_manual_review")
 
+    def test_malformed_explicit_online_date_blocks_false_match(self):
+        status, evidence, parsed = classify([
+            ("citation_online_date", "2026-10-03"),
+            ("citation_date_online", "unparseable")], "2026-10-03")
+        self.assertEqual(status, "needs_manual_review")
+        self.assertEqual(evidence, [])
+        self.assertEqual(len(parsed), 2)
+
+    def test_unrelated_generic_invalid_date_does_not_block_explicit_online_date(self):
+        status, evidence, _ = classify([
+            ("citation_online_date", "2026-10-03"),
+            ("citation_publication_date", "unknown")], "2026-10-03")
+        self.assertEqual(status, "publisher_date_match")
+        self.assertEqual(evidence, [("citation_online_date", "2026-10-03")])
+
     def test_explicit_online_publisher_date_conflict(self):
         status, _, _ = classify([("citation_online_date", "2026-10-02")], "2026-10-03")
         self.assertEqual(status, "date_conflict")
