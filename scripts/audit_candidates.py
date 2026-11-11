@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Audit every unresolved monthly candidate without inventing online-first dates."""
 import datetime as dt
+from concurrent.futures import ThreadPoolExecutor
 import json
 import pathlib
 import sys
@@ -19,7 +20,7 @@ out=DATA/"quality"/(MONTH+".json")
 out.parent.mkdir(parents=True,exist_ok=True)
 candidates=[a for a in report["articles"] if a["date_basis"]!="crossref_online"]
 records=[]
-for i,a in enumerate(candidates,1):
+def audit_candidate(a):
     doi=a["doi"]
     entry={"doi":doi,"journal":a["journal"],"title":a["title"],"source":"Crossref DOI API",
            "status":"needs_manual_review","online_date":None,"reason":"No explicit online-first date in monthly data"}
@@ -72,9 +73,15 @@ for i,a in enumerate(candidates,1):
             entry["europe_pmc"]={"status":"not_indexed_by_exact_doi"}
     except (urllib.error.HTTPError,urllib.error.URLError,TimeoutError,ValueError) as exc:
         entry["europe_pmc"]={"status":"lookup_failed","error":str(exc)[:110]}
-    records.append(entry)
-    if i%50==0:print("Kandidaten geprüft:",i,"/",len(candidates),flush=True)
-    time.sleep(.18)
+    return entry
+
+# Limit simultaneous external requests while preserving candidate order.
+# Six workers prevent hundreds of sequential network timeouts from stalling CI.
+with ThreadPoolExecutor(max_workers=6) as executor:
+    for i, entry in enumerate(executor.map(audit_candidate, candidates), 1):
+        records.append(entry)
+        if i % 50 == 0:
+            print("Kandidaten geprüft:", i, "/", len(candidates), flush=True)
 status_counts={}
 by_journal={}
 for entry in records:
