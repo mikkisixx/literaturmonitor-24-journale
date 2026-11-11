@@ -93,7 +93,11 @@ GENERIC_KEYS={"citation_publication_date","citation_date","dc.date.issued","dc.d
 def classify(dates,expected):
     parsed=[(k,v,normalize_date(v)) for k,v in dates]
     # Only explicit online-date metadata is accepted as corroboration.
-    online=[(k,v,d) for k,v,d in parsed if k in ONLINE_KEYS and d]
+    explicit=[(k,v,d) for k,v,d in parsed if k in ONLINE_KEYS]
+    # An invalid explicit online-date field must not be silently discarded:
+    # a second, parseable field cannot establish an unambiguous date.
+    if any(d is None for _,_,d in explicit):return "needs_manual_review",[],parsed
+    online=explicit
     if not online:return "needs_manual_review",[],parsed
     if any(d!=expected for _,_,d in online):return "date_conflict",[],parsed
     return "publisher_date_match",[(k,v) for k,v,d in online],parsed
