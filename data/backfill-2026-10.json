@@ -6,7 +6,7 @@
   "counts": {
     "Journal of Dental Research": 20,
     "Dental Materials": 41,
-    "Journal of Dentistry": 82,
+    "Journal of Dentistry": 81,
     "American Journal of Dentistry": 0,
     "Journal of Adhesive Dentistry": 0,
     "Journal of Prosthetic Dentistry": 89,
@@ -34,6 +34,6 @@
     "International Journal of Prosthodontics",
     "Quintessence International"
   ],
-  "distinct_doi_in_register": 76003,
+  "distinct_doi_in_register": 76496,
   "warning": "Published date alone is NOT confirmed online-first; publication dates can be updated."
 }
