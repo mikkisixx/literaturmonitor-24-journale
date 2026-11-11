@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/verify-alternative-month.yml'
+      - 'scripts/**'
+      - '.github/workflows/monthly-report.yml'
+      - '.github/workflows/einfacher-html-bericht.yml'
   workflow_dispatch:
 permissions:
   actions: write
