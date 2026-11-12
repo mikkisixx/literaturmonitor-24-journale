@@ -22,6 +22,14 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertFalse(row["publisher_coverage_verified"])
         self.assertEqual(row["publisher_candidate_count"], 1)
 
+    def test_page_limit_is_reported_as_incomplete_pagination(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "page_limit_reached", "candidate_dois": ["10.1007/example"]}}}
+        result = audit.build("2026-10", inventory)
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertIn("page limit", row["publisher_coverage_reason"])
+        self.assertFalse(row["publisher_coverage_verified"])
+
     def test_listing_failures_and_sources_are_explicit(self):
         inventory = {"journals": {"Clinical Oral Investigations": {
             "status": "unparseable_or_empty_listing",
