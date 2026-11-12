@@ -57,6 +57,10 @@ def build(month, inventory=None, verification=None):
                 reason = "No independent publisher listing attempted for this journal"
             elif status == "unparseable_or_empty_listing":
                 reason = "Publisher listing attempted but no DOI could be extracted; coverage unverified"
+            elif status == "page_limit_reached":
+                reason = "Publisher pagination stopped at page limit; remaining pages not checked"
+            elif status == "request_failed":
+                reason = "Publisher listing request failed; coverage unverified"
             else:
                 reason = "Publisher listing not proven exhaustive and first-online dates not fully inventoried"
             rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
