@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/verify-alternative-month.yml'
       - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/monthly-report.yml'
       - '.github/workflows/einfacher-html-bericht.yml'
   workflow_dispatch:
