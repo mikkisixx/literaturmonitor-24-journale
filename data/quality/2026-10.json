@@ -4,13 +4,13 @@
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
   "crossref_online_articles": 563,
-  "independently_corroborrated_online_dates": 479,
-  "online_dates_not_corroborrated": 84,
+  "independently_corroborrated_online_dates": 478,
+  "online_dates_not_corroborrated": 85,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 174,
+    "europe_pmc_electronic_month_match": 177,
     "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 89
+    "needs_manual_review": 86
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -33,8 +33,8 @@
       "total": 46,
       "statuses": {
         "europe_pmc_electronic_other_month": 33,
-        "europe_pmc_electronic_month_match": 6,
-        "needs_manual_review": 7
+        "europe_pmc_electronic_month_match": 8,
+        "needs_manual_review": 5
       }
     },
     "Journal of Dentistry": {
@@ -71,8 +71,8 @@
       "total": 40,
       "statuses": {
         "europe_pmc_electronic_other_month": 35,
-        "needs_manual_review": 3,
-        "europe_pmc_electronic_month_match": 2
+        "needs_manual_review": 2,
+        "europe_pmc_electronic_month_match": 3
       }
     },
     "Operative Dentistry": {
@@ -2951,12 +2951,16 @@
       "doi": "10.1016/j.jbiomech.2026.113651",
       "journal": "Journal of Biomechanics",
       "title": "Embedding muscle attachment sites in statistical shape models can estimate hip muscle attachment sites in patients with hip dysplasia",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-29",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "43002950",
+        "electronic_publication_date": "2026-10-29",
+        "first_publication_date": "2026-10-29",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -3163,12 +3167,16 @@
       "doi": "10.1016/j.jbiomech.2026.113605",
       "journal": "Journal of Biomechanics",
       "title": "Perturbing gait stability during treadmill walking with destabilizing functional electrical stimulation",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-07",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "43008671",
+        "electronic_publication_date": "2026-10-07",
+        "first_publication_date": "2026-10-07",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -6769,7 +6777,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -6925,7 +6933,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7009,7 +7017,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7213,7 +7221,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7249,7 +7257,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7297,7 +7305,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7309,7 +7317,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7369,7 +7377,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7393,7 +7401,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7441,7 +7449,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -8114,12 +8122,16 @@
       "doi": "10.1016/j.jmbbm.2026.107690",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Quantification of the flexural rigidity of endovascular surgical devices using three-point bending tests",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-31",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "source": "MED",
+        "id": "43003020",
+        "electronic_publication_date": "2026-10-31",
+        "first_publication_date": "2026-10-31",
+        "electronic_date_month_match": true
       }
     },
     {
