@@ -36,6 +36,16 @@ class RecoveryTests(unittest.TestCase):
             _, result = recovery.inspect({"doi": "10.1234/abc"})
         self.assertEqual(result["status"], "conflicting_online_dates")
 
+    def test_invalid_explicit_date_blocks_otherwise_valid_date(self):
+        with patch.object(recovery, "get_publisher", return_value=(
+            "https://publisher.example/article", [
+                ("citation_online_date", "2026-10-12"),
+                ("citation_date_online", "unknown"),
+            ])):
+            _, result = recovery.inspect({"doi": "10.1234/abc"})
+        self.assertEqual(result["status"], "invalid_online_date_metadata")
+        self.assertNotIn("online_date", result)
+
     def test_recovery_does_not_overwrite_conflicting_existing_date(self):
         with tempfile.TemporaryDirectory() as temp:
             root = pathlib.Path(temp)
