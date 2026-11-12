@@ -36,9 +36,11 @@ jobs:
           fi
           git commit -m "Aktualisiere Crossref-Metadaten"
           # Other workflows can push while collection is running.
+          # Never silently prefer either side in conflicts: the generated
+          # metadata must be regenerated or manually reconciled instead.
           for attempt in 1 2 3 4 5; do
             git fetch origin main
-            if ! git rebase -X ours origin/main; then
+            if ! git rebase origin/main; then
               git rebase --abort || true
               echo "::error::Automatischer Rebase fehlgeschlagen; keine Daten überschrieben"
               exit 1
