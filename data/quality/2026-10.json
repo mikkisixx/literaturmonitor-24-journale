@@ -4,8 +4,8 @@
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
   "crossref_online_articles": 563,
-  "independently_corroborrated_online_dates": 478,
-  "online_dates_not_corroborrated": 85,
+  "independently_corroborrated_online_dates": 479,
+  "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
     "europe_pmc_electronic_month_match": 177,
@@ -3374,7 +3374,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -4938,7 +4938,7 @@
     {
       "doi": "10.1016/j.joen.2026.10.003",
       "journal": "Journal of Endodontics",
-      "title": "Comparing Diagnostic Ability of Two Off-the-Shelf Large Language Models with That of Endodontists for Teeth Requiring Initial Root Canal Treatment: A Multicenter Retrospective Investigation",
+      "title": "Comparing Diagnostic Ability of Two Off-the-Shelf Large Language Models with That of Endodontists for Teeth Possibly Requiring Initial Root Canal Treatment: A Multicenter Retrospective Investigation",
       "source": "Europe PMC electronicPublicationDate",
       "status": "europe_pmc_electronic_month_match",
       "online_date": "2026-10-13",
@@ -7017,7 +7017,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7221,7 +7221,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7257,7 +7257,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7449,7 +7449,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
