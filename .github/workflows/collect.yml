@@ -14,6 +14,8 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -22,11 +24,30 @@ jobs:
       - name: Vorläufige Monatsansichten erzeugen
         run: python scripts/build_months.py
       - name: Ergebnisse versionieren
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/observed.json data/status.json data/months/
-          if ! git diff --cached --quiet; then
-            git commit -m "Aktualisiere Crossref-Metadaten"
-            git push
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen zu versionieren"
+            exit 0
           fi
+          git commit -m "Aktualisiere Crossref-Metadaten"
+          # Other workflows can push while collection is running.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if ! git rebase -X ours origin/main; then
+              git rebase --abort || true
+              echo "::error::Automatischer Rebase fehlgeschlagen; keine Daten überschrieben"
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "::warning::Push-Konflikt, erneuter Versuch $attempt/5"
+            sleep $((attempt * 3))
+          done
+          echo "::error::Push nach fünf Versuchen weiterhin nicht möglich"
+          exit 1
