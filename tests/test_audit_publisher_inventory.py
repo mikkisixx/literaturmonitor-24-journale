@@ -46,5 +46,22 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertFalse(attempted["publisher_coverage_verified"])
         self.assertFalse(absent["publisher_coverage_verified"])
 
+
+    def test_publisher_doi_assigned_to_wrong_journal_is_not_counted_as_covered(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "page_limit_reached",
+            "candidate_dois": ["10.1007/EXAMPLE", "10.1007/example", "10.1007/other"]}}}
+        report = {"articles": [
+            {"journal": "Dental Materials", "doi": "10.1007/example"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/other"}]}
+        result = audit.build("2026-10", inventory, monthly_report=report)
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_candidate_count"], 2)
+        self.assertEqual(row["publisher_candidates_absent_from_monthly_report"], ["10.1007/example"])
+        self.assertEqual(row["publisher_candidates_absent_count"], 1)
+        self.assertEqual(row["publisher_candidates_present_under_other_journal"], ["10.1007/example"])
+        self.assertTrue(row["publisher_report_comparison_available"])
+        self.assertFalse(row["publisher_coverage_verified"])
+
 if __name__ == "__main__":
     unittest.main()
