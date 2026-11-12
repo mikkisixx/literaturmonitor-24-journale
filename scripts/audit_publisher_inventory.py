@@ -37,9 +37,11 @@ def platform(name):
     if name == "Operative Dentistry": return "operative_dentistry"
     return "unmapped"
 
-def build(month, inventory=None, verification=None):
+def build(month, inventory=None, verification=None, monthly_report=None):
     inventory = inventory or {}
     verification = verification or {}
+    monthly_report = monthly_report or {}
+    reported_dois = {str(a.get("doi", "")).strip().lower() for a in monthly_report.get("articles", [])}
     verified_rows = verification.get("records", [])
     by_journal = {}
     for row in verified_rows:
@@ -49,6 +51,8 @@ def build(month, inventory=None, verification=None):
         for name in names:
             listing = inventory.get("journals", {}).get(name)
             checks = by_journal.get(name, [])
+            publisher_dois = {str(doi).strip().lower() for doi in (listing or {}).get("candidate_dois", []) if isinstance(doi, str) and doi.strip()}
+            missing_dois = sorted(publisher_dois - reported_dois) if monthly_report else []
             status = "not_implemented" if listing is None else listing.get("status", "unknown")
             # Report the actual listing attempt, rather than a generic coverage warning.
             pages = listing.get("pages", []) if listing else []
@@ -66,7 +70,10 @@ def build(month, inventory=None, verification=None):
             rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
                          "publisher_listing_status": status,
                          "publisher_listing_urls": urls,
-                         "publisher_candidate_count": len(listing.get("candidate_dois", [])) if listing else 0,
+                         "publisher_candidate_count": len(publisher_dois),
+                         "publisher_candidates_absent_from_monthly_report": missing_dois,
+                         "publisher_candidates_absent_count": len(missing_dois),
+                         "publisher_report_comparison_available": bool(monthly_report),
                          "publisher_article_dates_checked": len(checks),
                          "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" for x in checks),
                          "confirmed_month_missing_from_report": sum(x.get("in_requested_month") and not x.get("in_monthly_report")
@@ -87,7 +94,9 @@ def main():
     verified_path = folder / (args.month + "-verified.json")
     listing = json.loads(listing_path.read_text()) if listing_path.exists() else {}
     verified = json.loads(verified_path.read_text()) if verified_path.exists() else {}
-    result = build(args.month, listing, verified)
+    report_path = ROOT / "data/months" / (args.month + ".json")
+    monthly_report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else {}
+    result = build(args.month, listing, verified, monthly_report)
     folder.mkdir(parents=True, exist_ok=True)
     (folder / (args.month + "-coverage.json")).write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({"journals": 24, "implemented_listings": sum(r["publisher_listing_status"] != "not_implemented" for r in result["journals"]),
