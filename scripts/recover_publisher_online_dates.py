@@ -19,7 +19,12 @@ def inspect(item):
     doi=(item.get("doi") or "").lower()
     try:
         url,dates=get_publisher(doi)
-        values=sorted({normalize_date(v) for k,v in dates if k in ONLINE_KEYS and normalize_date(v)})
+        explicit=[(k,v,normalize_date(v)) for k,v in dates if k in ONLINE_KEYS]
+        # An invalid explicit date invalidates otherwise parseable evidence.
+        if any(parsed is None for _,_,parsed in explicit):
+            return doi,{"status":"invalid_online_date_metadata","publisher_url":url,
+                        "evidence":[{"field":k,"value":v} for k,v,_ in explicit][:5]}
+        values=sorted({parsed for _,_,parsed in explicit})
         if len(values)==1:
             return doi,{"status":"publisher_online_date_verified","online_date":values[0],
                 "publisher_url":url,"evidence":[{"field":k,"value":v} for k,v in dates if k in ONLINE_KEYS and normalize_date(v)==values[0]][:5]}
