@@ -8,17 +8,17 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 177,
-    "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 86
+    "needs_manual_review": 98,
+    "europe_pmc_electronic_other_month": 270,
+    "europe_pmc_electronic_month_match": 167
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 65,
-        "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 2
+        "needs_manual_review": 14,
+        "europe_pmc_electronic_other_month": 55,
+        "europe_pmc_electronic_month_match": 55
       }
     },
     "Dental Materials": {
@@ -87,16 +87,13 @@
       "doi": "10.1016/j.actbio.2026.10.013",
       "journal": "Acta Biomaterialia",
       "title": "A 3D lymphatics-on-a-chip reveals matrix stiffness dependent VEGFR-2 and VEGFR-3 contributions to lymphangiogenesis",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-08",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42849828",
-        "electronic_publication_date": "2026-10-08",
-        "first_publication_date": "2026-10-08",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -247,16 +244,13 @@
       "doi": "10.1016/j.actbio.2026.10.009",
       "journal": "Acta Biomaterialia",
       "title": "A pH-sensitive and ROS-responsive hydrogel enhanced by arginine-derived carbon dots for the diagnosis and treatment of infected wounds",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-06",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42838403",
-        "electronic_publication_date": "2026-10-06",
-        "first_publication_date": "2026-10-06",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -343,16 +337,13 @@
       "doi": "10.1016/j.actbio.2026.10.005",
       "journal": "Acta Biomaterialia",
       "title": "An NIR-triggered self-propelled janus nanomotor-integrated hydrogel with enzymatic cascade reactions and photothermal-enhanced drug release for the treatment of gouty arthritis",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-04",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42830168",
-        "electronic_publication_date": "2026-10-04",
-        "first_publication_date": "2026-10-04",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -455,32 +446,26 @@
       "doi": "10.1016/j.actbio.2026.10.021",
       "journal": "Acta Biomaterialia",
       "title": "Biomanufacturing vascular matrix-mimetic hydrogels from quantified arterial micromechanics and microstructure",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-14",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42874756",
-        "electronic_publication_date": "2026-10-14",
-        "first_publication_date": "2026-10-14",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.10.037",
       "journal": "Acta Biomaterialia",
       "title": "Biomaterial characteristics and biofluid composition differentially modulate protein adsorption and macrophage phenotype on common surgical polymers with proteome-transcriptome concordance",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-20",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42901352",
-        "electronic_publication_date": "2026-10-20",
-        "first_publication_date": "2026-10-20",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -503,16 +488,13 @@
       "doi": "10.1016/j.actbio.2026.02.041",
       "journal": "Acta Biomaterialia",
       "title": "Bone regeneration, tendon fiber formation, and angiogenesis are enhanced by the multifaceted effects of biodegradable octacalcium phosphate and gelatin scaffold materials",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-02-21",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "41730345",
-        "electronic_publication_date": "2026-02-21",
-        "first_publication_date": "2026-02-21",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -535,32 +517,26 @@
       "doi": "10.1016/j.actbio.2026.10.001",
       "journal": "Acta Biomaterialia",
       "title": "Comment on “Fiber density-driven mechanotransduction reconstructs collagen heterogeneity in the annulus fibrosus”",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-03",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42829019",
-        "electronic_publication_date": "2026-10-03",
-        "first_publication_date": "2026-10-03",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.09.054",
       "journal": "Acta Biomaterialia",
       "title": "Compromised elastin network load transfer in aging human aorta",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-03",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42829021",
-        "electronic_publication_date": "2026-10-03",
-        "first_publication_date": "2026-10-03",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -583,16 +559,13 @@
       "doi": "10.1016/j.actbio.2026.10.006",
       "journal": "Acta Biomaterialia",
       "title": "Contractile and hemodynamic modulation of skeletal muscle viscoelasticity quantified in vivo by ultrasound time-harmonic elastography",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-04",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42830169",
-        "electronic_publication_date": "2026-10-04",
-        "first_publication_date": "2026-10-04",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -647,32 +620,26 @@
       "doi": "10.1016/j.actbio.2026.09.043",
       "journal": "Acta Biomaterialia",
       "title": "Corrigendum to “Setd2 is associated with strontium-induced bone regeneration” [Acta Biomaterialia 2017;53:495-505]",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-05",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42833905",
-        "electronic_publication_date": "2026-10-05",
-        "first_publication_date": "2026-10-05",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.09.005",
       "journal": "Acta Biomaterialia",
       "title": "Corrigendum to “Spatially heterogeneous microgel-annealed PRP-derived fibrin hydrogel promotes coordinated vasculogenesis and angiogenesis after myocardial infarction” [Acta Biomaterialia 213 (2026) 182-199]",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-09-12",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42731973",
-        "electronic_publication_date": "2026-09-12",
-        "first_publication_date": "2026-09-12",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -727,16 +694,13 @@
       "doi": "10.1016/j.actbio.2026.09.052",
       "journal": "Acta Biomaterialia",
       "title": "Disorder-engineered thermoelectric Cu2Se/SnSe2 heterojunctions embedded in glycyrrhizic acid hydrogels for pyro-photo-ultrasonic therapy of periodontitis",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-06",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42838402",
-        "electronic_publication_date": "2026-10-06",
-        "first_publication_date": "2026-10-06",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7017,7 +6981,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7053,7 +7017,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7257,7 +7221,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
