@@ -15,7 +15,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
     def test_partial_listing_never_promoted_to_complete(self):
         inventory = {"journals": {"Clinical Oral Investigations": {"status": "page_limit_reached", "candidate_dois": ["10.1007/example"]}}}
         verification = {"records": [{"journal": "Clinical Oral Investigations", "status": "publisher_online_date_verified",
-                                     "in_requested_month": True, "in_monthly_report": False}]}
+                                     "doi": "10.1007/example", "in_requested_month": True, "in_monthly_report": False}]}
         result = audit.build("2026-10", inventory, verification)
         row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
         self.assertEqual(row["confirmed_month_missing_from_report"], 1)
@@ -115,7 +115,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         result = audit.build("2026-10", inventory, verification)
         row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
         self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/example"])
-        self.assertEqual(row["confirmed_month_missing_from_report"], 2)
+        self.assertEqual(row["confirmed_month_missing_from_report"], 1)
         self.assertFalse(row["publisher_coverage_verified"])
 
 if __name__ == "__main__":
