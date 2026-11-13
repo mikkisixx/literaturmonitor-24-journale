@@ -88,8 +88,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                          "publisher_report_comparison_available": report_available,
                          "publisher_article_dates_checked": len(checks),
                          "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" for x in checks),
-                         "confirmed_month_missing_from_report": sum(x.get("in_requested_month") and not x.get("in_monthly_report")
-                                                                      and x.get("status") == "publisher_online_date_verified" for x in checks),
+                         "confirmed_month_missing_from_report": len(confirmed_missing_dois),
+                         "confirmed_month_missing_dois": confirmed_missing_dois,
                          "publisher_coverage_verified": False,
                          "publisher_coverage_reason": reason})
     assert len(rows) == 24
