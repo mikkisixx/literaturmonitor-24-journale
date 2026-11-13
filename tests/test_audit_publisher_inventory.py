@@ -91,5 +91,15 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_candidates_not_found_anywhere"], [])
         self.assertFalse(row["publisher_coverage_verified"])
 
+    def test_existing_empty_monthly_report_is_comparable(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "page_limit_reached", "candidate_dois": ["10.1007/example"]}}}
+        result = audit.build("2026-10", inventory, monthly_report={"articles": []})
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertTrue(row["publisher_report_comparison_available"])
+        self.assertEqual(row["publisher_candidates_not_found_anywhere"], ["10.1007/example"])
+        self.assertEqual(row["publisher_candidates_absent_count"], 1)
+        self.assertFalse(row["publisher_coverage_verified"])
+
 if __name__ == "__main__":
     unittest.main()
