@@ -60,7 +60,35 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_candidates_absent_from_monthly_report"], ["10.1007/example"])
         self.assertEqual(row["publisher_candidates_absent_count"], 1)
         self.assertEqual(row["publisher_candidates_present_under_other_journal"], ["10.1007/example"])
+        self.assertEqual(row["publisher_candidates_not_found_anywhere"], [])
+        self.assertEqual(row["publisher_candidates_not_found_anywhere_count"], 0)
         self.assertTrue(row["publisher_report_comparison_available"])
+        self.assertFalse(row["publisher_coverage_verified"])
+
+    def test_global_absence_distinguished_from_wrong_journal(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "page_limit_reached",
+            "candidate_dois": ["10.1007/absent", "10.1007/misplaced", "10.1007/present"]}}}
+        report = {"articles": [
+            {"journal": "Dental Materials", "doi": "10.1007/misplaced"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/present"}]}
+        result = audit.build("2026-10", inventory, monthly_report=report)
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_candidates_absent_from_monthly_report"],
+                         ["10.1007/absent", "10.1007/misplaced"])
+        self.assertEqual(row["publisher_candidates_not_found_anywhere"], ["10.1007/absent"])
+        self.assertEqual(row["publisher_candidates_not_found_anywhere_count"], 1)
+        self.assertEqual(row["publisher_candidates_present_under_other_journal"], ["10.1007/misplaced"])
+        self.assertFalse(row["publisher_coverage_verified"])
+
+    def test_missing_monthly_report_does_not_claim_zero_missing_dois(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "page_limit_reached", "candidate_dois": ["10.1007/example"]}}}
+        result = audit.build("2026-10", inventory)
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertFalse(row["publisher_report_comparison_available"])
+        self.assertEqual(row["publisher_candidate_count"], 1)
+        self.assertEqual(row["publisher_candidates_not_found_anywhere"], [])
         self.assertFalse(row["publisher_coverage_verified"])
 
 if __name__ == "__main__":
