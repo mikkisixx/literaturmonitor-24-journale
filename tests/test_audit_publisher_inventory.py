@@ -101,5 +101,22 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_candidates_absent_count"], 1)
         self.assertFalse(row["publisher_coverage_verified"])
 
+    def test_verified_missing_doi_evidence_is_deduplicated(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {"status": "page_limit_reached"}}}
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/EXAMPLE",
+             "status": "publisher_online_date_verified", "in_requested_month": True, "in_monthly_report": False},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/example",
+             "status": "publisher_online_date_verified", "in_requested_month": True, "in_monthly_report": False},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/outside",
+             "status": "publisher_online_date_verified", "in_requested_month": False, "in_monthly_report": False},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/unverified",
+             "status": "unverified", "in_requested_month": True, "in_monthly_report": False}]}
+        result = audit.build("2026-10", inventory, verification)
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/example"])
+        self.assertEqual(row["confirmed_month_missing_from_report"], 2)
+        self.assertFalse(row["publisher_coverage_verified"])
+
 if __name__ == "__main__":
     unittest.main()
