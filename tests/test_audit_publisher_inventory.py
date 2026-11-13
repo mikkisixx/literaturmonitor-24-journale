@@ -134,5 +134,17 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["confirmed_month_missing_from_report"], 0)
         self.assertFalse(row["publisher_coverage_verified"])
 
+    def test_stale_snapshot_present_flag_does_not_hide_current_gap(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/example",
+            "status": "publisher_online_date_verified", "in_requested_month": True,
+            "in_monthly_report": True}]}
+        report = {"articles": []}
+        result = audit.build("2026-10", verification=verification, monthly_report=report)
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/example"])
+        self.assertEqual(row["confirmed_month_missing_from_report"], 1)
+
 if __name__ == "__main__":
     unittest.main()
