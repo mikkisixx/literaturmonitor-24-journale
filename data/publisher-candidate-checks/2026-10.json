@@ -1218,14 +1218,14 @@
       "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004574",
       "dates": []
     },
-    "10.1016/j.jdent.2026.107133": {
-      "status": "no_explicit_online_date",
-      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600802X",
-      "dates": []
-    },
     "10.1016/j.jdent.2026.106825": {
       "status": "no_explicit_online_date",
       "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004951",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107133": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600802X",
       "dates": []
     },
     "10.1016/j.jdent.2026.106850": {
@@ -1368,11 +1368,6 @@
       "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004744",
       "dates": []
     },
-    "10.1016/j.jdent.2026.107117": {
-      "status": "no_explicit_online_date",
-      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007864",
-      "dates": []
-    },
     "10.1016/j.jdent.2026.106810": {
       "status": "no_explicit_online_date",
       "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600480X",
@@ -1381,6 +1376,11 @@
     "10.1016/j.jdent.2026.107123": {
       "status": "no_explicit_online_date",
       "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600792X",
+      "dates": []
+    },
+    "10.1016/j.jdent.2026.107117": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007864",
       "dates": []
     },
     "10.1016/j.jdent.2026.107107": {
@@ -2688,11 +2688,6 @@
       "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S175161612600192X",
       "dates": []
     },
-    "10.2341/25-139-l": {
-      "status": "no_explicit_online_date",
-      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/51/5/article-p413.xml",
-      "dates": []
-    },
     "10.2341/25-196-l": {
       "status": "no_explicit_online_date",
       "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/51/5/article-p441.xml",
@@ -2703,24 +2698,19 @@
       "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/51/5/article-p402.xml",
       "dates": []
     },
+    "10.2341/25-139-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/51/5/article-p413.xml",
+      "dates": []
+    },
     "10.2341/25-170-l": {
       "status": "no_explicit_online_date",
       "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/51/5/article-p426.xml",
       "dates": []
     },
-    "10.2341/25-100-t": {
-      "status": "no_explicit_online_date",
-      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-100-T/article-10.2341-25-100-T.xml",
-      "dates": []
-    },
     "10.2341/26-032-l": {
       "status": "no_explicit_online_date",
       "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/51/5/article-p465.xml",
-      "dates": []
-    },
-    "10.2341/25-136-l": {
-      "status": "no_explicit_online_date",
-      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-136-L/article-10.2341-25-136-L.xml",
       "dates": []
     },
     "10.2341/26-034-l": {
@@ -2731,6 +2721,16 @@
     "10.2341/26-065-l": {
       "status": "no_explicit_online_date",
       "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/51/5/article-p455.xml",
+      "dates": []
+    },
+    "10.2341/25-100-t": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-100-T/article-10.2341-25-100-T.xml",
+      "dates": []
+    },
+    "10.2341/25-136-l": {
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://operative-dentistry.kglmeridian.com/view/journals/odnt/aop/article-10.2341-25-136-L/article-10.2341-25-136-L.xml",
       "dates": []
     },
     "10.2341/25-186": {

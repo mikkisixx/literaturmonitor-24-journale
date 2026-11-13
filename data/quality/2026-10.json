@@ -3748,22 +3748,6 @@
       }
     },
     {
-      "doi": "10.1016/j.jdent.2026.107133",
-      "journal": "Journal of Dentistry",
-      "title": "Clinical Evaluation of 3D-Printed Stabilization Splints for Probable Bruxism: An Exploratory Cohort Analysis of a Randomized Prospective Single-Blinded Crossover Trial",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-24",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
-      "europe_pmc": {
-        "source": "MED",
-        "id": "42926006",
-        "electronic_publication_date": "2026-10-24",
-        "first_publication_date": "2026-10-24",
-        "electronic_date_month_match": true
-      }
-    },
-    {
       "doi": "10.1016/j.jdent.2026.106825",
       "journal": "Journal of Dentistry",
       "title": "Clinical and patient-related factors influencing postoperative pain and oral health–related quality of life after emergency endodontic treatment: a prospective observational study",
@@ -3777,6 +3761,22 @@
         "electronic_publication_date": "2026-06-09",
         "first_publication_date": "2026-06-09",
         "electronic_date_month_match": false
+      }
+    },
+    {
+      "doi": "10.1016/j.jdent.2026.107133",
+      "journal": "Journal of Dentistry",
+      "title": "Clinical evaluation of 3D-printed stabilization splints for probable bruxism: An exploratory cohort analysis of a randomized prospective single-blinded crossover trial",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-24",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "europe_pmc": {
+        "source": "MED",
+        "id": "42926006",
+        "electronic_publication_date": "2026-10-24",
+        "first_publication_date": "2026-10-24",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4224,22 +4224,6 @@
       }
     },
     {
-      "doi": "10.1016/j.jdent.2026.107117",
-      "journal": "Journal of Dentistry",
-      "title": "FROM SIMPLICITY TO LUXURY: THE IMPACT OF DENTAL OFFICE STRUCTURE ON THE PROFESSIONAL'S IMAGE",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-24",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
-      "europe_pmc": {
-        "source": "MED",
-        "id": "42926005",
-        "electronic_publication_date": "2026-10-24",
-        "first_publication_date": "2026-10-24",
-        "electronic_date_month_match": true
-      }
-    },
-    {
       "doi": "10.1016/j.jdent.2026.106810",
       "journal": "Journal of Dentistry",
       "title": "Feasibility of digitizing multiple tissue-level implants without scan bodies for fixed dental prostheses",
@@ -4268,6 +4252,22 @@
         "id": "42893739",
         "electronic_publication_date": "2026-10-18",
         "first_publication_date": "2026-10-18",
+        "electronic_date_month_match": true
+      }
+    },
+    {
+      "doi": "10.1016/j.jdent.2026.107117",
+      "journal": "Journal of Dentistry",
+      "title": "From simplicity to luxury: The impact of dental office structure on the professional's image",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-24",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "europe_pmc": {
+        "source": "MED",
+        "id": "42926005",
+        "electronic_publication_date": "2026-10-24",
+        "first_publication_date": "2026-10-24",
         "electronic_date_month_match": true
       }
     },
@@ -4514,7 +4514,7 @@
     {
       "doi": "10.1016/j.jdent.2026.107108",
       "journal": "Journal of Dentistry",
-      "title": "PrepNet: A Multi-Task Geometric Deep Learning Framework for Automatic Detection and Numbering of Prepared Tooth in 3D Dental Scan Models",
+      "title": "PrepNet: a multi-task geometric deep learning framework for automatic detection and numbering of prepared tooth in 3D dental scan models",
       "source": "Europe PMC electronicPublicationDate",
       "status": "europe_pmc_electronic_month_match",
       "online_date": "2026-10-14",
@@ -4562,7 +4562,7 @@
     {
       "doi": "10.1016/j.jdent.2026.107143",
       "journal": "Journal of Dentistry",
-      "title": "Registration accuracy, time, and osteotomy outcomes across four strategies for task-autonomous robotic maxillofacial osteotomy",
+      "title": "Registration accuracy, time, and outcomes across four strategies for task-autonomous robotic maxillofacial osteotomy",
       "source": "Europe PMC electronicPublicationDate",
       "status": "europe_pmc_electronic_month_match",
       "online_date": "2026-10-29",
@@ -5062,7 +5062,7 @@
     {
       "doi": "10.1016/j.joen.2026.10.006",
       "journal": "Journal of Endodontics",
-      "title": "Efficacy of on-demand versus scheduled postoperative pain medication in endodontic patients with symptomatic apical periodontitis: A Randomized Controlled Trial",
+      "title": "Efficacy of On-demand Versus Scheduled Postoperative Pain Medication in Endodontic Patients with Symptomatic Apical Periodontitis: A Randomized Controlled Trial",
       "source": "Europe PMC electronicPublicationDate",
       "status": "europe_pmc_electronic_month_match",
       "online_date": "2026-10-21",
@@ -7157,7 +7157,7 @@
     {
       "doi": "10.1016/j.jeurceramsoc.2026.119022",
       "journal": "Journal of the European Ceramic Society",
-      "title": "Friction and Wear Behavior of Alumina-Boron Carbide Composites with Silver and Graphene Nanoplatelet Solid-Lubricant Additives",
+      "title": "Friction and wear behavior of alumina-boron carbide composites with silver and graphene nanoplatelet solid-lubricant additives",
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
@@ -7245,7 +7245,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7761,7 +7761,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -8183,18 +8183,6 @@
       }
     },
     {
-      "doi": "10.2341/25-139-l",
-      "journal": "Operative Dentistry",
-      "title": "Effect of Post-Setting Time on the Bond Strength of Bioceramic Repair Cements to Resin Composite",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
-      "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
-      }
-    },
-    {
       "doi": "10.2341/25-196-l",
       "journal": "Operative Dentistry",
       "title": "Adhesive Bond Durability of Resin-Matrix CAD/CAM Materials Following Different Artificial Aging Protocols",
@@ -8219,6 +8207,18 @@
       }
     },
     {
+      "doi": "10.2341/25-139-l",
+      "journal": "Operative Dentistry",
+      "title": "Effect of Post-Setting Time on the Bond Strength of Bioceramic Repair Cements to Resin Composite",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
+      "europe_pmc": {
+        "status": "not_indexed_by_exact_doi"
+      }
+    },
+    {
       "doi": "10.2341/25-170-l",
       "journal": "Operative Dentistry",
       "title": "Effects of Polishing Systems on Surface Roughness and Color of Single-Shade Resin Composites",
@@ -8231,33 +8231,9 @@
       }
     },
     {
-      "doi": "10.2341/25-100-t",
-      "journal": "Operative Dentistry",
-      "title": "Endocrown and Overlay Supporting RDPs for Extruded Teeth: A Case Report",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
-      "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
-      }
-    },
-    {
       "doi": "10.2341/26-032-l",
       "journal": "Operative Dentistry",
       "title": "Marginal Adaptation of Self-Cure and Light-Cured Class II Resin Composites",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
-      "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
-      }
-    },
-    {
-      "doi": "10.2341/25-136-l",
-      "journal": "Operative Dentistry",
-      "title": "Nano-Silver, Calcium, Fluoride, and Xylitol to Prevent Enamel Caries",
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
@@ -8282,6 +8258,30 @@
       "doi": "10.2341/26-065-l",
       "journal": "Operative Dentistry",
       "title": "Photocuring Proficiency: Effects of Experience, Power Setting, and Preparation Type on Radiant Exposure",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
+      "europe_pmc": {
+        "status": "not_indexed_by_exact_doi"
+      }
+    },
+    {
+      "doi": "10.2341/25-100-t",
+      "journal": "Operative Dentistry",
+      "title": "Endocrown and Overlay Supporting RDPs for Extruded Teeth: A Case Report",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
+      "europe_pmc": {
+        "status": "not_indexed_by_exact_doi"
+      }
+    },
+    {
+      "doi": "10.2341/25-136-l",
+      "journal": "Operative Dentistry",
+      "title": "Nano-Silver, Calcium, Fluoride, and Xylitol to Prevent Enamel Caries",
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
