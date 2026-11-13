@@ -60,6 +60,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
             publisher_dois = {str(doi).strip().lower() for doi in (listing or {}).get("candidate_dois", []) if isinstance(doi, str) and doi.strip()}
             missing_dois = sorted(publisher_dois - reported_by_journal.get(name, set())) if monthly_report else []
             misplaced_dois = sorted(publisher_dois & (reported_dois - reported_by_journal.get(name, set()))) if monthly_report else []
+            globally_absent_dois = sorted(publisher_dois - reported_dois) if monthly_report else []
             status = "not_implemented" if listing is None else listing.get("status", "unknown")
             # Report the actual listing attempt, rather than a generic coverage warning.
             pages = listing.get("pages", []) if listing else []
@@ -81,6 +82,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                          "publisher_candidates_absent_from_monthly_report": missing_dois,
                          "publisher_candidates_absent_count": len(missing_dois),
                          "publisher_candidates_present_under_other_journal": misplaced_dois,
+                         "publisher_candidates_not_found_anywhere": globally_absent_dois,
+                         "publisher_candidates_not_found_anywhere_count": len(globally_absent_dois),
                          "publisher_report_comparison_available": bool(monthly_report),
                          "publisher_article_dates_checked": len(checks),
                          "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" for x in checks),
