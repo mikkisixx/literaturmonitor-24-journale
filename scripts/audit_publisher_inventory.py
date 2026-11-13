@@ -81,6 +81,10 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 if x.get("status") == "publisher_online_date_verified"
                 and x.get("in_requested_month")
                 and not x.get("in_monthly_report")
+                # Reconcile verification snapshots against the actual report: a
+                # later backfill may already have incorporated this DOI.
+                and (not report_available or str(x.get("doi", "")).strip().lower()
+                     not in reported_by_journal.get(name, set()))
             ]
             confirmed_missing_dois = sorted({
                 str(x["doi"]).strip().lower() for x in confirmed_missing
