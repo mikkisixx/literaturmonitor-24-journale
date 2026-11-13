@@ -2,31 +2,31 @@
   "months": [
     {
       "month": "2026-01",
-      "count": 136
+      "count": 139
     },
     {
       "month": "2026-02",
-      "count": 136
+      "count": 139
     },
     {
       "month": "2026-03",
-      "count": 152
+      "count": 158
     },
     {
       "month": "2026-04",
-      "count": 138
+      "count": 140
     },
     {
       "month": "2026-05",
-      "count": 155
+      "count": 158
     },
     {
       "month": "2026-06",
-      "count": 210
+      "count": 211
     },
     {
       "month": "2026-07",
-      "count": 412
+      "count": 420
     },
     {
       "month": "2026-08",
@@ -42,7 +42,7 @@
     },
     {
       "month": "2026-11",
-      "count": 158
+      "count": 183
     }
   ],
   "warning": "Ungeprüfte Crossref-Kandidaten werden getrennt angezeigt. Der Filtertreffer allein bestätigt kein Online-First-Datum."
