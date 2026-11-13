@@ -118,5 +118,21 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["confirmed_month_missing_from_report"], 1)
         self.assertFalse(row["publisher_coverage_verified"])
 
+    def test_stale_verification_gap_is_cleared_when_report_now_contains_doi(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "page_limit_reached", "candidate_dois": ["10.1007/example"]}}}
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/EXAMPLE",
+            "status": "publisher_online_date_verified", "in_requested_month": True,
+            "in_monthly_report": False}]}
+        report = {"articles": [{"journal": "Clinical Oral Investigations",
+                               "doi": "10.1007/example"}]}
+        result = audit.build("2026-10", inventory, verification, report)
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+        self.assertEqual(row["confirmed_month_missing_from_report"], 0)
+        self.assertFalse(row["publisher_coverage_verified"])
+
 if __name__ == "__main__":
     unittest.main()
