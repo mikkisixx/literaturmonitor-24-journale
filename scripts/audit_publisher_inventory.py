@@ -76,7 +76,17 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 reason = "Publisher listing request failed; coverage unverified"
             else:
                 reason = "Publisher listing not proven exhaustive and first-online dates not fully inventoried"
-            confirmed_missing = [x for x in checks if x.get("status") == "publisher_online_date_verified"\n                                 and x.get("in_requested_month") and not x.get("in_monthly_report")]\n            confirmed_missing_dois = sorted({str(x["doi"]).strip().lower() for x in confirmed_missing\n                                             if x.get("doi") and str(x["doi"]).strip()})\n            rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
+            confirmed_missing = [
+                x for x in checks
+                if x.get("status") == "publisher_online_date_verified"
+                and x.get("in_requested_month")
+                and not x.get("in_monthly_report")
+            ]
+            confirmed_missing_dois = sorted({
+                str(x["doi"]).strip().lower() for x in confirmed_missing
+                if x.get("doi") and str(x["doi"]).strip()
+            })
+            rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
                          "publisher_listing_status": status,
                          "publisher_listing_urls": urls,
                          "publisher_candidate_count": len(publisher_dois),
