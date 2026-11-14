@@ -37,15 +37,24 @@ def platform(name):
     if name == "Operative Dentistry": return "operative_dentistry"
     return "unmapped"
 
+def normalize_doi(value):
+    """Canonicalize DOI identifiers from publisher URLs and bare DOI strings."""
+    doi = str(value or "").strip()
+    for prefix in ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
+        if doi.lower().startswith(prefix):
+            doi = doi[len(prefix):]
+            break
+    return doi.strip().lower()
+
 def build(month, inventory=None, verification=None, monthly_report=None):
     inventory = inventory or {}
     verification = verification or {}
     report_available = monthly_report is not None
     monthly_report = monthly_report if report_available else {}
-    reported_dois = {str(a.get("doi", "")).strip().lower() for a in monthly_report.get("articles", [])}
+    reported_dois = {normalize_doi(a.get("doi")) for a in monthly_report.get("articles", [])}
     reported_by_journal = {}
     for article in monthly_report.get("articles", []):
-        doi = str(article.get("doi", "")).strip().lower()
+        doi = normalize_doi(article.get("doi"))
         journal = str(article.get("journal", "")).strip()
         if doi and journal:
             reported_by_journal.setdefault(journal, set()).add(doi)
@@ -58,7 +67,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
         for name in names:
             listing = inventory.get("journals", {}).get(name)
             checks = by_journal.get(name, [])
-            publisher_dois = {str(doi).strip().lower() for doi in (listing or {}).get("candidate_dois", []) if isinstance(doi, str) and doi.strip()}
+            publisher_dois = {normalize_doi(doi) for doi in (listing or {}).get("candidate_dois", []) if isinstance(doi, str) and doi.strip()}
             missing_dois = sorted(publisher_dois - reported_by_journal.get(name, set())) if report_available else []
             misplaced_dois = sorted(publisher_dois & (reported_dois - reported_by_journal.get(name, set()))) if report_available else []
             globally_absent_dois = sorted(publisher_dois - reported_dois) if report_available else []
@@ -82,12 +91,12 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and x.get("in_requested_month")
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
-                and ((str(x.get("doi", "")).strip().lower()
+                and ((normalize_doi(x.get("doi"))
                       not in reported_by_journal.get(name, set()))
                      if report_available else not x.get("in_monthly_report"))
             ]
             confirmed_missing_dois = sorted({
-                str(x["doi"]).strip().lower() for x in confirmed_missing
+                normalize_doi(x["doi"]) for x in confirmed_missing
                 if x.get("doi") and str(x["doi"]).strip()
             })
             rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
