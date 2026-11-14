@@ -14,11 +14,20 @@ class IndependentPublisherAuditTests(unittest.TestCase):
 
     def test_doi_url_matches_plain_report_doi(self):
         inventory = {"journals": {"Example": {"candidate_dois": ["https://doi.org/10.1000%2FABC"]}}}
-        report = {"articles": [{"doi": "10.1000/abc"}]}
+        report = {"articles": [{"doi": "10.1000/abc", "journal": "Example"}]}
         def checker(doi, month):
             return {"doi": doi, "status": "verified_in_month", "online_date": "2026-08-01"}
         result = audit("2026-08", inventory, report, workers=1, checker=checker)
         self.assertEqual(result["journals"]["Example"]["verified_missing_from_report"], 0)
+
+    def test_wrong_journal_does_not_clear_verified_missing_candidate(self):
+        inventory = {"journals": {"Example": {"candidate_dois": ["10.1000/A"]}}}
+        report = {"articles": [{"doi": "10.1000/a", "journal": "Other Journal"}]}
+        def checker(doi, month):
+            return {"doi": doi, "status": "verified_in_month", "online_date": "2026-08-01"}
+        result = audit("2026-08", inventory, report, workers=1, checker=checker)
+        self.assertEqual(result["journals"]["Example"]["verified_missing_from_report"], 1)
+        self.assertFalse(result["records"][0]["in_monthly_report"])
 
     def test_missing_journal_listings_are_explicit(self):
         result = audit("2026-08", {"journals": {}}, {"articles": []}, workers=1)
@@ -52,7 +61,7 @@ class IndependentPublisherAuditTests(unittest.TestCase):
     def test_missing_from_report_is_reported_not_inserted(self):
         inventory = {"journals": {"Example": {"status": "page_limit_reached",
             "candidate_dois": ["10.1000/A", "10.1000/B"], "pages": [{"url": "https://example.org"}]}}}
-        report = {"articles": [{"doi": "10.1000/a"}]}
+        report = {"articles": [{"doi": "10.1000/a", "journal": "Example"}]}
         def checker(doi, month):
             return {"doi": doi, "status": "verified_in_month", "online_date": "2026-08-01"}
         result = audit("2026-08", inventory, report, workers=1, checker=checker)
