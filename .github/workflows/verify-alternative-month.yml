@@ -87,6 +87,18 @@ jobs:
           simple_files = list(Path("checked/simple").rglob("*.html"))
           assert monthly_files, "Kein HTML im Monatsbericht-Artefakt"
           assert simple_files, "Kein HTML im einfachen Berichts-Artefakt"
+          import json
+          provenance_files = list(Path("checked/simple").rglob("*-provenance.json"))
+          assert len(provenance_files) == 1, "Quellenprotokoll fehlt oder ist nicht eindeutig"
+          provenance = json.loads(provenance_files[0].read_text(encoding="utf-8"))
+          assert provenance["month"] == "2026-08", "Falscher Monat im Quellenprotokoll"
+          assert provenance["journal_count"] == 24, "Quellenprotokoll deckt nicht 24 Journale ab"
+          journals = provenance["journals"]
+          assert len(journals) == 24 and len({j["journal"] for j in journals}) == 24, "Journalzeilen fehlen oder sind doppelt"
+          assert provenance["independently_complete"] is False, "Unbelegte Vollständigkeit behauptet"
+          assert all(j["independently_exhaustive"] is False for j in journals), "Unbelegte Verlagsvollständigkeit behauptet"
+          assert all(j.get("reason") for j in journals), "Begründung der Vollständigkeitsgrenze fehlt"
+          print("Quellenprotokoll: 24 Journale, Vollständigkeitsgrenzen transparent")
           for path in monthly_files + simple_files:
               html = path.read_text(encoding="utf-8")
               inspector = Inspector()
