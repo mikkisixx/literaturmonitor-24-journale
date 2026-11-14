@@ -56,7 +56,12 @@ def check_candidate(doi, month, fetch=get_publisher):
 
 
 def audit(month, inventory, report, workers=4, checker=check_candidate):
-    in_report = {canonical_doi(a.get("doi")) for a in report.get("articles", [])} - {""}
+    reported_by_journal = {}
+    for article in report.get("articles", []):
+        doi = canonical_doi(article.get("doi"))
+        journal = article.get("journal")
+        if doi and journal:
+            reported_by_journal.setdefault(journal, set()).add(doi)
     expected = {name for names in collect.JOURNALS.values() for name in names}
     listed = set(inventory.get("journals", {}))
     output = {"month": month, "coverage_complete": False,
@@ -74,7 +79,8 @@ def audit(month, inventory, report, workers=4, checker=check_candidate):
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
         checked = list(pool.map(lambda item: checker(item[1], month), jobs))
     for (journal, doi), result in zip(jobs, checked):
-        result["in_monthly_report"] = doi in in_report
+        # A DOI under another journal does not satisfy this journal's inventory.
+        result["in_monthly_report"] = doi in reported_by_journal.get(journal, set())
         result["journal"] = journal
         result["in_requested_month"] = result["status"] == "verified_in_month"
         if result["status"] == "verified_in_month":
