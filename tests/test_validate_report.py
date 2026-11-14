@@ -54,6 +54,24 @@ class ReportValidationTests(unittest.TestCase):
     def test_real_report_passes_consistency_checks(self):
         validate(MONTH, self.data)
 
+    def test_verified_article_outside_selected_month_is_rejected(self):
+        def move_date(obj):
+            article = next(a for a in obj["articles"]
+                           if a.get("date_basis") in ("crossref_online", "publisher_online"))
+            article["online_date"] = "2026-09-30"
+        self.mutate(f"months/{MONTH}.json", move_date)
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
+    def test_verified_article_without_online_date_is_rejected(self):
+        def remove_date(obj):
+            article = next(a for a in obj["articles"]
+                           if a.get("date_basis") in ("crossref_online", "publisher_online"))
+            article.pop("online_date", None)
+        self.mutate(f"months/{MONTH}.json", remove_date)
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
     def test_duplicate_publisher_evidence_is_rejected(self):
         def duplicate(obj):
             obj["findings"].append(copy.deepcopy(obj["findings"][0]))
