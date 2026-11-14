@@ -36,6 +36,8 @@ for row in rows:
     row["publisher_listing_status"]=independent.get("publisher_listing_status","not_implemented")
     row["publisher_candidate_count"]=independent.get("publisher_candidate_count",0)
     row["publisher_article_dates_verified"]=independent.get("publisher_article_dates_verified",0)
+    row["publisher_listing_urls"]=independent.get("publisher_listing_urls",[])
+    row["publisher_coverage_reason"]=independent.get("publisher_coverage_reason","No independent publisher listing attempted for this journal")
     row["publisher_coverage_verified"]=False
 evidence_path=data/"publisher-evidence"/(month+".json")
 evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"findings":[]}
