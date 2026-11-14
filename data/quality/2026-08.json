@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 129,
   "candidate_count": 516,
   "candidate_status_counts": {
-    "europe_pmc_electronic_other_month": 351,
+    "europe_pmc_electronic_other_month": 335,
     "europe_pmc_electronic_month_match": 55,
-    "needs_manual_review": 110
+    "needs_manual_review": 126
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -68,8 +68,8 @@
     "Journal of the Mechanical Behavior of Biomedical Materials": {
       "total": 27,
       "statuses": {
-        "europe_pmc_electronic_other_month": 26,
-        "needs_manual_review": 1
+        "europe_pmc_electronic_other_month": 10,
+        "needs_manual_review": 17
       }
     }
   },
@@ -2257,7 +2257,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -5072,7 +5072,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -6538,7 +6538,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6634,7 +6635,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6682,7 +6684,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6694,7 +6697,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6706,7 +6710,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6730,7 +6735,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6742,7 +6748,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6754,7 +6761,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6764,9 +6772,10 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6778,7 +6787,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6790,7 +6800,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6802,7 +6813,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6814,7 +6826,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6826,7 +6839,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7064,7 +7078,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7304,9 +7318,10 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7366,7 +7381,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7517,144 +7533,117 @@
       "doi": "10.1016/j.jmbbm.2026.107461",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "A hyperelastic-plastic damage model for puncture analysis of tympanic membrane using finite-element method",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-08",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42119322",
-        "electronic_publication_date": "2026-05-08",
-        "first_publication_date": "2026-05-08",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107481",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Aging reduces strain magnitude and heterogeneity while increasing apparent stiffness of the rat proximal tibia",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-27",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42229074",
-        "electronic_publication_date": "2026-05-27",
-        "first_publication_date": "2026-05-27",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107475",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Analysis of viscoelastically active polypropylene sutures",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-25",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42208100",
-        "electronic_publication_date": "2026-05-25",
-        "first_publication_date": "2026-05-25",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107467",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Antimicrobial DMAHDM nanoparticle-modified resin for 3D printing: Composition–Property relationships",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42119320",
-        "electronic_publication_date": "2026-05-09",
-        "first_publication_date": "2026-05-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107466",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Biomimetic bone-matching DLP-printed gradient TPMS ceramic implants",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42127843",
-        "electronic_publication_date": "2026-05-09",
-        "first_publication_date": "2026-05-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107462",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Combining quasi-static and high frequency experiments for the viscoelastic characterization of porcine brain tissue",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-14",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42142501",
-        "electronic_publication_date": "2026-05-14",
-        "first_publication_date": "2026-05-14",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107483",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Continuum damage modeling of fatigue failure in whole bone under combined compression-torsional loading: A hybrid approach with machine learning integration",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-06-01",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42235115",
-        "electronic_publication_date": "2026-06-01",
-        "first_publication_date": "2026-06-01",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107464",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Deformation and ductile fracture characterization and modelling of Poly-Ether-Ether-Ketone",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42119321",
-        "electronic_publication_date": "2026-05-09",
-        "first_publication_date": "2026-05-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107465",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Design and biomechanical evaluation of a 3D-printed lumbar interbody fusion cage with auxetic metamaterial structure",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42142502",
-        "electronic_publication_date": "2026-05-09",
-        "first_publication_date": "2026-05-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7666,39 +7655,34 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107471",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Effect of bio-ink physical properties on droplet volume in the reactive jet impingement 3D bioprinting system",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-27",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42214184",
-        "electronic_publication_date": "2026-05-27",
-        "first_publication_date": "2026-05-27",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107476",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "From human joints to bioreactor setups: Quantifying mechanical stimuli in cartilage physiology and regeneration",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-06-01",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42235116",
-        "electronic_publication_date": "2026-06-01",
-        "first_publication_date": "2026-06-01",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7737,64 +7721,52 @@
       "doi": "10.1016/j.jmbbm.2026.107463",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Laser polishing for integrated enhancement of thin-walled LPBFed dental Co-Cr-Mo alloy frameworks",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42114198",
-        "electronic_publication_date": "2026-05-09",
-        "first_publication_date": "2026-05-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107484",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Machine learning-driven multi-objective optimization of Gyroid bioglass scaffolds for site-specific biomechanical adaptation",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-28",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42217950",
-        "electronic_publication_date": "2026-05-28",
-        "first_publication_date": "2026-05-28",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107474",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Mechanical and structural responses of silk fibroin scaffolds to MechanoCulture T6® bioreactor loading and enzymatic degradation",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-25",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42229073",
-        "electronic_publication_date": "2026-05-25",
-        "first_publication_date": "2026-05-25",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jmbbm.2026.107468",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Mechanistic understanding on the contribution to high strength in a three-directional severe plastic deformed biodegradable magnesium alloy",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-15",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42160883",
-        "electronic_publication_date": "2026-05-15",
-        "first_publication_date": "2026-05-15",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7817,16 +7789,13 @@
       "doi": "10.1016/j.jmbbm.2026.107469",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Polyphasic plastisol phantoms fabricated by thermal fusion assembly for benchmarking magnetic resonance elastography inversion methods",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-26",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42202483",
-        "electronic_publication_date": "2026-05-26",
-        "first_publication_date": "2026-05-26",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
