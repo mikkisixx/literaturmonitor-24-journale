@@ -136,6 +136,8 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_validate_report.py' -v
       - name: Regressionstest HTML und Freigabesperre
         run: python -m unittest discover -s tests -p 'test_export_html.py' -v
+      - name: Gesamte Regressionstestsuite ausführen
+        run: python -m unittest discover -s tests -v
       - name: Leserbericht als eigenständige HTML-Datei erstellen
         run: python scripts/export_html.py "$REPORT_MONTH" --output exports
         env:
