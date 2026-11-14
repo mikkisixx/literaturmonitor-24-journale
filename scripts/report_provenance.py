@@ -15,6 +15,8 @@ def make(month):
     online=load(base/"online-audit"/f"{month}.json")
     inv=load(base/"publisher-inventory"/f"{month}.json")
     verified=load(base/"publisher-inventory"/f"{month}-verified.json")
+    coverage=load(base/"publisher-inventory"/f"{month}-coverage.json")
+    coverage_by_journal={row["journal"]:row for row in coverage.get("journals",[])}
     report=load(base/"months"/f"{month}.json")
     records=report.get("articles",[])
     rows=[]
@@ -23,7 +25,11 @@ def make(month):
             included=[a for a in records if a.get("journal")==name and (a.get("online_date") or "").startswith(month) and a.get("date_basis") in ("crossref_online","publisher_online")]
             publisher=[a for a in included if a.get("date_basis")=="publisher_online"]
             checks=[a for a in verified.get("records",[]) if a.get("journal")==name]
-            rows.append({"journal":name,"group":group,"crossref_publication_candidates":back.get("counts",{}).get(name,0),
+            audit=coverage_by_journal.get(name,{})
+            rows.append({"journal":name,"group":group,
+                "publisher_platform":audit.get("publisher_platform","unmapped"),
+                "publisher_listing_urls":audit.get("publisher_listing_urls",[]),
+                "publisher_coverage_reason":audit.get("publisher_coverage_reason","Publisher completeness not independently verified"),"crossref_publication_candidates":back.get("counts",{}).get(name,0),
                 "crossref_online_query":online.get("journals",{}).get(name,{"status":"not_run"}),
                 "publisher_listing":inv.get("journals",{}).get(name,{"status":"not_implemented"}),
                 "publisher_article_pages_checked":len(checks),
