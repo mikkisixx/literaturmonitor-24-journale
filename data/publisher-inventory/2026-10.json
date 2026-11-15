@@ -28,6 +28,19 @@
       "candidate_dois": [],
       "online_first_month_verified": false,
       "warning": "Listing may include other months; article-level first-online date must be checked."
+    },
+    "BMC Oral Health": {
+      "status": "unparseable_or_empty_listing",
+      "error": null,
+      "pages": [
+        {
+          "url": "https://link.springer.com/journal/12903/articles?sort=PubDate&page=1",
+          "doi_count": 0
+        }
+      ],
+      "candidate_dois": [],
+      "online_first_month_verified": false,
+      "warning": "Listing may include other months; article-level first-online date must be checked."
     }
   }
 }
