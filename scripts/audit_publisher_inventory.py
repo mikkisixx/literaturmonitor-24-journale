@@ -89,6 +89,10 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 x for x in checks
                 if x.get("status") == "publisher_online_date_verified"
                 and x.get("in_requested_month")
+                # When a verified date is present, cross-check the actual month;
+                # a stale or contradictory flag is not sufficient evidence.
+                and (not x.get("online_date") or
+                     str(x["online_date"])[:7] == month)
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
