@@ -218,5 +218,21 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/inside"])
         self.assertEqual(row["confirmed_month_missing_from_report"], 1)
 
+    def test_verified_date_count_excludes_missing_and_impossible_calendar_dates(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "status": "publisher_online_date_verified",
+             "doi": "10.1007/valid", "online_date": "2026-09-30"},
+            {"journal": "Clinical Oral Investigations", "status": "publisher_online_date_verified",
+             "doi": "10.1007/invalid", "online_date": "2026-02-30"},
+            {"journal": "Clinical Oral Investigations", "status": "publisher_online_date_verified",
+             "doi": "10.1007/missing"},
+            {"journal": "Clinical Oral Investigations", "status": "unverified",
+             "doi": "10.1007/unchecked", "online_date": "2026-10-15"}]}
+        result = audit.build("2026-10", verification=verification)
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_article_dates_checked"], 4)
+        self.assertEqual(row["publisher_article_dates_verified"], 1)
+        self.assertFalse(row["publisher_coverage_verified"])
+
 if __name__ == "__main__":
     unittest.main()
