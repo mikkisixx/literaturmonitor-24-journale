@@ -165,5 +165,20 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_candidates_absent_count"], 0)
         self.assertEqual(row["confirmed_month_missing_dois"], [])
 
+    def test_empty_normalized_doi_is_not_a_candidate_or_confirmed_gap(self):
+        inventory = {"journals": {"Clinical Oral Investigations": {
+            "status": "page_limit_reached",
+            "candidate_dois": ["doi:", "https://doi.org/", "10.1007/real"]}}}
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "doi:",
+             "status": "publisher_online_date_verified",
+             "in_requested_month": True, "in_monthly_report": False}]}
+        result = audit.build("2026-10", inventory, verification, {"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_candidate_count"], 1)
+        self.assertEqual(row["publisher_candidates_not_found_anywhere"], ["10.1007/real"])
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+
 if __name__ == "__main__":
     unittest.main()
