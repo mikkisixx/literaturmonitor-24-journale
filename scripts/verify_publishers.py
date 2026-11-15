@@ -78,7 +78,7 @@ def get_publisher(doi):
 def normalize_date(value):
     """Accept ISO, publisher dd Month yyyy, and common slash dates without guessing."""
     value=html.unescape(str(value)).strip()
-    m=re.fullmatch(r"([12][0-9]{3})[-/]([01]?[0-9])[-/]([0-3]?[0-9])(?:[Tt ](?:[0-2][0-9]):[0-5][0-9](?::[0-5][0-9](?:\\.[0-9]+)?)?(?:Z|[+-][0-2][0-9]:?[0-5][0-9])?)?",value)
+    m=re.fullmatch(r"([12][0-9]{3})[-/]([01]?[0-9])[-/]([0-3]?[0-9])(?:[Tt ](?:[0-2][0-9]):[0-5][0-9](?::[0-5][0-9](?:\.[0-9]+)?)?(?:Z|[+-][0-2][0-9]:?[0-5][0-9])?)?",value)
     if m:
         try:return dt.date(*map(int,m.groups())).isoformat()
         except ValueError:return None
