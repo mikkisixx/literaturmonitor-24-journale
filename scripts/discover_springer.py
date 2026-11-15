@@ -18,8 +18,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 JOURNALS = {
     "Clinical Oral Investigations": "784",
     "Journal of Materials Science: Materials in Medicine": "10856",
+    "BMC Oral Health": "12903",
 }
-DOI = re.compile(r"10\.1007/(?:s00784|s10856)-[0-9]{4}-[0-9a-z-]+", re.I)
+DOI = re.compile(r"10\.(?:1007|1186)/(?:s00784|s10856|s12903)-[0-9]{4}-[0-9a-z-]+", re.I)
 
 class Links(HTMLParser):
     def __init__(self):
@@ -37,13 +38,15 @@ def parse_dois(html, journal):
     parser.feed(html)
     if journal not in JOURNALS:
         raise ValueError(f"Unsupported Springer journal: {journal}")
-    prefix = "s00784" if journal == "Clinical Oral Investigations" else "s10856"
+    prefix = {"Clinical Oral Investigations": "10.1007/s00784-",
+              "Journal of Materials Science: Materials in Medicine": "10.1007/s10856-",
+              "BMC Oral Health": "10.1186/s12903-"}[journal]
     result = set()
     for href in parser.links:
         # Springer may percent-encode the DOI slash in article hrefs. Decode
         # URL escapes before matching, without accepting DOI text outside links.
         for match in DOI.findall(urllib.parse.unquote(href)):
-            if match.lower().startswith("10.1007/" + prefix + "-"):
+            if match.lower().startswith(prefix):
                 result.add(match.lower().rstrip("/"))
     return sorted(result)
 
