@@ -180,5 +180,20 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_candidates_not_found_anywhere"], ["10.1007/real"])
         self.assertEqual(row["confirmed_month_missing_dois"], [])
 
+    def test_verified_date_contradicting_month_flag_is_not_a_confirmed_gap(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/outside",
+             "status": "publisher_online_date_verified", "online_date": "2026-09-30",
+             "in_requested_month": True, "in_monthly_report": False},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/inside",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-01",
+             "in_requested_month": True, "in_monthly_report": False}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/inside"])
+        self.assertEqual(row["confirmed_month_missing_from_report"], 1)
+
 if __name__ == "__main__":
     unittest.main()
