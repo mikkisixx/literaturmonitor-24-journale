@@ -234,5 +234,39 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_article_dates_verified"], 1)
         self.assertFalse(row["publisher_coverage_verified"])
 
+    def test_actual_springer_verifier_date_field_counts_verified_missing(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations",
+            "doi": "10.1007/springer-verified",
+            "status": "publisher_online_date_verified",
+            "publisher_online_date": "2026-10-12",
+            "in_requested_month": True,
+            "in_monthly_report": False,
+            "source": "https://link.springer.com/article/10.1007/springer-verified",
+        }]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_article_dates_verified"], 1)
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/springer-verified"])
+
+    def test_conflicting_publisher_date_aliases_are_not_verified(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations",
+            "doi": "10.1007/conflict",
+            "status": "publisher_online_date_verified",
+            "online_date": "2026-10-12",
+            "publisher_online_date": "2026-09-12",
+            "in_requested_month": True,
+            "in_monthly_report": False,
+        }]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_article_dates_verified"], 0)
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+
 if __name__ == "__main__":
     unittest.main()
