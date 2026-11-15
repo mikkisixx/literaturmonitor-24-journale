@@ -48,13 +48,16 @@ def recover(month,workers=6):
     for doi,record in results.items():
         if record["status"]!="publisher_online_date_verified":continue
         existing=observed.get(doi)
-        if not existing or existing.get("publisher_online_verified"):continue
+        if existing is None:continue
         online=record["online_date"]
         previous_online=existing.get("online_date")
         if previous_online and previous_online != online:
             record["status"]="conflict_with_existing_online_date"
             record["existing_online_date"]=previous_online
             conflicts+=1
+            continue
+        if existing.get("publisher_online_verified"):
+            record["status"]="already_publisher_verified"
             continue
         existing.update({"online_date":online,"publisher_online_verified":True,
                          "publisher_date_source":record["publisher_url"],
