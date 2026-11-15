@@ -51,7 +51,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
     verification = verification or {}
     report_available = monthly_report is not None
     monthly_report = monthly_report if report_available else {}
-    reported_dois = {normalize_doi(a.get("doi")) for a in monthly_report.get("articles", [])}
+    reported_dois = {doi for a in monthly_report.get("articles", []) if (doi := normalize_doi(a.get("doi")))}
     reported_by_journal = {}
     for article in monthly_report.get("articles", []):
         doi = normalize_doi(article.get("doi"))
@@ -67,7 +67,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
         for name in names:
             listing = inventory.get("journals", {}).get(name)
             checks = by_journal.get(name, [])
-            publisher_dois = {normalize_doi(doi) for doi in (listing or {}).get("candidate_dois", []) if isinstance(doi, str) and doi.strip()}
+            publisher_dois = {normalized for doi in (listing or {}).get("candidate_dois", []) if isinstance(doi, str) and (normalized := normalize_doi(doi))}
             missing_dois = sorted(publisher_dois - reported_by_journal.get(name, set())) if report_available else []
             misplaced_dois = sorted(publisher_dois & (reported_dois - reported_by_journal.get(name, set()))) if report_available else []
             globally_absent_dois = sorted(publisher_dois - reported_dois) if report_available else []
@@ -97,7 +97,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
             ]
             confirmed_missing_dois = sorted({
                 normalize_doi(x["doi"]) for x in confirmed_missing
-                if x.get("doi") and str(x["doi"]).strip()
+                if x.get("doi") and normalize_doi(x["doi"])
             })
             rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
                          "publisher_listing_status": status,
