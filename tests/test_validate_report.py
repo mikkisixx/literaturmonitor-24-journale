@@ -128,6 +128,13 @@ class ReportValidationTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             validate(MONTH, self.data)
 
+    def test_unexpected_journal_cannot_replace_required_title(self):
+        def substitute(obj):
+            obj["journals"][0]["journal"] = "Invented Dental Journal"
+        self.mutate(f"coverage/{MONTH}.json", substitute)
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
     def test_false_journal_coverage_is_rejected(self):
         self.mutate(f"coverage/{MONTH}.json",
                     lambda obj: obj["journals"][0].update(publisher_coverage_verified=True))
