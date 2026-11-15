@@ -330,8 +330,10 @@
       "journal": "BMC Oral Health",
       "group": "Zahnmedizin",
       "publisher_platform": "bmc_springer_nature",
-      "publisher_listing_status": "not_implemented",
-      "publisher_listing_urls": [],
+      "publisher_listing_status": "unparseable_or_empty_listing",
+      "publisher_listing_urls": [
+        "https://link.springer.com/journal/12903/articles?sort=PubDate&page=1"
+      ],
       "publisher_candidate_count": 0,
       "publisher_candidates_absent_from_monthly_report": [],
       "publisher_candidates_absent_count": 0,
@@ -344,7 +346,7 @@
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
       "publisher_coverage_verified": false,
-      "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
+      "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified"
     },
     {
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
