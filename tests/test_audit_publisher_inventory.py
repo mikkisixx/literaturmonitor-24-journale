@@ -14,7 +14,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertTrue(all(not r["publisher_coverage_verified"] for r in result["journals"]))
     def test_partial_listing_never_promoted_to_complete(self):
         inventory = {"journals": {"Clinical Oral Investigations": {"status": "page_limit_reached", "candidate_dois": ["10.1007/example"]}}}
-        verification = {"records": [{"journal": "Clinical Oral Investigations", "status": "publisher_online_date_verified",
+        verification = {"records": [{"journal": "Clinical Oral Investigations", "status": "publisher_online_date_verified", "online_date": "2026-10-15",
                                      "doi": "10.1007/example", "in_requested_month": True, "in_monthly_report": False}]}
         result = audit.build("2026-10", inventory, verification)
         row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
@@ -105,11 +105,11 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         inventory = {"journals": {"Clinical Oral Investigations": {"status": "page_limit_reached"}}}
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/EXAMPLE",
-             "status": "publisher_online_date_verified", "in_requested_month": True, "in_monthly_report": False},
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": True, "in_monthly_report": False},
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/example",
-             "status": "publisher_online_date_verified", "in_requested_month": True, "in_monthly_report": False},
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": True, "in_monthly_report": False},
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/outside",
-             "status": "publisher_online_date_verified", "in_requested_month": False, "in_monthly_report": False},
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": False, "in_monthly_report": False},
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/unverified",
              "status": "unverified", "in_requested_month": True, "in_monthly_report": False}]}
         result = audit.build("2026-10", inventory, verification)
@@ -123,7 +123,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
             "status": "page_limit_reached", "candidate_dois": ["10.1007/example"]}}}
         verification = {"records": [{
             "journal": "Clinical Oral Investigations", "doi": "10.1007/EXAMPLE",
-            "status": "publisher_online_date_verified", "in_requested_month": True,
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": True,
             "in_monthly_report": False}]}
         report = {"articles": [{"journal": "Clinical Oral Investigations",
                                "doi": "10.1007/example"}]}
@@ -137,7 +137,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
     def test_stale_snapshot_present_flag_does_not_hide_current_gap(self):
         verification = {"records": [{
             "journal": "Clinical Oral Investigations", "doi": "10.1007/example",
-            "status": "publisher_online_date_verified", "in_requested_month": True,
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": True,
             "in_monthly_report": True}]}
         report = {"articles": []}
         result = audit.build("2026-10", verification=verification, monthly_report=report)
@@ -153,7 +153,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         verification = {"records": [{
             "journal": "Clinical Oral Investigations",
             "doi": "https://dx.doi.org/10.1007/EXAMPLE",
-            "status": "publisher_online_date_verified",
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15",
             "in_requested_month": True,
             "in_monthly_report": False}]}
         report = {"articles": [{"journal": "Clinical Oral Investigations",
@@ -171,7 +171,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
             "candidate_dois": ["doi:", "https://doi.org/", "10.1007/real"]}}}
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "doi:",
-             "status": "publisher_online_date_verified",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15",
              "in_requested_month": True, "in_monthly_report": False}]}
         result = audit.build("2026-10", inventory, verification, {"articles": []})
         row = next(r for r in result["journals"]
@@ -180,13 +180,24 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_candidates_not_found_anywhere"], ["10.1007/real"])
         self.assertEqual(row["confirmed_month_missing_dois"], [])
 
+    def test_missing_online_date_is_not_verified_gap(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/undated",
+            "status": "publisher_online_date_verified", "in_requested_month": True,
+            "in_monthly_report": False}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+
     def test_verified_date_contradicting_month_flag_is_not_a_confirmed_gap(self):
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/outside",
-             "status": "publisher_online_date_verified", "online_date": "2026-09-30",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15", "online_date": "2026-09-30",
              "in_requested_month": True, "in_monthly_report": False},
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/inside",
-             "status": "publisher_online_date_verified", "online_date": "2026-10-01",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15", "online_date": "2026-10-01",
              "in_requested_month": True, "in_monthly_report": False}]}
         result = audit.build("2026-10", verification=verification,
                              monthly_report={"articles": []})
