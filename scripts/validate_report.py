@@ -65,6 +65,11 @@ def validate(month, data=DATA):
     assert coverage["journals_expected"]==24, "Expected 24 journals"
     assert len(coverage["journals"])==24, "Missing or duplicate journal audit rows"
     assert len({r["journal"] for r in coverage["journals"]})==24, "Duplicate journal coverage rows"
+    # A count of 24 alone cannot prove that the required 24 titles were queried.
+    from collect import JOURNALS
+    expected_journals={name for names in JOURNALS.values() for name in names}
+    assert len(expected_journals)==24, "Configured journal list is not 24 unique titles"
+    assert {r["journal"] for r in coverage["journals"]}==expected_journals, "Required journal missing or unexpected journal substituted"
     assert coverage["journals_queried"]==24 and coverage["query_errors"]==0, "Crossref queries incomplete"
     assert coverage["zero_hit_journals"]==sum(r["crossref_query_count"]==0 for r in coverage["journals"]), "Zero-hit mismatch"
     assert coverage["confirmed_missing_publisher_articles"]==len(coverage["missing_publisher_articles"]), "Publisher evidence mismatch"
