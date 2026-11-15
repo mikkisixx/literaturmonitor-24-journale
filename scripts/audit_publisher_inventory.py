@@ -64,6 +64,13 @@ def is_valid_month_date(value, month):
     except ValueError:
         return False
 
+def verified_online_date(row):
+    """Accept both publisher-verifier date field names, rejecting conflicts."""
+    dates = [row[key] for key in ("online_date", "publisher_online_date") if row.get(key)]
+    if not dates or len(set(dates)) != 1 or not is_valid_iso_date(dates[0]):
+        return None
+    return dates[0]
+
 def build(month, inventory=None, verification=None, monthly_report=None):
     inventory = inventory or {}
     verification = verification or {}
@@ -108,8 +115,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 if x.get("status") == "publisher_online_date_verified"
                 and x.get("in_requested_month")
                 # A verified date is mandatory; the month flag alone is not evidence.
-                and x.get("online_date")
-                and is_valid_month_date(x["online_date"], month)
+                and verified_online_date(x)
+                and is_valid_month_date(verified_online_date(x), month)
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
@@ -131,7 +138,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                          "publisher_candidates_not_found_anywhere_count": len(globally_absent_dois),
                          "publisher_report_comparison_available": report_available,
                          "publisher_article_dates_checked": len(checks),
-                         "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" and isinstance(x.get("online_date"), str) and is_valid_iso_date(x["online_date"]) for x in checks),
+                         "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" and verified_online_date(x) is not None for x in checks),
                          "confirmed_month_missing_from_report": len(confirmed_missing_dois),
                          "confirmed_month_missing_dois": confirmed_missing_dois,
                          "publisher_coverage_verified": False,
