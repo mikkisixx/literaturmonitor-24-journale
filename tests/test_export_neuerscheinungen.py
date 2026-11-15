@@ -68,6 +68,27 @@ class ReaderTests(unittest.TestCase):
         with patch.object(export_neuerscheinungen,"ROOT",self.root):
             with self.assertRaises(ValueError):
                 export_neuerscheinungen.export(self.month,self.root/"out")
+    def test_rejects_wrong_month_in_source_metadata(self):
+        self.write("coverage",{"month":"2026-09","journals_expected":24,"journals_queried":24,
+                               "journals":[{"journal":f"Journal {i:02d}"} for i in range(24)]})
+        with patch.object(export_neuerscheinungen,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"Monat"):
+                export_neuerscheinungen.export(self.month,self.root/"out")
+
+    def test_rejects_duplicate_journal_audit_rows(self):
+        self.write("coverage",{"journals_expected":24,"journals_queried":24,
+                               "journals":[{"journal":"Repeated"} for _ in range(24)]})
+        with patch.object(export_neuerscheinungen,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"Journal"):
+                export_neuerscheinungen.export(self.month,self.root/"out")
+
+    def test_rejects_crossref_query_errors(self):
+        self.write("coverage",{"journals_expected":24,"journals_queried":24,"query_errors":1,
+                               "journals":[{"journal":f"Journal {i:02d}"} for i in range(24)]})
+        with patch.object(export_neuerscheinungen,"ROOT",self.root):
+            with self.assertRaisesRegex(ValueError,"fehlerfrei"):
+                export_neuerscheinungen.export(self.month,self.root/"out")
+
     def test_preparation_does_not_erase_review_or_publisher_evidence(self):
         quality_path=self.root/"data/quality"/(self.month+".json")
         coverage_path=self.root/"data/coverage"/(self.month+".json")
