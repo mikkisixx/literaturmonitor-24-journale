@@ -46,6 +46,15 @@ def normalize_doi(value):
             break
     return doi.strip().lower()
 
+def is_valid_month_date(value, month):
+    """Require a real ISO calendar date, not just a matching YYYY-MM prefix."""
+    if not isinstance(value, str):
+        return False
+    try:
+        return dt.date.fromisoformat(value).strftime("%Y-%m") == month
+    except ValueError:
+        return False
+
 def build(month, inventory=None, verification=None, monthly_report=None):
     inventory = inventory or {}
     verification = verification or {}
@@ -91,7 +100,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and x.get("in_requested_month")
                 # A verified date is mandatory; the month flag alone is not evidence.
                 and x.get("online_date")
-                and str(x["online_date"])[:7] == month
+                and is_valid_month_date(x["online_date"], month)
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
