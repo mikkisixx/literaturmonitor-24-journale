@@ -46,6 +46,15 @@ def normalize_doi(value):
             break
     return doi.strip().lower()
 
+def is_valid_iso_date(value):
+    """Count only publisher dates that represent real ISO calendar days."""
+    if not isinstance(value, str):
+        return False
+    try:
+        return dt.date.fromisoformat(value).isoformat() == value
+    except ValueError:
+        return False
+
 def is_valid_month_date(value, month):
     """Require a real ISO calendar date, not just a matching YYYY-MM prefix."""
     if not isinstance(value, str):
@@ -122,7 +131,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                          "publisher_candidates_not_found_anywhere_count": len(globally_absent_dois),
                          "publisher_report_comparison_available": report_available,
                          "publisher_article_dates_checked": len(checks),
-                         "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" for x in checks),
+                         "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" and isinstance(x.get("online_date"), str) and is_valid_iso_date(x["online_date"]) for x in checks),
                          "confirmed_month_missing_from_report": len(confirmed_missing_dois),
                          "confirmed_month_missing_dois": confirmed_missing_dois,
                          "publisher_coverage_verified": False,
