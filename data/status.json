@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-14T06:14:53.315568+00:00",
+  "updated": "2026-11-15T06:17:59.076414+00:00",
   "source": "Crossref indexed records (last 45 days)",
   "journal_count": 24,
   "checked": 24,
   "errors": {},
   "counts": {
     "Journal of Dental Research": {
-      "indexed_records": 3274,
+      "indexed_records": 3251,
       "issn": "0022-0345"
     },
     "Dental Materials": {
-      "indexed_records": 2141,
+      "indexed_records": 2085,
       "issn": "0109-5641"
     },
     "Journal of Dentistry": {
-      "indexed_records": 2558,
+      "indexed_records": 2485,
       "issn": "0300-5712"
     },
     "American Journal of Dentistry": {
@@ -26,11 +26,11 @@
       "issn": "1461-5185"
     },
     "Journal of Prosthetic Dentistry": {
-      "indexed_records": 2704,
+      "indexed_records": 2689,
       "issn": "0022-3913"
     },
     "International Journal of Prosthodontics": {
-      "indexed_records": 7,
+      "indexed_records": 6,
       "issn": "1942-4426"
     },
     "Quintessence International": {
@@ -38,71 +38,71 @@
       "issn": "0033-6572"
     },
     "Operative Dentistry": {
-      "indexed_records": 492,
+      "indexed_records": 477,
       "issn": "0361-7734"
     },
     "Clinical Oral Investigations": {
-      "indexed_records": 1341,
+      "indexed_records": 1339,
       "issn": "1432-6981"
     },
     "European Journal of Oral Sciences": {
-      "indexed_records": 782,
+      "indexed_records": 774,
       "issn": "0909-8836"
     },
     "The Journal of Esthetic and Restorative Dentistry": {
-      "indexed_records": 743,
+      "indexed_records": 744,
       "issn": "1496-4155"
     },
     "International Endodontic Journal": {
-      "indexed_records": 1593,
+      "indexed_records": 1574,
       "issn": "0143-2885"
     },
     "Journal of Endodontics": {
-      "indexed_records": 2831,
+      "indexed_records": 2834,
       "issn": "0099-2399"
     },
     "Dental Traumatology": {
-      "indexed_records": 721,
+      "indexed_records": 736,
       "issn": "1600-4469"
     },
     "International Journal of Paediatric Dentistry": {
-      "indexed_records": 606,
+      "indexed_records": 609,
       "issn": "0960-7439"
     },
     "BMC Oral Health": {
-      "indexed_records": 4485,
+      "indexed_records": 4451,
       "issn": "1472-6831"
     },
     "Journal of the Mechanical Behavior of Biomedical Materials": {
-      "indexed_records": 2583,
+      "indexed_records": 2512,
       "issn": "1751-6161"
     },
     "Journal of Materials Science: Materials in Medicine": {
-      "indexed_records": 1492,
+      "indexed_records": 1467,
       "issn": "0957-4530"
     },
     "Acta Biomaterialia": {
-      "indexed_records": 6044,
+      "indexed_records": 5927,
       "issn": "1742-7061"
     },
     "Journal of Oral Rehabilitation": {
-      "indexed_records": 1428,
+      "indexed_records": 1409,
       "issn": "0305-182X"
     },
     "Journal of the American Ceramic Society": {
-      "indexed_records": 8960,
+      "indexed_records": 8976,
       "issn": "0002-7820"
     },
     "Journal of the European Ceramic Society": {
-      "indexed_records": 6929,
+      "indexed_records": 6808,
       "issn": "0955-2219"
     },
     "Journal of Biomechanics": {
-      "indexed_records": 6094,
+      "indexed_records": 5802,
       "issn": "0021-9290"
     }
   },
-  "unique_observed_doi": 77982,
-  "undated_in_latest_window": 33450,
+  "unique_observed_doi": 78805,
+  "undated_in_latest_window": 32675,
   "warning": "Technische Datensammlung; kein Nachweis vollständiger Online-First-Erfassung. Datumsfelder und Verlagsquellen sind noch nicht validiert."
 }
