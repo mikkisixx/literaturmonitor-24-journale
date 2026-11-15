@@ -23,7 +23,13 @@ def export(month, output):
     quality=json.loads((ROOT/"data/quality"/(month+".json")).read_text(encoding="utf-8"))
     coverage=json.loads((ROOT/"data/coverage"/(month+".json")).read_text(encoding="utf-8"))
     if report["count"]!=len(report["articles"]): raise ValueError("Artikelanzahl inkonsistent")
-    if any(obj.get("month",month)!=month for obj in (report,quality,coverage)):\n        raise ValueError("Monat in Quelldaten widerspricht der Auswahl")\n    if coverage["journals_expected"]!=24 or coverage["journals_queried"]!=24 or coverage.get("query_errors",0)!=0:\n        raise ValueError("Nicht alle Journale fehlerfrei abgefragt")\n    audit_names=[row.get("journal") for row in coverage.get("journals",[])]\n    if len(audit_names)!=24 or len(set(audit_names))!=24 or any(not name for name in audit_names):\n        raise ValueError("24 eindeutige Journal-Prüfzeilen erforderlich")
+    if any(obj.get("month",month)!=month for obj in (report,quality,coverage)):
+        raise ValueError("Monat in Quelldaten widerspricht der Auswahl")
+    if coverage["journals_expected"]!=24 or coverage["journals_queried"]!=24 or coverage.get("query_errors",0)!=0:
+        raise ValueError("Nicht alle Journale fehlerfrei abgefragt")
+    audit_names=[row.get("journal") for row in coverage.get("journals",[])]
+    if len(audit_names)!=24 or len(set(audit_names))!=24 or any(not name for name in audit_names):
+        raise ValueError("24 eindeutige Journal-Prüfzeilen erforderlich")
     year,number=map(int,month.split("-"))
     heading=f"Neuerscheinungen {MONTHS[number-1]} {year}"
     groups=defaultdict(list)
