@@ -13,6 +13,13 @@ class SpringerInventoryTests(unittest.TestCase):
         html = '<a href="/article/10.1007%2Fs00784-2026-07203-0?source=journal">A</a>'
         self.assertEqual(ds.parse_dois(html, "Clinical Oral Investigations"), ["10.1007/s00784-2026-07203-0"])
         self.assertEqual(ds.parse_dois(html, "Journal of Materials Science: Materials in Medicine"), [])
+    def test_bmc_oral_health_doi_is_journal_specific(self):
+        html = ('<a href="/article/10.1186/s12903-2026-01234-5">BMC</a>'
+                '<a href="/article/10.1007/s00784-2026-07203-0">Other</a>'
+                '<p>10.1186/s12903-2026-99999-9</p>')
+        self.assertEqual(ds.parse_dois(html, "BMC Oral Health"), ["10.1186/s12903-2026-01234-5"])
+        self.assertEqual(ds.parse_dois(html, "Clinical Oral Investigations"), ["10.1007/s00784-2026-07203-0"])
+
     def test_unknown_journal_fails_closed(self):
         html = '<a href="/article/10.1007/s10856-2026-07117-z">A</a>'
         with self.assertRaises(ValueError):
@@ -20,7 +27,11 @@ class SpringerInventoryTests(unittest.TestCase):
 
     def test_bounded_listing_never_claims_complete(self):
         def fetch(url):
-            return '<a href="/article/10.1007/s00784-2026-07203-0">A</a>' if "/784/" in url else '<a href="/article/10.1007/s10856-2026-07117-z">B</a>'
+            if "/784/" in url:
+                return '<a href="/article/10.1007/s00784-2026-07203-0">A</a>'
+            if "/12903/" in url:
+                return '<a href="/article/10.1186/s12903-2026-01234-5">C</a>'
+            return '<a href="/article/10.1007/s10856-2026-07117-z">B</a>'
         result = ds.discover("2026-10", pages=1, fetch=fetch)
         self.assertFalse(result["coverage_complete"])
         for entry in result["journals"].values():
