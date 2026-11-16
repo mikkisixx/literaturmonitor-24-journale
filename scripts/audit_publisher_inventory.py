@@ -119,6 +119,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 reason = "Publisher listing request failed; coverage unverified"
             else:
                 reason = "Publisher listing not proven exhaustive and first-online dates not fully inventoried"
+            conflicting_journal_dois = sorted(doi for journal, doi in conflicting_dois if journal == name)
             confirmed_missing = [
                 x for x in checks
                 if x.get("status") == "publisher_online_date_verified"
@@ -153,6 +154,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                          "publisher_candidates_not_found_anywhere": globally_absent_dois,
                          "publisher_candidates_not_found_anywhere_count": len(globally_absent_dois),
                          "publisher_report_comparison_available": report_available,
+                         "publisher_conflicting_verified_date_dois": conflicting_journal_dois,
+                         "publisher_conflicting_verified_date_count": len(conflicting_journal_dois),
                          "publisher_article_dates_checked": len(checks),
                          "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" and verified_online_date(x) is not None for x in checks),
                          "confirmed_month_missing_from_report": len(confirmed_missing_dois),
