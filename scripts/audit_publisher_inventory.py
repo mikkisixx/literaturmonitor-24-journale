@@ -137,9 +137,9 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 normalize_doi(x["doi"]) for x in confirmed_missing
                 if x.get("doi") and normalize_doi(x["doi"])
             })
-            rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
+            verified_sources = sorted({str(x.get("source") or x.get("publisher_url") or x.get("url")).strip()\n                                       for x in checks\n                                       if x.get("status") == "publisher_online_date_verified"\n                                       and verified_online_date(x)\n                                       and str(x.get("source") or x.get("publisher_url") or x.get("url") or "").startswith(("https://", "http://"))})\n            rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
                          "publisher_listing_status": status,
-                         "publisher_listing_urls": urls,
+                         "publisher_listing_urls": urls,\n                         "publisher_verified_date_source_urls": verified_sources,
                          "publisher_candidate_count": len(publisher_dois),
                          "publisher_candidates_absent_from_monthly_report": missing_dois,
                          "publisher_candidates_absent_count": len(missing_dois),
