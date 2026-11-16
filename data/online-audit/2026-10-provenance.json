@@ -1,0 +1,524 @@
+{
+  "month": "2026-10",
+  "journal_count": 24,
+  "all_crossref_queries_succeeded": false,
+  "independently_complete": false,
+  "journals": [
+    {
+      "journal": "Journal of Dental Research",
+      "group": "Zahnmedizin",
+      "publisher_platform": "sage",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 20,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 20,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Dental Materials",
+      "group": "Zahnmedizin",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 41,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of Dentistry",
+      "group": "Zahnmedizin",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 74,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "American Journal of Dentistry",
+      "group": "Zahnmedizin",
+      "publisher_platform": "american_journal_of_dentistry",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 0,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of Adhesive Dentistry",
+      "group": "Zahnmedizin",
+      "publisher_platform": "quintessence_publishing",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 0,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of Prosthetic Dentistry",
+      "group": "Zahnmedizin",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 89,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "International Journal of Prosthodontics",
+      "group": "Zahnmedizin",
+      "publisher_platform": "quintessence_publishing",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 0,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Quintessence International",
+      "group": "Zahnmedizin",
+      "publisher_platform": "quintessence_publishing",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 0,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Operative Dentistry",
+      "group": "Zahnmedizin",
+      "publisher_platform": "operative_dentistry",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 3,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Clinical Oral Investigations",
+      "group": "Zahnmedizin",
+      "publisher_platform": "springer_link",
+      "publisher_listing_urls": [
+        "https://link.springer.com/journal/784/articles?sort=PubDate&page=1"
+      ],
+      "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified",
+      "crossref_publication_candidates": 56,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "unparseable_or_empty_listing",
+        "error": null,
+        "pages": [
+          {
+            "url": "https://link.springer.com/journal/784/articles?sort=PubDate&page=1",
+            "doi_count": 0
+          }
+        ],
+        "candidate_dois": [],
+        "online_first_month_verified": false,
+        "warning": "Listing may include other months; article-level first-online date must be checked."
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 56,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "European Journal of Oral Sciences",
+      "group": "Zahnmedizin",
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 13,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 13,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "The Journal of Esthetic and Restorative Dentistry",
+      "group": "Zahnmedizin",
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 19,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 19,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "International Endodontic Journal",
+      "group": "Zahnmedizin",
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 21,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 21,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of Endodontics",
+      "group": "Zahnmedizin",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 38,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Dental Traumatology",
+      "group": "Zahnmedizin",
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 19,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 19,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "International Journal of Paediatric Dentistry",
+      "group": "Zahnmedizin",
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 11,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 11,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "BMC Oral Health",
+      "group": "Zahnmedizin",
+      "publisher_platform": "bmc_springer_nature",
+      "publisher_listing_urls": [
+        "https://link.springer.com/journal/12903/articles?sort=PubDate&page=1"
+      ],
+      "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified",
+      "crossref_publication_candidates": 291,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "unparseable_or_empty_listing",
+        "error": null,
+        "pages": [
+          {
+            "url": "https://link.springer.com/journal/12903/articles?sort=PubDate&page=1",
+            "doi_count": 0
+          }
+        ],
+        "candidate_dois": [],
+        "online_first_month_verified": false,
+        "warning": "Listing may include other months; article-level first-online date must be checked."
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 291,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
+      "group": "Biomaterialien",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 37,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of Materials Science: Materials in Medicine",
+      "group": "Biomaterialien",
+      "publisher_platform": "springer_link",
+      "publisher_listing_urls": [
+        "https://link.springer.com/journal/10856/articles?sort=PubDate&page=1"
+      ],
+      "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified",
+      "crossref_publication_candidates": 3,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "unparseable_or_empty_listing",
+        "error": null,
+        "pages": [
+          {
+            "url": "https://link.springer.com/journal/10856/articles?sort=PubDate&page=1",
+            "doi_count": 0
+          }
+        ],
+        "candidate_dois": [],
+        "online_first_month_verified": false,
+        "warning": "Listing may include other months; article-level first-online date must be checked."
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 3,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Acta Biomaterialia",
+      "group": "Biomaterialien",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 106,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of Oral Rehabilitation",
+      "group": "Biomaterialien",
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 34,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 34,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of the American Ceramic Society",
+      "group": "Engineering",
+      "publisher_platform": "wiley_online_library",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 76,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 76,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of the European Ceramic Society",
+      "group": "Engineering",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 49,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    },
+    {
+      "journal": "Journal of Biomechanics",
+      "group": "Engineering",
+      "publisher_platform": "elsevier_sciencedirect",
+      "publisher_listing_urls": [],
+      "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
+      "crossref_publication_candidates": 37,
+      "crossref_online_query": {
+        "status": "not_run"
+      },
+      "publisher_listing": {
+        "status": "not_implemented"
+      },
+      "publisher_article_pages_checked": 0,
+      "publisher_online_dates_verified": 0,
+      "included_articles": 0,
+      "included_with_publisher_evidence": 0,
+      "independently_exhaustive": false,
+      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+    }
+  ]
+}
