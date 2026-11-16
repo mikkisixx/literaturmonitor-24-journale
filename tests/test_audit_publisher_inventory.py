@@ -5,6 +5,23 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 import audit_publisher_inventory as audit
 
 class AllJournalPublisherAuditTests(unittest.TestCase):
+    def test_conflicting_dates_are_disclosed_per_journal_not_silently_ignored(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/CONFLICT",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "in_requested_month": True, "in_monthly_report": False},
+            {"journal": "Clinical Oral Investigations", "doi": "doi:10.1007/conflict",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-13",
+             "in_requested_month": True, "in_monthly_report": False}]}
+        result = audit.build("2026-10", verification=verification, monthly_report={"articles": []})
+        rows = {row["journal"]: row for row in result["journals"]}
+        row = rows["Clinical Oral Investigations"]
+        self.assertEqual(row["publisher_conflicting_verified_date_dois"], ["10.1007/conflict"])
+        self.assertEqual(row["publisher_conflicting_verified_date_count"], 1)
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+        self.assertEqual(rows["Dental Materials"]["publisher_conflicting_verified_date_count"], 0)
+        self.assertFalse(result["complete"])
+
     def test_all_24_journals_have_platform_and_explicit_unverified_status(self):
         result = audit.build("2026-10")
         self.assertEqual(result["journal_count"], 24)
