@@ -137,9 +137,15 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 normalize_doi(x["doi"]) for x in confirmed_missing
                 if x.get("doi") and normalize_doi(x["doi"])
             })
-            verified_sources = sorted({str(x.get("source") or x.get("publisher_url") or x.get("url")).strip()\n                                       for x in checks\n                                       if x.get("status") == "publisher_online_date_verified"\n                                       and verified_online_date(x)\n                                       and str(x.get("source") or x.get("publisher_url") or x.get("url") or "").startswith(("https://", "http://"))})\n            rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
+            verified_sources = sorted({str(x.get("source") or x.get("publisher_url") or x.get("url")).strip()
+                                       for x in checks
+                                       if x.get("status") == "publisher_online_date_verified"
+                                       and verified_online_date(x)
+                                       and str(x.get("source") or x.get("publisher_url") or x.get("url") or "").startswith(("https://", "http://"))})
+            rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
                          "publisher_listing_status": status,
-                         "publisher_listing_urls": urls,\n                         "publisher_verified_date_source_urls": verified_sources,
+                         "publisher_listing_urls": urls,
+                         "publisher_verified_date_source_urls": verified_sources,
                          "publisher_candidate_count": len(publisher_dois),
                          "publisher_candidates_absent_from_monthly_report": missing_dois,
                          "publisher_candidates_absent_count": len(missing_dois),
@@ -171,7 +177,8 @@ def main():
     monthly_report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else None
     result = build(args.month, listing, verified, monthly_report)
     folder.mkdir(parents=True, exist_ok=True)
-    (folder / (args.month + "-coverage.json")).write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+    (folder / (args.month + "-coverage.json")).write_text(json.dumps(result, ensure_ascii=False, indent=2) + "
+")
     print(json.dumps({"journals": 24, "implemented_listings": sum(r["publisher_listing_status"] != "not_implemented" for r in result["journals"]),
                       "independently_verified": 0}))
 
