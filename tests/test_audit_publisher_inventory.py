@@ -18,6 +18,8 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         row = rows["Clinical Oral Investigations"]
         self.assertEqual(row["publisher_conflicting_verified_date_dois"], ["10.1007/conflict"])
         self.assertEqual(row["publisher_conflicting_verified_date_count"], 1)
+        self.assertEqual(row["publisher_article_dates_verified"], 2)
+        self.assertEqual(row["publisher_article_dates_verified_unambiguous"], 0)
         self.assertEqual(row["confirmed_month_missing_dois"], [])
         self.assertEqual(rows["Dental Materials"]["publisher_conflicting_verified_date_count"], 0)
         self.assertFalse(result["complete"])
