@@ -284,5 +284,25 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["confirmed_month_missing_dois"], [])
         self.assertEqual(row["confirmed_month_missing_from_report"], 0)
 
+    def test_verified_publisher_date_sources_are_auditable_per_journal(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/one",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "source": "https://link.springer.com/article/10.1007/one"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/two",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-13",
+             "source": "https://link.springer.com/article/10.1007/one"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/invalid",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-99",
+             "source": "https://link.springer.com/article/10.1007/invalid"},
+            {"journal": "Dental Materials", "doi": "10.1016/example",
+             "status": "unverified", "source": "https://example.org/not-verified"},
+        ]}
+        result = audit.build("2026-10", verification=verification)
+        rows = {r["journal"]: r for r in result["journals"]}
+        self.assertEqual(rows["Clinical Oral Investigations"]["publisher_verified_date_source_urls"],
+                         ["https://link.springer.com/article/10.1007/one"])
+        self.assertEqual(rows["Dental Materials"]["publisher_verified_date_source_urls"], [])
+
 if __name__ == "__main__":
     unittest.main()
