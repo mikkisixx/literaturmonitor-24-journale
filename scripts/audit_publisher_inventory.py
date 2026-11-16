@@ -87,6 +87,15 @@ def build(month, inventory=None, verification=None, monthly_report=None):
     by_journal = {}
     for row in verified_rows:
         by_journal.setdefault(row["journal"], []).append(row)
+    # A DOI with contradictory verified publisher dates is not reliable evidence.
+    # Suppress it from confirmed-gap reporting until the conflict is resolved.
+    dates_by_doi = {}
+    for record in verified_rows:
+        doi = normalize_doi(record.get("doi"))
+        date = verified_online_date(record)
+        if doi and record.get("status") == "publisher_online_date_verified" and date:
+            dates_by_doi.setdefault((record.get("journal"), doi), set()).add(date)
+    conflicting_dois = {key for key, dates in dates_by_doi.items() if len(dates) > 1}
     rows = []
     for group, names in collect.JOURNALS.items():
         for name in names:
@@ -117,6 +126,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 # A verified date is mandatory; the month flag alone is not evidence.
                 and verified_online_date(x)
                 and is_valid_month_date(verified_online_date(x), month)
+                and (name, normalize_doi(x.get("doi"))) not in conflicting_dois
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
