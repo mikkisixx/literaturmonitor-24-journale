@@ -16,6 +16,7 @@ on:
       - 'scripts/discover_springer.py'
       - 'scripts/verify_springer_inventory.py'
       - 'scripts/audit_publisher_inventory.py'
+      - 'scripts/report_provenance.py'
       - 'scripts/verify_discovered_candidates.py'
       - 'tests/test_verify_discovered_candidates.py'
       - 'tests/test_audit_publisher_inventory.py'
@@ -98,6 +99,8 @@ jobs:
         run: python scripts/audit_publisher_inventory.py --month "${{ steps.period.outputs.month }}"
       - name: Tests Verlagsabdeckung aller 24 Zeitschriften
         run: python -m unittest discover -s tests -p 'test_audit_publisher_inventory.py' -v
+      - name: Nachvollziehbare Quellenübersicht pro Journal erzeugen
+        run: python scripts/report_provenance.py --month "${{ steps.period.outputs.month }}"
       - name: Verlagsdaten artikelweise abgleichen
         run: python scripts/verify_publishers.py "$REPORT_MONTH"
         env:
@@ -128,6 +131,7 @@ jobs:
             data/publisher-inventory/${{ steps.period.outputs.month }}-verified.json
             data/publisher-candidate-checks/${{ steps.period.outputs.month }}.json
             data/quality/${{ steps.period.outputs.month }}.json
+            data/online-audit/${{ steps.period.outputs.month }}-provenance.json
           if-no-files-found: warn
           retention-days: 30
       - name: Regressionstest Crossref und Null-Treffer-Suche
@@ -196,6 +200,13 @@ jobs:
           assert "Rechercheentwurf" not in content, "Draft marker present"
           print(f"Validated {page}: {parser.articles} DOI entries, {parser.rows} audit rows")
           PY
+      - name: Journalquellen als zusätzliches Prüfartefakt bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Journalquellen-${{ steps.period.outputs.month }}
+          path: data/online-audit/${{ steps.period.outputs.month }}-provenance.json
+          if-no-files-found: error
+          retention-days: 90
       - name: Berichtspaket als GitHub-Artefakt bereitstellen
         uses: actions/upload-artifact@v4
         with:
@@ -207,7 +218,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/publisher-candidate-checks/ data/publisher-inventory/ data/quality/ data/coverage/
+          git add data/observed.json data/backfill-*.json data/months/ data/publisher-checks/ data/publisher-candidate-checks/ data/publisher-inventory/ data/quality/ data/coverage/ data/online-audit/
           if ! git diff --cached --quiet; then
             git commit -m "Aktualisiere Monatsbericht ${{ steps.period.outputs.month }}"
             # Never silently resolve conflicts in scientific evidence or review files.
