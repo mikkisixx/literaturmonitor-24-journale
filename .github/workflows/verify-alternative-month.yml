@@ -1,13 +1,5 @@
 name: End-to-End-Nachweis alternativer Monat August 2026
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/verify-alternative-month.yml'
-      - 'scripts/**'
-      - 'tests/**'
-      - '.github/workflows/monthly-report.yml'
-      - '.github/workflows/einfacher-html-bericht.yml'
   workflow_dispatch:
 permissions:
   actions: write
