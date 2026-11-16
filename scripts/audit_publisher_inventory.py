@@ -177,8 +177,7 @@ def main():
     monthly_report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else None
     result = build(args.month, listing, verified, monthly_report)
     folder.mkdir(parents=True, exist_ok=True)
-    (folder / (args.month + "-coverage.json")).write_text(json.dumps(result, ensure_ascii=False, indent=2) + "
-")
+    (folder / (args.month + "-coverage.json")).write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"journals": 24, "implemented_listings": sum(r["publisher_listing_status"] != "not_implemented" for r in result["journals"]),
                       "independently_verified": 0}))
 
