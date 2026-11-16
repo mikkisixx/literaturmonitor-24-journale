@@ -59,11 +59,25 @@ def merge_publisher(month):
     observed_path=ROOT/"data"/"observed.json"
     observed=json.loads(observed_path.read_text())
     n=0
-    for row in json.loads(p.read_text()).get("records",[]):
+    records=json.loads(p.read_text()).get("records",[])
+    dates_by_doi={}
+    for row in records:
         if row.get("status")!="publisher_online_date_verified":continue
-        online=row.get("publisher_online_date")
-        doi=(row.get("doi") or "").lower()
-        if not doi or not online or online[:7]!=month:continue
+        doi=(row.get("doi") or "").strip().lower()
+        online=row.get("publisher_online_date") or row.get("online_date")
+        if doi and online:
+            dates_by_doi.setdefault(doi,set()).add(online)
+    conflicting={doi for doi,dates in dates_by_doi.items() if len(dates)>1}
+    for row in records:
+        if row.get("status")!="publisher_online_date_verified":continue
+        online=row.get("publisher_online_date") or row.get("online_date")
+        doi=(row.get("doi") or "").strip().lower()
+        if not doi or doi in conflicting or not isinstance(online,str):continue
+        try:
+            valid_date=dt.date.fromisoformat(online).isoformat()==online
+        except ValueError:
+            valid_date=False
+        if not valid_date or online[:7]!=month:continue
         previous=observed.get(doi,{})
         if previous.get("journal") and previous["journal"]!=row["journal"]:continue
         previous.update({"doi":doi,"journal":row["journal"],"online_date":online,
