@@ -50,6 +50,12 @@ class PublisherDateConflictTests(unittest.TestCase):
         self.assertEqual(normalize_date("2026-10-03T12:30:45.123+02:00"), "2026-10-03")
         self.assertEqual(normalize_date("2026-10-03T12:30:45Z"), "2026-10-03")
 
+    def test_rejects_invalid_iso_time_components(self):
+        for value in ("2026-10-03T29:00:00Z", "2026-10-03T24:00:00Z",
+                      "2026-10-03T12:30:00+29:00", "2026-10-03T12:30:00-24:00"):
+            with self.subTest(value=value):
+                self.assertIsNone(normalize_date(value))
+
     def test_ambiguous_explicit_online_date_requires_review(self):
         status, evidence, _ = classify([
             ("citation_online_date", "2026-10-03 and 2026-10-05")], "2026-10-03")
