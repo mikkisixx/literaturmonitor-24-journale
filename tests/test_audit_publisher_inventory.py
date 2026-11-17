@@ -145,7 +145,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/example",
              "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": True, "in_monthly_report": False},
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/outside",
-             "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": False, "in_monthly_report": False},
+             "status": "publisher_online_date_verified", "online_date": "2026-09-15", "in_requested_month": False, "in_monthly_report": False},
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/unverified",
              "status": "unverified", "in_requested_month": True, "in_monthly_report": False}]}
         result = audit.build("2026-10", inventory, verification)
@@ -153,6 +153,18 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/example"])
         self.assertEqual(row["confirmed_month_missing_from_report"], 1)
         self.assertFalse(row["publisher_coverage_verified"])
+
+    def test_verified_month_date_overrides_stale_false_month_flag(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/stale-month",
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+            "in_requested_month": False, "in_monthly_report": False}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/stale-month"])
+        self.assertEqual(row["confirmed_month_missing_from_report"], 1)
 
     def test_stale_verification_gap_is_cleared_when_report_now_contains_doi(self):
         inventory = {"journals": {"Clinical Oral Investigations": {
