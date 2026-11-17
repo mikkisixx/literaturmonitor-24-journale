@@ -98,5 +98,28 @@ class RecoveryTests(unittest.TestCase):
             self.assertEqual(checks["existing_date_conflicts"], 1)
             self.assertEqual(checks["records"]["10.1234/abc"]["status"], "conflict_with_existing_online_date")
 
+    def test_missing_observed_doi_is_explicitly_reported(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = pathlib.Path(temp)
+            (root / "data/months").mkdir(parents=True)
+            (root / "data/months/2026-10.json").write_text(json.dumps({
+                "articles": [{"doi": "10.1234/abc", "journal": "Example",
+                              "date_basis": "crossref_published_unverified"}]
+            }))
+            (root / "data/observed.json").write_text("{}")
+            with patch.object(recovery, "ROOT", root), patch.object(
+                recovery, "inspect", return_value=("10.1234/abc", {
+                    "status": "publisher_online_date_verified",
+                    "online_date": "2026-10-12",
+                    "publisher_url": "https://publisher.example/article",
+                    "evidence": [{"field": "citation_online_date", "value": "2026-10-12"}],
+                })
+            ):
+                recovery.recover("2026-10", workers=1)
+            checks = json.loads((root / "data/publisher-candidate-checks/2026-10.json").read_text())
+            self.assertEqual(checks["records"]["10.1234/abc"]["status"], "doi_not_in_observed")
+            self.assertEqual(checks["journal_statuses"]["Example"]["statuses"]["doi_not_in_observed"], 1)
+            self.assertEqual(checks["publisher_dates_recovered"], 0)
+
 if __name__ == "__main__":
     unittest.main()
