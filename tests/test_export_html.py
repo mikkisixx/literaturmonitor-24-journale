@@ -164,6 +164,23 @@ class HtmlExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,"Unsafe publisher evidence URL"):
                 export_html.export(self.month,self.root/"out")
 
+    def test_whitespace_in_publisher_listing_url_blocks_export(self):
+        self.coverage["journals"][0]["publisher_listing_urls"] = ["https://publisher.example/issue\nmalformed"]
+        self.save()
+        with patch.object(export_html, "ROOT", self.root):
+            with self.assertRaisesRegex(ValueError, "Unsafe publisher listing source URL"):
+                export_html.export(self.month, self.root / "out")
+
+    def test_whitespace_in_publisher_evidence_url_blocks_export(self):
+        self.coverage["confirmed_missing_publisher_articles"] = 1
+        self.coverage["missing_publisher_articles"] = [{
+            "journal": "Journal <A>", "publisher_online_date": "2026-10-12",
+            "doi": "10.1234/missing", "source": "https://publisher.example/article\tbad"}]
+        self.save()
+        with patch.object(export_html, "ROOT", self.root):
+            with self.assertRaisesRegex(ValueError, "Unsafe publisher evidence URL"):
+                export_html.export(self.month, self.root / "out")
+
     def test_explicit_approval_never_auto_exported(self):
         self.quality={"month":self.month,"publication_ready":True,"release_status":"approved"}
         self.save()
