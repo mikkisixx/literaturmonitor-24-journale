@@ -129,7 +129,7 @@ class HtmlExportTests(unittest.TestCase):
         self.report={"month":self.month,"count":1,"verified_online_count":1,"candidate_count":0,
                      "articles":[{"journal":"Unexpected Journal","title":"Misassigned",
                                   "doi":"10.1234/unexpected","date_basis":"publisher_online",
-                                  "online_date":"2026-10-12"}]}
+                                  "online_date":"2026-10-12","publisher_date_source":"https://publisher.example/unexpected"}]}
         self.save()
         with patch.object(export_html,"ROOT",self.root):
             with self.assertRaisesRegex(ValueError,"absent from the 24-journal audit"):
@@ -209,7 +209,7 @@ class HtmlExportTests(unittest.TestCase):
         self.report["articles"]=[
             {"journal":"Journal <A>","title":"August online article",
              "doi":"10.1234/august","date_basis":"publisher_online",
-             "online_date":"2026-08-19"},
+             "online_date":"2026-08-19","publisher_date_source":"https://publisher.example/august"},
             {"journal":"Journal <A>","title":"Not verified",
              "doi":"10.1234/unknown","date_basis":"crossref_published_unverified",
              "online_date":"2026-08-20"},
