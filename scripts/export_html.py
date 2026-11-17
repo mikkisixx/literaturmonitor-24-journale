@@ -43,6 +43,13 @@ def export(month, output):
             parsed = dt.date.fromisoformat(online)
             if parsed.strftime("%Y-%m") != month:
                 raise ValueError("Verified article outside selected month")
+    for a in eligible:
+        if a.get("date_basis") == "publisher_online":
+            source = a.get("publisher_date_source")
+            parsed = urlsplit(source) if isinstance(source, str) else None
+            if (not parsed or parsed.scheme != "https" or not parsed.hostname
+                    or parsed.username or parsed.password or any(c.isspace() for c in source)):
+                raise ValueError("Publisher-verified article lacks a valid HTTPS evidence URL")
     if len(eligible) != report["verified_online_count"]:
         raise ValueError("Verified online article count differs from exportable articles")
     if len({a["doi"].strip().lower() for a in eligible}) != len(eligible):
