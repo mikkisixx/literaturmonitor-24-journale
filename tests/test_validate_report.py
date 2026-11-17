@@ -72,6 +72,16 @@ class ReportValidationTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             validate(MONTH, self.data)
 
+    def test_publisher_verified_article_without_source_is_rejected(self):
+        def claim_publisher_verification(obj):
+            article = next(a for a in obj["articles"]
+                           if a.get("date_basis") in ("crossref_online", "publisher_online"))
+            article["date_basis"] = "publisher_online"
+            article["publisher_date_source"] = None
+        self.mutate(f"months/{MONTH}.json", claim_publisher_verification)
+        with self.assertRaises(AssertionError):
+            validate(MONTH, self.data)
+
     def test_duplicate_publisher_evidence_is_rejected(self):
         def duplicate(obj):
             obj["findings"].append(copy.deepcopy(obj["findings"][0]))
