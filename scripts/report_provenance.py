@@ -31,6 +31,7 @@ def make(month):
                 "publisher_platform":audit.get("publisher_platform","unmapped"),
                 "publisher_listing_urls":audit.get("publisher_listing_urls",[]),
                 "publisher_coverage_reason":audit.get("publisher_coverage_reason","Publisher completeness not independently verified"),"crossref_publication_candidates":back.get("counts",{}).get(name,0),
+                "crossref_publication_query":{"status":("failed" if name in back.get("errors",{}) else "queried" if name in back.get("counts",{}) else "not_run"),"error":back.get("errors",{}).get(name)},
                 "crossref_online_query":online.get("journals",{}).get(name,{"status":"not_run"}),
                 "publisher_listing":inv.get("journals",{}).get(name,{"status":"not_implemented"}),
                 "publisher_article_pages_checked":len(checks),
@@ -40,6 +41,7 @@ def make(month):
                 "reason":"No proven exhaustive publisher listing and article-level first-online date verification"})
     assert len(rows)==24
     return {"month":month,"journal_count":24,"all_crossref_queries_succeeded":back.get("checked")==24 and not back.get("errors") and all(x["crossref_online_query"].get("status")=="queried" for x in rows),
+        "all_crossref_publication_queries_succeeded":all(row["crossref_publication_query"]["status"]=="queried" for row in rows) and not back.get("title_fallback_truncated"),
         "independently_complete":False,"journals":rows}
 if __name__=="__main__":
     p=argparse.ArgumentParser()
