@@ -94,8 +94,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
         doi = normalize_doi(record.get("doi"))
         date = verified_online_date(record)
         if doi and record.get("status") == "publisher_online_date_verified" and date:
-            dates_by_doi.setdefault((record.get("journal"), doi), set()).add(date)
-    conflicting_dois = {key for key, dates in dates_by_doi.items() if len(dates) > 1}
+            dates_by_doi.setdefault(doi, set()).add(date)
+    conflicting_dois = {doi for doi, dates in dates_by_doi.items() if len(dates) > 1}
     rows = []
     for group, names in collect.JOURNALS.items():
         for name in names:
@@ -119,7 +119,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 reason = "Publisher listing request failed; coverage unverified"
             else:
                 reason = "Publisher listing not proven exhaustive and first-online dates not fully inventoried"
-            conflicting_journal_dois = sorted(doi for journal, doi in conflicting_dois if journal == name)
+            conflicting_journal_dois = sorted({normalize_doi(record.get("doi")) for record in checks
+                                               if normalize_doi(record.get("doi")) in conflicting_dois})
             confirmed_missing = [
                 x for x in checks
                 if x.get("status") == "publisher_online_date_verified"
@@ -127,7 +128,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 # A verified date is mandatory; the month flag alone is not evidence.
                 and verified_online_date(x)
                 and is_valid_month_date(verified_online_date(x), month)
-                and (name, normalize_doi(x.get("doi"))) not in conflicting_dois
+                and normalize_doi(x.get("doi")) not in conflicting_dois
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
@@ -161,7 +162,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                          "publisher_article_dates_verified_unambiguous": sum(
                              x.get("status") == "publisher_online_date_verified"
                              and verified_online_date(x) is not None
-                             and (name, normalize_doi(x.get("doi"))) not in conflicting_dois
+                             and normalize_doi(x.get("doi")) not in conflicting_dois
                              for x in checks),
                          "confirmed_month_missing_from_report": len(confirmed_missing_dois),
                          "confirmed_month_missing_dois": confirmed_missing_dois,
