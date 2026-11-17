@@ -48,7 +48,9 @@ def recover(month,workers=6):
     for doi,record in results.items():
         if record["status"]!="publisher_online_date_verified":continue
         existing=observed.get(doi)
-        if existing is None:continue
+        if existing is None:
+            record["status"]="doi_not_in_observed"
+            continue
         online=record["online_date"]
         previous_online=existing.get("online_date")
         if previous_online and previous_online != online:
