@@ -4,13 +4,13 @@
   "release_status": "review_required",
   "note": "Automatic checks cannot establish completeness across 24 journals. Editorial approval required.",
   "crossref_online_articles": 563,
-  "independently_corroborrated_online_dates": 479,
-  "online_dates_not_corroborrated": 84,
+  "independently_corroborrated_online_dates": 478,
+  "online_dates_not_corroborrated": 85,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 177,
-    "europe_pmc_electronic_other_month": 271,
-    "needs_manual_review": 87
+    "europe_pmc_electronic_month_match": 178,
+    "europe_pmc_electronic_other_month": 272,
+    "needs_manual_review": 85
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -24,9 +24,9 @@
     "Dental Materials": {
       "total": 41,
       "statuses": {
-        "europe_pmc_electronic_other_month": 17,
-        "europe_pmc_electronic_month_match": 21,
-        "needs_manual_review": 3
+        "europe_pmc_electronic_other_month": 18,
+        "europe_pmc_electronic_month_match": 22,
+        "needs_manual_review": 1
       }
     },
     "Journal of Biomechanics": {
@@ -2315,13 +2315,16 @@
       "doi": "10.1016/j.dental.2026.10.008",
       "journal": "Dental Materials",
       "title": "Engineering a multifunctional dental adhesive via direct incorporation of a catechol-based monomer",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-16",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "HTTP Error 503: "
+        "source": "MED",
+        "id": "42888050",
+        "electronic_publication_date": "2026-10-16",
+        "first_publication_date": "2026-10-16",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -2488,13 +2491,16 @@
       "doi": "10.1016/j.dental.2026.04.016",
       "journal": "Dental Materials",
       "title": "On the degradation mechanics and fatigue strength of resin-dentin interfaces: Identifying weak links of adhesive strategies after prolonged ageing",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-09",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42108116",
+        "electronic_publication_date": "2026-05-09",
+        "first_publication_date": "2026-05-09",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -2904,7 +2910,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -6835,7 +6841,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -6895,7 +6901,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7027,7 +7033,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7063,7 +7069,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7087,7 +7093,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7099,7 +7105,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7111,7 +7117,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7123,7 +7129,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7207,7 +7213,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7423,7 +7429,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7459,7 +7465,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7471,7 +7477,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7531,7 +7537,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -8307,9 +8313,7 @@
     "journals_queried": 24,
     "query_errors": 0,
     "title_fallback_truncated": [
-      "American Journal of Dentistry",
-      "International Journal of Prosthodontics",
-      "Quintessence International"
+      "International Journal of Prosthodontics"
     ],
     "zero_hit_journals": 4,
     "journals_independently_verified": 0,
