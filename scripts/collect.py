@@ -26,7 +26,7 @@ def get(url):
             with urllib.request.urlopen(req,timeout=45) as r:
                 return json.load(r)["message"]
         except (urllib.error.HTTPError,urllib.error.URLError,TimeoutError) as exc:
-            if isinstance(exc,urllib.error.HTTPError) and exc.code not in (429,500,502,503,504):
+            if isinstance(exc,urllib.error.HTTPError) and exc.code not in (404,408,429,500,502,503,504):
                 raise
             if n==3: raise
             time.sleep(2**n*2)
