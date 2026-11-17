@@ -124,7 +124,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
             confirmed_missing = [
                 x for x in checks
                 if x.get("status") == "publisher_online_date_verified"
-                and x.get("in_requested_month")
+                # Derive month membership from the verified date, not a potentially stale flag.
                 # A verified date is mandatory; the month flag alone is not evidence.
                 and verified_online_date(x)
                 and is_valid_month_date(verified_online_date(x), month)
