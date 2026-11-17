@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 178,
-    "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 85
+    "europe_pmc_electronic_month_match": 173,
+    "europe_pmc_electronic_other_month": 260,
+    "needs_manual_review": 102
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -24,25 +24,25 @@
     "Dental Materials": {
       "total": 41,
       "statuses": {
-        "europe_pmc_electronic_other_month": 18,
-        "europe_pmc_electronic_month_match": 22,
-        "needs_manual_review": 1
+        "europe_pmc_electronic_other_month": 16,
+        "europe_pmc_electronic_month_match": 19,
+        "needs_manual_review": 6
       }
     },
     "Journal of Biomechanics": {
       "total": 46,
       "statuses": {
-        "europe_pmc_electronic_other_month": 33,
-        "europe_pmc_electronic_month_match": 9,
-        "needs_manual_review": 4
+        "europe_pmc_electronic_other_month": 30,
+        "europe_pmc_electronic_month_match": 8,
+        "needs_manual_review": 8
       }
     },
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
-        "europe_pmc_electronic_other_month": 59,
+        "europe_pmc_electronic_other_month": 57,
         "europe_pmc_electronic_month_match": 28,
-        "needs_manual_review": 1
+        "needs_manual_review": 3
       }
     },
     "Journal of Endodontics": {
@@ -70,9 +70,9 @@
     "Journal of the Mechanical Behavior of Biomedical Materials": {
       "total": 40,
       "statuses": {
-        "europe_pmc_electronic_other_month": 35,
-        "needs_manual_review": 2,
-        "europe_pmc_electronic_month_match": 3
+        "europe_pmc_electronic_other_month": 30,
+        "needs_manual_review": 8,
+        "europe_pmc_electronic_month_match": 2
       }
     },
     "Operative Dentistry": {
@@ -2443,16 +2443,13 @@
       "doi": "10.1016/j.dental.2026.05.002",
       "journal": "Dental Materials",
       "title": "Macroscopic and microscopic investigation of the viscoelastic behavior of dental resin-ceramic composite materials",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-12",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42115027",
-        "electronic_publication_date": "2026-05-12",
-        "first_publication_date": "2026-05-12",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2507,16 +2504,13 @@
       "doi": "10.1016/j.dental.2026.10.002",
       "journal": "Dental Materials",
       "title": "Phosphorylation-driven rapid intrafibrillar mineralization: A biomimetic strategy for dentin remineralization",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-08",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42850100",
-        "electronic_publication_date": "2026-10-08",
-        "first_publication_date": "2026-10-08",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2571,16 +2565,13 @@
       "doi": "10.1016/j.dental.2026.09.019",
       "journal": "Dental Materials",
       "title": "Reinforcement of glass ionomer cement using ultralong hydroxyapatite nanowires",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-06",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42838825",
-        "electronic_publication_date": "2026-10-06",
-        "first_publication_date": "2026-10-06",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2619,16 +2610,13 @@
       "doi": "10.1016/j.dental.2026.10.003",
       "journal": "Dental Materials",
       "title": "Tolerance of universal adhesives to saliva and gingival crevicular fluid contamination of dentin",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-08",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42850099",
-        "electronic_publication_date": "2026-10-08",
-        "first_publication_date": "2026-10-08",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2667,16 +2655,13 @@
       "doi": "10.1016/j.dental.2026.04.026",
       "journal": "Dental Materials",
       "title": "Utilizing pectin/ACP complexes to mimic amelogenesis for biomimetic enamel regeneration",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-05",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42091404",
-        "electronic_publication_date": "2026-05-05",
-        "first_publication_date": "2026-05-05",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2999,16 +2984,13 @@
       "doi": "10.1016/j.jbiomech.2026.113610",
       "journal": "Journal of Biomechanics",
       "title": "From simulation to clinical evidence: A credibility framework for clinical applications of computational spine biomechanics",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-07",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "43035065",
-        "electronic_publication_date": "2026-10-07",
-        "first_publication_date": "2026-10-07",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -3219,16 +3201,13 @@
       "doi": "10.1016/j.jbiomech.2026.113459",
       "journal": "Journal of Biomechanics",
       "title": "Sensitivity of musculoskeletal model-predicted loads to spinal alignment individualization in adult spinal deformity",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-08",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42721582",
-        "electronic_publication_date": "2026-07-08",
-        "first_publication_date": "2026-07-08",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -3336,7 +3315,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -3403,32 +3383,26 @@
       "doi": "10.1016/j.jbiomech.2026.113570",
       "journal": "Journal of Biomechanics",
       "title": "Walking with treadmill lateral oscillation facilitates paretic limb loading in individuals post-stroke",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-09-10",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42743858",
-        "electronic_publication_date": "2026-09-10",
-        "first_publication_date": "2026-09-10",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jbiomech.2026.113589",
       "journal": "Journal of Biomechanics",
       "title": "Waveform-based interlimb ground-reaction-force similarity reveals direction-dependent locomotor adaptation during split-belt treadmill walking",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-09-23",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42785118",
-        "electronic_publication_date": "2026-09-23",
-        "first_publication_date": "2026-09-23",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -3467,32 +3441,26 @@
       "doi": "10.1016/j.jdent.2026.106742",
       "journal": "Journal of Dentistry",
       "title": "A new automated 3d facial soft tissue landmarking method via deep learning",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-06",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42103064",
-        "electronic_publication_date": "2026-05-06",
-        "first_publication_date": "2026-05-06",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.jdent.2026.106746",
       "journal": "Journal of Dentistry",
       "title": "AI framework for dental shade matching under variable lighting conditions",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-12",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42128088",
-        "electronic_publication_date": "2026-05-12",
-        "first_publication_date": "2026-05-12",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7682,16 +7650,13 @@
       "doi": "10.1016/j.jmbbm.2026.107562",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Biomechanical function of the murine cervix with elastic fiber deficiency",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-17",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42475954",
-        "electronic_publication_date": "2026-07-17",
-        "first_publication_date": "2026-07-17",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7714,16 +7679,13 @@
       "doi": "10.1016/j.jmbbm.2026.107573",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Design for additive manufacturing using the contactless support strategy for the fabrication of ultrathin zirconia dental veneers",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-25",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42531957",
-        "electronic_publication_date": "2026-07-25",
-        "first_publication_date": "2026-07-25",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7790,16 +7752,13 @@
       "doi": "10.1016/j.jmbbm.2026.107559",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Effect of reusing cobalt-chromium alloy powders in direct metal laser sintering on powder characteristics and metal-ceramic bond strength",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-15",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42462486",
-        "electronic_publication_date": "2026-07-15",
-        "first_publication_date": "2026-07-15",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7838,16 +7797,13 @@
       "doi": "10.1016/j.jmbbm.2026.107701",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Evaluating mechanical response from kinetic threats in surrogate tissue materials and bone-tissue boundaries",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-29",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42976722",
-        "electronic_publication_date": "2026-10-29",
-        "first_publication_date": "2026-10-29",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -8062,16 +8018,13 @@
       "doi": "10.1016/j.jmbbm.2026.107566",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Metal ion release of a polished hip stem coated with a zirconium nitride multilayer in comparison with an uncoated hip stem – an in vitro study in a completely cemented as well as in a severe debonding condition",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-18",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42480385",
-        "electronic_publication_date": "2026-07-18",
-        "first_publication_date": "2026-07-18",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -8110,16 +8063,13 @@
       "doi": "10.1016/j.jmbbm.2026.107531",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Numerical modeling of textile-based LCE actuators for conformal cardiac surface interaction",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-07-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42435568",
-        "electronic_publication_date": "2026-07-09",
-        "first_publication_date": "2026-07-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -8231,7 +8181,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -8303,7 +8254,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     }
   ],
