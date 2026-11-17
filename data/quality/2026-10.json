@@ -8,17 +8,17 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "needs_manual_review": 91,
-    "europe_pmc_electronic_other_month": 267,
-    "europe_pmc_electronic_month_match": 177
+    "europe_pmc_electronic_month_match": 178,
+    "europe_pmc_electronic_other_month": 272,
+    "needs_manual_review": 85
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "needs_manual_review": 3,
+        "europe_pmc_electronic_month_match": 65,
         "europe_pmc_electronic_other_month": 57,
-        "europe_pmc_electronic_month_match": 64
+        "needs_manual_review": 2
       }
     },
     "Dental Materials": {
@@ -70,8 +70,8 @@
     "Journal of the Mechanical Behavior of Biomedical Materials": {
       "total": 40,
       "statuses": {
-        "europe_pmc_electronic_other_month": 30,
-        "needs_manual_review": 7,
+        "europe_pmc_electronic_other_month": 35,
+        "needs_manual_review": 2,
         "europe_pmc_electronic_month_match": 3
       }
     },
@@ -87,13 +87,16 @@
       "doi": "10.1016/j.actbio.2026.10.013",
       "journal": "Acta Biomaterialia",
       "title": "A 3D lymphatics-on-a-chip reveals matrix stiffness dependent VEGFR-2 and VEGFR-3 contributions to lymphangiogenesis",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-08",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42849828",
+        "electronic_publication_date": "2026-10-08",
+        "first_publication_date": "2026-10-08",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4991,7 +4994,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7066,7 +7069,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7787,13 +7790,16 @@
       "doi": "10.1016/j.jmbbm.2026.107559",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Effect of reusing cobalt-chromium alloy powders in direct metal laser sintering on powder characteristics and metal-ceramic bond strength",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-07-15",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42462486",
+        "electronic_publication_date": "2026-07-15",
+        "first_publication_date": "2026-07-15",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -7880,13 +7886,16 @@
       "doi": "10.1016/j.jmbbm.2026.107530",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Finite element analysis in tibial plateau fractures: a systematic review of literature",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-07-02",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42413145",
+        "electronic_publication_date": "2026-07-02",
+        "first_publication_date": "2026-07-02",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -8053,13 +8062,16 @@
       "doi": "10.1016/j.jmbbm.2026.107566",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Metal ion release of a polished hip stem coated with a zirconium nitride multilayer in comparison with an uncoated hip stem – an in vitro study in a completely cemented as well as in a severe debonding condition",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-07-18",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42480385",
+        "electronic_publication_date": "2026-07-18",
+        "first_publication_date": "2026-07-18",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -8098,13 +8110,16 @@
       "doi": "10.1016/j.jmbbm.2026.107531",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Numerical modeling of textile-based LCE actuators for conformal cardiac surface interaction",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-07-09",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42435568",
+        "electronic_publication_date": "2026-07-09",
+        "first_publication_date": "2026-07-09",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -8143,13 +8158,16 @@
       "doi": "10.1016/j.jmbbm.2026.107568",
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
       "title": "Tribological and microstructural analysis of heat treatments on medical grade cobalt-chromium-molybdenum alloys",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-07-29",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42541998",
+        "electronic_publication_date": "2026-07-29",
+        "first_publication_date": "2026-07-29",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -8213,8 +8231,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
