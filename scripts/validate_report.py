@@ -44,6 +44,9 @@ def validate(month, data=DATA):
             assert isinstance(online,str), "Verified article has no online date"
             parsed=dt.date.fromisoformat(online)
             assert parsed.strftime("%Y-%m")==month, "Verified article outside selected month"
+            if basis == "publisher_online":
+                assert valid_https_source(article.get("publisher_date_source")), (
+                    "Publisher-verified article has no valid HTTPS publisher evidence URL")
             eligible.append(article)
         else:
             candidates.append(article)
