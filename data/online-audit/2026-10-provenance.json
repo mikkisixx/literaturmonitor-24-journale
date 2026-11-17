@@ -2,6 +2,7 @@
   "month": "2026-10",
   "journal_count": 24,
   "all_crossref_queries_succeeded": false,
+  "all_crossref_publication_queries_succeeded": false,
   "independently_complete": false,
   "journals": [
     {
@@ -11,6 +12,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 20,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -31,6 +36,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 41,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -51,6 +60,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 74,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -71,6 +84,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 0,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -91,6 +108,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 0,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -111,6 +132,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 89,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -131,6 +156,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 0,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -151,6 +180,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 0,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -171,6 +204,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 3,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -193,6 +230,10 @@
       ],
       "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified",
       "crossref_publication_candidates": 56,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -223,6 +264,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 13,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -243,6 +288,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 19,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -263,6 +312,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 21,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -283,6 +336,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 38,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -303,6 +360,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 19,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -323,6 +384,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 11,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -345,6 +410,10 @@
       ],
       "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified",
       "crossref_publication_candidates": 291,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -375,6 +444,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 37,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -397,6 +470,10 @@
       ],
       "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified",
       "crossref_publication_candidates": 3,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -427,6 +504,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 106,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -447,6 +528,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 34,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -467,6 +552,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 76,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -487,6 +576,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 49,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
@@ -507,6 +600,10 @@
       "publisher_listing_urls": [],
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal",
       "crossref_publication_candidates": 36,
+      "crossref_publication_query": {
+        "status": "queried",
+        "error": null
+      },
       "crossref_online_query": {
         "status": "not_run"
       },
