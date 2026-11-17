@@ -7,6 +7,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
 import collect
+from audit_publisher_inventory import verified_online_date
 def load(path):
     return json.loads(path.read_text()) if path.exists() else {}
 def make(month):
@@ -33,7 +34,7 @@ def make(month):
                 "crossref_online_query":online.get("journals",{}).get(name,{"status":"not_run"}),
                 "publisher_listing":inv.get("journals",{}).get(name,{"status":"not_implemented"}),
                 "publisher_article_pages_checked":len(checks),
-                "publisher_online_dates_verified":sum(a.get("status")=="publisher_online_date_verified" for a in checks),
+                "publisher_online_dates_verified":sum(a.get("status")=="publisher_online_date_verified" and verified_online_date(a) is not None for a in checks),
                 "included_articles":len(included),"included_with_publisher_evidence":len(publisher),
                 "independently_exhaustive":False,
                 "reason":"No proven exhaustive publisher listing and article-level first-online date verification"})
