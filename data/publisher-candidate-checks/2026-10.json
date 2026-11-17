@@ -23,22 +23,19 @@
     "Journal of Dentistry": {
       "candidates": 88,
       "statuses": {
-        "no_explicit_online_date": 55,
-        "publisher_unavailable": 33
+        "no_explicit_online_date": 88
       }
     },
     "Journal of Endodontics": {
       "candidates": 38,
       "statuses": {
-        "no_explicit_online_date": 35,
-        "publisher_unavailable": 3
+        "no_explicit_online_date": 38
       }
     },
     "Journal of Prosthetic Dentistry": {
       "candidates": 93,
       "statuses": {
-        "no_explicit_online_date": 87,
-        "publisher_unavailable": 6
+        "no_explicit_online_date": 93
       }
     },
     "Journal of the European Ceramic Society": {
@@ -63,8 +60,7 @@
   "publisher_dates_recovered": 0,
   "existing_date_conflicts": 0,
   "statuses": {
-    "no_explicit_online_date": 493,
-    "publisher_unavailable": 42
+    "no_explicit_online_date": 535
   },
   "records": {
     "10.1016/j.actbio.2026.10.013": {
@@ -1193,52 +1189,64 @@
       "dates": []
     },
     "10.1016/j.jdent.2026.107147": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008171",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106798": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004689",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106842": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005129",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107145": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008158",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106836": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005063",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106787": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004574",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106825": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004951",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107133": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600802X",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106850": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005208",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106757": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004276",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106826": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004963",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106835": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005051",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106839": {
       "status": "no_explicit_online_date",
@@ -1371,88 +1379,109 @@
       "dates": []
     },
     "10.1016/j.jdent.2026.107117": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007864",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107107": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007761",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106748": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004185",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106840": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005105",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106755": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004252",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107128": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007979",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107115": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007840",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106794": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004641",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106799": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004690",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107134": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008031",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106841": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005117",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107106": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S030057122600775X",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107139": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008080",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106747": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004173",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106823": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004938",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106855": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226005257",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107108": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226007773",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107132": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008018",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106790": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004604",
+      "dates": []
     },
     "10.1016/j.jdent.2026.107143": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226008134",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106797": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0300571226004677",
+      "dates": []
     },
     "10.1016/j.jdent.2026.106854": {
       "status": "no_explicit_online_date",
@@ -1615,16 +1644,19 @@
       "dates": []
     },
     "10.1016/j.joen.2026.06.013": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003535",
+      "dates": []
     },
     "10.1016/s0099-2399(26)00476-0": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926004760",
+      "dates": []
     },
     "10.1016/j.joen.2026.07.007": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0099239926003602",
+      "dates": []
     },
     "10.1016/j.joen.2026.06.006": {
       "status": "no_explicit_online_date",
@@ -1742,24 +1774,29 @@
       "dates": []
     },
     "10.1016/j.prosdent.2026.06.035": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004713",
+      "dates": []
     },
     "10.1016/j.prosdent.2026.06.021": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326004610",
+      "dates": []
     },
     "10.1016/j.prosdent.2026.07.020": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005330",
+      "dates": []
     },
     "10.1016/j.prosdent.2026.09.029": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326006669",
+      "dates": []
     },
     "10.1016/j.prosdent.2026.08.003": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005755",
+      "dates": []
     },
     "10.1016/j.prosdent.2026.07.011": {
       "status": "no_explicit_online_date",
@@ -1892,8 +1929,9 @@
       "dates": []
     },
     "10.1016/j.prosdent.2026.07.029": {
-      "status": "publisher_unavailable",
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "no_explicit_online_date",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022391326005421",
+      "dates": []
     },
     "10.1016/j.prosdent.2026.07.021": {
       "status": "no_explicit_online_date",
