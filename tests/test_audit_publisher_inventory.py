@@ -24,6 +24,23 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(rows["Dental Materials"]["publisher_conflicting_verified_date_count"], 0)
         self.assertFalse(result["complete"])
 
+    def test_conflicting_dates_across_journal_assignments_are_not_confirmed(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/shared",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "in_requested_month": True, "in_monthly_report": False},
+            {"journal": "Dental Materials", "doi": "doi:10.1007/SHARED",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-13",
+             "in_requested_month": True, "in_monthly_report": False}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        rows = {row["journal"]: row for row in result["journals"]}
+        for name in ("Clinical Oral Investigations", "Dental Materials"):
+            self.assertEqual(rows[name]["publisher_conflicting_verified_date_dois"],
+                             ["10.1007/shared"])
+            self.assertEqual(rows[name]["publisher_article_dates_verified_unambiguous"], 0)
+            self.assertEqual(rows[name]["confirmed_month_missing_dois"], [])
+
     def test_all_24_journals_have_platform_and_explicit_unverified_status(self):
         result = audit.build("2026-10")
         self.assertEqual(result["journal_count"], 24)
