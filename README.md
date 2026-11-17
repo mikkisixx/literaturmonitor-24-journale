@@ -11,6 +11,13 @@ Monatliche DOI-Recherche mit Crossref, ergänzenden Verlagsprüfungen und einem 
 
 Der Workflow ist unter [monthly-report.yml](.github/workflows/monthly-report.yml) definiert. Die Ausgabe wird von [export_html.py](scripts/export_html.py) erstellt. Ein manueller End-to-End-Lauf für **August 2026** ist belegt ([Run 42648802202](https://github.com/mikkisixx/literaturmonitor-24-journale/actions/runs/42648802202), Artefakt 13692656117). Das heruntergeladene ZIP enthält eine eigenständige HTML-Datei mit **579 Artikeln**, **579 eindeutigen DOI-Links**, **24 Journal-Prüfzeilen**, **keinem Suchfeld** und **keinem Rechercheentwurf-Hinweis**. Für **Oktober 2026** ist ein erfolgreicher produktiver Lauf belegt ([Run 42776085078](https://github.com/mikkisixx/literaturmonitor-24-journale/actions/runs/42776085078), Artefakt 13747954794). Diese Nachweise belegen die technische Monatsauswahl und HTML-Ausgabe für zwei Monate, **nicht** die unabhängige bibliografische Vollständigkeit aller 24 Zeitschriften.
 
+## Aktueller überprüfter Oktober-Lauf (17. November 2026)
+
+- [Monatsrecherche und Bericht – Run 44089991911](https://github.com/mikkisixx/literaturmonitor-24-journale/actions/runs/44089991911): erfolgreich; HTML-Artefakt `Literaturbericht-2026-10-HTML` (ID `14333745097`) über den GitHub-Connector heruntergeladen und ZIP-Inhalt geprüft.
+- `Literaturbericht-2026-10.html` enthält 563 DOI-Links, die Titelangabe `Literaturbericht 2026-10`, 24 Journal-Prüfzeilen sowie weder Suchfeld noch Rechercheentwurf-Hinweis. Das HTML ist eine eigenständige Datei.
+- [Regressionstests – Run 44089991657](https://github.com/mikkisixx/literaturmonitor-24-journale/actions/runs/44089991657) und [Monat auswählen und sammeln – Run 44089991622](https://github.com/mikkisixx/literaturmonitor-24-journale/actions/runs/44089991622) waren ebenfalls erfolgreich.
+- **Wissenschaftliche Einschränkung:** `data/coverage/2026-10.json` weist 24 abgefragte Journale, 4 Null-Treffer-Journale und 0 unabhängig vollständig verifizierte Journale aus. Drei Titel-Fallback-Abfragen waren abgeschnitten. Dies ist ausdrücklich **kein** Nachweis einer vollständigen Erfassung aller Online-Erstveröffentlichungen.
+
 ## Datenherkunft und Einschränkungen
 
 - **Crossref** liefert DOI und Online-Publikationsmetadaten; nur Einträge mit zum gewählten Monat passendem `online_date` und ausgewiesener Datumsbasis (`crossref_online` oder `publisher_online`) werden im Leser-HTML ausgegeben. Ein Print-/Heftdatum ist kein Ersatz.
