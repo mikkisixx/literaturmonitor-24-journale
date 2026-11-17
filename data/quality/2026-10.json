@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 178,
-    "europe_pmc_electronic_other_month": 264,
-    "needs_manual_review": 93
+    "europe_pmc_electronic_month_match": 177,
+    "europe_pmc_electronic_other_month": 271,
+    "needs_manual_review": 87
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -24,9 +24,9 @@
     "Dental Materials": {
       "total": 41,
       "statuses": {
-        "europe_pmc_electronic_other_month": 18,
-        "europe_pmc_electronic_month_match": 22,
-        "needs_manual_review": 1
+        "europe_pmc_electronic_other_month": 17,
+        "europe_pmc_electronic_month_match": 21,
+        "needs_manual_review": 3
       }
     },
     "Journal of Biomechanics": {
@@ -40,9 +40,9 @@
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
-        "europe_pmc_electronic_other_month": 51,
+        "europe_pmc_electronic_other_month": 59,
         "europe_pmc_electronic_month_match": 28,
-        "needs_manual_review": 9
+        "needs_manual_review": 1
       }
     },
     "Journal of Endodontics": {
@@ -2315,16 +2315,13 @@
       "doi": "10.1016/j.dental.2026.10.008",
       "journal": "Dental Materials",
       "title": "Engineering a multifunctional dental adhesive via direct incorporation of a catechol-based monomer",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-16",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42888050",
-        "electronic_publication_date": "2026-10-16",
-        "first_publication_date": "2026-10-16",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "HTTP Error 503: "
       }
     },
     {
@@ -2491,16 +2488,13 @@
       "doi": "10.1016/j.dental.2026.04.016",
       "journal": "Dental Materials",
       "title": "On the degradation mechanics and fatigue strength of resin-dentin interfaces: Identifying weak links of adhesive strategies after prolonged ageing",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-09",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42108116",
-        "electronic_publication_date": "2026-05-09",
-        "first_publication_date": "2026-05-09",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2910,7 +2904,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -3515,13 +3509,16 @@
       "doi": "10.1016/j.jdent.2026.106745",
       "journal": "Journal of Dentistry",
       "title": "Accuracy and agreement of mobile applications in measuring gingival colour: a comparison with spectrophotometry",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-11",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42119936",
+        "electronic_publication_date": "2026-05-11",
+        "first_publication_date": "2026-05-11",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3560,13 +3557,16 @@
       "doi": "10.1016/j.jdent.2026.106749",
       "journal": "Journal of Dentistry",
       "title": "Accuracy of dynamic navigation compared with static navigation for guided endodontic microsurgery: A randomised controlled trial",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-15",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42142615",
+        "electronic_publication_date": "2026-05-15",
+        "first_publication_date": "2026-05-15",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3589,26 +3589,32 @@
       "doi": "10.1016/j.jdent.2026.106808",
       "journal": "Journal of Dentistry",
       "title": "Acquired enamel pellicle engineering and the use of vitamin e as a preventive strategy for dental erosion",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-03",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42242612",
+        "electronic_publication_date": "2026-06-03",
+        "first_publication_date": "2026-06-03",
+        "electronic_date_month_match": false
       }
     },
     {
       "doi": "10.1016/j.jdent.2026.106800",
       "journal": "Journal of Dentistry",
       "title": "Activated irrigation systems and postoperative pain after single-visit root canal treatment: A network meta-analysis",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-28",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42214656",
+        "electronic_publication_date": "2026-05-28",
+        "first_publication_date": "2026-05-28",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3663,13 +3669,16 @@
       "doi": "10.1016/j.jdent.2026.106798",
       "journal": "Journal of Dentistry",
       "title": "An educational intervention for teaching bad news communication in dentistry: A pilot study in Italy",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-28",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42214654",
+        "electronic_publication_date": "2026-05-28",
+        "first_publication_date": "2026-05-28",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3708,13 +3717,16 @@
       "doi": "10.1016/j.jdent.2026.106836",
       "journal": "Journal of Dentistry",
       "title": "Arresting root caries with nonrestorative strategies: A systematic review with network meta-analysis",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-17",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42309377",
+        "electronic_publication_date": "2026-06-17",
+        "first_publication_date": "2026-06-17",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3785,13 +3797,16 @@
       "doi": "10.1016/j.jdent.2026.106757",
       "journal": "Journal of Dentistry",
       "title": "Clinical performance of 3D-printed resin versus prefabricated zirconia crowns in primary molars: A split-mouth clinical study",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-05-15",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42142616",
+        "electronic_publication_date": "2026-05-15",
+        "first_publication_date": "2026-05-15",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3878,13 +3893,16 @@
       "doi": "10.1016/j.jdent.2026.106849",
       "journal": "Journal of Dentistry",
       "title": "Conceptual development of a restorative dental prognosis index: A proof-of-concept framework integrating survival evidence and restorability assessment”",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-06-23",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42336077",
+        "electronic_publication_date": "2026-06-23",
+        "first_publication_date": "2026-06-23",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -6585,7 +6603,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7033,7 +7051,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7081,7 +7099,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7429,7 +7447,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
