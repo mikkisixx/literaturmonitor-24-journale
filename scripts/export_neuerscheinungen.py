@@ -18,6 +18,8 @@ def human_date(value):
         return f"{d.day}. {MONTHS[d.month-1]} {d.year}"
     except (ValueError,TypeError): return "Online-Datum nicht bestätigt"
 def export(month, output):
+    if not re.fullmatch(r"20[0-9]{2}-(0[1-9]|1[0-2])", month):
+        raise ValueError("Monat muss im Format YYYY-MM angegeben werden")
     root=ROOT/"data/months"/(month+".json")
     report=json.loads(root.read_text(encoding="utf-8"))
     quality=json.loads((ROOT/"data/quality"/(month+".json")).read_text(encoding="utf-8"))
