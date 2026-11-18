@@ -245,6 +245,24 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_candidates_not_found_anywhere"], ["10.1007/real"])
         self.assertEqual(row["confirmed_month_missing_dois"], [])
 
+    def test_verified_doi_under_wrong_journal_remains_confirmed_gap(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations",
+            "doi": "10.1007/misattributed",
+            "status": "publisher_online_date_verified",
+            "online_date": "2026-10-15",
+            "in_monthly_report": True}]}
+        report = {"articles": [{
+            "journal": "Dental Materials", "doi": "10.1007/misattributed"}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report=report)
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"],
+                         ["10.1007/misattributed"])
+        self.assertEqual(row["confirmed_month_missing_from_report"], 1)
+        self.assertFalse(row["publisher_coverage_verified"])
+
     def test_missing_online_date_is_not_verified_gap(self):
         verification = {"records": [{
             "journal": "Clinical Oral Investigations", "doi": "10.1007/undated",
