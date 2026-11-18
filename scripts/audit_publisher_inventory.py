@@ -152,6 +152,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                                        for x in checks
                                        if x.get("status") == "publisher_online_date_verified"
                                        and normalize_doi(x.get("doi"))
+                                       and normalize_doi(x.get("doi")) not in conflicting_dois
                                        and verified_online_date(x)
                                        and str(x.get("source") or x.get("publisher_url") or x.get("url") or "").startswith(("https://", "http://"))})
             rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
