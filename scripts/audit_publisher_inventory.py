@@ -95,7 +95,16 @@ def build(month, inventory=None, verification=None, monthly_report=None):
         date = verified_online_date(record)
         if doi and record.get("status") == "publisher_online_date_verified" and date:
             dates_by_doi.setdefault(doi, set()).add(date)
-    conflicting_dois = {doi for doi, dates in dates_by_doi.items() if len(dates) > 1}
+    # A DOI assigned to two journals is contradictory even when dates agree.
+    journals_by_doi = {}
+    for record in verified_rows:
+        doi = normalize_doi(record.get("doi"))
+        if doi and record.get("status") == "publisher_online_date_verified" and verified_online_date(record):
+            journals_by_doi.setdefault(doi, set()).add(record.get("journal"))
+    conflicting_dois = {
+        doi for doi in dates_by_doi
+        if len(dates_by_doi[doi]) > 1 or len(journals_by_doi.get(doi, ())) > 1
+    }
     rows = []
     for group, names in collect.JOURNALS.items():
         for name in names:
