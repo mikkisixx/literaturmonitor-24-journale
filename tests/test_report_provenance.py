@@ -51,7 +51,7 @@ class ProvenanceTests(unittest.TestCase):
         journal = next(iter(next(iter(report_provenance.collect.JOURNALS.values()))))
         articles = [
             {"journal": journal, "online_date": "2026-10-03", "date_basis": "crossref_online"},
-            {"journal": journal, "online_date": "2026-10-04", "date_basis": "publisher_online"},
+            {"journal": journal, "online_date": "2026-10-04", "date_basis": "publisher_online", "publisher_date_source": "https://publisher.example/article"},
             {"journal": journal, "online_date": "2026-09-30", "date_basis": "publisher_online"},
             {"journal": journal, "online_date": "2026-10-05", "date_basis": "print"},
             {"journal": journal, "online_date": "", "date_basis": "crossref_online"},
@@ -63,6 +63,8 @@ class ProvenanceTests(unittest.TestCase):
         row = next(row for row in result["journals"] if row["journal"] == journal)
         self.assertEqual(row["included_articles"], 2)
         self.assertEqual(row["included_with_publisher_evidence"], 1)
+        self.assertEqual(row["crossref_api_source"], "https://api.crossref.org/works")
+        self.assertEqual(row["publisher_article_evidence_urls"], ["https://publisher.example/article"])
         self.assertFalse(row["independently_exhaustive"])
 
 
