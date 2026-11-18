@@ -29,7 +29,7 @@
       "included_articles": 20,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Dental Materials",
@@ -55,7 +55,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of Dentistry",
@@ -81,7 +81,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "American Journal of Dentistry",
@@ -107,7 +107,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of Adhesive Dentistry",
@@ -133,7 +133,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of Prosthetic Dentistry",
@@ -159,7 +159,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "International Journal of Prosthodontics",
@@ -185,7 +185,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Quintessence International",
@@ -211,7 +211,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Operative Dentistry",
@@ -237,7 +237,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Clinical Oral Investigations",
@@ -275,7 +275,7 @@
       "included_articles": 56,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified"
     },
     {
       "journal": "European Journal of Oral Sciences",
@@ -301,7 +301,7 @@
       "included_articles": 13,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "The Journal of Esthetic and Restorative Dentistry",
@@ -327,7 +327,7 @@
       "included_articles": 19,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "International Endodontic Journal",
@@ -353,7 +353,7 @@
       "included_articles": 21,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of Endodontics",
@@ -379,7 +379,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Dental Traumatology",
@@ -405,7 +405,7 @@
       "included_articles": 19,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "International Journal of Paediatric Dentistry",
@@ -431,7 +431,7 @@
       "included_articles": 11,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "BMC Oral Health",
@@ -469,7 +469,7 @@
       "included_articles": 291,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified"
     },
     {
       "journal": "Journal of the Mechanical Behavior of Biomedical Materials",
@@ -495,7 +495,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of Materials Science: Materials in Medicine",
@@ -533,7 +533,7 @@
       "included_articles": 3,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified"
     },
     {
       "journal": "Acta Biomaterialia",
@@ -559,7 +559,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of Oral Rehabilitation",
@@ -585,7 +585,7 @@
       "included_articles": 34,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of the American Ceramic Society",
@@ -611,7 +611,7 @@
       "included_articles": 76,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of the European Ceramic Society",
@@ -637,7 +637,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     },
     {
       "journal": "Journal of Biomechanics",
@@ -663,7 +663,7 @@
       "included_articles": 0,
       "included_with_publisher_evidence": 0,
       "independently_exhaustive": false,
-      "reason": "No proven exhaustive publisher listing and article-level first-online date verification"
+      "reason": "No independent publisher listing attempted for this journal"
     }
   ]
 }
