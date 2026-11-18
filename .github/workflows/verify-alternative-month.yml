@@ -1,14 +1,26 @@
-name: End-to-End-Nachweis alternativer Monat August 2026
+name: End-to-End-Nachweis frei wählbarer Monat
 on:
   workflow_dispatch:
+    inputs:
+      month:
+        description: 'Berichtsmonat (YYYY-MM)'
+        required: true
+        default: '2026-08'
+        type: string
 permissions:
   actions: write
   contents: read
 jobs:
   verify-alternative-month:
+    env:
+      REPORT_MONTH: ${{ inputs.month }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:
+      - name: Monatsformat prüfen
+        shell: bash
+        run: |
+          [[ "$REPORT_MONTH" =~ ^[0-9]{4}-(0[1-9]|1[0-2])$ ]] || { echo '::error::Ungültiger Monat'; exit 1; }
       - name: Beide Monatsgeneratoren auslösen und ihre Run-IDs erfassen
         env:
           GH_TOKEN: ${{ github.token }}
@@ -18,7 +30,7 @@ jobs:
           set -euo pipefail
           for workflow in monthly-report.yml einfacher-html-bericht.yml; do
             started="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            gh workflow run "$workflow" --ref main -f month=2026-08
+            gh workflow run "$workflow" --ref main -f month="$REPORT_MONTH"
             id=""
             for attempt in $(seq 1 30); do
               id="$(gh api "repos/$GH_REPO/actions/workflows/$workflow/runs?event=workflow_dispatch&per_page=30" --jq '.workflow_runs[] | select(.created_at >= "'"$started"'") | select(.head_branch == "main") | .id' | head -n 1)"
@@ -50,7 +62,7 @@ jobs:
             done
             [[ "$result" == success ]] || { echo "::error::$workflow: ${result:-timeout}; run $id"; exit 1; }
           done
-      - name: Artefakte herunterladen und August-HTML inhaltlich prüfen
+      - name: Artefakte herunterladen und Monats-HTML inhaltlich prüfen
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -58,9 +70,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p checked/monthly checked/simple
-          gh run download "$monthly_report_yml" --name Literaturbericht-2026-08-HTML --dir checked/monthly
+          gh run download "$monthly_report_yml" --name "Literaturbericht-${REPORT_MONTH}-HTML" --dir checked/monthly
           gh run download "$einfacher_html_bericht_yml" --dir checked/simple
           python - <<'PY'
+          import os
+          month = os.environ["REPORT_MONTH"]
           from html.parser import HTMLParser
           from pathlib import Path
           class Inspector(HTMLParser):
@@ -83,7 +97,7 @@ jobs:
           provenance_files = list(Path("checked/simple").rglob("*-provenance.json"))
           assert len(provenance_files) == 1, "Quellenprotokoll fehlt oder ist nicht eindeutig"
           provenance = json.loads(provenance_files[0].read_text(encoding="utf-8"))
-          assert provenance["month"] == "2026-08", "Falscher Monat im Quellenprotokoll"
+          assert provenance["month"] == month, "Falscher Monat im Quellenprotokoll"
           assert provenance["journal_count"] == 24, "Quellenprotokoll deckt nicht 24 Journale ab"
           journals = provenance["journals"]
           assert len(journals) == 24 and len({j["journal"] for j in journals}) == 24, "Journalzeilen fehlen oder sind doppelt"
@@ -96,7 +110,7 @@ jobs:
               inspector = Inspector()
               inspector.feed(html)
               assert html.lstrip().lower().startswith("<!doctype html>"), path
-              assert "2026-08" in html or "August 2026" in html, f"Falscher Monat: {path}"
+              assert month in html or __import__("datetime").date.fromisoformat(month+"-01").strftime("%B %Y") in html, f"Falscher Monat: {path}"
               assert "Rechercheentwurf" not in html, f"Entwurfsmarker: {path}"
               assert inspector.inputs == 0, f"Suchfeld: {path}"
               if path in monthly_files:
@@ -107,7 +121,7 @@ jobs:
       - name: Geprüfte HTML-Ergebnisse bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: End-to-End-Nachweis-2026-08
+          name: End-to-End-Nachweis-${{ inputs.month }}
           path: checked/
           if-no-files-found: error
           retention-days: 90
