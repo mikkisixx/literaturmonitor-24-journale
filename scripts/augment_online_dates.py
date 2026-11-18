@@ -64,15 +64,21 @@ def merge_publisher(month):
     for row in records:
         if row.get("status")!="publisher_online_date_verified":continue
         doi=(row.get("doi") or "").strip().lower()
-        online=row.get("publisher_online_date") or row.get("online_date")
-        if doi and online:
-            dates_by_doi.setdefault(doi,set()).add(online)
+        dates={row[key] for key in ("publisher_online_date","online_date") if row.get(key)}
+        if doi and dates:
+            dates_by_doi.setdefault(doi,set()).update(dates)
     conflicting={doi for doi,dates in dates_by_doi.items() if len(dates)>1}
     for row in records:
         if row.get("status")!="publisher_online_date_verified":continue
         online=row.get("publisher_online_date") or row.get("online_date")
         doi=(row.get("doi") or "").strip().lower()
         if not doi or doi in conflicting or not isinstance(online,str):continue
+        # Contradictory date fields within one publisher record are not evidence.
+        if row.get("publisher_online_date") and row.get("online_date") and row["publisher_online_date"] != row["online_date"]:
+            continue
+        # Never introduce records assigned to an unknown journal.
+        if row.get("journal") not in {name for names in collect.JOURNALS.values() for name in names}:
+            continue
         try:
             valid_date=dt.date.fromisoformat(online).isoformat()==online
         except ValueError:
