@@ -369,5 +369,22 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
                          ["https://link.springer.com/article/10.1007/one"])
         self.assertEqual(rows["Dental Materials"]["publisher_verified_date_source_urls"], [])
 
+    def test_verified_date_without_doi_is_not_counted_or_sourced(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations",
+            "doi": "doi:",
+            "status": "publisher_online_date_verified",
+            "online_date": "2026-10-12",
+            "source": "https://link.springer.com/article/unidentified",
+        }]}
+        result = audit.build("2026-10", verification=verification, monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_article_dates_checked"], 1)
+        self.assertEqual(row["publisher_article_dates_verified"], 0)
+        self.assertEqual(row["publisher_article_dates_verified_unambiguous"], 0)
+        self.assertEqual(row["publisher_verified_date_source_urls"], [])
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+
 if __name__ == "__main__":
     unittest.main()
