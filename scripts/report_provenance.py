@@ -40,7 +40,7 @@ def make(month):
                 "publisher_online_dates_verified":sum(a.get("status")=="publisher_online_date_verified" and verified_online_date(a) is not None for a in checks),
                 "included_articles":len(included),"included_with_publisher_evidence":len(publisher),
                 "independently_exhaustive":False,
-                "reason":"No proven exhaustive publisher listing and article-level first-online date verification"})
+                "reason":audit.get("publisher_coverage_reason") or "No proven exhaustive publisher listing and article-level first-online date verification"})
     assert len(rows)==24
     return {"month":month,"journal_count":24,"all_crossref_queries_succeeded":back.get("checked")==24 and not back.get("errors") and all(x["crossref_online_query"].get("status")=="queried" for x in rows),
         "all_crossref_publication_queries_succeeded":all(row["crossref_publication_query"]["status"]=="queried" for row in rows) and not back.get("title_fallback_truncated"),
