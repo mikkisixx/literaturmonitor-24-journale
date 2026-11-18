@@ -21,6 +21,19 @@ class ProvenanceTests(unittest.TestCase):
         self.assertTrue(all(row["publisher_listing"]["status"] == "not_implemented"
                             for row in result["journals"]))
 
+    def test_specific_publisher_coverage_failure_is_preserved(self):
+        journal = next(iter(next(iter(report_provenance.collect.JOURNALS.values()))))
+        def fake_load(path):
+            if path.name == "2026-10-coverage.json":
+                return {"journals": [{"journal": journal,
+                    "publisher_coverage_reason": "Publisher pagination stopped at page limit; remaining pages not checked"}]}
+            return {}
+        with patch.object(report_provenance, "load", side_effect=fake_load):
+            result = report_provenance.make("2026-10")
+        row = next(row for row in result["journals"] if row["journal"] == journal)
+        self.assertIn("page limit", row["reason"])
+        self.assertFalse(row["independently_exhaustive"])
+
     def test_publication_queries_are_not_mistaken_for_online_first_queries(self):
         journal = next(iter(next(iter(report_provenance.collect.JOURNALS.values()))))
         def fake_load(path):
