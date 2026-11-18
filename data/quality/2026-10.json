@@ -8,9 +8,9 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 176,
-    "europe_pmc_electronic_other_month": 263,
-    "needs_manual_review": 96
+    "europe_pmc_electronic_month_match": 179,
+    "europe_pmc_electronic_other_month": 272,
+    "needs_manual_review": 84
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
@@ -32,17 +32,17 @@
     "Journal of Biomechanics": {
       "total": 46,
       "statuses": {
-        "europe_pmc_electronic_other_month": 24,
-        "europe_pmc_electronic_month_match": 8,
-        "needs_manual_review": 14
+        "europe_pmc_electronic_other_month": 33,
+        "europe_pmc_electronic_month_match": 10,
+        "needs_manual_review": 3
       }
     },
     "Journal of Dentistry": {
       "total": 88,
       "statuses": {
         "europe_pmc_electronic_other_month": 59,
-        "needs_manual_review": 2,
-        "europe_pmc_electronic_month_match": 27
+        "europe_pmc_electronic_month_match": 28,
+        "needs_manual_review": 1
       }
     },
     "Journal of Endodontics": {
@@ -2919,26 +2919,32 @@
       "doi": "10.1016/j.jbiomech.2026.113652",
       "journal": "Journal of Biomechanics",
       "title": "Effects of forkball pitching on forearm flexor-pronator muscle stiffness and grip strength",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-29",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42976752",
+        "electronic_publication_date": "2026-10-29",
+        "first_publication_date": "2026-10-29",
+        "electronic_date_month_match": true
       }
     },
     {
       "doi": "10.1016/j.jbiomech.2026.113555",
       "journal": "Journal of Biomechanics",
       "title": "Effects of mechanical loading on cranial suture mesenchymal stem cell proliferation",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-02",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42743855",
+        "electronic_publication_date": "2026-09-02",
+        "first_publication_date": "2026-09-02",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -2977,26 +2983,32 @@
       "doi": "10.1016/j.jbiomech.2026.113537",
       "journal": "Journal of Biomechanics",
       "title": "Fracture location-type synergy impacts stability in surgical stabilization of rib fractures",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-08-25",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42743856",
+        "electronic_publication_date": "2026-08-25",
+        "first_publication_date": "2026-08-25",
+        "electronic_date_month_match": false
       }
     },
     {
       "doi": "10.1016/j.jbiomech.2026.113610",
       "journal": "Journal of Biomechanics",
       "title": "From simulation to clinical evidence: A credibility framework for clinical applications of computational spine biomechanics",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-07",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "43035065",
+        "electronic_publication_date": "2026-10-07",
+        "first_publication_date": "2026-10-07",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -3019,13 +3031,16 @@
       "doi": "10.1016/j.jbiomech.2026.113558",
       "journal": "Journal of Biomechanics",
       "title": "Invariant multi-joint control strategies are observed during vertical and lateral drop jumps in female athletes despite differences in absolute limb- and joint-level mechanical demands",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-05",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42721583",
+        "electronic_publication_date": "2026-09-05",
+        "first_publication_date": "2026-09-05",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3048,13 +3063,16 @@
       "doi": "10.1016/j.jbiomech.2026.113569",
       "journal": "Journal of Biomechanics",
       "title": "Mechanical functional zoning of the proximal femoral trabecular bone revealed by two-dimensional topology optimization without a predefined structure",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-10",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42731529",
+        "electronic_publication_date": "2026-09-10",
+        "first_publication_date": "2026-09-10",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3077,13 +3095,16 @@
       "doi": "10.1016/j.jbiomech.2026.113577",
       "journal": "Journal of Biomechanics",
       "title": "Medial knee loading responses to prosthetic foot stiffness during various ambulatory activities",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-16",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42790346",
+        "electronic_publication_date": "2026-09-16",
+        "first_publication_date": "2026-09-16",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3170,13 +3191,16 @@
       "doi": "10.1016/j.jbiomech.2026.113520",
       "journal": "Journal of Biomechanics",
       "title": "Robustness of mediolateral stability measures to different operationalizations of the center of mass and base of support",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-08-11",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42691557",
+        "electronic_publication_date": "2026-08-11",
+        "first_publication_date": "2026-08-11",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3231,13 +3255,16 @@
       "doi": "10.1016/j.jbiomech.2026.113551",
       "journal": "Journal of Biomechanics",
       "title": "Société de Biomécanique senior investigator award 2024—Hemodynamic performance of a bicuspid venous valve: A computational study",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-08-31",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42691558",
+        "electronic_publication_date": "2026-08-31",
+        "first_publication_date": "2026-08-31",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3276,13 +3303,16 @@
       "doi": "10.1016/j.jbiomech.2026.113568",
       "journal": "Journal of Biomechanics",
       "title": "Synergistic restoration of dynamic mechanical properties of articular cartilage by hyaluronic acid methacrylate",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-18",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42785119",
+        "electronic_publication_date": "2026-09-18",
+        "first_publication_date": "2026-09-18",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3310,21 +3340,23 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
       "doi": "10.1016/j.jbiomech.2026.113550",
       "journal": "Journal of Biomechanics",
       "title": "The relationship between hip-shoulder separation angle and bat speed in division I batters",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-09-02",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42710169",
+        "electronic_publication_date": "2026-09-02",
+        "first_publication_date": "2026-09-02",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -3352,8 +3384,7 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "status": "not_indexed_by_exact_doi"
       }
     },
     {
@@ -3424,13 +3455,16 @@
       "doi": "10.1016/j.jdent.2026.107124",
       "journal": "Journal of Dentistry",
       "title": "A deep-learning system for dental plaque quantification from disclosed intraoral photographs, validation against clinical plaque scoring",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_month_match",
+      "online_date": "2026-10-19",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "The read operation timed out"
+        "source": "MED",
+        "id": "42896645",
+        "electronic_publication_date": "2026-10-19",
+        "first_publication_date": "2026-10-19",
+        "electronic_date_month_match": true
       }
     },
     {
@@ -4824,7 +4858,7 @@
     {
       "doi": "10.1016/j.joen.2026.09.014",
       "journal": "Journal of Endodontics",
-      "title": "Analytical methods for biomarker-based diagnosis of pulpitis in minimally invasive biological fluids: a systematic review",
+      "title": "Analytical Methods for Biomarker-Based Diagnosis of Pulpitis in Minimally Invasive Biological Fluids: A Systematic Review",
       "source": "Europe PMC electronicPublicationDate",
       "status": "europe_pmc_electronic_month_match",
       "online_date": "2026-10-06",
