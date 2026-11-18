@@ -67,7 +67,16 @@ def merge_publisher(month):
         dates={row[key] for key in ("publisher_online_date","online_date") if row.get(key)}
         if doi and dates:
             dates_by_doi.setdefault(doi,set()).update(dates)
-    conflicting={doi for doi,dates in dates_by_doi.items() if len(dates)>1}
+    journals_by_doi={}
+    for row in records:
+        if row.get("status")!="publisher_online_date_verified":continue
+        doi=(row.get("doi") or "").strip().lower()
+        if doi:
+            journals_by_doi.setdefault(doi,set()).add(row.get("journal"))
+    # Publisher evidence that assigns one DOI to different journals is ambiguous.
+    # Never merge either record, even when the dates happen to agree.
+    conflicting={doi for doi,dates in dates_by_doi.items()
+                 if len(dates)>1 or len(journals_by_doi.get(doi,()))>1}
     for row in records:
         if row.get("status")!="publisher_online_date_verified":continue
         online=row.get("publisher_online_date") or row.get("online_date")
