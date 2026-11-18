@@ -29,6 +29,8 @@ def make(month):
             audit=coverage_by_journal.get(name,{})
             rows.append({"journal":name,"group":group,
                 "publisher_platform":audit.get("publisher_platform","unmapped"),
+                "crossref_api_source":"https://api.crossref.org/works",
+                "publisher_article_evidence_urls":sorted({a["publisher_date_source"] for a in publisher if isinstance(a.get("publisher_date_source"),str) and a["publisher_date_source"].startswith("https://")}),
                 "publisher_listing_urls":audit.get("publisher_listing_urls",[]),
                 "publisher_coverage_reason":audit.get("publisher_coverage_reason","Publisher completeness not independently verified"),"crossref_publication_candidates":back.get("counts",{}).get(name,0),
                 "crossref_publication_query":{"status":("failed" if name in back.get("errors",{}) else "queried" if name in back.get("counts",{}) else "not_run"),"error":back.get("errors",{}).get(name)},
