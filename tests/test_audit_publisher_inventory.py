@@ -5,6 +5,26 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 import audit_publisher_inventory as audit
 
 class AllJournalPublisherAuditTests(unittest.TestCase):
+    def test_conflicting_doi_sources_are_not_presented_as_verified_evidence(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/conflict",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "source": "https://link.springer.com/article/10.1007/conflict"},
+            {"journal": "Dental Materials", "doi": "10.1007/CONFLICT",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "source": "https://www.sciencedirect.com/science/article/pii/conflict"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/valid",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+             "source": "https://link.springer.com/article/10.1007/valid"}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        rows = {row["journal"]: row for row in result["journals"]}
+        self.assertEqual(rows["Clinical Oral Investigations"]["publisher_verified_date_source_urls"],
+                         ["https://link.springer.com/article/10.1007/valid"])
+        self.assertEqual(rows["Dental Materials"]["publisher_verified_date_source_urls"], [])
+        self.assertEqual(rows["Clinical Oral Investigations"]["confirmed_month_missing_dois"],
+                         ["10.1007/valid"])
+
     def test_conflicting_dates_are_disclosed_per_journal_not_silently_ignored(self):
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/CONFLICT",
