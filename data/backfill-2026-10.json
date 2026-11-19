@@ -27,13 +27,13 @@
     "Journal of Oral Rehabilitation": 34,
     "Journal of the American Ceramic Society": 76,
     "Journal of the European Ceramic Society": 49,
-    "Journal of Biomechanics": 36
+    "Journal of Biomechanics": 35
   },
   "title_fallback_truncated": [
     "American Journal of Dentistry",
     "International Journal of Prosthodontics",
     "Quintessence International"
   ],
-  "distinct_doi_in_register": 80375,
+  "distinct_doi_in_register": 81028,
   "warning": "Published date alone is NOT confirmed online-first; publication dates can be updated."
 }
