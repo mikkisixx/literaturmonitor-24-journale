@@ -67,6 +67,8 @@ class ProvenanceTests(unittest.TestCase):
             {"journal": journal, "online_date": "2026-10-04", "date_basis": "publisher_online", "publisher_date_source": "https://publisher.example/article"},
             {"journal": journal, "online_date": "2026-09-30", "date_basis": "publisher_online"},
             {"journal": journal, "online_date": "2026-10-05", "date_basis": "print"},
+            {"journal": journal, "online_date": "2026-10-99", "date_basis": "crossref_online"},
+            {"journal": journal, "online_date": "2026-10", "date_basis": "publisher_online"},
             {"journal": journal, "online_date": "", "date_basis": "crossref_online"},
         ]
         def fake_load(path):
