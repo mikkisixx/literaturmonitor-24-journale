@@ -7,7 +7,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
 import collect
-from audit_publisher_inventory import verified_online_date
+from audit_publisher_inventory import verified_online_date, is_valid_month_date
 def load(path):
     return json.loads(path.read_text()) if path.exists() else {}
 def make(month):
@@ -23,7 +23,7 @@ def make(month):
     rows=[]
     for group,names in collect.JOURNALS.items():
         for name in names:
-            included=[a for a in records if a.get("journal")==name and (a.get("online_date") or "").startswith(month) and a.get("date_basis") in ("crossref_online","publisher_online")]
+            included=[a for a in records if a.get("journal")==name and is_valid_month_date(a.get("online_date"), month) and a.get("date_basis") in ("crossref_online","publisher_online")]
             publisher=[a for a in included if a.get("date_basis")=="publisher_online"]
             checks=[a for a in verified.get("records",[]) if a.get("journal")==name]
             audit=coverage_by_journal.get(name,{})
