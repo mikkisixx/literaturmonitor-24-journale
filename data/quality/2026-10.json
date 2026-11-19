@@ -4146,7 +4146,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -5305,7 +5305,7 @@
     {
       "doi": "10.1016/j.joen.2026.10.013",
       "journal": "Journal of Endodontics",
-      "title": "Preserving tooth structure after instrument separation: Effects of management strategy on root fracture resistance and structural outcomes related to tooth preservation",
+      "title": "Preserving Tooth Structure After Instrument Separation: Effects of Management Strategy on Root Fracture Resistance and Structural Outcomes Related to Tooth Preservation",
       "source": "Europe PMC electronicPublicationDate",
       "status": "europe_pmc_electronic_month_match",
       "online_date": "2026-10-30",
@@ -7313,7 +7313,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
