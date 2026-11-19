@@ -94,10 +94,10 @@ jobs:
                   if tag == "input": self.inputs += 1
                   if tag == "tbody": self.in_tbody = True
                   if tag == "tr" and self.in_tbody: self.audit_rows += 1
-              def handle_endtag(self, tag):
-                  if tag == "tbody": self.in_tbody = False
                   if tag == "a" and attrs.get("href", "").startswith("https://doi.org/"):
                       self.dois.append(attrs["href"])
+              def handle_endtag(self, tag):
+                  if tag == "tbody": self.in_tbody = False
           monthly_files = list(Path("checked/monthly").rglob("*.html"))
           simple_files = list(Path("checked/simple").rglob("*.html"))
           assert monthly_files, "Kein HTML im Monatsbericht-Artefakt"
