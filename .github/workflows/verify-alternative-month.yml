@@ -86,10 +86,16 @@ jobs:
                   self.articles = 0
                   self.dois = []
                   self.inputs = 0
+                  self.audit_rows = 0
+                  self.in_tbody = False
               def handle_starttag(self, tag, attrs):
                   attrs = dict(attrs)
                   if tag == "article": self.articles += 1
                   if tag == "input": self.inputs += 1
+                  if tag == "tbody": self.in_tbody = True
+                  if tag == "tr" and self.in_tbody: self.audit_rows += 1
+              def handle_endtag(self, tag):
+                  if tag == "tbody": self.in_tbody = False
                   if tag == "a" and attrs.get("href", "").startswith("https://doi.org/"):
                       self.dois.append(attrs["href"])
           monthly_files = list(Path("checked/monthly").rglob("*.html"))
@@ -126,6 +132,7 @@ jobs:
               if path in monthly_files:
                   assert len(inspector.dois) == len(set(inspector.dois)), f"DOI-Dubletten: {path}"
                   assert inspector.articles == len(inspector.dois), f"Fehlende DOI-Links: {path}"
+                  assert inspector.audit_rows == 24, f"Journal-Prüftabelle enthält nicht 24 Zeilen: {path}"
               print(f"Geprüft: {path}: {inspector.articles} Artikel, {len(inspector.dois)} DOI-Links")
           PY
       - name: Geprüfte HTML-Ergebnisse bereitstellen
