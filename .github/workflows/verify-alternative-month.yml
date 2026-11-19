@@ -120,6 +120,27 @@ jobs:
           assert provenance["independently_complete"] is False, "Unbelegte Vollständigkeit behauptet"
           assert all(j["independently_exhaustive"] is False for j in journals), "Unbelegte Verlagsvollständigkeit behauptet"
           assert all(j.get("reason") for j in journals), "Begründung der Vollständigkeitsgrenze fehlt"
+          # Audit the downloaded scientific dataset, not just the HTML shell.
+          datasets = list(Path("checked/monthly").rglob(f"{month}.json"))
+          assert len(datasets) == 1, "Monatsdatensatz fehlt oder ist nicht eindeutig"
+          dataset = json.loads(datasets[0].read_text(encoding="utf-8"))
+          assert dataset["month"] == month, "Monatsdatensatz hat falschen Monat"
+          articles = dataset["articles"]
+          assert dataset["verified_online_count"] == len(articles), "Artikelzahl weicht vom Datensatz ab"
+          article_dois = set()
+          for article in articles:
+              doi = str(article.get("doi") or "").strip().lower()
+              assert doi and doi not in article_dois, f"DOI fehlt oder ist doppelt: {doi}"
+              article_dois.add(doi)
+              assert article.get("date_basis") in ("crossref_online", "publisher_online"), f"Erst-Online-Beleg fehlt: {doi}"
+              date = article.get("online_date")
+              assert isinstance(date, str), f"Erst-Online-Datum fehlt: {doi}"
+              from datetime import date as calendar_date
+              assert calendar_date.fromisoformat(date).strftime("%Y-%m") == month, f"Datum außerhalb des Monats: {doi}"
+              if article["date_basis"] == "publisher_online":
+                  source = article.get("publisher_date_source")
+                  assert isinstance(source, str) and source.startswith("https://"), f"Verlagsbeleg fehlt: {doi}"
+          print(f"Monatsdatensatz geprüft: {len(articles)} belegte Erst-Online-Daten")
           print("Quellenprotokoll: 24 Journale, Vollständigkeitsgrenzen transparent")
           for path in monthly_files + simple_files:
               html = path.read_text(encoding="utf-8")
@@ -131,6 +152,7 @@ jobs:
               assert inspector.inputs == 0, f"Suchfeld: {path}"
               if path in monthly_files:
                   assert len(inspector.dois) == len(set(inspector.dois)), f"DOI-Dubletten: {path}"
+                  assert {url.removeprefix("https://doi.org/").lower() for url in inspector.dois} == article_dois, f"HTML-DOIs stimmen nicht mit belegtem Monatsdatensatz überein: {path}"
                   assert inspector.articles == len(inspector.dois), f"Fehlende DOI-Links: {path}"
                   assert inspector.audit_rows == 24, f"Journal-Prüftabelle enthält nicht 24 Zeilen: {path}"
               print(f"Geprüft: {path}: {inspector.articles} Artikel, {len(inspector.dois)} DOI-Links")
