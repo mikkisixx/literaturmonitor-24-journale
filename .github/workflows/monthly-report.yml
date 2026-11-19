@@ -196,7 +196,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Literaturbericht-${{ steps.period.outputs.month }}-HTML
-          path: exports/
+          path: |
+            exports/
+            data/months/${{ steps.period.outputs.month }}.json
           if-no-files-found: error
           retention-days: 90
       - name: Monatsberichte speichern
