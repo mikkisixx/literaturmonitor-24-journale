@@ -40,6 +40,18 @@ class HtmlExportTests(unittest.TestCase):
         self.assertIn("Quellen- und Vollständigkeitsprüfung aller 24 Zeitschriften",html)
         self.assertIn("Journal &lt;A&gt;",html)
         self.assertEqual(html.count("<tr>"),25)
+    def test_visible_date_is_verified_first_online_date_not_issue_date(self):
+        self.report={"month":self.month,"count":1,"verified_online_count":1,"candidate_count":0,
+                     "articles":[{"journal":"Journal <A>","title":"Online first",
+                                  "doi":"10.1234/online-first","date_basis":"crossref_online",
+                                  "online_date":"2026-10-12","display_date":"2027-01-01"}]}
+        self.save()
+        with patch.object(export_html,"ROOT",self.root):
+            export_html.export(self.month,self.root/"out")
+        page=(self.root/"out"/"Literaturbericht-2026-10.html").read_text()
+        self.assertIn("2026-10-12",page)
+        self.assertNotIn("2027-01-01",page)
+
     def test_out_of_month_verified_article_blocks_export(self):
         self.report={"month":self.month,"count":2,"verified_online_count":2,"candidate_count":0,
                      "articles":[
