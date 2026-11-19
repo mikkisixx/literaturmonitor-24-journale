@@ -96,6 +96,13 @@ jobs:
           simple_files = list(Path("checked/simple").rglob("*.html"))
           assert monthly_files, "Kein HTML im Monatsbericht-Artefakt"
           assert simple_files, "Kein HTML im einfachen Berichts-Artefakt"
+          expected_monthly = f"Literaturbericht-{month}.html"
+          assert any(p.name == expected_monthly for p in monthly_files), (
+              f"Erwarteter Monatsbericht {expected_monthly} fehlt im Artefakt"
+          )
+          assert all(month in p.name for p in monthly_files + simple_files), (
+              "Artefakt enthält HTML-Dateien eines anderen Berichtsmonats"
+          )
           import json
           provenance_files = list(Path("checked/simple").rglob("*-provenance.json"))
           assert len(provenance_files) == 1, "Quellenprotokoll fehlt oder ist nicht eindeutig"
