@@ -422,6 +422,29 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_verified_date_source_urls"],
                          ["https://link.springer.com/article/10.1007/secure"])
 
+    def test_https_provenance_count_excludes_unsourced_and_conflicted_dates(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/valid",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "source": "https://link.springer.com/article/valid"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/unsourced",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-13"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/insecure",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-14",
+             "source": "http://link.springer.com/article/insecure"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/conflict",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+             "source": "https://link.springer.com/article/conflict"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/conflict",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-16",
+             "source": "https://link.springer.com/article/conflict"},
+        ]}
+        result = audit.build("2026-10", verification=verification)
+        row = next(r for r in result["journals"] if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_article_dates_verified"], 5)
+        self.assertEqual(row["publisher_article_dates_verified_unambiguous"], 3)
+        self.assertEqual(row["publisher_article_dates_with_https_source"], 1)
+
     def test_verified_date_without_doi_is_not_counted_or_sourced(self):
         verification = {"records": [{
             "journal": "Clinical Oral Investigations",
