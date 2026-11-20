@@ -120,12 +120,20 @@ jobs:
           assert provenance["independently_complete"] is False, "Unbelegte Vollständigkeit behauptet"
           assert all(j["independently_exhaustive"] is False for j in journals), "Unbelegte Verlagsvollständigkeit behauptet"
           assert all(j.get("reason") for j in journals), "Begründung der Vollständigkeitsgrenze fehlt"
+          assert all(j.get("crossref_api_source") == "https://api.crossref.org/works" for j in journals), "Crossref-Quellenangabe fehlt"
+          assert all(isinstance(j.get("publisher_listing_urls"), list) for j in journals), "Verlagslistenquellen fehlen"
+          assert all(j.get("crossref_publication_query", {}).get("status") in ("queried", "failed", "not_run") for j in journals), "Abfragestatus fehlt"
           # Audit the downloaded scientific dataset, not just the HTML shell.
           datasets = list(Path("checked/monthly").rglob(f"{month}.json"))
           assert len(datasets) == 1, "Monatsdatensatz fehlt oder ist nicht eindeutig"
           dataset = json.loads(datasets[0].read_text(encoding="utf-8"))
           assert dataset["month"] == month, "Monatsdatensatz hat falschen Monat"
           articles = dataset["articles"]
+          from collections import Counter
+          by_journal = Counter(a["journal"] for a in dataset["articles"])
+          assert sum(j["included_articles"] for j in journals) == len(dataset["articles"]), "Quellenprotokoll-Artikelzahl weicht ab"
+          assert all(j["included_articles"] == by_journal[j["journal"]] for j in journals), "Journalzuordnung im Quellenprotokoll stimmt nicht"
+          assert set(by_journal).issubset({j["journal"] for j in journals}), "Artikel aus unbekanntem Journal"
           assert dataset["verified_online_count"] == len(articles), "Artikelzahl weicht vom Datensatz ab"
           article_dois = set()
           for article in articles:
