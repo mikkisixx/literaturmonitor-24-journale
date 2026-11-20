@@ -32,6 +32,11 @@ def make(month):
                 "crossref_api_source":"https://api.crossref.org/works",
                 "publisher_article_evidence_urls":sorted({a["publisher_date_source"] for a in publisher if isinstance(a.get("publisher_date_source"),str) and a["publisher_date_source"].startswith("https://")}),
                 "publisher_listing_urls":audit.get("publisher_listing_urls",[]),
+                "publisher_verified_date_source_urls":audit.get("publisher_verified_date_source_urls",[]),
+                "publisher_confirmed_month_missing_dois":audit.get("confirmed_month_missing_dois",[]),
+                "publisher_confirmed_month_missing_count":audit.get("confirmed_month_missing_from_report",0),
+                "publisher_conflicting_verified_date_dois":audit.get("publisher_conflicting_verified_date_dois",[]),
+                "publisher_report_comparison_available":audit.get("publisher_report_comparison_available",False),
                 "publisher_coverage_reason":audit.get("publisher_coverage_reason","Publisher completeness not independently verified"),"crossref_publication_candidates":back.get("counts",{}).get(name,0),
                 "crossref_publication_query":{"status":("failed" if name in back.get("errors",{}) else "queried" if name in back.get("counts",{}) else "not_run"),"error":back.get("errors",{}).get(name)},
                 "crossref_online_query":online.get("journals",{}).get(name,{"status":"not_run"}),
@@ -41,7 +46,10 @@ def make(month):
                 "included_articles":len(included),"included_with_publisher_evidence":len(publisher),
                 "independently_exhaustive":False,
                 "reason":audit.get("publisher_coverage_reason") or "No proven exhaustive publisher listing and article-level first-online date verification"})
-    assert len(rows)==24
+    assert len(rows)==24 and len({row["journal"] for row in rows})==24
+    for row in rows:
+        missing=row["publisher_confirmed_month_missing_dois"]
+        assert len(missing)==len(set(missing))==row["publisher_confirmed_month_missing_count"], "Inconsistent publisher-confirmed gap ledger"
     return {"month":month,"journal_count":24,"all_crossref_queries_succeeded":back.get("checked")==24 and not back.get("errors") and all(x["crossref_online_query"].get("status")=="queried" for x in rows),
         "all_crossref_publication_queries_succeeded":all(row["crossref_publication_query"]["status"]=="queried" for row in rows) and not back.get("title_fallback_truncated"),
         "independently_complete":False,"journals":rows}
