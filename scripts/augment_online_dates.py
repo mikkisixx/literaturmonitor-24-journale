@@ -10,6 +10,7 @@ import json
 import pathlib
 import sys
 import time
+from urllib.parse import urlsplit
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parent))
 import collect
 import backfill
@@ -93,6 +94,17 @@ def merge_publisher(month):
         except ValueError:
             valid_date=False
         if not valid_date or online[:7]!=month:continue
+        # A status flag alone is not evidence: require a traceable HTTPS publisher URL.
+        source=row.get("source")
+        if not isinstance(source,str):continue
+        try:
+            parsed=urlsplit(source)
+            source_valid=(parsed.scheme=="https" and bool(parsed.hostname)
+                          and not parsed.username and not parsed.password
+                          and not any(ch.isspace() for ch in source))
+        except ValueError:
+            source_valid=False
+        if not source_valid:continue
         previous=observed.get(doi,{})
         if previous.get("journal") and previous["journal"]!=row["journal"]:continue
         previous.update({"doi":doi,"journal":row["journal"],"online_date":online,
