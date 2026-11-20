@@ -69,7 +69,9 @@ def export(month, output):
         for a in articles:
             basis=a.get("date_basis","")
             status="Online-Datum laut Crossref; Verlagsabdeckung ungeprüft" if basis=="crossref_online" else "Online-Datum laut Verlag"
-            rows.append('<article class="entry"><h3>'+h(a.get("title") or "Ohne Titel")+'</h3><p>'+h(a["online_date"])+' · '+h(status)+'</p><a href="https://doi.org/'+h(a["doi"])+'" target="_blank" rel="noopener noreferrer">DOI: '+h(a["doi"])+'</a></article>')
+            source_url = ("https://api.crossref.org/works/" + a["doi"] if basis == "crossref_online" else a["publisher_date_source"])
+            source_label = "Crossref-Metadaten" if basis == "crossref_online" else "Verlagsbeleg"
+            rows.append('<article class="entry"><h3>'+h(a.get("title") or "Ohne Titel")+'</h3><p>'+h(a["online_date"])+' · '+h(status)+'</p><a href="https://doi.org/'+h(a["doi"])+'" target="_blank" rel="noopener noreferrer">DOI: '+h(a["doi"])+'</a> · <a href="'+h(source_url)+'" target="_blank" rel="noopener noreferrer">'+h(source_label)+'</a></article>')
         sections.append('<section class="journal"><h2>'+h(journal)+' <small>('+str(len(articles))+')</small></h2>'+''.join(rows)+'</section>')
     # Report all 24 source audits, including journals with no verified online articles.
     audit_rows=[]
