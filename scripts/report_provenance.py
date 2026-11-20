@@ -51,7 +51,7 @@ def make(month):
         missing=row["publisher_confirmed_month_missing_dois"]
         assert len(missing)==len(set(missing))==row["publisher_confirmed_month_missing_count"], "Inconsistent publisher-confirmed gap ledger"
     return {"month":month,"journal_count":24,"all_crossref_queries_succeeded":back.get("checked")==24 and not back.get("errors") and all(x["crossref_online_query"].get("status")=="queried" for x in rows),
-        "all_crossref_publication_queries_succeeded":all(row["crossref_publication_query"]["status"]=="queried" for row in rows) and not back.get("title_fallback_truncated"),
+        "all_crossref_publication_queries_succeeded":back.get("checked")==24 and not back.get("errors") and all(row["crossref_publication_query"]["status"]=="queried" for row in rows) and not back.get("title_fallback_truncated"),
         "independently_complete":False,"journals":rows}
 if __name__=="__main__":
     p=argparse.ArgumentParser()
