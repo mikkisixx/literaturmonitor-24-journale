@@ -11,6 +11,7 @@ import datetime as dt
 import json
 import pathlib
 import sys
+from urllib.parse import urlsplit
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parent))
 from verify_publishers import get_publisher, normalize_date, ONLINE_KEYS
 ROOT=pathlib.Path(__file__).resolve().parents[1]
@@ -19,6 +20,13 @@ def inspect(item):
     doi=(item.get("doi") or "").lower()
     try:
         url,dates=get_publisher(doi)
+        # A DOI redirect alone is not publisher evidence. Require an HTTPS
+        # destination with a real host before persisting a verified date.
+        parsed_url=urlsplit(url)
+        if (parsed_url.scheme != "https" or not parsed_url.hostname
+                or parsed_url.hostname.lower() in ("doi.org", "dx.doi.org")
+                or parsed_url.username or parsed_url.password):
+            return doi,{"status":"invalid_publisher_source","publisher_url":url}
         explicit=[(k,v,normalize_date(v)) for k,v in dates if k in ONLINE_KEYS]
         # An invalid explicit date invalidates otherwise parseable evidence.
         if any(parsed is None for _,_,parsed in explicit):
