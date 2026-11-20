@@ -48,6 +48,20 @@ class ProvenanceTests(unittest.TestCase):
         self.assertFalse(result["all_crossref_publication_queries_succeeded"])
         self.assertFalse(result["all_crossref_queries_succeeded"])
 
+    def test_publication_query_success_requires_24_completed_checks(self):
+        names = [name for group in report_provenance.collect.JOURNALS.values() for name in group]
+        self.assertEqual(len(names), 24)
+        def fake_load(path):
+            if path.name == "backfill-2026-10.json":
+                return {"counts": {name: 1 for name in names},
+                        "checked": 23, "errors": {}}
+            return {}
+        with patch.object(report_provenance, "load", side_effect=fake_load):
+            result = report_provenance.make("2026-10")
+        self.assertTrue(all(row["crossref_publication_query"]["status"] == "queried"
+                            for row in result["journals"]))
+        self.assertFalse(result["all_crossref_publication_queries_succeeded"])
+
     def test_publication_query_failure_is_explicit(self):
         journal = next(iter(next(iter(report_provenance.collect.JOURNALS.values()))))
         def fake_load(path):
