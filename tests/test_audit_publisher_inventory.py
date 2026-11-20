@@ -5,6 +5,25 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 import audit_publisher_inventory as audit
 
 class AllJournalPublisherAuditTests(unittest.TestCase):
+    def test_malformed_https_evidence_is_not_counted_as_source(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/valid",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+             "source": "https://link.springer.com/article/valid"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/bad",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+             "source": "https://"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/credentials",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+             "source": "https://user:pass@link.springer.com/article/credentials"}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_article_dates_with_https_source"], 1)
+        self.assertEqual(row["publisher_verified_date_source_urls"],
+                         ["https://link.springer.com/article/valid"])
+
     def test_conflicting_doi_sources_are_not_presented_as_verified_evidence(self):
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/conflict",
