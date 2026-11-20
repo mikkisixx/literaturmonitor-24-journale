@@ -10,6 +10,7 @@ import datetime as dt
 import json
 import pathlib
 import sys
+from urllib.parse import urlsplit
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -45,6 +46,16 @@ def normalize_doi(value):
             doi = doi[len(prefix):]
             break
     return doi.strip().lower()
+
+def valid_https_source(value):
+    """Reject malformed, credential-bearing or whitespace-containing evidence URLs."""
+    if not isinstance(value, str) or any(c.isspace() for c in value):
+        return False
+    try:
+        url = urlsplit(value)
+        return url.scheme == "https" and bool(url.hostname) and not url.username and not url.password
+    except ValueError:
+        return False
 
 def is_valid_iso_date(value):
     """Count only publisher dates that represent real ISO calendar days."""
@@ -154,7 +165,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                                        and normalize_doi(x.get("doi"))
                                        and normalize_doi(x.get("doi")) not in conflicting_dois
                                        and verified_online_date(x)
-                                       and str(x.get("source") or x.get("publisher_url") or x.get("url") or "").startswith("https://")})
+                                       and valid_https_source(x.get("source") or x.get("publisher_url") or x.get("url"))})
             rows.append({"journal": name, "group": group, "publisher_platform": platform(name),
                          "publisher_listing_status": status,
                          "publisher_listing_urls": urls,
@@ -175,7 +186,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                              and verified_online_date(x) is not None
                              and bool(normalize_doi(x.get("doi")))
                              and normalize_doi(x.get("doi")) not in conflicting_dois
-                             and str(x.get("source") or x.get("publisher_url") or x.get("url") or "").startswith("https://")
+                             and valid_https_source(x.get("source") or x.get("publisher_url") or x.get("url"))
                              for x in checks),
                          "publisher_article_dates_verified_unambiguous": sum(
                              x.get("status") == "publisher_online_date_verified"
