@@ -128,13 +128,14 @@ jobs:
           assert len(datasets) == 1, "Monatsdatensatz fehlt oder ist nicht eindeutig"
           dataset = json.loads(datasets[0].read_text(encoding="utf-8"))
           assert dataset["month"] == month, "Monatsdatensatz hat falschen Monat"
-          articles = dataset["articles"]
+          articles = [a for a in dataset["articles"] if a.get("date_basis") in ("crossref_online", "publisher_online")]
           from collections import Counter
-          by_journal = Counter(a["journal"] for a in dataset["articles"])
-          assert sum(j["included_articles"] for j in journals) == len(dataset["articles"]), "Quellenprotokoll-Artikelzahl weicht ab"
+          by_journal = Counter(a["journal"] for a in articles)
+          assert sum(j["included_articles"] for j in journals) == len(articles), "Quellenprotokoll-Artikelzahl weicht ab"
           assert all(j["included_articles"] == by_journal[j["journal"]] for j in journals), "Journalzuordnung im Quellenprotokoll stimmt nicht"
           assert set(by_journal).issubset({j["journal"] for j in journals}), "Artikel aus unbekanntem Journal"
-          assert dataset["verified_online_count"] == len(articles), "Artikelzahl weicht vom Datensatz ab"
+          assert dataset["verified_online_count"] == len(articles), "Verifizierte Artikelzahl weicht vom Datensatz ab"
+          assert dataset["candidate_count"] == len(dataset["articles"]) - len(articles), "Kandidatenzahl weicht vom Datensatz ab"
           article_dois = set()
           for article in articles:
               doi = str(article.get("doi") or "").strip().lower()
