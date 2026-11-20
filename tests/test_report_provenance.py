@@ -60,6 +60,39 @@ class ProvenanceTests(unittest.TestCase):
         self.assertEqual(row["crossref_publication_query"]["status"], "failed")
         self.assertEqual(row["crossref_publication_query"]["error"], "HTTP 503")
 
+    def test_confirmed_publisher_gaps_and_sources_are_preserved(self):
+        journal = next(iter(next(iter(report_provenance.collect.JOURNALS.values()))))
+        def fake_load(path):
+            if path.name == "2026-10-coverage.json":
+                return {"journals": [{"journal": journal,
+                    "confirmed_month_missing_dois": ["10.1007/missing"],
+                    "confirmed_month_missing_from_report": 1,
+                    "publisher_verified_date_source_urls": ["https://publisher.example/article"],
+                    "publisher_conflicting_verified_date_dois": ["10.1007/conflict"],
+                    "publisher_report_comparison_available": True}]}
+            return {}
+        with patch.object(report_provenance, "load", side_effect=fake_load):
+            result = report_provenance.make("2026-10")
+        row = next(row for row in result["journals"] if row["journal"] == journal)
+        self.assertEqual(row["publisher_confirmed_month_missing_dois"], ["10.1007/missing"])
+        self.assertEqual(row["publisher_confirmed_month_missing_count"], 1)
+        self.assertEqual(row["publisher_verified_date_source_urls"], ["https://publisher.example/article"])
+        self.assertEqual(row["publisher_conflicting_verified_date_dois"], ["10.1007/conflict"])
+        self.assertTrue(row["publisher_report_comparison_available"])
+        self.assertFalse(result["independently_complete"])
+
+    def test_inconsistent_publisher_gap_count_is_rejected(self):
+        journal = next(iter(next(iter(report_provenance.collect.JOURNALS.values()))))
+        def fake_load(path):
+            if path.name == "2026-10-coverage.json":
+                return {"journals": [{"journal": journal,
+                    "confirmed_month_missing_dois": ["10.1007/missing"],
+                    "confirmed_month_missing_from_report": 2}]}
+            return {}
+        with patch.object(report_provenance, "load", side_effect=fake_load):
+            with self.assertRaisesRegex(AssertionError, "Inconsistent publisher-confirmed gap ledger"):
+                report_provenance.make("2026-10")
+
     def test_only_month_matching_dated_articles_are_counted(self):
         journal = next(iter(next(iter(report_provenance.collect.JOURNALS.values()))))
         articles = [
