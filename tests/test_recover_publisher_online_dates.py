@@ -19,6 +19,19 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(result["online_date"], "2026-10-12")
         self.assertEqual(result["status"], "publisher_online_date_verified")
 
+    def test_untrusted_publisher_redirect_is_not_date_evidence(self):
+        for url in ("http://publisher.example/article",
+                    "https://doi.org/10.1234/abc",
+                    "https://dx.doi.org/10.1234/abc",
+                    "https://user:pass@publisher.example/article"):
+            with self.subTest(url=url), patch.object(
+                recovery, "get_publisher",
+                return_value=(url, [("citation_online_date", "2026-10-12")])
+            ):
+                _, result = recovery.inspect({"doi": "10.1234/abc"})
+                self.assertEqual(result["status"], "invalid_publisher_source")
+                self.assertNotIn("online_date", result)
+
     def test_generic_publication_date_is_not_accepted(self):
         with patch.object(recovery, "get_publisher", return_value=(
             "https://publisher.example/article", [
