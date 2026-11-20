@@ -170,6 +170,13 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                          "publisher_conflicting_verified_date_count": len(conflicting_journal_dois),
                          "publisher_article_dates_checked": len(checks),
                          "publisher_article_dates_verified": sum(x.get("status") == "publisher_online_date_verified" and bool(normalize_doi(x.get("doi"))) and verified_online_date(x) is not None for x in checks),
+                         "publisher_article_dates_with_https_source": sum(
+                             x.get("status") == "publisher_online_date_verified"
+                             and verified_online_date(x) is not None
+                             and bool(normalize_doi(x.get("doi")))
+                             and normalize_doi(x.get("doi")) not in conflicting_dois
+                             and str(x.get("source") or x.get("publisher_url") or x.get("url") or "").startswith("https://")
+                             for x in checks),
                          "publisher_article_dates_verified_unambiguous": sum(
                              x.get("status") == "publisher_online_date_verified"
                              and verified_online_date(x) is not None
