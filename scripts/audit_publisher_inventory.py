@@ -159,6 +159,11 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 normalize_doi(x["doi"]) for x in confirmed_missing
                 if x.get("doi") and normalize_doi(x["doi"])
             })
+            # Distinguish dated gaps without a usable publisher URL from auditable evidence.
+            missing_without_source_dois = sorted({
+                normalize_doi(x.get("doi")) for x in confirmed_missing
+                if not valid_https_source(x.get("source") or x.get("publisher_url") or x.get("url"))
+            })
             verified_sources = sorted({str(x.get("source") or x.get("publisher_url") or x.get("url")).strip()
                                        for x in checks
                                        if x.get("status") == "publisher_online_date_verified"
@@ -196,6 +201,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                              for x in checks),
                          "confirmed_month_missing_from_report": len(confirmed_missing_dois),
                          "confirmed_month_missing_dois": confirmed_missing_dois,
+                         "confirmed_month_missing_without_https_source_dois": missing_without_source_dois,
                          "publisher_coverage_verified": False,
                          "publisher_coverage_reason": reason})
     assert len(rows) == 24
