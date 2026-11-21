@@ -9,7 +9,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from validate_report import validate
+from validate_report import validate, valid_https_source
 
 MONTH = "2026-10"
 FILES = [
@@ -81,6 +81,10 @@ class ReportValidationTests(unittest.TestCase):
         self.mutate(f"months/{MONTH}.json", claim_publisher_verification)
         with self.assertRaises(AssertionError):
             validate(MONTH, self.data)
+
+    def test_publisher_source_with_backslash_is_rejected(self):
+        self.assertFalse(valid_https_source("https://publisher.example/\\\\unsafe"))
+        self.assertTrue(valid_https_source("https://publisher.example/article/123"))
 
     def test_duplicate_publisher_evidence_is_rejected(self):
         def duplicate(obj):
