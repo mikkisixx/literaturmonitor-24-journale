@@ -5,6 +5,23 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 import audit_publisher_inventory as audit
 
 class AllJournalPublisherAuditTests(unittest.TestCase):
+    def test_missing_month_dois_without_auditable_source_are_disclosed(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/sourced",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+             "source": "https://link.springer.com/article/sourced"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/unsourced",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-16",
+             "source": "https://"}]}
+        result = audit.build("2026-10", verification=verification,
+                             monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"],
+                         ["10.1007/sourced", "10.1007/unsourced"])
+        self.assertEqual(row["confirmed_month_missing_without_https_source_dois"],
+                         ["10.1007/unsourced"])
+
     def test_malformed_https_evidence_is_not_counted_as_source(self):
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/valid",
