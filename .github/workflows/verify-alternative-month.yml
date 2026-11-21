@@ -187,7 +187,7 @@ jobs:
                   text_parser = TextDOIInspector()
                   text_parser.feed(html)
                   found = [doi.lower() for doi in re.findall(
-                      r"DOI:\\s*(10\\.\\d{4,9}/[^\\s]+)", " ".join(text_parser.text)
+                      r"DOI:\s*(10\.\d{4,9}/[^\s]+)", " ".join(text_parser.text)
                   )]
                   assert len(found) == len(set(found)), f"DOI-Dubletten im einfachen Bericht: {path}"
                   assert set(found) == article_dois, f"Einfacher HTML-Bericht weicht vom belegten Monatsdatensatz ab: {path}"
