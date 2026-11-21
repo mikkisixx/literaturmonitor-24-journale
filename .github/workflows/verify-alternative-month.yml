@@ -32,12 +32,22 @@ jobs:
         run: |
           set -euo pipefail
           for workflow in monthly-report.yml einfacher-html-bericht.yml; do
-            started="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            # Record existing runs before dispatch so concurrent/manual dispatches
+            # from the same second cannot be mistaken for this verification run.
+            before="$(gh api "repos/$GH_REPO/actions/workflows/$workflow/runs?event=workflow_dispatch&per_page=100" --jq '[.workflow_runs[].id]')"
             gh workflow run "$workflow" --ref main -f month="$REPORT_MONTH"
             id=""
             for attempt in $(seq 1 30); do
-              id="$(gh api "repos/$GH_REPO/actions/workflows/$workflow/runs?event=workflow_dispatch&per_page=30" --jq '.workflow_runs[] | select(.created_at >= "'"$started"'") | select(.head_branch == "main") | .id' | head -n 1)"
-              if [[ -n "$id" ]]; then break; fi
+              candidates="$(gh api "repos/$GH_REPO/actions/workflows/$workflow/runs?event=workflow_dispatch&per_page=100" --jq --argjson before "$before" '[.workflow_runs[] | select(.head_branch == "main" and (.id as $id | $before | index($id) | not)) | .id]')"
+              count="$(jq 'length' <<< "$candidates")"
+              if [[ "$count" -eq 1 ]]; then
+                id="$(jq -r '.[0]' <<< "$candidates")"
+                break
+              fi
+              if [[ "$count" -gt 1 ]]; then
+                echo "::error::Mehrere neue $workflow-Läufe gefunden; Zuordnung nicht eindeutig"
+                exit 1
+              fi
               sleep 10
             done
             if [[ -z "$id" ]]; then echo "::error::Run-ID für $workflow nicht gefunden"; exit 1; fi
