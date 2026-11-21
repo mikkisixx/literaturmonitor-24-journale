@@ -88,7 +88,16 @@ def build(month, inventory=None, verification=None, monthly_report=None):
     report_available = monthly_report is not None
     monthly_report = monthly_report if report_available else {}
     reported_dois = {doi for a in monthly_report.get("articles", []) if (doi := normalize_doi(a.get("doi")))}
-    # Only articles with an evidenced first-online date count as covered for\n    # a publisher-confirmed monthly gap. Undated candidates remain unresolved.\n    verified_reported_by_journal = {}\n    for article in monthly_report.get("articles", []):\n        doi = normalize_doi(article.get("doi"))\n        journal = str(article.get("journal", "")).strip()\n        if (doi and journal and article.get("date_basis") in ("crossref_online", "publisher_online")\n                and is_valid_month_date(article.get("online_date"), month)):\n            verified_reported_by_journal.setdefault(journal, set()).add(doi)\n    reported_by_journal = {}
+    # Only articles with an evidenced first-online date count as covered for
+    # a publisher-confirmed monthly gap. Undated candidates remain unresolved.
+    verified_reported_by_journal = {}
+    for article in monthly_report.get("articles", []):
+        doi = normalize_doi(article.get("doi"))
+        journal = str(article.get("journal", "")).strip()
+        if (doi and journal and article.get("date_basis") in ("crossref_online", "publisher_online")
+                and is_valid_month_date(article.get("online_date"), month)):
+            verified_reported_by_journal.setdefault(journal, set()).add(doi)
+    reported_by_journal = {}
     for article in monthly_report.get("articles", []):
         doi = normalize_doi(article.get("doi"))
         journal = str(article.get("journal", "")).strip()
