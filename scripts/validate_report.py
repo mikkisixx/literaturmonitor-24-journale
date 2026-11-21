@@ -15,7 +15,7 @@ def valid_https_source(value):
         parsed = urlsplit(value)
         return (parsed.scheme == "https" and bool(parsed.hostname)
                 and not parsed.username and not parsed.password
-                and not any(c.isspace() for c in value))
+                and not any(c.isspace() or c == "\\" for c in value))
     except ValueError:
         return False
 
