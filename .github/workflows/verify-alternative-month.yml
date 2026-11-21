@@ -38,7 +38,7 @@ jobs:
             gh workflow run "$workflow" --ref main -f month="$REPORT_MONTH"
             id=""
             for attempt in $(seq 1 30); do
-              candidates="$(gh api "repos/$GH_REPO/actions/workflows/$workflow/runs?event=workflow_dispatch&per_page=100" --jq --argjson before "$before" '[.workflow_runs[] | select(.head_branch == "main" and (.id as $id | $before | index($id) | not)) | .id]')"
+              candidates="$(gh api "repos/$GH_REPO/actions/workflows/$workflow/runs?event=workflow_dispatch&per_page=100" | jq --argjson before "$before" '[.workflow_runs[] | select(.head_branch == "main" and (.id as $id | $before | index($id) | not)) | .id]')"
               count="$(jq 'length' <<< "$candidates")"
               if [[ "$count" -eq 1 ]]; then
                 id="$(jq -r '.[0]' <<< "$candidates")"
