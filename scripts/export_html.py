@@ -48,7 +48,7 @@ def export(month, output):
             source = a.get("publisher_date_source")
             parsed = urlsplit(source) if isinstance(source, str) else None
             if (not parsed or parsed.scheme != "https" or not parsed.hostname
-                    or parsed.username or parsed.password or any(c.isspace() for c in source)):
+                    or parsed.username or parsed.password or any(c.isspace() or c == "\\" for c in source)):
                 raise ValueError("Publisher-verified article lacks a valid HTTPS evidence URL")
     if len(eligible) != report["verified_online_count"]:
         raise ValueError("Verified online article count differs from exportable articles")
@@ -84,12 +84,12 @@ def export(month, output):
         source_links = []
         for source in item.get("publisher_listing_urls", []):
             parsed = urlsplit(source) if isinstance(source, str) else None
-            if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() for c in source):
+            if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() or c == "\\" for c in source):
                 raise ValueError("Unsafe publisher listing source URL")
             source_links.append('<a href="'+h(source)+'" target="_blank" rel="noopener noreferrer">Verlagsliste '+str(len(source_links)+1)+'</a>')
         for source in item.get("publisher_verified_date_source_urls", []):
             parsed = urlsplit(source) if isinstance(source, str) else None
-            if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() for c in source):
+            if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() or c == "\\" for c in source):
                 raise ValueError("Unsafe publisher date evidence URL")
             source_links.append('<a href="'+h(source)+'" target="_blank" rel="noopener noreferrer">Verlagsdatumsbeleg '+str(len(source_links)+1)+'</a>')
         source_note = " · ".join(source_links) if source_links else "Keine unabhängige Verlagsliste oder Datumsquelle belegt"
@@ -103,7 +103,7 @@ def export(month, output):
     for article in coverage["missing_publisher_articles"]:
         source = article.get("source", "")
         parsed = urlsplit(source)
-        if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() for c in source):
+        if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() or c == "\\" for c in source):
             raise ValueError("Unsafe publisher evidence URL; refusing HTML export")
     missing=''.join('<li>'+h(a["journal"])+' · '+h(a["publisher_online_date"])+' · <a href="'+h(a["source"])+'" target="_blank" rel="noopener noreferrer">'+h(a["doi"])+'</a></li>' for a in coverage["missing_publisher_articles"])
     page='''<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Literaturbericht '''+h(month)+'''</title><style>
