@@ -5,6 +5,18 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 import audit_publisher_inventory as audit
 
 class AllJournalPublisherAuditTests(unittest.TestCase):
+    def test_undated_candidate_does_not_hide_verified_publisher_gap(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/candidate",
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+            "source": "https://link.springer.com/article/candidate"}]}
+        report = {"articles": [{"journal": "Clinical Oral Investigations",
+                                "doi": "10.1007/candidate", "date_basis": "candidate"}]}
+        row = next(r for r in audit.build("2026-10", verification=verification,
+                                          monthly_report=report)["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/candidate"])
+
     def test_missing_month_dois_without_auditable_source_are_disclosed(self):
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/sourced",
