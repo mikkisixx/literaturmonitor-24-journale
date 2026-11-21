@@ -87,7 +87,12 @@ def export(month, output):
             if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() for c in source):
                 raise ValueError("Unsafe publisher listing source URL")
             source_links.append('<a href="'+h(source)+'" target="_blank" rel="noopener noreferrer">Verlagsliste '+str(len(source_links)+1)+'</a>')
-        source_note = " · ".join(source_links) if source_links else "Keine unabhängige Verlagsliste belegt"
+        for source in item.get("publisher_verified_date_source_urls", []):
+            parsed = urlsplit(source) if isinstance(source, str) else None
+            if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or any(c.isspace() for c in source):
+                raise ValueError("Unsafe publisher date evidence URL")
+            source_links.append('<a href="'+h(source)+'" target="_blank" rel="noopener noreferrer">Verlagsdatumsbeleg '+str(len(source_links)+1)+'</a>')
+        source_note = " · ".join(source_links) if source_links else "Keine unabhängige Verlagsliste oder Datumsquelle belegt"
         audit_rows.append('<tr><th scope="row">'+h(name)+'</th><td>'+str(count)+'</td><td>'+h(platform)+'</td><td>'+h(listing)+'</td><td>'+verified+'</td><td>'+h(item.get("publisher_coverage_reason") or ("Unabhängige Vollständigkeit nicht belegt" if not item.get("publisher_coverage_verified") else "Unabhängig verifiziert"))+'<p>'+source_note+'</p></td></tr>')
     if len(audit_rows)!=24 or len({j.get("journal") for j in coverage["journals"]})!=24:
         raise ValueError("Expected 24 distinct journal audit records")
