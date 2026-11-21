@@ -259,7 +259,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
             "status": "publisher_online_date_verified", "online_date": "2026-10-15", "in_requested_month": True,
             "in_monthly_report": False}]}
         report = {"articles": [{"journal": "Clinical Oral Investigations",
-                               "doi": "10.1007/example"}]}
+                               "doi": "10.1007/example", "date_basis": "publisher_online", "online_date": "2026-10-15"}]}
         result = audit.build("2026-10", inventory, verification, report)
         row = next(r for r in result["journals"]
                    if r["journal"] == "Clinical Oral Investigations")
@@ -290,7 +290,7 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
             "in_requested_month": True,
             "in_monthly_report": False}]}
         report = {"articles": [{"journal": "Clinical Oral Investigations",
-                               "doi": "10.1007/example"}]}
+                               "doi": "10.1007/example", "date_basis": "publisher_online", "online_date": "2026-10-15"}]}
         result = audit.build("2026-10", inventory, verification, report)
         row = next(r for r in result["journals"]
                    if r["journal"] == "Clinical Oral Investigations")
