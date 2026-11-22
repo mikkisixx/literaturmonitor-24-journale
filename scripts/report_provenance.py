@@ -7,7 +7,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
 import collect
-from audit_publisher_inventory import verified_online_date, is_valid_month_date
+from audit_publisher_inventory import verified_online_date, is_valid_month_date, valid_https_source
 def load(path):
     return json.loads(path.read_text()) if path.exists() else {}
 def make(month):
@@ -30,7 +30,7 @@ def make(month):
             rows.append({"journal":name,"group":group,
                 "publisher_platform":audit.get("publisher_platform","unmapped"),
                 "crossref_api_source":"https://api.crossref.org/works",
-                "publisher_article_evidence_urls":sorted({a["publisher_date_source"] for a in publisher if isinstance(a.get("publisher_date_source"),str) and a["publisher_date_source"].startswith("https://")}),
+                "publisher_article_evidence_urls":sorted({a["publisher_date_source"] for a in publisher if valid_https_source(a.get("publisher_date_source"))}),
                 "publisher_listing_urls":audit.get("publisher_listing_urls",[]),
                 "publisher_verified_date_source_urls":audit.get("publisher_verified_date_source_urls",[]),
                 "publisher_confirmed_month_missing_dois":audit.get("confirmed_month_missing_dois",[]),
