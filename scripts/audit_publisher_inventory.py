@@ -49,7 +49,7 @@ def normalize_doi(value):
 
 def valid_https_source(value):
     """Reject malformed, credential-bearing or whitespace-containing evidence URLs."""
-    if not isinstance(value, str) or any(c.isspace() for c in value):
+    if not isinstance(value, str) or any(c.isspace() or c == "\\" for c in value):
         return False
     try:
         url = urlsplit(value)
