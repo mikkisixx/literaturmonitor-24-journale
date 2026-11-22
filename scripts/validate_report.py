@@ -73,6 +73,7 @@ def validate(month, data=DATA):
     expected_journals={name for names in JOURNALS.values() for name in names}
     assert len(expected_journals)==24, "Configured journal list is not 24 unique titles"
     assert {r["journal"] for r in coverage["journals"]}==expected_journals, "Required journal missing or unexpected journal substituted"
+    assert all(a.get("journal") in expected_journals for a in articles), "Report article belongs to an unknown journal"
     assert coverage["journals_queried"]==24 and coverage["query_errors"]==0, "Crossref queries incomplete"
     assert coverage["zero_hit_journals"]==sum(r["crossref_query_count"]==0 for r in coverage["journals"]), "Zero-hit mismatch"
     assert coverage["confirmed_missing_publisher_articles"]==len(coverage["missing_publisher_articles"]), "Publisher evidence mismatch"
