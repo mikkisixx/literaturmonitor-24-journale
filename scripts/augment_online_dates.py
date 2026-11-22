@@ -104,7 +104,7 @@ def merge_publisher(month):
                           and not any(ch.isspace() for ch in source))
         except ValueError:
             source_valid=False
-        if not source_valid:continue
+        if not source_valid or parsed.hostname.lower() in ("doi.org", "dx.doi.org"):continue
         previous=observed.get(doi,{})
         if previous.get("journal") and previous["journal"]!=row["journal"]:continue
         previous.update({"doi":doi,"journal":row["journal"],"online_date":online,
