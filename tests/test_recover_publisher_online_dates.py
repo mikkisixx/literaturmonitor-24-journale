@@ -23,7 +23,9 @@ class RecoveryTests(unittest.TestCase):
         for url in ("http://publisher.example/article",
                     "https://doi.org/10.1234/abc",
                     "https://dx.doi.org/10.1234/abc",
-                    "https://user:pass@publisher.example/article",\n                    "https://publisher.example/article\\\\unsafe",\n                    "https://publisher.example/article with space"):
+                    "https://user:pass@publisher.example/article",
+                    "https://publisher.example/article\\\\unsafe",
+                    "https://publisher.example/article with space"):
             with self.subTest(url=url), patch.object(
                 recovery, "get_publisher",
                 return_value=(url, [("citation_online_date", "2026-10-12")])
