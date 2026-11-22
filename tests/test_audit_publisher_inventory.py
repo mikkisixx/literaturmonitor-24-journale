@@ -53,6 +53,19 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_verified_date_source_urls"],
                          ["https://link.springer.com/article/valid"])
 
+    def test_backslash_in_publisher_url_is_not_a_valid_source(self):
+        self.assertFalse(audit.valid_https_source("https://publisher.example\\@other.example/article"))
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/backslash",
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+            "source": "https://publisher.example\\@other.example/article"}]}
+        row = next(r for r in audit.build("2026-10", verification=verification,
+                                          monthly_report={"articles": []})["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["publisher_article_dates_with_https_source"], 0)
+        self.assertEqual(row["confirmed_month_missing_without_https_source_dois"],
+                         ["10.1007/backslash"])
+
     def test_conflicting_doi_sources_are_not_presented_as_verified_evidence(self):
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/conflict",
