@@ -149,6 +149,12 @@ class ReportValidationTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             validate(MONTH, self.data)
 
+    def test_article_from_unconfigured_journal_is_rejected(self):
+        self.mutate(f"months/{MONTH}.json",
+                    lambda obj: obj["articles"][0].update(journal="Invented Dental Journal"))
+        with self.assertRaisesRegex(AssertionError, "unknown journal"):
+            validate(MONTH, self.data)
+
     def test_false_journal_coverage_is_rejected(self):
         self.mutate(f"coverage/{MONTH}.json",
                     lambda obj: obj["journals"][0].update(publisher_coverage_verified=True))
