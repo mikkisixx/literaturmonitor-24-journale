@@ -298,6 +298,19 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["confirmed_month_missing_from_report"], 0)
         self.assertFalse(row["publisher_coverage_verified"])
 
+    def test_reported_doi_with_conflicting_online_date_remains_a_gap(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/date-mismatch",
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+            "source": "https://link.springer.com/article/date-mismatch"}]}
+        report = {"articles": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/date-mismatch",
+            "date_basis": "crossref_online", "online_date": "2026-10-16"}]}
+        row = next(r for r in audit.build("2026-10", verification=verification,
+                                          monthly_report=report)["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/date-mismatch"])
+
     def test_stale_snapshot_present_flag_does_not_hide_current_gap(self):
         verification = {"records": [{
             "journal": "Clinical Oral Investigations", "doi": "10.1007/example",
