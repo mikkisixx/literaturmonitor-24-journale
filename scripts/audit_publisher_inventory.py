@@ -165,7 +165,9 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and verified_online_date(x)
                 and is_valid_month_date(verified_online_date(x), month)
                 and normalize_doi(x.get("doi")) not in conflicting_dois
-                and normalize_doi(x.get("doi")) not in dated_reported_by_journal.get(name, {})
+                # An undated/unverified report entry with the same DOI and day
+                # is not evidence that the publisher-confirmed article was included.
+                # Conflicting report dates are disclosed separately below.
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
