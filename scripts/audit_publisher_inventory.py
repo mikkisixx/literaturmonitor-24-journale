@@ -157,7 +157,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and normalize_doi(x.get("doi")) not in conflicting_dois
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
-                and ((normalize_doi(x.get("doi"))
+                and ((verified_online_date(x)
                       not in verified_reported_by_journal.get(name, {}).get(normalize_doi(x.get("doi")), set()))
                      if report_available else not x.get("in_monthly_report"))
             ]
