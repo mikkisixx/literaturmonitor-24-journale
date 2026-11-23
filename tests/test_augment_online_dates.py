@@ -43,7 +43,7 @@ class PublisherMergeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "data" / "publisher-inventory").mkdir(parents=True)
-            dois = ["missing", "http", "credentials", "resolver", "valid"]
+            dois = ["missing", "http", "credentials", "resolver", "backslash", "valid"]
             (root / "data" / "observed.json").write_text(json.dumps({
                 "10.1234/" + doi: {"title": doi} for doi in dois
             }))
@@ -55,6 +55,7 @@ class PublisherMergeTests(unittest.TestCase):
                     ("missing", None), ("http", "http://publisher.example/article"),
                     ("credentials", "https://user:password@publisher.example/article"),
                     ("resolver", "https://doi.org/10.1234/resolver"),
+                    ("backslash", "https://publisher.example\\\\attacker.example/article"),
                     ("valid", "https://publisher.example/article")
                 ]
             ]
