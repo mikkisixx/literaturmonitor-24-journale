@@ -636,5 +636,24 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
             self.assertEqual(row["publisher_verified_date_source_urls"], [])
             self.assertFalse(row["publisher_coverage_verified"])
 
+    def test_monthly_gaps_separate_traceable_https_evidence(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/sourced",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "source": "https://link.springer.com/article/sourced"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/unsourced",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-13"},
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/insecure",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-14",
+             "source": "http://link.springer.com/article/insecure"},
+        ]}
+        result = audit.build("2026-10", verification=verification, monthly_report={"articles": []})
+        row = next(r for r in result["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_with_https_source_dois"], ["10.1007/sourced"])
+        self.assertEqual(row["confirmed_month_missing_with_https_source_count"], 1)
+        self.assertEqual(row["confirmed_month_missing_without_https_source_dois"],
+                         ["10.1007/insecure", "10.1007/unsourced"])
+
 if __name__ == "__main__":
     unittest.main()
