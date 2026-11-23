@@ -26,6 +26,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -52,6 +54,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -78,6 +82,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -104,6 +110,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -130,6 +138,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -156,6 +166,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -182,6 +194,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -208,6 +222,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -234,6 +250,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -262,6 +280,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified"
@@ -288,6 +308,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -314,6 +336,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -340,6 +364,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -366,6 +392,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -392,6 +420,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -418,6 +448,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -446,6 +478,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified"
@@ -472,6 +506,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -500,6 +536,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "Publisher listing attempted but no DOI could be extracted; coverage unverified"
@@ -526,6 +564,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -552,6 +592,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -578,6 +620,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -604,6 +648,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"
@@ -630,6 +676,8 @@
       "publisher_article_dates_verified_unambiguous": 0,
       "confirmed_month_missing_from_report": 0,
       "confirmed_month_missing_dois": [],
+      "publisher_report_online_date_conflict_dois": [],
+      "publisher_report_online_date_conflict_count": 0,
       "confirmed_month_missing_without_https_source_dois": [],
       "publisher_coverage_verified": false,
       "publisher_coverage_reason": "No independent publisher listing attempted for this journal"

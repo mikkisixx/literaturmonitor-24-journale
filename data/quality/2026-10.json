@@ -8,25 +8,25 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 180,
-    "europe_pmc_electronic_other_month": 270,
-    "needs_manual_review": 85
+    "europe_pmc_electronic_month_match": 163,
+    "europe_pmc_electronic_other_month": 261,
+    "needs_manual_review": 111
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 64,
-        "europe_pmc_electronic_other_month": 55,
-        "needs_manual_review": 5
+        "europe_pmc_electronic_month_match": 48,
+        "europe_pmc_electronic_other_month": 47,
+        "needs_manual_review": 29
       }
     },
     "Dental Materials": {
       "total": 41,
       "statuses": {
-        "europe_pmc_electronic_other_month": 18,
-        "europe_pmc_electronic_month_match": 22,
-        "needs_manual_review": 1
+        "europe_pmc_electronic_other_month": 17,
+        "needs_manual_review": 3,
+        "europe_pmc_electronic_month_match": 21
       }
     },
     "Journal of Biomechanics": {
@@ -151,32 +151,26 @@
       "doi": "10.1016/j.actbio.2026.10.008",
       "journal": "Acta Biomaterialia",
       "title": "A calcination-based method for the indirect determination of octacalcium phosphate phase purity",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-03",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42829022",
-        "electronic_publication_date": "2026-10-03",
-        "first_publication_date": "2026-10-03",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.10.058",
       "journal": "Acta Biomaterialia",
       "title": "A cascade-targeted nanoplatform for in situ remodeling of the atherosclerotic plaque microenvironment through bidirectional cholesterol regulation and ROS/NO rebalancing",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-28",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42950997",
-        "electronic_publication_date": "2026-10-28",
-        "first_publication_date": "2026-10-28",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -199,16 +193,13 @@
       "doi": "10.1016/j.actbio.2026.10.030",
       "journal": "Acta Biomaterialia",
       "title": "A macrophage-integrated 3D spheroid model inoculated with bacteria for simultaneous evaluation of antibacterial efficacy, cytotoxicity, and immunomodulation",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-16",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42887584",
-        "electronic_publication_date": "2026-10-16",
-        "first_publication_date": "2026-10-16",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -231,16 +222,13 @@
       "doi": "10.1016/j.actbio.2026.10.024",
       "journal": "Acta Biomaterialia",
       "title": "A natural neuronal receptor-derived MRI probe targets β-amyloid oligomers for the diagnosis of Alzheimer’s disease",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-17",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42892388",
-        "electronic_publication_date": "2026-10-17",
-        "first_publication_date": "2026-10-17",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -263,16 +251,13 @@
       "doi": "10.1016/j.actbio.2026.08.046",
       "journal": "Acta Biomaterialia",
       "title": "A strong wet-adhesive hydrogel with reactive oxygen species-scavenging and sustained estradiol release for intrauterine adhesion prevention",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-26",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42648684",
-        "electronic_publication_date": "2026-08-26",
-        "first_publication_date": "2026-08-26",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -295,64 +280,52 @@
       "doi": "10.1016/j.actbio.2026.08.023",
       "journal": "Acta Biomaterialia",
       "title": "Adipose stem cell-targeted local delivery of forskolin induces de novo beige adipogenesis and adipose tissue browning to combat obesity",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-13",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42594979",
-        "electronic_publication_date": "2026-08-13",
-        "first_publication_date": "2026-08-13",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.10.010",
       "journal": "Acta Biomaterialia",
       "title": "Age-dependent brain mechanics are linked to microstructural changes",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-11",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42860195",
-        "electronic_publication_date": "2026-10-11",
-        "first_publication_date": "2026-10-11",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.10.064",
       "journal": "Acta Biomaterialia",
       "title": "Age-related biomechanical and structural remodeling of human middle cerebral arteries",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-30",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42962843",
-        "electronic_publication_date": "2026-10-30",
-        "first_publication_date": "2026-10-30",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.10.005",
       "journal": "Acta Biomaterialia",
       "title": "An NIR-triggered self-propelled janus nanomotor-integrated hydrogel with enzymatic cascade reactions and photothermal-enhanced drug release for the treatment of gouty arthritis",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-04",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42830168",
-        "electronic_publication_date": "2026-10-04",
-        "first_publication_date": "2026-10-04",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -391,16 +364,13 @@
       "doi": "10.1016/j.actbio.2026.04.018",
       "journal": "Acta Biomaterialia",
       "title": "Antimicrobial hydrogels for oral infection management: From molecular design to clinical translation",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-04-18",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42009159",
-        "electronic_publication_date": "2026-04-18",
-        "first_publication_date": "2026-04-18",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -810,7 +780,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -991,16 +961,13 @@
       "doi": "10.1016/j.actbio.2026.10.042",
       "journal": "Acta Biomaterialia",
       "title": "Genetically reprogrammed exosomes for targeted prostate cancer immunotherapy",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-23",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42918474",
-        "electronic_publication_date": "2026-10-23",
-        "first_publication_date": "2026-10-23",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1023,13 +990,16 @@
       "doi": "10.1016/j.actbio.2026.04.014",
       "journal": "Acta Biomaterialia",
       "title": "Hard tissue organoids: From concept to practice",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-04-12",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "HTTP Error 503: "
+        "source": "MED",
+        "id": "41980633",
+        "electronic_publication_date": "2026-04-12",
+        "first_publication_date": "2026-04-12",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -1084,48 +1054,39 @@
       "doi": "10.1016/j.actbio.2026.10.055",
       "journal": "Acta Biomaterialia",
       "title": "Injectable and bio-responsive hydrogels for on-demand intraperitoneal delivery of anti-cancer therapeutics in ovarian cancer",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-30",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42962839",
-        "electronic_publication_date": "2026-10-30",
-        "first_publication_date": "2026-10-30",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2025.12.007",
       "journal": "Acta Biomaterialia",
       "title": "Injectable, mechanically reinforced human-based nanocomposite for minimal invasive applications",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2025-12-05",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "41354193",
-        "electronic_publication_date": "2025-12-05",
-        "first_publication_date": "2025-12-05",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.01.026",
       "journal": "Acta Biomaterialia",
       "title": "Innovations in foot and ankle arthrodesis: Biological and biomaterial approaches to reducing non-union and the challenge of preclinical models",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-01-14",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "41544916",
-        "electronic_publication_date": "2026-01-14",
-        "first_publication_date": "2026-01-14",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1164,16 +1125,13 @@
       "doi": "10.1016/j.actbio.2026.08.048",
       "journal": "Acta Biomaterialia",
       "title": "Matrix metalloproteinase–mediated degradation governs angioarchitecture within poly(ethylene Glycol) hydrogels",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-28",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42660211",
-        "electronic_publication_date": "2026-08-28",
-        "first_publication_date": "2026-08-28",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1228,16 +1186,13 @@
       "doi": "10.1016/j.actbio.2026.08.041",
       "journal": "Acta Biomaterialia",
       "title": "Multi-scale assessment of scaffold-guided regeneration in human extraction sockets using an ultra-porous TiO₂ biomaterial",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-20",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42624348",
-        "electronic_publication_date": "2026-08-20",
-        "first_publication_date": "2026-08-20",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1282,7 +1237,7 @@
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "lookup_failed",
-        "error": "HTTP Error 503: "
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1337,32 +1292,26 @@
       "doi": "10.1016/j.actbio.2026.10.060",
       "journal": "Acta Biomaterialia",
       "title": "Nanozyme-powered immunotherapy via concurrent niche disruption and checkpoint blockade for acute myeloid leukemia",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-29",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42956951",
-        "electronic_publication_date": "2026-10-29",
-        "first_publication_date": "2026-10-29",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.10.041",
       "journal": "Acta Biomaterialia",
       "title": "Navigating hypoxia in tissue engineering: From biological mechanisms to therapeutic strategies",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-22",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42914042",
-        "electronic_publication_date": "2026-10-22",
-        "first_publication_date": "2026-10-22",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1465,13 +1414,16 @@
       "doi": "10.1016/j.actbio.2026.08.029",
       "journal": "Acta Biomaterialia",
       "title": "Poly(itaconic acid) nanoparticles alleviate inflammation and multiorgan injury in sepsis by promoting nuclear factor erythroid 2-related factor 2 nuclear translocation and macrophage reprogramming",
-      "source": "Crossref DOI API",
-      "status": "needs_manual_review",
-      "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "source": "Europe PMC electronicPublicationDate",
+      "status": "europe_pmc_electronic_other_month",
+      "online_date": "2026-08-19",
+      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
       "europe_pmc": {
-        "status": "lookup_failed",
-        "error": "HTTP Error 503: "
+        "source": "MED",
+        "id": "42617783",
+        "electronic_publication_date": "2026-08-19",
+        "first_publication_date": "2026-08-19",
+        "electronic_date_month_match": false
       }
     },
     {
@@ -1590,16 +1542,13 @@
       "doi": "10.1016/j.actbio.2026.08.034",
       "journal": "Acta Biomaterialia",
       "title": "Rapid biofilm disruption by ionic buffers enables calcium phosphate cement functionalization",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-19",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42617778",
-        "electronic_publication_date": "2026-08-19",
-        "first_publication_date": "2026-08-19",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1670,16 +1619,13 @@
       "doi": "10.1016/j.actbio.2026.10.002",
       "journal": "Acta Biomaterialia",
       "title": "Response to Letter to Editor “Comment on “Fiber density-driven mechanotransduction reconstructs collagen heterogeneity in the annulus fibrosus””",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-03",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42829023",
-        "electronic_publication_date": "2026-10-03",
-        "first_publication_date": "2026-10-03",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1750,16 +1696,13 @@
       "doi": "10.1016/j.actbio.2026.08.040",
       "journal": "Acta Biomaterialia",
       "title": "Silicate biomaterials modulate heart-bone paracrine interactions for tissue repair",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-23",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42633815",
-        "electronic_publication_date": "2026-08-23",
-        "first_publication_date": "2026-08-23",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1798,16 +1741,13 @@
       "doi": "10.1016/j.actbio.2026.10.027",
       "journal": "Acta Biomaterialia",
       "title": "Spatially defined Latrunculin A–eluting intraocular lenses attenuate posterior capsule opacification via cytoskeletal disruption",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-17",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42892390",
-        "electronic_publication_date": "2026-10-17",
-        "first_publication_date": "2026-10-17",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1910,16 +1850,13 @@
       "doi": "10.1016/j.actbio.2026.10.023",
       "journal": "Acta Biomaterialia",
       "title": "Tailoring the microstructure, mechanical properties, degradation behavior, and biological performance of biodegradable Zn-Cu alloys through plastic deformation processing",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-14",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42874758",
-        "electronic_publication_date": "2026-10-14",
-        "first_publication_date": "2026-10-14",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1942,16 +1879,13 @@
       "doi": "10.1016/j.actbio.2026.09.051",
       "journal": "Acta Biomaterialia",
       "title": "Thermosensitive hydroxypropyl chitin-based hydrogel for trigeminal neuralgia: Rapid analgesia, myelin repair, and attenuation of gamma-band hyperactivity in the spinal trigeminal nucleus caudalis",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-01",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42822747",
-        "electronic_publication_date": "2026-10-01",
-        "first_publication_date": "2026-10-01",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -1990,32 +1924,26 @@
       "doi": "10.1016/j.actbio.2026.10.007",
       "journal": "Acta Biomaterialia",
       "title": "Volumetric imaging of Young’s modulus and nonlinear elasticity on the micro-scale",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-03",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42829020",
-        "electronic_publication_date": "2026-10-03",
-        "first_publication_date": "2026-10-03",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.actbio.2026.08.033",
       "journal": "Acta Biomaterialia",
       "title": "Zinc-based nanoplatforms for cancer immunotherapy achieved through the cyclic GMP-AMP synthase-stimulator of interferon genes pathway: Bridging tumor metabolism and immune activation",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-19",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42617782",
-        "electronic_publication_date": "2026-08-19",
-        "first_publication_date": "2026-08-19",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -2086,32 +2014,26 @@
       "doi": "10.1016/j.dental.2026.10.009",
       "journal": "Dental Materials",
       "title": "A quercetin loaded root canal sealer based on polyphosphate coacervate composite with anti-inflammatory and mineralization promoting properties",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-22",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42918713",
-        "electronic_publication_date": "2026-10-22",
-        "first_publication_date": "2026-10-22",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
       "doi": "10.1016/j.dental.2026.04.029",
       "journal": "Dental Materials",
       "title": "An in vitro analysis of two-body wear and three body wear, hardness, and degree of conversion of 3D-printed restorative materials",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-05-11",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42115028",
-        "electronic_publication_date": "2026-05-11",
-        "first_publication_date": "2026-05-11",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -4917,7 +4839,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -6926,7 +6848,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6938,7 +6861,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -6950,7 +6874,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7010,7 +6935,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7034,7 +6960,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7094,7 +7021,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7118,7 +7046,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7130,7 +7059,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7154,7 +7084,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7178,7 +7109,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7214,7 +7146,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7226,7 +7159,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7262,7 +7196,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7286,7 +7221,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7346,7 +7282,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7406,7 +7343,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
@@ -7418,7 +7356,8 @@
       "online_date": null,
       "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "status": "not_indexed_by_exact_doi"
+        "status": "lookup_failed",
+        "error": "The read operation timed out"
       }
     },
     {
