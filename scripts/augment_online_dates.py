@@ -101,7 +101,7 @@ def merge_publisher(month):
             parsed=urlsplit(source)
             source_valid=(parsed.scheme=="https" and bool(parsed.hostname)
                           and not parsed.username and not parsed.password
-                          and not any(ch.isspace() for ch in source))
+                          and not any(ch.isspace() or ch == "\\" for ch in source))
         except ValueError:
             source_valid=False
         if not source_valid or parsed.hostname.lower() in ("doi.org", "dx.doi.org"):continue
