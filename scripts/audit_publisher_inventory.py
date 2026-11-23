@@ -61,6 +61,8 @@ def is_valid_iso_date(value):
     """Count only publisher dates that represent real ISO calendar days."""
     if not isinstance(value, str):
         return False
+    if len(value) != 10 or value[4] != "-" or value[7] != "-" or not (value[:4] + value[5:7] + value[8:]).isascii() or not (value[:4] + value[5:7] + value[8:]).isdigit():
+        return False
     try:
         return dt.date.fromisoformat(value).isoformat() == value
     except ValueError:
@@ -68,12 +70,7 @@ def is_valid_iso_date(value):
 
 def is_valid_month_date(value, month):
     """Require a real ISO calendar date, not just a matching YYYY-MM prefix."""
-    if not isinstance(value, str):
-        return False
-    try:
-        return dt.date.fromisoformat(value).strftime("%Y-%m") == month
-    except ValueError:
-        return False
+    return is_valid_iso_date(value) and value[:7] == month
 
 def verified_online_date(row):
     """Accept both publisher-verifier date field names, rejecting conflicts."""
