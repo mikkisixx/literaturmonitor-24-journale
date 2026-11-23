@@ -94,6 +94,15 @@ def build(month, inventory=None, verification=None, monthly_report=None):
         if (doi and journal and article.get("date_basis") in ("crossref_online", "publisher_online")
                 and is_valid_month_date(article.get("online_date"), month)):
             verified_reported_by_journal.setdefault(journal, {}).setdefault(doi, set()).add(article["online_date"])
+    # Keep every dated report record for conflict detection, including records
+    # outside the requested month or without an accepted evidence basis.
+    dated_reported_by_journal = {}
+    for article in monthly_report.get("articles", []):
+        doi = normalize_doi(article.get("doi"))
+        journal = str(article.get("journal", "")).strip()
+        date = article.get("online_date")
+        if doi and journal and is_valid_iso_date(date):
+            dated_reported_by_journal.setdefault(journal, {}).setdefault(doi, set()).add(date)
     reported_by_journal = {}
     for article in monthly_report.get("articles", []):
         doi = normalize_doi(article.get("doi"))
@@ -155,6 +164,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and verified_online_date(x)
                 and is_valid_month_date(verified_online_date(x), month)
                 and normalize_doi(x.get("doi")) not in conflicting_dois
+                and normalize_doi(x.get("doi")) not in dated_reported_by_journal.get(name, {})
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
@@ -169,8 +179,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and verified_online_date(x)
                 and is_valid_month_date(verified_online_date(x), month)
                 and normalize_doi(x.get("doi")) not in conflicting_dois
-                and normalize_doi(x.get("doi")) in verified_reported_by_journal.get(name, {})
-                and verified_online_date(x) not in verified_reported_by_journal[name][normalize_doi(x.get("doi"))]
+                and normalize_doi(x.get("doi")) in dated_reported_by_journal.get(name, {})
+                and verified_online_date(x) not in dated_reported_by_journal[name][normalize_doi(x.get("doi"))]
             })
             confirmed_missing_dois = sorted({
                 normalize_doi(x["doi"]) for x in confirmed_missing
