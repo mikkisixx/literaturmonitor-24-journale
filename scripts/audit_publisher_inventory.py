@@ -157,10 +157,21 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and normalize_doi(x.get("doi")) not in conflicting_dois
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
-                and ((verified_online_date(x)
-                      not in verified_reported_by_journal.get(name, {}).get(normalize_doi(x.get("doi")), set()))
+                and ((normalize_doi(x.get("doi"))
+                      not in verified_reported_by_journal.get(name, {}))
                      if report_available else not x.get("in_monthly_report"))
             ]
+            # A DOI already present with a different first-online day is a
+            # date conflict, not a missing article.
+            conflicting_report_dates = sorted({
+                normalize_doi(x.get("doi")) for x in checks
+                if x.get("status") == "publisher_online_date_verified"
+                and verified_online_date(x)
+                and is_valid_month_date(verified_online_date(x), month)
+                and normalize_doi(x.get("doi")) not in conflicting_dois
+                and normalize_doi(x.get("doi")) in verified_reported_by_journal.get(name, {})
+                and verified_online_date(x) not in verified_reported_by_journal[name][normalize_doi(x.get("doi"))]
+            })
             confirmed_missing_dois = sorted({
                 normalize_doi(x["doi"]) for x in confirmed_missing
                 if x.get("doi") and normalize_doi(x["doi"])
@@ -207,6 +218,8 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                              for x in checks),
                          "confirmed_month_missing_from_report": len(confirmed_missing_dois),
                          "confirmed_month_missing_dois": confirmed_missing_dois,
+                         "publisher_report_online_date_conflict_dois": conflicting_report_dates,
+                         "publisher_report_online_date_conflict_count": len(conflicting_report_dates),
                          "confirmed_month_missing_without_https_source_dois": missing_without_source_dois,
                          "publisher_coverage_verified": False,
                          "publisher_coverage_reason": reason})
