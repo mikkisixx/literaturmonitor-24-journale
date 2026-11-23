@@ -93,7 +93,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
         journal = str(article.get("journal", "")).strip()
         if (doi and journal and article.get("date_basis") in ("crossref_online", "publisher_online")
                 and is_valid_month_date(article.get("online_date"), month)):
-            verified_reported_by_journal.setdefault(journal, set()).add(doi)
+            verified_reported_by_journal.setdefault(journal, {}).setdefault(doi, set()).add(article["online_date"])
     reported_by_journal = {}
     for article in monthly_report.get("articles", []):
         doi = normalize_doi(article.get("doi"))
@@ -158,7 +158,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 # Prefer the actual current report over the verification
                 # snapshot, which can be stale in either direction.
                 and ((normalize_doi(x.get("doi"))
-                      not in verified_reported_by_journal.get(name, set()))
+                      not in verified_reported_by_journal.get(name, {}).get(normalize_doi(x.get("doi")), set()))
                      if report_available else not x.get("in_monthly_report"))
             ]
             confirmed_missing_dois = sorted({
