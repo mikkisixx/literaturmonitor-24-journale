@@ -107,6 +107,12 @@ def merge_publisher(month):
         if not source_valid or parsed.hostname.lower() in ("doi.org", "dx.doi.org"):continue
         previous=dict(observed.get(doi,{}))
         if previous.get("journal") and previous["journal"]!=row["journal"]:continue
+        # A previously publisher-verified first-online date is independent
+        # evidence. Do not silently overwrite a contradictory earlier result.
+        if (previous.get("publisher_online_verified")
+                and previous.get("online_date")
+                and previous["online_date"] != online):
+            continue
         previous.update({"doi":doi,"journal":row["journal"],"online_date":online,
             "publisher_online_verified":True,"publisher_date_source":row.get("source"),
             "url":"https://doi.org/"+doi})
