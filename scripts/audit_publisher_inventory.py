@@ -180,7 +180,7 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and is_valid_month_date(verified_online_date(x), month)
                 and normalize_doi(x.get("doi")) not in conflicting_dois
                 and normalize_doi(x.get("doi")) in dated_reported_by_journal.get(name, {})
-                and verified_online_date(x) not in dated_reported_by_journal[name][normalize_doi(x.get("doi"))]
+                and dated_reported_by_journal[name][normalize_doi(x.get("doi"))] != {verified_online_date(x)}
             })
             confirmed_missing_dois = sorted({
                 normalize_doi(x["doi"]) for x in confirmed_missing
