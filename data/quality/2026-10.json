@@ -8,17 +8,17 @@
   "online_dates_not_corroborrated": 84,
   "candidate_count": 535,
   "candidate_status_counts": {
-    "europe_pmc_electronic_month_match": 181,
-    "europe_pmc_electronic_other_month": 272,
-    "needs_manual_review": 82
+    "europe_pmc_electronic_month_match": 180,
+    "europe_pmc_electronic_other_month": 270,
+    "needs_manual_review": 85
   },
   "candidate_journals": {
     "Acta Biomaterialia": {
       "total": 124,
       "statuses": {
-        "europe_pmc_electronic_month_match": 65,
-        "europe_pmc_electronic_other_month": 57,
-        "needs_manual_review": 2
+        "europe_pmc_electronic_month_match": 64,
+        "europe_pmc_electronic_other_month": 55,
+        "needs_manual_review": 5
       }
     },
     "Dental Materials": {
@@ -1023,16 +1023,13 @@
       "doi": "10.1016/j.actbio.2026.04.014",
       "journal": "Acta Biomaterialia",
       "title": "Hard tissue organoids: From concept to practice",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-04-12",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "41980633",
-        "electronic_publication_date": "2026-04-12",
-        "first_publication_date": "2026-04-12",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "HTTP Error 503: "
       }
     },
     {
@@ -1279,16 +1276,13 @@
       "doi": "10.1016/j.actbio.2026.10.038",
       "journal": "Acta Biomaterialia",
       "title": "Multiscale heterostructured Mg-2 Zn alloy for biodegradable implants: Coordinated strength-ductility, moderate degradation, and immunomodulation",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_month_match",
-      "online_date": "2026-10-21",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42906674",
-        "electronic_publication_date": "2026-10-21",
-        "first_publication_date": "2026-10-21",
-        "electronic_date_month_match": true
+        "status": "lookup_failed",
+        "error": "HTTP Error 503: "
       }
     },
     {
@@ -1471,16 +1465,13 @@
       "doi": "10.1016/j.actbio.2026.08.029",
       "journal": "Acta Biomaterialia",
       "title": "Poly(itaconic acid) nanoparticles alleviate inflammation and multiorgan injury in sepsis by promoting nuclear factor erythroid 2-related factor 2 nuclear translocation and macrophage reprogramming",
-      "source": "Europe PMC electronicPublicationDate",
-      "status": "europe_pmc_electronic_other_month",
-      "online_date": "2026-08-19",
-      "reason": "Europe PMC electronic publication date; check publisher for original first-online event",
+      "source": "Crossref DOI API",
+      "status": "needs_manual_review",
+      "online_date": null,
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
-        "source": "MED",
-        "id": "42617783",
-        "electronic_publication_date": "2026-08-19",
-        "first_publication_date": "2026-08-19",
-        "electronic_date_month_match": false
+        "status": "lookup_failed",
+        "error": "HTTP Error 503: "
       }
     },
     {
@@ -4926,7 +4917,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "No explicit online-first date in monthly data",
+      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -6933,7 +6924,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
@@ -7293,7 +7284,7 @@
       "source": "Crossref DOI API",
       "status": "needs_manual_review",
       "online_date": null,
-      "reason": "Crossref recheck failed: HTTP Error 429: Too Many Requests",
+      "reason": "No explicit online-first date in monthly data",
       "europe_pmc": {
         "status": "not_indexed_by_exact_doi"
       }
