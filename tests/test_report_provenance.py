@@ -83,7 +83,11 @@ class ProvenanceTests(unittest.TestCase):
                     "confirmed_month_missing_from_report": 1,
                     "publisher_verified_date_source_urls": ["https://publisher.example/article"],
                     "publisher_conflicting_verified_date_dois": ["10.1007/conflict"],
-                    "publisher_report_comparison_available": True}]}
+                    "publisher_report_comparison_available": True,
+                    "publisher_article_dates_with_https_source": 3,
+                    "publisher_conflicting_verified_date_count": 1,
+                    "publisher_report_online_date_conflict_count": 2,
+                    "confirmed_month_missing_without_https_source_dois": ["10.1007/missing"]}]}
             return {}
         with patch.object(report_provenance, "load", side_effect=fake_load):
             result = report_provenance.make("2026-10")
@@ -93,6 +97,10 @@ class ProvenanceTests(unittest.TestCase):
         self.assertEqual(row["publisher_verified_date_source_urls"], ["https://publisher.example/article"])
         self.assertEqual(row["publisher_conflicting_verified_date_dois"], ["10.1007/conflict"])
         self.assertTrue(row["publisher_report_comparison_available"])
+        self.assertEqual(row["publisher_online_dates_with_https_source"], 3)
+        self.assertEqual(row["publisher_online_date_conflicts"], 1)
+        self.assertEqual(row["publisher_report_date_conflicts"], 2)
+        self.assertEqual(row["publisher_missing_without_https_source_dois"], ["10.1007/missing"])
         self.assertFalse(result["independently_complete"])
 
     def test_inconsistent_publisher_gap_count_is_rejected(self):
