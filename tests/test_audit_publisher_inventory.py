@@ -309,7 +309,9 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         row = next(r for r in audit.build("2026-10", verification=verification,
                                           monthly_report=report)["journals"]
                    if r["journal"] == "Clinical Oral Investigations")
-        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/date-mismatch"])
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+        self.assertEqual(row["publisher_report_online_date_conflict_dois"], ["10.1007/date-mismatch"])
+        self.assertEqual(row["publisher_report_online_date_conflict_count"], 1)
 
     def test_stale_snapshot_present_flag_does_not_hide_current_gap(self):
         verification = {"records": [{
