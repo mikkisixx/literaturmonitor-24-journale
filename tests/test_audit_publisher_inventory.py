@@ -35,6 +35,20 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
                    if r["journal"] == "Clinical Oral Investigations")
         self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/candidate"])
 
+    def test_matching_day_without_verified_date_basis_is_still_a_gap(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/unverified",
+            "status": "publisher_online_date_verified", "online_date": "2026-10-15",
+            "source": "https://link.springer.com/article/unverified"}]}
+        report = {"articles": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/unverified",
+            "online_date": "2026-10-15", "date_basis": "candidate"}]}
+        row = next(r for r in audit.build("2026-10", verification=verification,
+                                          monthly_report=report)["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], ["10.1007/unverified"])
+        self.assertEqual(row["publisher_report_online_date_conflict_dois"], [])
+
     def test_missing_month_dois_without_auditable_source_are_disclosed(self):
         verification = {"records": [
             {"journal": "Clinical Oral Investigations", "doi": "10.1007/sourced",
