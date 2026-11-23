@@ -43,6 +43,10 @@ def make(month):
                 "publisher_listing":inv.get("journals",{}).get(name,{"status":"not_implemented"}),
                 "publisher_article_pages_checked":len(checks),
                 "publisher_online_dates_verified":sum(a.get("status")=="publisher_online_date_verified" and verified_online_date(a) is not None for a in checks),
+                "publisher_online_dates_with_https_source":audit.get("publisher_article_dates_with_https_source",0),
+                "publisher_online_date_conflicts":audit.get("publisher_conflicting_verified_date_count",0),
+                "publisher_report_date_conflicts":audit.get("publisher_report_online_date_conflict_count",0),
+                "publisher_missing_without_https_source_dois":audit.get("confirmed_month_missing_without_https_source_dois",[]),
                 "included_articles":len(included),"included_with_publisher_evidence":len(publisher),
                 "independently_exhaustive":False,
                 "reason":audit.get("publisher_coverage_reason") or "No proven exhaustive publisher listing and article-level first-online date verification"})
