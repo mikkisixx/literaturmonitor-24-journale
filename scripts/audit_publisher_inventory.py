@@ -185,6 +185,11 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 and normalize_doi(x.get("doi")) in dated_reported_by_journal.get(name, {})
                 and dated_reported_by_journal[name][normalize_doi(x.get("doi"))] != {verified_online_date(x)}
             })
+            # A DOI present in the report with a contradictory online date is
+            # a date conflict, not an absent article. Keep these categories
+            # mutually exclusive so the audit does not double-count a gap.
+            confirmed_missing = [x for x in confirmed_missing
+                                 if normalize_doi(x.get("doi")) not in conflicting_report_dates]
             confirmed_missing_dois = sorted({
                 normalize_doi(x["doi"]) for x in confirmed_missing
                 if x.get("doi") and normalize_doi(x["doi"])
