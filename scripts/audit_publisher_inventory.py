@@ -53,7 +53,8 @@ def valid_https_source(value):
         return False
     try:
         url = urlsplit(value)
-        return url.scheme == "https" and bool(url.hostname) and not url.username and not url.password
+        return (url.scheme == "https" and bool(url.hostname) and not url.username
+                and not url.password and url.hostname.lower() not in ("doi.org", "dx.doi.org"))
     except ValueError:
         return False
 
