@@ -91,6 +91,29 @@ class PublisherMergeTests(unittest.TestCase):
             observed = json.loads((root / "data" / "observed.json").read_text())
             self.assertNotIn("online_date", observed["10.1234/ambiguous"])
 
+    def test_prior_publisher_verified_date_conflict_is_not_overwritten(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "data" / "publisher-inventory").mkdir(parents=True)
+            original = {"10.1234/old": {
+                "title": "Old", "journal": "Dental Materials",
+                "online_date": "2026-09-30",
+                "publisher_online_verified": True,
+                "publisher_date_source": "https://publisher.example/old"
+            }}
+            (root / "data" / "observed.json").write_text(json.dumps(original))
+            (root / "data" / "publisher-inventory" / "2026-10-verified.json").write_text(
+                json.dumps({"records": [{
+                    "doi": "10.1234/old", "journal": "Dental Materials",
+                    "status": "publisher_online_date_verified",
+                    "publisher_online_date": "2026-10-04",
+                    "source": "https://publisher.example/new"
+                }]}))
+            with patch.object(module, "ROOT", root):
+                self.assertEqual(module.merge_publisher("2026-10"), 0)
+            self.assertEqual(json.loads((root / "data" / "observed.json").read_text()),
+                             original)
+
     def test_missing_title_does_not_mutate_existing_observation(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
