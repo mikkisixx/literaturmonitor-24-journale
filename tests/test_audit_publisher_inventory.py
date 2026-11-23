@@ -603,5 +603,24 @@ class AllJournalPublisherAuditTests(unittest.TestCase):
         self.assertEqual(row["publisher_verified_date_source_urls"], [])
         self.assertEqual(row["confirmed_month_missing_dois"], [])
 
+    def test_same_verified_doi_assigned_to_two_journals_is_not_confirmed_missing(self):
+        verification = {"records": [
+            {"journal": "Clinical Oral Investigations", "doi": "10.1007/shared",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "source": "https://link.springer.com/article/10.1007/shared"},
+            {"journal": "Dental Materials", "doi": "doi:10.1007/SHARED",
+             "status": "publisher_online_date_verified", "online_date": "2026-10-12",
+             "source": "https://www.sciencedirect.com/science/article/pii/example"},
+        ]}
+        result = audit.build("2026-10", verification=verification, monthly_report={"articles": []})
+        rows = {row["journal"]: row for row in result["journals"]}
+        for journal in ("Clinical Oral Investigations", "Dental Materials"):
+            row = rows[journal]
+            self.assertEqual(row["confirmed_month_missing_dois"], [])
+            self.assertEqual(row["publisher_conflicting_verified_date_dois"], ["10.1007/shared"])
+            self.assertEqual(row["publisher_article_dates_verified_unambiguous"], 0)
+            self.assertEqual(row["publisher_verified_date_source_urls"], [])
+            self.assertFalse(row["publisher_coverage_verified"])
+
 if __name__ == "__main__":
     unittest.main()
