@@ -5,6 +5,24 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 import audit_publisher_inventory as audit
 
 class AllJournalPublisherAuditTests(unittest.TestCase):
+    def test_only_canonical_calendar_dates_are_valid_evidence(self):
+        self.assertTrue(audit.is_valid_iso_date("2026-10-26"))
+        self.assertTrue(audit.is_valid_month_date("2026-10-26", "2026-10"))
+        for invalid in ("2026-W44-1", "20261026", "2026-10-32", "2026-10-1", "2026-10-26T00:00:00"):
+            self.assertFalse(audit.is_valid_iso_date(invalid))
+            self.assertFalse(audit.is_valid_month_date(invalid, "2026-10"))
+
+    def test_iso_week_date_cannot_create_a_confirmed_missing_doi(self):
+        verification = {"records": [{
+            "journal": "Clinical Oral Investigations", "doi": "10.1007/weekdate",
+            "status": "publisher_online_date_verified", "online_date": "2026-W44-1",
+            "source": "https://link.springer.com/article/weekdate"}]}
+        row = next(r for r in audit.build("2026-10", verification=verification,
+                                          monthly_report={"articles": []})["journals"]
+                   if r["journal"] == "Clinical Oral Investigations")
+        self.assertEqual(row["confirmed_month_missing_dois"], [])
+        self.assertEqual(row["publisher_article_dates_verified"], 0)
+
     def test_undated_candidate_does_not_hide_verified_publisher_gap(self):
         verification = {"records": [{
             "journal": "Clinical Oral Investigations", "doi": "10.1007/candidate",
