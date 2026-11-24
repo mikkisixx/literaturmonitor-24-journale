@@ -199,7 +199,12 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                 normalize_doi(x.get("doi")) for x in confirmed_missing
                 if not valid_https_source(x.get("source") or x.get("publisher_url") or x.get("url"))
             })
-            # Separate evidence-backed gaps from date claims lacking a traceable publisher URL.\n            confirmed_missing_with_source_dois = sorted({\n                normalize_doi(x.get("doi")) for x in confirmed_missing\n                if valid_https_source(x.get("source") or x.get("publisher_url") or x.get("url"))\n            })\n            verified_sources = sorted({str(x.get("source") or x.get("publisher_url") or x.get("url")).strip()
+            # Separate evidence-backed gaps from date claims lacking a traceable publisher URL.
+            confirmed_missing_with_source_dois = sorted({
+                normalize_doi(x.get("doi")) for x in confirmed_missing
+                if valid_https_source(x.get("source") or x.get("publisher_url") or x.get("url"))
+            })
+            verified_sources = sorted({str(x.get("source") or x.get("publisher_url") or x.get("url")).strip()
                                        for x in checks
                                        if x.get("status") == "publisher_online_date_verified"
                                        and normalize_doi(x.get("doi"))
@@ -235,7 +240,9 @@ def build(month, inventory=None, verification=None, monthly_report=None):
                              and normalize_doi(x.get("doi")) not in conflicting_dois
                              for x in checks),
                          "confirmed_month_missing_from_report": len(confirmed_missing_dois),
-                         "confirmed_month_missing_dois": confirmed_missing_dois,\n                         "confirmed_month_missing_with_https_source_dois": confirmed_missing_with_source_dois,\n                         "confirmed_month_missing_with_https_source_count": len(confirmed_missing_with_source_dois),
+                         "confirmed_month_missing_dois": confirmed_missing_dois,
+                         "confirmed_month_missing_with_https_source_dois": confirmed_missing_with_source_dois,
+                         "confirmed_month_missing_with_https_source_count": len(confirmed_missing_with_source_dois),
                          "publisher_report_online_date_conflict_dois": conflicting_report_dates,
                          "publisher_report_online_date_conflict_count": len(conflicting_report_dates),
                          "confirmed_month_missing_without_https_source_dois": missing_without_source_dois,
